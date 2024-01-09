@@ -1,0 +1,20 @@
+[Default Applications]
+application/xml=nvim.desktop
+image/png=org.xfce.ristretto.desktop
+image/jpeg=org.xfce.ristretto.desktop
+application/pdf=firefox.desktop
+text/plain=nvim.desktop
+application/json=nvim.desktop
+application/x-zerosize=nvim.desktop
+
+[Added Associations]
+application/xml=chromium.desktop;nvim.desktop;
+text/plain=libreoffice-writer.desktop;code-oss.desktop;nvim.desktop;
+image/png=org.xfce.ristretto.desktop;
+image/jpeg=org.xfce.ristretto.desktop;
+application/pdf=firefox.desktop;
+text/javascript=nvim.desktop;code-oss.desktop;vim.desktop;
+application/json=nvim.desktop;
+image/gif=org.xfce.ristretto.desktop;
+application/x-zerosize=nvim.desktop;
+image/svg+xml=firefox.desktop;org.xfce.ristretto.desktop;

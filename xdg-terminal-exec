@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+alacritty --class "tty-flex,tty-flex" -e "$@"

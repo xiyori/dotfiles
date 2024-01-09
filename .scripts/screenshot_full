@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+# Script by PROxZIMA from https://github.com/PROxZIMA/.dotfiles/tree/master
+IMG=~/Pictures/Screenshots/$(date +'Screenshot_%Y-%m-%d_%H-%M-%S.png') && grim $IMG && wl-copy < $IMG && notify-send "Screenshot" "Saved & Copied";
