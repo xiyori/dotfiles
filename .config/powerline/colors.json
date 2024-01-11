@@ -1,0 +1,24 @@
+{
+    "colors": {
+        "catppuccin:base03-old": [8, "1e1e2e"],
+        "catppuccin:base02-old": [0, "404059"],
+        "catppuccin:base01-old": [10, "565671"],
+        "catppuccin:base00-old": [11, "787897"],
+        "catppuccin:base03": [8, "0c1c38"],
+        "catppuccin:base02": [0, "152b52"],
+        "catppuccin:base01": [10, "213c6b"],
+        "catppuccin:base00": [11, "31528c"],
+        "catppuccin:base0": [12, "a6adc8"],
+        "catppuccin:base1": [14, "c3cbe8"],
+        "catppuccin:base2": [7, "cdd6f4"],
+        "catppuccin:base3": [15, "e0e8ff"],
+        "catppuccin:yellow": [3, "d9a534"],
+        "catppuccin:orange": [9, "d44f00"],
+        "catppuccin:red": [1, "cf446b"],
+        "catppuccin:magenta": [5, "c456a7"],
+        "catppuccin:violet": [13, "5447de"],
+        "catppuccin:blue": [4, "4071bf"],
+        "catppuccin:cyan": [6, "59a699"],
+        "catppuccin:green": [2, "5fa659"]
+    }
+}

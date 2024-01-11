@@ -31,13 +31,24 @@ bindings = [
 { key = "Backspace", mods = "Control", chars = "\u0017" },
 ]
 
+# Normal colors
+[colors.normal]
+black = '#2c2e3a' # surface1
+red = '#cf446b' # red
+green = '#5fa659' # green
+yellow = '#d9a534' # yellow
+blue = '#4071bf' # blue
+magenta = '#c456a7' # pink
+cyan = '#59a699' # teal
+white = '#5366ac' # subtext1
+
 # Dim colors
-# [colors.dim]
-# black = '#2c2e3a' # surface1
-# red = '#cf446b' # red
-# green = '#5fa659' # green
-# yellow = '#d9a534' # yellow
-# blue = '#4071bf' # blue
-# magenta = '#c456a7' # pink
-# cyan = '#59a699' # teal
-# white = '#5366ac' # subtext1
+[colors.dim]
+black = '#2c2e3a' # surface1
+red = '#cf446b' # red
+green = '#5fa659' # green
+yellow = '#d9a534' # yellow
+blue = '#4071bf' # blue
+magenta = '#c456a7' # pink
+cyan = '#59a699' # teal
+white = '#5366ac' # subtext1

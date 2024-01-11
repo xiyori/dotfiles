@@ -56,7 +56,7 @@ create_symlinks () {
     _create_symlink .config/hypr
     _create_symlink .config/neofetch
     _create_symlink .config/nvim
-    # _create_symlink .config/powerline
+    _create_symlink .config/powerline
     _create_symlink .config/waybar
     _create_symlink .config/wlogout
     _create_symlink .config/wofi

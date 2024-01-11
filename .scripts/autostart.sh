@@ -30,8 +30,3 @@ nm-applet &
 hyprctl setcursor Bibata-Modern-Classic 24
 
 #exec-once=redshift
-~/.scripts/auto_monitor.sh &
-~/.scripts/switch_out_from_empty.sh &
-
-sleep 2
-~/.scripts/startup_monitor.sh
