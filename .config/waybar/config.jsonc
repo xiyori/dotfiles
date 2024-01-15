@@ -17,6 +17,7 @@
         "memory",
         "temperature",
         "disk",
+        "custom/monitor",
         "hyprland/workspaces"
     ],
     "modules-center": [
@@ -90,16 +91,26 @@
         "on-click": "alacritty -e btop",
         "interval": 2
     },
+    "custom/monitor": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{}", // {format_source}
+        "tooltip": true,
+        "exec": "cat /tmp/custom_monitor_waybar",
+        "return-type": "json",
+        "on-click": "~/.scripts/mirror.sh",
+        "on-click-right": "~/.scripts/external.sh",
+        "signal": 3
+    },
     "custom/updates": {
         "format": "{}",
         "exec": "~/.scripts/updates",
+        "return-type": "json",
         "on-click": "~/.scripts/updates update",
         "interval": 7320,
         "tooltip": true,
         // "tooltip-format": "{}",
         // "exec-tooltip": "~/.scripts/updates tooltip"
     },
-    
     "hyprland/window": {
         "format": "{}",
         // "separate-outputs": true,

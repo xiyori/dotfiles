@@ -12,12 +12,6 @@ fi
 AUR=$(yay -Qua | wc -l)
 OFFICIAL=$(checkupdates | wc -l)
 
-# Case/switch for each service updates
-case $1 in
-    aur) echo " $AUR";;
-    official) echo " $OFFICIAL";;
-esac
-
 # If the parameter is "update", update all services
 if [ "$1" = "update" ]; then
     alacritty -e yay
@@ -35,7 +29,7 @@ if [ "$1" = "" ]; then
         echo ""
     else
         # This Update symbol is RTL. So &#x202d; is left-to-right override.
-        echo " $COUNT"
+        echo "{\"text\":\" $COUNT\",\"tooltip\":\"Updates available\"}"
     fi
     exit 0
 fi

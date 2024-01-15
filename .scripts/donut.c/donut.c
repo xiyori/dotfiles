@@ -1,3 +1,6 @@
+// donut.c by Andy Sloane
+// https://www.a1k0n.net/2006/09/15/obfuscated-c-donut.html
+
              k;double sin()
          ,cos();main(){float A=
        0,B=0,i,j,z[1760];char b[

@@ -8,14 +8,9 @@
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all &
 
-# gsettings
-# gsettings set org.gnome.desktop.interface gtk-theme 'Catppuccin-Mocha-Standard-Blue-Dark'
-# gsettings set org.gnome.desktop.interface font-name 'Noto Sans'
-# gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-# gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
-
 # waybar
 echo "{\"text\": \"us\", \"tooltip\": \"English (US)\"}" > /tmp/kb_layout
+echo "" > /tmp/custom_monitor_waybar
 ~/.scripts/launch_waybar &
 
 # wallpaper

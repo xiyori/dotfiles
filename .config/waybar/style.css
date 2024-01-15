@@ -78,16 +78,16 @@
 #memory,
 #disk,
 #temperature,
+#custom-monitor,
 #custom-sound,
 #custom-music,
 #custom-updates,
-#custom-nordvpn,
-#custom-notifications,
-#custom-power,
+/* #custom-notifications,
 #custom-custom,
 #custom-cycle_wall,
 #custom-clipboard,
-#custom-ss,
+#custom-ss, */
+#custom-power,
 #custom-weather,
 #custom-language {
   background-color: @surface0;
@@ -112,6 +112,13 @@
 #waybar.empty #window {
   background: none;
   box-shadow: none;
+}
+
+/* =============================== */
+/* Monitor Module */
+#custom-monitor {
+  color: @sky;
+  padding-right: 11px;
 }
 
 /* =============================== */
