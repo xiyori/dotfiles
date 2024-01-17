@@ -8,9 +8,8 @@ print_help () {
     echo "TARGETS:"
     echo "  essential             install essential packages"
     echo "  optional              install optional programs from rice video"
-    echo "  symlinks              create symlinks for dotfiles"
-    echo "  all                   all of the above"
     echo "  extra                 install xiyori's personal apps"
+    echo "  all                   all of the above"
     echo "    if no target is given, display the help screen"
     echo
     echo "OPTIONS:"
@@ -36,6 +35,19 @@ install () {
     yay -S $packages
 }
 
+_create_symlink () {
+    mkdir -p "$(dirname ~/"$1")"
+    
+    # Remove existing symlink, directory, or file at the target location
+    [ -L ~/"$1" ] && { rm ~/"$1"; echo -n "old symlink removed, "; }
+    [ -d ~/"$1" ] && { rm -rf ~/"$1"; echo -n "old directory removed, "; }
+    [ -f ~/"$1" ] && { rm ~/"$1"; echo -n "old file removed, "; }
+    
+    # Create new symlink
+    ln -s "$(pwd)/$1" ~/"$1"
+    echo "created symlink ~/$1"
+}
+
 install_essential () {
     echo "installing essential packages"
     packages=(
@@ -44,6 +56,7 @@ install_essential () {
         
         # Terminals & Shells
         "alacritty" # for terminal management
+        "fish" # friendly interactive shell
         "powerline" # for CLI customization
         
         # Text Editors
@@ -117,11 +130,32 @@ install_essential () {
     echo
     echo "setting up packages"
 
-    # Services
+    # Symlinks
+    echo "creating symlinks"
 
+    _create_symlink .scripts
+    _create_symlink .xserverrc
+    _create_symlink .bash_profile
+    _create_symlink .bashrc
+    _create_symlink .gtkrc-2.0
+    _create_symlink .vimrc
+    _create_symlink .config/alacritty/alacritty.toml
+    _create_symlink .config/fish/config.fish
+    _create_symlink .config/fontconfig/fonts.conf
+    _create_symlink .config/gtk-3.0/settings.ini
+    _create_symlink .config/hypr
+    _create_symlink .config/nvim
+    _create_symlink .config/powerline
+    _create_symlink .config/waybar
+    _create_symlink .config/wlogout
+    _create_symlink .config/wofi
+    _create_symlink .config/chromium-flags.conf
+    _create_symlink .config/code-flags.conf
+    _create_symlink .config/electron-flags.conf
+    _create_symlink .config/mimeapps.list
 
     # For the proper starting of terminal apps from GTK
-    sudo ln -s "$(pwd)/xdg-terminal-exec" "/usr/bin/xdg-terminal-exec"
+    sudo ln -s "$(pwd)/xdg-terminal-exec" /usr/bin/xdg-terminal-exec
     
     # gsettings
     gsettings set org.gnome.desktop.interface gtk-theme 'Catppuccin-Mocha-Standard-Blue-Dark'
@@ -134,13 +168,11 @@ install_essential () {
     mkdir -p ~/.config/alacritty/themes
     git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 
-    mkdir -p "$(bat --config-dir)/themes"
-    git clone https://github.com/catppuccin/bat.git "$(bat --config-dir)/themes"
-
-    git clone https://github.com/catppuccin/btop.git
-    sudo cp btop/themes/* /usr/share/btop/themes/
-
-
+    # Services
+    sudo systemctl enable bluetooth.service
+    systemctl --user enable pipewire pipewire-pulse wireplumber
+    systemctl --user enable xfce4-notifyd.service
+    systemctl --user enable mpris-proxy.service
 }
 
 install_optional () {
@@ -152,7 +184,6 @@ install_optional () {
         "btop" # for performance monitoring
         "bat" # cat with the looks
         "ristretto" # image viewer
-        "udev-block-notify" # filesystem notifications
         "wofi-emoji" # emoji picker
         "noto-fonts-emoji" # emoji font
         "hyprpicker" # color picker
@@ -162,6 +193,22 @@ install_optional () {
         "cava" # musical flex
     )
     install "${packages[@]}"
+
+    # Symlinks
+    echo "creating symlinks"
+
+    _create_symlink .config/btop/btop.conf
+    _create_symlink .config/calcurse/conf
+    _create_symlink .config/calcurse/keys
+    _create_symlink .config/cava/config
+    _create_symlink .config/neofetch
+
+    # App themes
+    mkdir -p "$(bat --config-dir)/themes"
+    git clone https://github.com/catppuccin/bat.git "$(bat --config-dir)/themes"
+
+    git clone https://github.com/catppuccin/btop.git
+    sudo cp btop/themes/* /usr/share/btop/themes/
 }
 
 install_extra () {
@@ -170,6 +217,8 @@ install_extra () {
         "tigervnc"
         "font-manager"
         "firefox"
+        "gimp"
+        "mpv"
         "sshfs"
         "code"
         "code-features"
@@ -177,6 +226,7 @@ install_extra () {
         "android-file-transfer"
         "noto-fonts-cjk"
         "vim-commentary"
+        "vim-jedi"
         "qalculate-gtk"
         "wev"
         "torbrowser-launcher"
@@ -185,50 +235,23 @@ install_extra () {
         "greetd"
     )
     install "${packages[@]}"
-}
 
-_create_symlink () {
-    mkdir -p "$(dirname ~/"$1")"
-    
-    # Remove existing symlink, directory, or file at the target location
-    [ -L ~/"$1" ] && { rm ~/"$1"; echo -n "old symlink removed, "; }
-    [ -d ~/"$1" ] && { rm -rf ~/"$1"; echo -n "old directory removed, "; }
-    [ -f ~/"$1" ] && { rm ~/"$1"; echo -n "old file removed, "; }
-    
-    # Create new symlink
-    ln -s "$(pwd)/$1" ~/"$1"
-    echo "created symlink ~/$1"
-}
-
-create_symlinks () {
+    # Symlinks
     echo "creating symlinks"
-    _create_symlink .scripts
-    _create_symlink .xserverrc
-    _create_symlink .bash_profile
-    _create_symlink .bashrc
-    _create_symlink .gtkrc-2.0
-    _create_symlink .vimrc
-    _create_symlink .config/alacritty/alacritty.toml
-    _create_symlink .config/btop/btop.conf
-    _create_symlink .config/calcurse/conf
-    _create_symlink .config/calcurse/keys
-    _create_symlink .config/cava/config
-    _create_symlink .config/fish/config.fish
-    _create_symlink .config/fontconfig/fonts.conf
-    _create_symlink .config/gtk-3.0/settings.ini
-    _create_symlink .config/hypr
-    _create_symlink .config/neofetch
-    _create_symlink .config/nvim
-    _create_symlink .config/powerline
-    _create_symlink .config/waybar
-    _create_symlink .config/wlogout
-    _create_symlink .config/wofi
-    _create_symlink .config/chromium-flags.conf
-    _create_symlink .config/code-flags.conf
-    _create_symlink .config/electron-flags.conf
-    _create_symlink .config/mimeapps.list
-}
 
+    _create_symlink .config/GIMP/2.10/gimprc
+    _create_symlink .config/GIMP/2.10/menurc
+    _create_symlink .config/GIMP/2.10/sessionrc
+    _create_symlink .config/GIMP/2.10/toolrc
+
+    sudo ln -s "$(pwd)/config.toml" /etc/greetd/config.toml
+    sudo ln -s "$(pwd)/resolved.conf" /etc/systemd/resolved.conf
+    sudo ln -s /usr/bin/resolvectl /usr/local/bin/resolvconf
+
+    # Services
+    sudo systemctl enable greetd.service
+    sudo systemctl enable systemd-resolved.service
+}
 
 if [[ "$#" > 2 ]]; then
     echo "ERROR: too many arguments"
@@ -246,13 +269,15 @@ case "$1" in
         install_yay
         install_optional
     ;;
-    symlinks)
-        create_symlinks
+    extra)
+        install_yay
+        install_extra
     ;;
     all)
+        install_yay
         install_essential
         install_optional
-        create_symlinks
+        install_extra
     ;;
     ""|-h|--help)
         print_help
