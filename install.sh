@@ -134,9 +134,7 @@ install_essential () {
     echo "creating symlinks"
 
     _create_symlink .scripts
-    _create_symlink .xserverrc
     _create_symlink .bash_profile
-    _create_symlink .bashrc
     _create_symlink .gtkrc-2.0
     _create_symlink .vimrc
     _create_symlink .config/alacritty/alacritty.toml

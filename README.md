@@ -1,10 +1,20 @@
 # xiyori's dotfiles
 
--- here are exampes of rice
+*TODO: here are exampes of rice*
+
+Initial scripts and configs are from
+
+https://github.com/PROxZIMA/.dotfiles
+
+https://github.com/AmitGolden/dotfiles
+
+https://github.com/rustybucketz30/dotfiles
+
+Look up the exact attribution in the dotfiles.
 
 ## Before installation
 
-Check the install script, it **deletes** files like `.bashrc` and `.bash_profile`! The script is intended for clean base systems, installing it in a working setup is **not** recommended!
+Please, check the install script before running it. The script is intended for clean base systems, installing it in a working setup is **not** recommended!
 
 If you wish to install optional packages, edit your `/etc/pacman.conf` to include `multilib` repo:
 
@@ -16,8 +26,6 @@ Include = /etc/pacman.d/mirrorlist
 ## Installation
 
 Run `./install.sh` from the repo directory. Minimum requirements are `base`, `base-devel`.
-
-remove user install: qt6-base qt6-wayland sdbus-cpp
 
 ## Touhou
 
