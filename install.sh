@@ -188,7 +188,8 @@ install_optional () {
         "imagemagick" # for color picker script
         "tty-clock" # to flex
         "calcurse" # to plan while flexing
-        "cava" # musical flex
+        "cmus" # musical flex
+        "cava" # saem
     )
     install "${packages[@]}"
 
@@ -207,6 +208,9 @@ install_optional () {
 
     git clone https://github.com/catppuccin/btop.git
     sudo cp btop/themes/* /usr/share/btop/themes/
+
+    git clone https://github.com/Sekki21956/cmus.git
+    sudo cp cmus/catppuccin.theme /usr/share/cmus/
 }
 
 install_extra () {
