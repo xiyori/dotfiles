@@ -8,12 +8,6 @@ if status is-interactive
     powerline-setup
 
     set fish_greeting
-end
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /home/sergej/anaconda3/bin/conda
-    eval /home/sergej/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+    set VIRTUAL_ENV_DISABLE_PROMPT 1
 end
-# <<< conda initialize <<<
-

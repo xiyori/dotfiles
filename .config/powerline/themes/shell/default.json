@@ -34,5 +34,10 @@
             }
         ],
         "right": []
+    },
+    "segment_data": {
+        "powerline.segments.common.env.virtualenv": {
+            "before": ""
+        }
     }
 }
