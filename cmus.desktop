@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=C* Music Player
+GenericName=Music Player
+Comment=A small, fast and powerful console music player
+Exec=/bin/sh -c "$HOME/.scripts/start_cmus.sh %F"
+Terminal=false
+Type=Application
+Keywords=Audio;Song;MP3;CD;Podcast;MTP;iPod;Playlist;Last.fm;UPnP;DLNA;Radio;
+Icon=cmus
+Categories=AudioVideo;Audio;Player;
+StartupNotify=false

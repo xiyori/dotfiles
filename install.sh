@@ -127,8 +127,6 @@ install_essential () {
         "waybar-hyprland"
     )
     install "${packages[@]}"
-    echo
-    echo "setting up packages"
 
     # Symlinks
     echo "creating symlinks"
@@ -151,6 +149,8 @@ install_essential () {
     _create_symlink .config/code-flags.conf
     _create_symlink .config/electron-flags.conf
     _create_symlink .config/mimeapps.list
+
+    echo "setting up packages"
 
     # For the proper starting of terminal apps from GTK
     sudo ln -s "$(pwd)/xdg-terminal-exec" /usr/bin/xdg-terminal-exec
@@ -202,6 +202,14 @@ install_optional () {
     _create_symlink .config/cava/config
     _create_symlink .config/neofetch
 
+    echo "setting up packages"
+    
+    # Cmus status
+    mkdir -p .local/state/cmus_status/cover
+    ln -s "$(pwd)/resources/placeholder.png" ~/.local/state/cmus_status/placeholder.png
+    ln -s "$(pwd)/resources/cmus.svg" ~/.local/share/icons/cmus.svg
+    desktop-file-install --dir=$HOME/.local/share/applications cmus.desktop
+
     # App themes
     mkdir -p "$(bat --config-dir)/themes"
     git clone https://github.com/catppuccin/bat.git "$(bat --config-dir)/themes"
@@ -235,6 +243,7 @@ install_extra () {
         "libdbus-glib-1-2"
         "tldr"
         "greetd"
+        "joplin-desktop"
     )
     install "${packages[@]}"
 

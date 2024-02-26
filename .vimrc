@@ -11,6 +11,7 @@ set incsearch
 set ignorecase
 set listchars=tab:⋅⋅
 set list
+set completeopt=menu,menuone
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p

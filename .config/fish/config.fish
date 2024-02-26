@@ -1,7 +1,7 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 
-    set PATH "$PATH:/home/sergej/.cargo/bin"
+    set PATH "$PATH:$HOME/.cargo/bin"
 
     set fish_function_path $fish_function_path "/usr/share/powerline/bindings/fish"
     source /usr/share/powerline/bindings/fish/powerline-setup.fish
