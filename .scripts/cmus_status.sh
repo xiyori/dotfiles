@@ -6,8 +6,10 @@ COVER_PATH="$COVER_DIR/cmus_status_cover.jpg"
 
 status=$2
 file_path=$(echo "$@" | grep -o "file .* artist")
-file_path="${file_path#file }"
-file_path="${file_path% artist}"
+file_path="${file_path:5:-7}"
+if [[ "$file_path" == cue://* ]]; then
+    file_path="$(dirname "${file_path:6}")"
+fi
 
 if [ "$file_path" != "" ]; then
     file_dir="$(dirname "${file_path}")"

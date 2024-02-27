@@ -4,7 +4,7 @@ function handle {
   case "$1" in 
     monitorremoved\>\>HDMI-A-1)
       hyprctl keyword monitor "eDP-1,1920x1080@60,0x0,1.25"
-      hyprctl keyword monitor "HDMI-A-1,preferred,auto,2"
+      hyprctl keyword monitor "HDMI-A-1,preferred,-1920x-216,2"
       echo "" > /tmp/custom_monitor_waybar
       pkill -RTMIN+3 waybar
       return

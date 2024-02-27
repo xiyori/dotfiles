@@ -63,7 +63,7 @@ install_essential () {
         "neovim"
         
         # Launchers & Notifications
-        "wofi" # for launching applications
+        "rofi-lbonn-wayland-git" # for launching applications
         "xfce4-notifyd" # for notifications
         
         # Desktop Customization
@@ -144,7 +144,7 @@ install_essential () {
     _create_symlink .config/powerline
     _create_symlink .config/waybar
     _create_symlink .config/wlogout
-    _create_symlink .config/wofi
+    _create_symlink .config/rofi
     _create_symlink .config/chromium-flags.conf
     _create_symlink .config/code-flags.conf
     _create_symlink .config/electron-flags.conf
@@ -166,6 +166,10 @@ install_essential () {
     mkdir -p ~/.config/alacritty/themes
     git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 
+    git clone https://github.com/catppuccin/rofi
+    mkdir -p ~/.local/share/rofi/themes/
+    cp rofi/basic/.local/share/rofi/themes/* ~/.local/share/rofi/themes/
+
     # Services
     sudo systemctl enable bluetooth.service
     systemctl --user enable pipewire pipewire-pulse wireplumber
@@ -182,7 +186,7 @@ install_optional () {
         "btop" # for performance monitoring
         "bat" # cat with the looks
         "ristretto" # image viewer
-        "wofi-emoji" # emoji picker
+        "rofi-emoji-git" # emoji picker
         "noto-fonts-emoji" # emoji font
         "hyprpicker" # color picker
         "imagemagick" # for color picker script
