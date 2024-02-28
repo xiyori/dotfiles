@@ -43,4 +43,4 @@ pactl set-default-sink "$NEW_DEFAULT_SINK"
 
 pkill -RTMIN+1 waybar
 
-notify-send --expire-time 3000 "Output: $(~/.scripts/default_sink_nick.sh | tr -d '"')"
+notify-send --expire-time 3000 "Output: $(~/.scripts/default_sink_nick.sh)"

@@ -58,6 +58,10 @@
   color: @text;
 }
 
+tooltip {
+  background-color: @surface0;
+}
+
 /* =============================== */
 
 

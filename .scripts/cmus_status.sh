@@ -11,6 +11,7 @@ if [[ "$file_path" == cue://* ]]; then
     file_path="$(dirname "${file_path:6}")"
 fi
 
+# echo "$file_path" >> $HOME/log
 if [ "$file_path" != "" ]; then
     file_dir="$(dirname "${file_path}")"
     img_name="$(ls -S1 "${file_dir}" | grep -oiE ".*(cover|folder|artwork|albumart|jacket).*\.(jpg|jpeg|png|tiff)" | head -1)"

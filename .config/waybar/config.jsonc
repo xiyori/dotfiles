@@ -109,6 +109,7 @@
         "on-click": "~/.scripts/updates update",
         "interval": 7320,
         "tooltip": true,
+        "signal": 4
         // "tooltip-format": "{}",
         // "exec-tooltip": "~/.scripts/updates tooltip"
     },

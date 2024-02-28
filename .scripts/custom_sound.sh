@@ -3,6 +3,23 @@
 volume="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d':' -f 2 | sed -e 's/\.//' -e 's/ //' -e 's/^0*//')"
 nick="$(~/.scripts/default_sink_nick.sh)"
 
+artist=$(playerctl metadata | grep xesam:artist)
+artist=${artist#*artist}
+artist=$(echo $artist | xargs)
+title=$(playerctl metadata | grep xesam:title)
+title=${title#*title}
+title=$(echo $title | xargs)
+
+if [ "$artist" == "" ]; then
+    tooltip="$title"
+else
+    tooltip="$artist - $title"
+fi
+
+if [ "$tooltip" == "" ]; then
+    tooltip="$nick"
+fi
+
 muted=0
 
 case $volume in
@@ -38,4 +55,4 @@ if [[ $muted -eq 1 ]]; then
     icon="󰖁"
 fi
 
-echo "{\"text\": \"${icon} ${volume}%\",\"tooltip\":$nick}"
+echo "{\"text\": \"${icon} ${volume}%\",\"tooltip\":\"$tooltip\"}"
