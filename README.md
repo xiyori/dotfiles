@@ -27,7 +27,7 @@
 
 <h1></h1>
 
-https://user-images.githubusercontent.com/???
+https://github.com/xiyori/dotfiles/assets/111375905/c208ef6b-5c20-4b28-8d38-18afbd212ff2
 
 ### Attributions
 
