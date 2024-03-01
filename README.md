@@ -9,6 +9,7 @@
  ╭─ Distro  -> Arch Linux x86_64
  ├─ Editor  -> NeoVim
  ├─ Browser -> Firefox /w Betterfox
+ ├─ Music   -> Cmus
  ├─ Shell   -> fish
  ╰─ Resource Monitor -> Btop
 
@@ -19,6 +20,7 @@
 
  ╭─ WM       -> Hyprland
  ├─ Terminal -> Alacritty
+ ├─ Launcher -> Rofi
  ├─ Theme    -> Catpuccin-Mocha-Blue-Dark
  ├─ Icons    -> Papirus-Dark
  ╰─ Font     -> Fira Code Nerd Font
@@ -28,16 +30,6 @@
 <h1></h1>
 
 https://github.com/xiyori/dotfiles/assets/111375905/c208ef6b-5c20-4b28-8d38-18afbd212ff2
-
-### Attributions
-
-Artwork:
-
-* [nifu (200°F)](https://www.pixiv.net/en/artworks/84795129)
-* [Tess](https://www.pixiv.net/en/artworks/81827899)
-* [竹之輪ちくわ (Takeyukiwa Tikuwa)](https://www.pixiv.net/en/artworks/76702197)
-
-Scripts and configs are from / based on [PROxZIMA](https://github.com/PROxZIMA/.dotfiles), [AmitGolden](https://github.com/AmitGolden/dotfiles), [rustybucketz30](https://github.com/rustybucketz30/dotfiles) dotfiles. Look up the exact attribution in each file.
 
 ## Before installation
 
@@ -63,3 +55,13 @@ To play Touhou games, install
 and run games like this:
 
 `WINEARCH=win32 gamescope -W 1920 -H 1080 -r 60 --expose-wayland -- wine $YOUR_GAME`
+
+## Credits
+
+Artwork:
+
+* [nifu (200°F)](https://www.pixiv.net/en/artworks/84795129)
+* [Tess](https://www.pixiv.net/en/artworks/81827899)
+* [竹之輪ちくわ (Takeyukiwa Tikuwa)](https://www.pixiv.net/en/artworks/76702197)
+
+Scripts and configs are from / based on [PROxZIMA](https://github.com/PROxZIMA/.dotfiles), [AmitGolden](https://github.com/AmitGolden/dotfiles), [rustybucketz30](https://github.com/rustybucketz30/dotfiles) dotfiles. Look up the exact attribution in each file.
