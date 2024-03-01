@@ -9,7 +9,7 @@ systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all &
 
 # waybar
-echo "{\"text\": \"us\", \"tooltip\": \"English (US)\"}" > /tmp/kb_layout
+echo "{\"text\": \"en\", \"tooltip\": \"English (US)\"}" > /tmp/kb_layout
 echo "" > /tmp/custom_monitor_waybar
 ~/.scripts/launch_waybar &
 

@@ -195,6 +195,7 @@ install_optional () {
         "cmus" # musical flex
         "cava" # saem
         "qalculate-gtk" # calculator
+        "lsd" # next gen ls
     )
     install "${packages[@]}"
 
