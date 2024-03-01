@@ -27,8 +27,6 @@
 
 ```
 
-<h1></h1>
-
 https://github.com/xiyori/dotfiles/assets/111375905/c208ef6b-5c20-4b28-8d38-18afbd212ff2
 
 ## Before installation
