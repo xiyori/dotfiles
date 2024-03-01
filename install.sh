@@ -194,6 +194,7 @@ install_optional () {
         "calcurse" # to plan while flexing
         "cmus" # musical flex
         "cava" # saem
+        "qalculate-gtk" # calculator
     )
     install "${packages[@]}"
 
@@ -241,13 +242,18 @@ install_extra () {
         "noto-fonts-cjk"
         "vim-commentary"
         "vim-jedi"
-        "qalculate-gtk"
         "wev"
         "torbrowser-launcher"
+        "obfsproxy"
         "libdbus-glib-1-2"
         "tldr"
         "greetd"
         "joplin-desktop"
+        "obs-studio"
+        "cups"
+        "cups-pdf"
+        "nss-mdns"
+        "avahi"
     )
     install "${packages[@]}"
 
