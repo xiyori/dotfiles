@@ -210,8 +210,8 @@ install_optional () {
     
     # Cmus status
     mkdir -p .local/state/cmus_status/cover
-    ln -s "$(pwd)/resources/placeholder.png" ~/.local/state/cmus_status/placeholder.png
-    ln -s "$(pwd)/resources/cmus.svg" ~/.local/share/icons/cmus.svg
+    ln -s "$(pwd)/assets/placeholder.png" ~/.local/state/cmus_status/placeholder.png
+    ln -s "$(pwd)/assets/cmus.svg" ~/.local/share/icons/cmus.svg
     desktop-file-install --dir=$HOME/.local/share/applications cmus.desktop
 
     # App themes

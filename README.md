@@ -1,16 +1,43 @@
 # xiyori's dotfiles
 
-*TODO: here are exampes of rice*
+[<img align="right" src="pic/rice.jpg" alt="Rice Preview" width="400px"/>](pic/)
 
-Initial scripts and configs are from
+```mint
+⠀⠀   ⑨ Setup / Hyprland ⑨
+ -----------------------------------
 
-https://github.com/PROxZIMA/.dotfiles
+ ╭─ Distro  -> Arch Linux x86_64
+ ├─ Editor  -> NeoVim
+ ├─ Browser -> Firefox /w Betterfox
+ ├─ Shell   -> fish
+ ╰─ Resource Monitor -> Btop
 
-https://github.com/AmitGolden/dotfiles
+ ╭─ Model -> Modern 14 B5M
+ ├─ CPU   -> Ryzen 5 5500U @ 4.0GHz
+ ├─ GPU   -> No :(
+ ╰─ Resolution -> 1920x1080
 
-https://github.com/rustybucketz30/dotfiles
+ ╭─ WM       -> Hyprland
+ ├─ Terminal -> Alacritty
+ ├─ Theme    -> Catpuccin-Mocha-Blue-Dark
+ ├─ Icons    -> Papirus-Dark
+ ╰─ Font     -> Fira Code Nerd Font
 
-Look up the exact attribution in the dotfiles.
+```
+
+<h1></h1>
+
+https://user-images.githubusercontent.com/???
+
+### Attributions
+
+Artwork:
+
+* [nifu (200°F)](https://www.pixiv.net/en/artworks/84795129)
+* [Tess](https://www.pixiv.net/en/artworks/81827899)
+* [竹之輪ちくわ (Takeyukiwa Tikuwa)](https://www.pixiv.net/en/artworks/76702197)
+
+Scripts and configs are from / based on [PROxZIMA](https://github.com/PROxZIMA/.dotfiles), [AmitGolden](https://github.com/AmitGolden/dotfiles), [rustybucketz30](https://github.com/rustybucketz30/dotfiles) dotfiles. Look up the exact attribution in each file.
 
 ## Before installation
 
@@ -33,4 +60,6 @@ To play Touhou games, install
 
 `pacman -S wine-staging winetricks wine-mono lib32-mesa-libgl lib32-gnutls lib32-alsa-plugins lib32-libpulse lib32-openal vulkan-radeon lib32-vulkan-radeon gamescope`
 
-and use `th` script to run your games.
+and run games like this:
+
+`WINEARCH=win32 gamescope -W 1920 -H 1080 -r 60 --expose-wayland -- wine $YOUR_GAME`
