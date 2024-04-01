@@ -23,5 +23,6 @@ nm-applet &
 
 # other
 hyprctl setcursor Bibata-Modern-Classic 24
+# /usr/bin/nohup /usr/bin/easyeffects --gapplication-service &
 
 #exec-once=redshift
