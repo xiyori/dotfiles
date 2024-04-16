@@ -1,0 +1,12 @@
+[Unit]
+Description=Switch out from empty workspace
+
+[Service]
+StandardOutput=syslog
+StandardError=syslog
+ExecStart=%h/.scripts/switch_out_from_empty.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

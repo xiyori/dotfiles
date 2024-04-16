@@ -16,5 +16,5 @@ command = "agreety --cmd Hyprland"
 user = "sergej"
 
 [initial_session]
-command = "Hyprland"
+command = "Hyprland > .hyprland.log.txt 2> .hyprland.err.txt"
 user = "sergej"

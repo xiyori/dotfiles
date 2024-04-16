@@ -149,6 +149,9 @@ install_essential () {
     _create_symlink .config/code-flags.conf
     _create_symlink .config/electron-flags.conf
     _create_symlink .config/mimeapps.list
+    _create_symlink .config/systemd/user/auto-monitor.service
+    _create_symlink .config/systemd/user/switch-out-from-empty.service
+    _create_symlink .config/systemd/user/swww-daemon.service
 
     echo "setting up packages"
 
@@ -175,6 +178,9 @@ install_essential () {
     systemctl --user enable pipewire pipewire-pulse wireplumber
     systemctl --user enable xfce4-notifyd.service
     systemctl --user enable mpris-proxy.service
+    systemctl --user enable auto-monitor.service
+    systemctl --user enable switch-out-from-empty.service
+    systemctl --user enable swww-daemon.service
 }
 
 install_optional () {
@@ -256,6 +262,7 @@ install_extra () {
         "cups-pdf"
         "nss-mdns"
         "avahi"
+        "yacreader"
     )
     install "${packages[@]}"
 
@@ -266,6 +273,7 @@ install_extra () {
     _create_symlink .config/GIMP/2.10/menurc
     _create_symlink .config/GIMP/2.10/sessionrc
     _create_symlink .config/GIMP/2.10/toolrc
+    _create_symlink .config/systemd/user/easyeffects.service
 
     sudo ln -s "$(pwd)/config.toml" /etc/greetd/config.toml
     sudo ln -s "$(pwd)/resolved.conf" /etc/systemd/resolved.conf
@@ -274,6 +282,7 @@ install_extra () {
     # Services
     sudo systemctl enable greetd.service
     sudo systemctl enable systemd-resolved.service
+    systemctl --user enable easyeffects.service
 }
 
 if [[ "$#" > 2 ]]; then

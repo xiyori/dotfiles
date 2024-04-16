@@ -1,0 +1,12 @@
+[Unit]
+Description=Detect external monitor connection
+
+[Service]
+StandardOutput=syslog
+StandardError=syslog
+ExecStart=%h/.scripts/auto_monitor.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

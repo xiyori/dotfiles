@@ -1,0 +1,12 @@
+[Unit]
+Description=easyeffects daemon
+#PartOf=default.target
+#After=default.target
+
+[Service]
+Environment="G_MESSAGES_DEBUG=easyeffects"
+ExecStart=easyeffects --gapplication-service
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

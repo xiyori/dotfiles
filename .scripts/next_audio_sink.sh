@@ -24,6 +24,9 @@ get_default_sink() {
 
 DEF_SINK=$(get_default_sink)
 for SINK in $(get_all_sinks) ; do
+  if [ "$SINK" == "easyeffects_sink" ]; then
+    continue
+  fi
   [ -z "$FIRST" ] && FIRST=$SINK # Save the first index in case the current default is the last in the list
   # get_default_sink currently returns the index with a leading space
   if [ " $SINK" = "$DEF_SINK" ]; then

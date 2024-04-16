@@ -1,0 +1,10 @@
+[Unit]
+Description=Restart swww-daemon in case of a crash
+
+[Service]
+Type=simple
+ExecStart=swww-daemon
+Restart=always
+
+[Install]
+WantedBy=default.target

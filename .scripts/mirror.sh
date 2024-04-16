@@ -5,5 +5,3 @@ sleep 2
 hyprctl keyword monitor "HDMI-A-1,preferred,auto,1,mirror,eDP-1"
 echo "{\"text\":\"󰍺 \",\"tooltip\":\"Mirroring monitors\"}" > /tmp/custom_monitor_waybar
 pkill -RTMIN+3 waybar
-sleep 1
-swww init
