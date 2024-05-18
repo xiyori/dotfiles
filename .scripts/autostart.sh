@@ -14,8 +14,8 @@ echo "" > /tmp/custom_monitor_waybar
 ~/.scripts/launch_waybar &
 
 # wallpaper
-# swww-daemon &
-# swww img ~/Pictures/wallpaper/cirno_3.jpg -t none
+nohup swww-daemon &
+swww img ~/Pictures/wallpaper/cirno_3.jpg -t none
 
 # other
 hyprctl setcursor Bibata-Modern-Classic 24

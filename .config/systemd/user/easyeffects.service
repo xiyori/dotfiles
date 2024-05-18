@@ -6,7 +6,8 @@ Description=easyeffects daemon
 [Service]
 Environment="G_MESSAGES_DEBUG=easyeffects"
 ExecStart=easyeffects --gapplication-service
-Restart=on-failure
+Restart=always
+RestartSec=1
 
 [Install]
 WantedBy=default.target

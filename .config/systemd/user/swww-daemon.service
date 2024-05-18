@@ -5,6 +5,7 @@ Description=Restart swww-daemon in case of a crash
 Type=simple
 ExecStart=swww-daemon
 Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=default.target

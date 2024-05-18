@@ -49,10 +49,14 @@
     },
     "hyprland/workspaces": {
         // "format": "{icon} {name}",
+        "sort-by": "id",
         "disable-scroll": false,
-        "format": "",
+        "format": "{icon}",
         "format-icons": {
-            "active": "",
+            "Music": "󰎇",
+            "Telegram": "",
+            "VNC": "󰢹",
+            // "active": "",
             "default": ""
         },
         "on-scroll-up": "hyprctl dispatch workspace m-1",

@@ -151,7 +151,6 @@ install_essential () {
     _create_symlink .config/mimeapps.list
     _create_symlink .config/systemd/user/auto-monitor.service
     _create_symlink .config/systemd/user/switch-out-from-empty.service
-    _create_symlink .config/systemd/user/swww-daemon.service
 
     echo "setting up packages"
 
@@ -180,7 +179,6 @@ install_essential () {
     systemctl --user enable mpris-proxy.service
     systemctl --user enable auto-monitor.service
     systemctl --user enable switch-out-from-empty.service
-    systemctl --user enable swww-daemon.service
 }
 
 install_optional () {

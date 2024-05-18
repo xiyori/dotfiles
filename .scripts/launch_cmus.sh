@@ -1,4 +1,5 @@
 #!/bin/bash
+hyprctl dispatch workspace name:Music
 if ! pgrep -f "alacritty -e cmus" &> /dev/null 2>&1 ; then
     nohup alacritty -e cmus >/dev/null 2>&1 &
     nohup ristretto ~/.local/state/cmus_status/cover >/dev/null 2>&1 &
