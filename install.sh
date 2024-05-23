@@ -31,8 +31,7 @@ install_yay () {
 }
 
 install () {
-    packages=$(printf " %s" "$1[@]")
-    yay -S $packages
+    yay -S --needed $*
 }
 
 _create_symlink () {
@@ -71,6 +70,7 @@ install_essential () {
         "lxappearance" # for theming
         "catppuccin-gtk-theme-mocha" # for theming
         "bibata-cursor-theme" # for theming
+        "papirus-icon-theme" # for theming
         
         # File Management & Utilities
         "thunar"
@@ -93,6 +93,7 @@ install_essential () {
         "pipewire-pulse"
         "wireplumber"
         "playerctl"
+        "mpris-proxy-service"
         
         # Desktop Integration
         "xdg-desktop-portal-gtk" # needed for theming
@@ -122,9 +123,8 @@ install_essential () {
         "bluez-utils"
 
         # Hyprland
-        "hyprland" # window manager
+        "hyprland-git" # window manager
         "waybar" # for status bar 
-        "waybar-hyprland"
     )
     install "${packages[@]}"
 
@@ -173,9 +173,10 @@ install_essential () {
     cp rofi/basic/.local/share/rofi/themes/* ~/.local/share/rofi/themes/
 
     # Services
+    sudo ufw enable
+    sudo systemctl enable NetworkManager.service
     sudo systemctl enable bluetooth.service
     systemctl --user enable pipewire pipewire-pulse wireplumber
-    systemctl --user enable xfce4-notifyd.service
     systemctl --user enable mpris-proxy.service
     systemctl --user enable auto-monitor.service
     systemctl --user enable switch-out-from-empty.service
@@ -215,14 +216,14 @@ install_optional () {
     echo "setting up packages"
     
     # Cmus status
-    mkdir -p .local/state/cmus_status/cover
+    mkdir -p ~/.local/state/cmus_status/cover
+    mkdir -p ~/.local/share/icons
     ln -s "$(pwd)/assets/placeholder.png" ~/.local/state/cmus_status/placeholder.png
     ln -s "$(pwd)/assets/cmus.svg" ~/.local/share/icons/cmus.svg
     desktop-file-install --dir=$HOME/.local/share/applications cmus.desktop
 
     # App themes
-    mkdir -p "$(bat --config-dir)/themes"
-    git clone https://github.com/catppuccin/bat.git "$(bat --config-dir)/themes"
+    git clone https://github.com/catppuccin/bat.git "$(bat --config-dir)"
 
     git clone https://github.com/catppuccin/btop.git
     sudo cp btop/themes/* /usr/share/btop/themes/
@@ -237,6 +238,7 @@ install_extra () {
         "tigervnc"
         "font-manager"
         "firefox"
+        "telegram-desktop"
         "gimp"
         "mpv"
         "sshfs"
@@ -249,8 +251,8 @@ install_extra () {
         "vim-jedi"
         "wev"
         "torbrowser-launcher"
-        "obfsproxy"
-        "libdbus-glib-1-2"
+        "obfs4proxy"
+        "dbus-glib"
         "tldr"
         "greetd"
         "easyeffects"
@@ -273,8 +275,11 @@ install_extra () {
     _create_symlink .config/GIMP/2.10/toolrc
     _create_symlink .config/systemd/user/easyeffects.service
 
+    sudo rm /etc/greetd/config.toml
     sudo ln -s "$(pwd)/config.toml" /etc/greetd/config.toml
+    sudo rm /etc/systemd/resolved.conf
     sudo ln -s "$(pwd)/resolved.conf" /etc/systemd/resolved.conf
+    sudo rm /usr/local/bin/resolvconf
     sudo ln -s /usr/bin/resolvectl /usr/local/bin/resolvconf
 
     # Services
