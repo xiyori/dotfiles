@@ -175,6 +175,7 @@ install_essential () {
     # Services
     sudo ufw enable
     sudo systemctl enable NetworkManager.service
+    sudo systemctl enable ufw.service
     sudo systemctl enable bluetooth.service
     systemctl --user enable pipewire pipewire-pulse wireplumber
     systemctl --user enable mpris-proxy.service
@@ -241,12 +242,15 @@ install_extra () {
         "telegram-desktop"
         "gimp"
         "mpv"
+        "openssh"
         "sshfs"
         "code"
         "code-features"
         "wireguard-tools"
+        "systemd-resolvconf"
         "android-file-transfer"
         "noto-fonts-cjk"
+        "dconf-editor"
         "vim-commentary"
         "vim-jedi"
         "wev"
@@ -279,8 +283,6 @@ install_extra () {
     sudo ln -s "$(pwd)/config.toml" /etc/greetd/config.toml
     sudo rm /etc/systemd/resolved.conf
     sudo ln -s "$(pwd)/resolved.conf" /etc/systemd/resolved.conf
-    sudo rm /usr/local/bin/resolvconf
-    sudo ln -s /usr/bin/resolvectl /usr/local/bin/resolvconf
 
     # Services
     sudo systemctl enable greetd.service

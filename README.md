@@ -44,6 +44,15 @@ Include = /etc/pacman.d/mirrorlist
 
 Run `./install.sh` from the repo directory. Minimum requirements are `base`, `base-devel`.
 
+Set up cmus (if installed)
+
+```
+:colorscheme catppuccin
+:set status_display_program=$HOME/.scripts/cmus_status.sh
+```
+
+and btop `OPTIONS -> Theme -> catppuccin_mocha`.
+
 ## Touhou
 
 To play Touhou games, install
