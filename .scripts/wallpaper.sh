@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
 case $(swww query) in 
-  *cirno.jpg)
-    new_image="$WALLPAPER1"
+  *$WALLPAPER1)
+    new_image="$WALLPAPER2"
   ;;
   *)
-    new_image="$WALLPAPER2"
+    new_image="$WALLPAPER1"
   ;;
 esac
 
