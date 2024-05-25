@@ -60,6 +60,7 @@ install_essential () {
         
         # Text Editors
         "neovim"
+        "neovim-catppuccin"
         
         # Launchers & Notifications
         "rofi-lbonn-wayland-git" # for launching applications
@@ -132,7 +133,6 @@ install_essential () {
     echo "creating symlinks"
 
     _create_symlink .scripts
-    _create_symlink .bash_profile
     _create_symlink .gtkrc-2.0
     _create_symlink .vimrc
     _create_symlink .config/alacritty/alacritty.toml
@@ -225,6 +225,7 @@ install_optional () {
 
     # App themes
     git clone https://github.com/catppuccin/bat.git "$(bat --config-dir)"
+    bat cache --build
 
     git clone https://github.com/catppuccin/btop.git
     sudo cp btop/themes/* /usr/share/btop/themes/

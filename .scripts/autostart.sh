@@ -15,14 +15,14 @@ echo "" > /tmp/custom_monitor_waybar
 
 # wallpaper
 nohup swww-daemon &
-swww img ~/Pictures/wallpaper/cirno_3.jpg -t none
+swww img "$WALLPAPER1" -t none
 
 # other
 hyprctl setcursor Bibata-Modern-Classic 24
 # /usr/bin/nohup /usr/bin/easyeffects --gapplication-service &
 
 # applets
-blueman-applet &
+# blueman-applet &
 nm-applet &
 
 #exec-once=redshift

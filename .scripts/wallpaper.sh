@@ -2,11 +2,11 @@
 
 case $(swww query) in 
   *cirno.jpg)
-    new_image="cirno_3.jpg"
+    new_image="$WALLPAPER1"
   ;;
   *)
-    new_image="cirno.jpg"
+    new_image="$WALLPAPER2"
   ;;
 esac
 
-swww img ~/Pictures/wallpaper/$new_image -t wipe --transition-angle 30
+swww img "$new_image" -t wipe --transition-angle 30

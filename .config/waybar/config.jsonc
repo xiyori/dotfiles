@@ -82,8 +82,8 @@
         "format-critical": "{icon} {temperatureC}°C",
         "format": "{icon} {temperatureC}°C",
         "format-icons": [
+            "",
             "",
-            "",
             ""
         ],
         "tooltip": true,
