@@ -68,7 +68,7 @@ install_essential () {
         
         # Desktop Customization
         "swww" # for wallpapers
-        "lxappearance" # for theming
+        "lxappearance-gtk3" # for theming
         "catppuccin-gtk-theme-mocha" # for theming
         "bibata-cursor-theme" # for theming
         "papirus-icon-theme" # for theming
@@ -112,6 +112,7 @@ install_essential () {
         "python-requests" # for wttr script
         "polkit-gnome" # auth dialogs
         "swaylock-effects" # lock screen
+        "hypridle" # turn off screen
 
         # wifi - network management
         "networkmanager" # for network management
@@ -245,6 +246,8 @@ install_extra () {
         "mpv"
         "openssh"
         "sshfs"
+        "libreoffice-still"
+        "libreoffice-still-ru"
         "code"
         "code-features"
         "wireguard-tools"
@@ -254,6 +257,7 @@ install_extra () {
         "dconf-editor"
         "vim-commentary"
         "vim-jedi"
+        "python-pynvim"
         "wev"
         "torbrowser-launcher"
         "obfs4proxy"
@@ -268,6 +272,7 @@ install_extra () {
         "nss-mdns"
         "avahi"
         "yacreader"
+        "joplin-appimage"
     )
     install "${packages[@]}"
 
