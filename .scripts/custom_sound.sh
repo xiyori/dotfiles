@@ -5,10 +5,10 @@ nick="$(~/.scripts/default_sink_nick.sh)"
 
 artist=$(playerctl metadata | grep xesam:artist)
 artist=${artist#*artist}
-artist=$(echo $artist | xargs)
+artist=$(echo $artist | xargs -0)
 title=$(playerctl metadata | grep xesam:title)
 title=${title#*title}
-title=$(echo $title | xargs)
+title=$(echo $title | xargs -0)
 
 if [ "$artist" == "" ]; then
     tooltip="$title"

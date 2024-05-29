@@ -72,6 +72,7 @@ install_essential () {
         "catppuccin-gtk-theme-mocha" # for theming
         "bibata-cursor-theme" # for theming
         "papirus-icon-theme" # for theming
+        "papirus-folders" # for theming
         
         # File Management & Utilities
         "thunar"
@@ -159,12 +160,14 @@ install_essential () {
     sudo ln -s "$(pwd)/xdg-terminal-exec" /usr/bin/xdg-terminal-exec
     
     # gsettings
-    gsettings set org.gnome.desktop.interface gtk-theme 'Catppuccin-Mocha-Standard-Blue-Dark'
+    gsettings set org.gnome.desktop.interface gtk-theme 'catppuccin-mocha-mauve-standard+default-dark'
     # gsettings set org.gnome.desktop.interface font-name 'Noto Sans'
     gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
     gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 
     # App themes
+    papirus-folders -C violet --theme Papirus-Dark
+    
     # We use Alacritty's default Linux config directory as our storage location here.
     mkdir -p ~/.config/alacritty/themes
     git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
