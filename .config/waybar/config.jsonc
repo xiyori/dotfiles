@@ -33,7 +33,7 @@
         // "wireplumber",
         "backlight",
         "battery",
-        "custom/language",
+        "hyprland/language",
         "custom/weather",
         // "custom/cycle_wall",
         // "custom/clipboard",
@@ -282,13 +282,11 @@
         "interval": 1,
         "on-click-right": "alacritty --class \"tty-flex,tty-flex\" -e calcurse"
     },
-    "custom/language": {
-        "exec": "cat /tmp/kb_layout",
-        "return-type": "json",
+    "hyprland/language": {
         "format": "{}",
-        "tooltip": true,
-        "on-click": "~/.scripts/switch_kb_layout.sh",
-        "signal": 2
+        "format-en": "en",
+        "format-ru": "ru",
+        "keyboard-name": "glorious-gmmk-pro-ansi"
     },
     "custom/weather": {
         "format": "{}",

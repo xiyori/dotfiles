@@ -247,6 +247,7 @@ install_extra () {
         "telegram-desktop"
         "gimp"
         "mpv"
+        "mpv-mpris"
         "openssh"
         "sshfs"
         "libreoffice-still"
