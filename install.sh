@@ -126,7 +126,7 @@ install_essential () {
         "bluez-utils"
 
         # Hyprland
-        "hyprland-git" # window manager
+        "hyprland" # window manager
         "waybar" # for status bar 
     )
     install "${packages[@]}"
