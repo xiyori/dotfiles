@@ -64,7 +64,7 @@
         "on-click": "activate"
     },
     "cpu": {
-        "format": "󰍛 {usage}%",
+        "format": " {usage}%",
         "tooltip": true,
         "on-click": "alacritty -e btop",
         "interval": 2
