@@ -13,6 +13,12 @@ case "$1" in
   play)
     playerctl play-pause
   ;;
+  next)
+    playerctl next
+  ;;
+  prev)
+    playerctl previous
+  ;;
 esac
 
 pkill -RTMIN+1 waybar

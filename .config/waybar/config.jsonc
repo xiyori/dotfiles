@@ -286,7 +286,8 @@
         "format": "{}",
         "format-en": "en",
         "format-ru": "ru",
-        "keyboard-name": "glorious-gmmk-pro-ansi"
+        "keyboard-name": "glorious-gmmk-pro-ansi",
+        "on-click": "hyprctl switchxkblayout glorious-gmmk-pro-ansi next"
     },
     "custom/weather": {
         "format": "{}",
