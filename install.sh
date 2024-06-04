@@ -241,7 +241,6 @@ install_optional () {
 install_extra () {
     echo "installing extra packages"
     packages=(
-        "tigervnc"
         "font-manager"
         "firefox"
         "telegram-desktop"
@@ -293,6 +292,8 @@ install_extra () {
     sudo ln -s "$(pwd)/config.toml" /etc/greetd/config.toml
     sudo rm /etc/systemd/resolved.conf
     sudo ln -s "$(pwd)/resolved.conf" /etc/systemd/resolved.conf
+    sudo rm /etc/resolv.conf
+    sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
     # Services
     sudo systemctl enable greetd.service
