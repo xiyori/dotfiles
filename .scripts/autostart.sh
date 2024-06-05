@@ -9,7 +9,6 @@ systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all &
 
 # waybar
-echo "{\"text\": \"en\", \"tooltip\": \"English (US)\"}" > /tmp/kb_layout
 echo "" > /tmp/custom_monitor_waybar
 ~/.scripts/launch_waybar &
 
@@ -19,10 +18,8 @@ swww img "$WALLPAPER1" -t none
 
 # other
 hyprctl setcursor Bibata-Modern-Classic 24
-# /usr/bin/nohup /usr/bin/easyeffects --gapplication-service &
 
 # applets
-# blueman-applet &
+blueman-applet &
 nm-applet &
-
-#exec-once=redshift
+wlsunset -l 56.2 -L 36.3 &
