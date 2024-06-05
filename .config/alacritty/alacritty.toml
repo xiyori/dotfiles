@@ -6,6 +6,7 @@ shell = "fish"
 [window]
 # dynamic_padding = true
 padding = { x = 0, y = 0 }
+dimensions = { columns = 80, lines = 24 }
 decorations = "None"
 startup_mode = "Maximized"
 opacity = 1

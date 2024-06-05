@@ -12,6 +12,7 @@ set ignorecase
 set listchars=tab:⋅⋅
 set list
 set completeopt=menu,menuone
+setlocal spell spelllang=en_us
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p

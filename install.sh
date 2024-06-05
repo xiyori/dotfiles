@@ -109,6 +109,7 @@ install_essential () {
         # System
         "brightnessctl" # screen brightness
         "wlogout" # power menu
+        "wlsunset" # night light (redshift)
         "socat" # for hyprland socket scripts
         "python-requests" # for wttr script
         "polkit-gnome" # auth dialogs
