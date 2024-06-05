@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 swaylock \
---image "~/Pictures/wallpaper/cirno_3.jpg" \
+--image "$WALLPAPER2" \
 --indicator \
 --clock \
 --font "Noto Sans Light" \
@@ -13,19 +13,19 @@ swaylock \
 --inside-ver-color 1E1E2E60 \
 --text-color  ffffff \
 --text-clear-color  a6e3a1 \
---text-ver-color  89b4fa \
+--text-ver-color  cba6f7 \
 --text-wrong-color  f38ba8 \
 --indicator-radius 200 \
 --indicator-thickness 3 \
---effect-vignette 0.4:0.4 \
 --ring-color 00161925 \
---key-hl-color 89b4fa \
+--key-hl-color cba6f7 \
 --line-color ffffff80 \
 --line-clear-color ffffff80 \
 --line-ver-color ffffff80 \
 --line-wrong-color ffffff80 \
 --inside-color 1E1E2E40 \
 --separator-color 00000000 \
+--effect-vignette 0.7:0.7 \
 --fade-in 0.5 &
 
 # --effect-blur 10x2 \
