@@ -191,7 +191,7 @@ install_optional () {
     echo "installing optional packages"
     packages=(
         # System Info Display
-        "neofetch" # to flex
+        "fastfetch" # to flex
         "cmatrix-git" # for fun
         "btop" # for performance monitoring
         "bat" # cat with the looks
@@ -216,7 +216,6 @@ install_optional () {
     _create_symlink .config/calcurse/conf
     _create_symlink .config/calcurse/keys
     _create_symlink .config/cava/config
-    _create_symlink .config/neofetch
 
     echo "setting up packages"
     
@@ -274,7 +273,6 @@ install_extra () {
         "cups-pdf"
         "nss-mdns"
         "avahi"
-        "yacreader"
         "joplin-appimage"
     )
     install "${packages[@]}"
