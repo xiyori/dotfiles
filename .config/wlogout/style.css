@@ -1,7 +1,7 @@
 window {
     font-family: monospace;
     font-size: 14pt;
-    color: #cdd6f4; /* text */
+    color: white; /* text */
     background-color: rgba(30, 30, 46, 0.5);
 }
 
@@ -10,6 +10,7 @@ button {
     background-position: center;
     background-size: 25%;
     border: none;
+    color: white; /* text */
     background-color: rgba(30, 30, 46, 0);
     margin: 5px;
     transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
