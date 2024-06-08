@@ -7,8 +7,8 @@ shell = "fish"
 # dynamic_padding = true
 padding = { x = 0, y = 0 }
 dimensions = { columns = 80, lines = 24 }
-decorations = "None"
-startup_mode = "Maximized"
+# decorations = "None"
+# startup_mode = "Maximized"
 opacity = 1
 
 [font]
@@ -30,6 +30,7 @@ save_to_clipboard = true
 bindings = [
 { key = "V", mods = "Control", action = "Paste" },
 { key = "Backspace", mods = "Control", chars = "\u0017" },
+{ key = "Delete", mods = "Control", chars = "\u001bd" },
 ]
 
 # Normal colors

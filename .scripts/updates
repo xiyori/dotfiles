@@ -14,7 +14,7 @@ OFFICIAL=$(checkupdates | wc -l)
 
 # If the parameter is "update", update all services
 if [ "$1" = "update" ]; then
-    alacritty -e yay
+    alacritty -e yay -Syu --devel
     pkill -RTMIN+4 waybar
 fi
 
