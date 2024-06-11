@@ -8,6 +8,8 @@
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all &
 
+~/.scripts/audio/startup.sh
+
 # waybar
 echo "" > /tmp/custom_monitor_waybar
 ~/.scripts/launch_waybar &

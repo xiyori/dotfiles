@@ -96,6 +96,9 @@ install_essential () {
         "wireplumber"
         "playerctl"
         "mpris-proxy-service"
+        "carla" # equal loudness system volume
+        "lsp-plugins"
+        "alsa-utils"
         
         # Desktop Integration
         "xdg-desktop-portal-gtk" # needed for theming
@@ -143,7 +146,10 @@ install_essential () {
     _create_symlink .config/fontconfig/fonts.conf
     _create_symlink .config/gtk-3.0/settings.ini
     _create_symlink .config/hypr
+    _create_symlink .config/myeffects.carxp
+    _create_symlink .config/myeffects_profiles.txt
     _create_symlink .config/nvim
+    _create_symlink .config/pipewire
     _create_symlink .config/powerline
     _create_symlink .config/waybar
     _create_symlink .config/wlogout
@@ -267,8 +273,6 @@ install_extra () {
         "dbus-glib"
         "tldr"
         "greetd"
-        "easyeffects"
-        "lsp-plugins-lv2"
         "obs-studio"
         "cups"
         "cups-pdf"
@@ -285,7 +289,6 @@ install_extra () {
     _create_symlink .config/GIMP/2.10/menurc
     _create_symlink .config/GIMP/2.10/sessionrc
     _create_symlink .config/GIMP/2.10/toolrc
-    _create_symlink .config/systemd/user/easyeffects.service
 
     sudo rm /etc/greetd/config.toml
     sudo ln -s "$(pwd)/config.toml" /etc/greetd/config.toml
@@ -297,7 +300,6 @@ install_extra () {
     # Services
     sudo systemctl enable greetd.service
     sudo systemctl enable systemd-resolved.service
-    systemctl --user enable easyeffects.service
 }
 
 if [[ "$#" > 2 ]]; then

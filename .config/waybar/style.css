@@ -128,7 +128,7 @@ tooltip {
 /* =============================== */
 /* Launcher Module */
 #custom-launcher {
-  color: @blue;
+  color: @mauve;
   padding-top: 0px;
   padding-bottom: 0px;
   padding-left: 10px;
@@ -462,7 +462,7 @@ tooltip {
 
 /* Powermenu Module */
 #custom-power {
-  color: @blue;
+  color: @mauve;
   /* border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding-left: 8px; */

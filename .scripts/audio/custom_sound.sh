@@ -1,7 +1,12 @@
 #!/bin/bash
 
-volume="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d':' -f 2 | sed -e 's/\.//' -e 's/ //' -e 's/^0*//')"
-nick="$(~/.scripts/default_sink_nick.sh)"
+~/.scripts/audio/detect_sink_change.sh
+
+volume="0x$(cat /tmp/loudness)"
+volume="$(printf "%d" "$volume")"
+volume=$(((volume - 127) / 2 + 90))
+sink="$(~/.scripts/audio/get_active_sink.sh)"
+nick="$(~/.scripts/audio/active_sink_nick.sh)"
 
 artist=$(playerctl metadata | grep xesam:artist)
 artist=${artist#*artist}
@@ -22,24 +27,20 @@ fi
 
 muted=0
 
-case $volume in
-  *\[MUTED\])
+case "$(pactl get-sink-mute "$sink")" in
+  *yes)
     muted=1
-    volume="${volume:0: -8}"
   ;;
 esac
 
-if (( volume > 100 )); then
+if (( volume > 83 )); then
     icon="󰝝"
-elif (( volume > 60 )); then
+elif (( volume >= 70 )); then
     icon="󰕾"
-elif (( volume > 20 )); then
+elif (( volume >= 60 )); then
     icon="󰖀"
-elif (( volume > 0 )); then
-    icon="󰕿"
 else
-    icon="󰝟"
-    volume=0
+    icon="󰕿"
 fi
 
 case $(playerctl status) in 
@@ -55,4 +56,4 @@ if [[ $muted -eq 1 ]]; then
     icon="󰖁"
 fi
 
-echo "{\"text\": \"${icon} ${volume}%\",\"tooltip\":\"$tooltip\"}"
+echo "{\"text\": \"${icon} ${volume}db\",\"tooltip\":\"$tooltip\"}"

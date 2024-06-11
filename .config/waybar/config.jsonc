@@ -186,12 +186,12 @@
         // "scroll-step": 1, // %, can be a float
         "format": "{}", // {format_source}
         "tooltip": true,
-        "exec": "~/.scripts/custom_sound.sh",
+        "exec": "~/.scripts/audio/custom_sound.sh",
         "return-type": "json",
         "on-click": "playerctl play-pause",
-        "on-click-right": "~/.scripts/next_audio_sink.sh",
-        "on-scroll-up": "wpctl set-volume -l 1.3 @DEFAULT_AUDIO_SINK@ 5%+",
-        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+        "on-click-right": "~/.scripts/audio/next_audio_sink.sh",
+        "on-scroll-up": "~/.scripts/audio/control.sh coarse_up",
+        "on-scroll-down": "~/.scripts/audio/control.sh coarse_down",
         "signal": 1,
         "interval": 2
     },
@@ -272,13 +272,18 @@
         "timezone": "",
         "format": " {:%d <small>%a</small> %H:%M}",
         //"format": " {:%a %b %d %Y | %H:%M}",
-        "format-alt": " {:%A %B %d %Y (%V) | %r}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "calendar-weeks-pos": "right",
-        "today-format": "<span color='#f38ba8'><b><u>{}</u></b></span>",
-        "format-calendar": "<span color='#f2cdcd'><b>{}</b></span>",
-        "format-calendar-weeks": "<span color='#94e2d5'><b>W{:%U}</b></span>",
-        "format-calendar-weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "format-alt": " {:%A %B %d %Y | %r}",
+        "tooltip-format": "<tt><small><span color='#f2cdcd'><b>{:%d}</b></span> {calendar}</small></tt>",
+        "locale": "ru_RU.utf8",
+        "calendar": {
+            "weeks-pos"     : "",
+            "format": {
+                "months":     "<span color='#f2cdcd'><b>{}</b></span>",
+                "days":       "<span color='#cdd6f4'><b>{}</b></span>",
+                "weekdays":   "<span color='#eba0ac'><b>{}</b></span>",
+                "today":      "<span color='#a6e3a1'><b><u>{}</u></b></span>"
+            }
+        },
         "interval": 1,
         "on-click-right": "alacritty --class \"tty-flex,tty-flex\" -e calcurse"
     },
