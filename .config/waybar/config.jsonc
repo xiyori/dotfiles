@@ -54,8 +54,8 @@
         "format": "{icon}",
         "format-icons": {
             "Music": "󰎇",
+            "Carla": "󰙽",
             "Telegram": "",
-            "VNC": "󰢹",
             // "active": "",
             "default": ""
         },

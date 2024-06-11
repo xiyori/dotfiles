@@ -25,6 +25,11 @@ get_sink_profile() {
     fi
 }
 
+if ! pactl list clients | grep "$output_node" > /dev/null 2>&1; then
+    notify-send --expire-time 3000 "Error: Carla not started"
+    exit 0
+fi
+
 active_sink="$(~/.scripts/audio/get_active_sink.sh)"
 for sink in $(get_all_sinks) ; do
   [ -z "$first" ] && first="$sink" # Save the first index in case the current default is the last in the list

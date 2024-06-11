@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&1; then
+    echo "{\"text\": \"󱄡 N/A\",\"tooltip\":\"Carla not started\"}"
+    exit 0
+fi
+
 ~/.scripts/audio/detect_sink_change.sh
 
 volume="0x$(cat /tmp/loudness)"
@@ -8,10 +13,10 @@ volume=$(((volume - 127) / 2 + 90))
 sink="$(~/.scripts/audio/get_active_sink.sh)"
 nick="$(~/.scripts/audio/active_sink_nick.sh)"
 
-artist=$(playerctl metadata | grep xesam:artist)
+artist=$(playerctl metadata > /dev/null 2>&1 | grep xesam:artist)
 artist=${artist#*artist}
 artist=$(echo $artist | xargs -0)
-title=$(playerctl metadata | grep xesam:title)
+title=$(playerctl metadata > /dev/null 2>&1 | grep xesam:title)
 title=${title#*title}
 title=$(echo $title | xargs -0)
 
@@ -43,7 +48,7 @@ else
     icon="󰕿"
 fi
 
-case $(playerctl status) in 
+case $(playerctl status > /dev/null 2>&1) in 
   Playing)
     icon="󰐊"
   ;;
