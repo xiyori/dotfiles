@@ -13,11 +13,15 @@
     // Choose the order of the modules
     "modules-left": [
         "custom/launcher",
-        "clock",
         "cpu",
         "memory",
-        "temperature",
-        "disk",
+        "temperature#cpu",
+        //"temperature#gpu",
+        "disk#default",
+        //"disk#system",
+        //"disk#data",
+        "backlight",
+        "battery",
         "custom/monitor",
         "hyprland/workspaces"
     ],
@@ -31,10 +35,9 @@
         // "network",
         "custom/sound",
         // "wireplumber",
-        "backlight",
-        "battery",
         "hyprland/language",
         "custom/weather",
+        "clock",
         // "custom/cycle_wall",
         // "custom/clipboard",
         "custom/power"
@@ -75,9 +78,9 @@
         "on-click": "alacritty -e btop",
         "interval": 2
     },
-    "temperature": {
+    "temperature#cpu": {
         // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        //"hwmon-path": "/sys/class/hwmon/hwmon5/temp2_input",
         "critical-threshold": 70,
         "format-critical": "{icon} {temperatureC}°C",
         "format": "{icon} {temperatureC}°C",
@@ -87,14 +90,40 @@
             ""
         ],
         "tooltip": true,
-        "on-click": "alacritty -e btop",
+        "on-click": "alacritty -e nvtop",
         "interval": 2
     },
-    "disk": {
+    "temperature#gpu": {
+        // "thermal-zone": 2,
+        "hwmon-path": "/tmp/nvidia-temp/temp",
+        "critical-threshold": 70,
+        "format-critical": "{icon} {temperatureC}°C",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [
+            ""
+        ],
+        "tooltip": true,
+        "on-click": "alacritty -e nvtop",
+        "interval": 2
+    },
+    "disk#default": {
         "format": " {percentage_used}%",  // ({free})",
         "tooltip": true,
-        "on-click": "alacritty -e btop",
+        //"on-click": "alacritty -e btop",
         "interval": 2
+    },
+    "disk#system": {
+        "format": " {percentage_used}%,",  // ({free})",
+        "tooltip": true,
+        //"on-click": "alacritty -e btop",
+        "interval": 2
+    },
+    "disk#data": {
+        "format": "{percentage_used}%",  // ({free})",
+        "tooltip": true,
+        //"on-click": "alacritty -e btop",
+        "interval": 2,
+        "path": "/mnt/data"
     },
     "custom/monitor": {
         // "scroll-step": 1, // %, can be a float
@@ -270,9 +299,9 @@
     },
     "clock": {
         "timezone": "",
-        "format": " {:%d <small>%a</small> %H:%M}",
+        "format": "{:%d <small>%a</small> %H:%M}",
         //"format": " {:%a %b %d %Y | %H:%M}",
-        "format-alt": " {:%A %B %d %Y | %r}",
+        "format-alt": "{:%A %B %d %Y | %r}",
         "tooltip-format": "<tt><small><span color='#f2cdcd'><b>{:%d}</b></span> {calendar}</small></tt>",
         "locale": "ru_RU.utf8",
         "calendar": {
