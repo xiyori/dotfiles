@@ -13,10 +13,10 @@ volume=$(((volume - 127) / 2 + 90))
 sink="$(~/.scripts/audio/get_active_sink.sh)"
 nick="$(~/.scripts/audio/active_sink_nick.sh)"
 
-artist=$(playerctl metadata > /dev/null 2>&1 | grep xesam:artist)
+artist=$(playerctl metadata 2> /dev/null | grep xesam:artist)
 artist=${artist#*artist}
 artist=$(echo $artist | xargs -0)
-title=$(playerctl metadata > /dev/null 2>&1 | grep xesam:title)
+title=$(playerctl metadata 2> /dev/null | grep xesam:title)
 title=${title#*title}
 title=$(echo $title | xargs -0)
 
@@ -48,7 +48,7 @@ else
     icon="󰕿"
 fi
 
-case $(playerctl status > /dev/null 2>&1) in 
+case $(playerctl status 2> /dev/null) in 
   Playing)
     icon="󰐊"
   ;;

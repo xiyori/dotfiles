@@ -190,8 +190,8 @@
         "return-type": "json",
         "on-click": "playerctl play-pause",
         "on-click-right": "~/.scripts/audio/next_audio_sink.sh",
-        "on-scroll-up": "~/.scripts/audio/control.sh coarse_up",
-        "on-scroll-down": "~/.scripts/audio/control.sh coarse_down",
+        "on-scroll-up": "~/.scripts/audio/control.sh up",
+        "on-scroll-down": "~/.scripts/audio/control.sh down",
         "signal": 1,
         "interval": 2
     },
