@@ -141,13 +141,13 @@ install_essential () {
     _create_symlink .scripts
     _create_symlink .gtkrc-2.0
     _create_symlink .vimrc
+    _create_symlink .Xresources
     _create_symlink .config/alacritty/alacritty.toml
     _create_symlink .config/fish/config.fish
     _create_symlink .config/fontconfig/fonts.conf
     _create_symlink .config/gtk-3.0/settings.ini
     _create_symlink .config/hypr
-    _create_symlink .config/myeffects.carxp
-    _create_symlink .config/myeffects_profiles.txt
+    _create_symlink .config/myeffects
     _create_symlink .config/nvim
     _create_symlink .config/pipewire
     _create_symlink .config/powerline
@@ -162,6 +162,9 @@ install_essential () {
     _create_symlink .config/systemd/user/switch-out-from-empty.service
 
     echo "setting up packages"
+
+    # For MIDI loudness control
+    echo "snd-virmidi" | sudo tee -a /etc/modules-load.d/virmidi.conf > /dev/null
 
     # For the proper starting of terminal apps from GTK
     sudo ln -s "$(pwd)/xdg-terminal-exec" /usr/bin/xdg-terminal-exec
@@ -265,6 +268,7 @@ install_extra () {
         "noto-fonts-cjk"
         "dconf-editor"
         "vim-commentary"
+        "vim-supertab"
         "vim-jedi"
         "python-pynvim"
         "wev"

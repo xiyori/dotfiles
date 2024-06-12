@@ -8,7 +8,7 @@ then
     wpctl set-default "${BASH_REMATCH[1]}"
     wpctl set-volume @DEFAULT_AUDIO_SINK@ 1
     echo 4D > /tmp/loudness  # 65db initial loudness
-    nohup carla ~/.config/myeffects.carxp &
+    nohup carla ~/.config/myeffects/carla.carxp &
 else
     echo "audio effects startup failed"
 fi
