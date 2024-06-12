@@ -202,7 +202,7 @@
     <Index>29</Index>
     <Name>Frequency Left 0</Name>
     <Symbol>fl_0</Symbol>
-    <Value>4800</Value>
+    <Value>4700</Value>
    </Parameter>
 
    <Parameter>
@@ -216,7 +216,7 @@
     <Index>31</Index>
     <Name>Gain Left 0</Name>
     <Symbol>gl_0</Symbol>
-    <Value>1.13501083850861</Value>
+    <Value>1.12201845645905</Value>
    </Parameter>
 
    <Parameter>
@@ -272,7 +272,7 @@
     <Index>40</Index>
     <Name>Frequency Right 0</Name>
     <Symbol>fr_0</Symbol>
-    <Value>4600</Value>
+    <Value>4700</Value>
    </Parameter>
 
    <Parameter>
@@ -286,7 +286,7 @@
     <Index>42</Index>
     <Name>Gain Right 0</Name>
     <Symbol>gr_0</Symbol>
-    <Value>0.901571154594421</Value>
+    <Value>0.891250908374786</Value>
    </Parameter>
 
    <Parameter>
@@ -307,7 +307,7 @@
     <Index>46</Index>
     <Name>Filter type Left 1</Name>
     <Symbol>ftl_1</Symbol>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -377,7 +377,7 @@
     <Index>57</Index>
     <Name>Filter type Right 1</Name>
     <Symbol>ftr_1</Symbol>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -447,7 +447,7 @@
     <Index>68</Index>
     <Name>Filter type Left 2</Name>
     <Symbol>ftl_2</Symbol>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -517,7 +517,7 @@
     <Index>79</Index>
     <Name>Filter type Right 2</Name>
     <Symbol>ftr_2</Symbol>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -9390,6 +9390,14 @@
 
  <ExternalPatchbay>
   <Connection>
+   <Source>Blessing 2 ISO Harman:Output L</Source>
+   <Target>LSP Parametric Equalizer x32 LeftRight (2):Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>Blessing 2 ISO Harman:Output R</Source>
+   <Target>LSP Parametric Equalizer x32 LeftRight (2):Input R</Target>
+  </Connection>
+  <Connection>
    <Source>LSP Parametric Equalizer x32 LeftRight (2):Output L</Source>
    <Target>LSP Loudness Compensator Stereo:Input L</Target>
   </Connection>
@@ -9404,14 +9412,6 @@
   <Connection>
    <Source>LSP Loudness Compensator Stereo:Output R</Source>
    <Target>MOONDROP Dawn Pro Analog Stereo:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Blessing 2 ISO Harman:Output L</Source>
-   <Target>LSP Parametric Equalizer x32 LeftRight (2):Input L</Target>
-  </Connection>
-  <Connection>
-   <Source>Blessing 2 ISO Harman:Output R</Source>
-   <Target>LSP Parametric Equalizer x32 LeftRight (2):Input R</Target>
   </Connection>
   <Connection>
    <Source>myeffects_sink:monitor_FL</Source>
@@ -9432,11 +9432,11 @@
    <Position x1="0" y1="691">
     <Name>myeffects_sink</Name>
    </Position>
+   <Position x1="261" y1="266" x2="1088" y2="954">
+    <Name>MOONDROP Dawn Pro Analog Stereo</Name>
+   </Position>
    <Position x1="1196" y1="1139" x2="1172" y2="952">
     <Name>Family 17h/19h HD Audio Controller Speaker + Headphones</Name>
-   </Position>
-   <Position x1="1010" y1="792" x2="1100" y2="865">
-    <Name>Renoir Radeon High Definition Audio Controller HDMI / DisplayPort 1 Output</Name>
    </Position>
    <Position x1="195" y1="1017" x2="1138" y2="1085">
     <Name>Midi-Bridge</Name>
@@ -9444,20 +9444,14 @@
    <Position x1="556" y1="1150" x2="1164" y2="1118">
     <Name>BLE MIDI 1</Name>
    </Position>
-   <Position x1="305" y1="688">
-    <Name>LSP Parametric Equalizer x32 LeftRight</Name>
-   </Position>
-   <Position x1="328" y1="826">
-    <Name>LSP Parametric Equalizer x32 LeftRight (2)</Name>
-   </Position>
-   <Position x1="705" y1="934">
-    <Name>LSP Loudness Compensator Stereo</Name>
-   </Position>
-   <Position x1="261" y1="266" x2="1088" y2="954">
-    <Name>MOONDROP Dawn Pro Analog Stereo</Name>
-   </Position>
    <Position x1="339" y1="704" pluginId="0">
     <Name>Blessing 2 ISO Harman</Name>
+   </Position>
+   <Position x1="328" y1="826" pluginId="1">
+    <Name>LSP Parametric Equalizer x32 LeftRight (2)</Name>
+   </Position>
+   <Position x1="705" y1="934" pluginId="2">
+    <Name>LSP Loudness Compensator Stereo</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>
