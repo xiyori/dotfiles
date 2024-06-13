@@ -13,11 +13,11 @@
 output_node="LSP Loudness Compensator Stereo"
 
 get_all_sinks() {
-  pactl list short sinks | grep -v myeffects_sink | cut -f 2
+  pactl list short sinks | grep -v "myeffects_sink" | grep -v "alsa_output.pci-0000_00_1f.3.iec958-stereo" | cut -f 2
 }
 
 get_sink_profile() {
-    profile="$(cat ~/.config/myeffects_profiles.txt | grep "$1" | cut -f 2)"
+    profile="$(cat ~/.config/myeffects/profiles.txt | grep "$1" | cut -f 2)"
     if [ -z "$profile" ]; then
         echo "$output_node"
     else
