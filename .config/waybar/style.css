@@ -229,8 +229,8 @@ tooltip {
 }
 
 #memory,
-#temperature {
-  /* min-width: 10px; */
+#temperature,
+#disk.default {
   border-radius: 0px;
   margin-right: 0px;
   padding-left: 5px;
@@ -243,19 +243,13 @@ tooltip {
   min-width: 40px;
 }
 
-#temperature {
+#temperature,
+#disk.default {
   min-width: 48px;
 }
 
 #disk {
   color: @flamingo;
-}
-
-#disk.default {
-  min-width: 48px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding-left: 5px;
 }
 
 #disk.system {
@@ -271,7 +265,6 @@ tooltip {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding-left: 0px;
-  padding-right: 1rem;  
 }
 
 /* Updates Module */
@@ -335,8 +328,8 @@ tooltip {
 /* =============================== */
 /* Backlight Module */
 #backlight {
-  color: @flamingo;
-  min-width: 48px;
+  color: @yellow;
+  min-width: 40px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding-left: 5px;
@@ -349,10 +342,10 @@ tooltip {
 /* Battery Module */
 #battery {
   color: @green;
-  min-width: 48px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  min-width: 40px;
+  border-radius: 0;
   margin-right: 0px;
+  padding-left: 5px;
   padding-right: 5px;
 }
 

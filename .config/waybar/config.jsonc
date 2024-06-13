@@ -20,8 +20,8 @@
         "disk#default",
         //"disk#system",
         //"disk#data",
-        "backlight",
         "battery",
+        "backlight",
         "custom/monitor",
         "hyprland/workspaces"
     ],
