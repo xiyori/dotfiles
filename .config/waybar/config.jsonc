@@ -217,10 +217,10 @@
         "tooltip": true,
         "exec": "~/.scripts/audio/custom_sound.sh",
         "return-type": "json",
-        "on-click": "playerctl play-pause",
+        "on-click": "~/.scripts/audio/player.sh play-pause",
         "on-click-right": "~/.scripts/audio/next_audio_sink.sh",
-        "on-scroll-up": "~/.scripts/audio/control.sh up",
-        "on-scroll-down": "~/.scripts/audio/control.sh down",
+        "on-scroll-up": "~/.scripts/audio/volume.sh up",
+        "on-scroll-down": "~/.scripts/audio/volume.sh down",
         "signal": 1,
         "interval": 2
     },

@@ -82,7 +82,7 @@ install_essential () {
         "thunar-volman"
         "thunar-archive-plugin"
         "thunar-media-tags-plugin"
-        "file-roller"
+        "engrampa"
         
         # Fonts
         "ttf-firacode-nerd"
@@ -99,6 +99,7 @@ install_essential () {
         "carla" # equal loudness system volume
         "lsp-plugins"
         "alsa-utils"
+        "jq" # for waybar json scripting
         
         # Desktop Integration
         "xdg-desktop-portal-gtk" # needed for theming

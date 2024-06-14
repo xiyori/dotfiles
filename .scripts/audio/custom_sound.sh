@@ -1,5 +1,11 @@
 #!/bin/bash
 
+convert_to_json() {
+    tmp="$(echo $1 | jq -R .)"
+    echo "${tmp:1:-1}"
+}
+
+
 if ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&1; then
     echo "{\"text\": \"󱄡 N/A\",\"tooltip\":\"Carla not started\"}"
     exit 0
@@ -14,11 +20,9 @@ sink="$(~/.scripts/audio/get_active_sink.sh)"
 nick="$(~/.scripts/audio/active_sink_nick.sh)"
 
 artist=$(playerctl metadata 2> /dev/null | grep xesam:artist)
-artist=${artist#*artist}
-artist=$(echo $artist | xargs -0)
-title=$(playerctl metadata 2> /dev/null | grep xesam:title)
-title=${title#*title}
-title=$(echo $title | xargs -0)
+artist="$(convert_to_json "${artist#*artist}")"
+title="$(playerctl metadata 2> /dev/null | grep xesam:title)"
+title="$(convert_to_json "${title#*title}")"
 
 if [ "$artist" == "" ]; then
     tooltip="$title"

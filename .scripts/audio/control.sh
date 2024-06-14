@@ -1,14 +1,8 @@
 #!/bin/bash
 
 case "$1" in 
-  play)
-    playerctl play-pause
-  ;;
-  next)
-    playerctl next
-  ;;
-  prev)
-    playerctl previous
+  play-pause|next|previous)
+    ~/.scripts/audio/player.sh "$1"
   ;;
   *)
     ~/.scripts/audio/volume.sh "$1"

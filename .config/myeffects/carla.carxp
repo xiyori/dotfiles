@@ -10,11 +10,15 @@
   <UIBridgesTimeout>4000</UIBridgesTimeout>
  </EngineSettings>
 
+ <Transport>
+  <BeatsPerMinute>120</BeatsPerMinute>
+ </Transport>
+
  <!-- LSP Parametric Equalizer x32 LeftRight -->
  <Plugin>
   <Info>
    <Type>LV2</Type>
-   <Name>Blessing 2 ISO Harman</Name>
+   <Name>Blessing 2 ISO Custom</Name>
    <URI>http://lsp-plug.in/plugins/lv2/para_equalizer_x32_lr</URI>
   </Info>
 
@@ -34,7 +38,7 @@
     <Index>1</Index>
     <Name>Input gain</Name>
     <Symbol>g_in</Symbol>
-    <Value>1</Value>
+    <Value>0.99999988079071</Value>
    </Parameter>
 
    <Parameter>
@@ -4655,7 +4659,7 @@
  <Plugin>
   <Info>
    <Type>LV2</Type>
-   <Name>Blessing 2 ISO Harman Main EQ</Name>
+   <Name>Blessing 2 ISO Custom Main EQ</Name>
    <URI>http://lsp-plug.in/plugins/lv2/para_equalizer_x32_lr</URI>
   </Info>
 
@@ -4717,7 +4721,7 @@
     <Index>7</Index>
     <Name>Filter select</Name>
     <Symbol>fsel</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -4857,14 +4861,14 @@
     <Index>31</Index>
     <Name>Gain Left 0</Name>
     <Symbol>gl_0</Symbol>
-    <Value>1.05925369262695</Value>
+    <Value>1.13501083850861</Value>
    </Parameter>
 
    <Parameter>
     <Index>32</Index>
     <Name>Quality factor Left 0</Name>
     <Symbol>ql_0</Symbol>
-    <Value>2</Value>
+    <Value>3.5</Value>
    </Parameter>
 
    <Parameter>
@@ -4927,14 +4931,14 @@
     <Index>42</Index>
     <Name>Gain Right 0</Name>
     <Symbol>gr_0</Symbol>
-    <Value>1.05925369262695</Value>
+    <Value>1.13501083850861</Value>
    </Parameter>
 
    <Parameter>
     <Index>43</Index>
     <Name>Quality factor Right 0</Name>
     <Symbol>qr_0</Symbol>
-    <Value>2</Value>
+    <Value>3.5</Value>
    </Parameter>
 
    <Parameter>
@@ -4983,7 +4987,7 @@
     <Index>51</Index>
     <Name>Frequency Left 1</Name>
     <Symbol>fl_1</Symbol>
-    <Value>51</Value>
+    <Value>30</Value>
    </Parameter>
 
    <Parameter>
@@ -4997,14 +5001,14 @@
     <Index>53</Index>
     <Name>Gain Left 1</Name>
     <Symbol>gl_1</Symbol>
-    <Value>1.36458313465118</Value>
+    <Value>1.53108751773834</Value>
    </Parameter>
 
    <Parameter>
     <Index>54</Index>
     <Name>Quality factor Left 1</Name>
     <Symbol>ql_1</Symbol>
-    <Value>0.400000005960464</Value>
+    <Value>0.5</Value>
    </Parameter>
 
    <Parameter>
@@ -5053,7 +5057,7 @@
     <Index>62</Index>
     <Name>Frequency Right 1</Name>
     <Symbol>fr_1</Symbol>
-    <Value>51</Value>
+    <Value>30</Value>
    </Parameter>
 
    <Parameter>
@@ -5067,14 +5071,14 @@
     <Index>64</Index>
     <Name>Gain Right 1</Name>
     <Symbol>gr_1</Symbol>
-    <Value>1.36458313465118</Value>
+    <Value>1.53108751773834</Value>
    </Parameter>
 
    <Parameter>
     <Index>65</Index>
     <Name>Quality factor Right 1</Name>
     <Symbol>qr_1</Symbol>
-    <Value>0.400000005960464</Value>
+    <Value>0.5</Value>
    </Parameter>
 
    <Parameter>
@@ -5123,7 +5127,7 @@
     <Index>73</Index>
     <Name>Frequency Left 2</Name>
     <Symbol>fl_2</Symbol>
-    <Value>210</Value>
+    <Value>67</Value>
    </Parameter>
 
    <Parameter>
@@ -5137,14 +5141,14 @@
     <Index>75</Index>
     <Name>Gain Left 2</Name>
     <Symbol>gl_2</Symbol>
-    <Value>0.901571154594421</Value>
+    <Value>1.12201845645905</Value>
    </Parameter>
 
    <Parameter>
     <Index>76</Index>
     <Name>Quality factor Left 2</Name>
     <Symbol>ql_2</Symbol>
-    <Value>2.40000009536743</Value>
+    <Value>1.5</Value>
    </Parameter>
 
    <Parameter>
@@ -5193,7 +5197,7 @@
     <Index>84</Index>
     <Name>Frequency Right 2</Name>
     <Symbol>fr_2</Symbol>
-    <Value>210</Value>
+    <Value>67</Value>
    </Parameter>
 
    <Parameter>
@@ -5207,14 +5211,14 @@
     <Index>86</Index>
     <Name>Gain Right 2</Name>
     <Symbol>gr_2</Symbol>
-    <Value>0.901571154594421</Value>
+    <Value>1.12201845645905</Value>
    </Parameter>
 
    <Parameter>
     <Index>87</Index>
     <Name>Quality factor Right 2</Name>
     <Symbol>qr_2</Symbol>
-    <Value>2.40000009536743</Value>
+    <Value>1.5</Value>
    </Parameter>
 
    <Parameter>
@@ -5263,7 +5267,7 @@
     <Index>95</Index>
     <Name>Frequency Left 3</Name>
     <Symbol>fl_3</Symbol>
-    <Value>440</Value>
+    <Value>380</Value>
    </Parameter>
 
    <Parameter>
@@ -5277,14 +5281,14 @@
     <Index>97</Index>
     <Name>Gain Left 3</Name>
     <Symbol>gl_3</Symbol>
-    <Value>1.5488166809082</Value>
+    <Value>1.04712855815887</Value>
    </Parameter>
 
    <Parameter>
     <Index>98</Index>
     <Name>Quality factor Left 3</Name>
     <Symbol>ql_3</Symbol>
-    <Value>1.39999997615814</Value>
+    <Value>5</Value>
    </Parameter>
 
    <Parameter>
@@ -5333,7 +5337,7 @@
     <Index>106</Index>
     <Name>Frequency Right 3</Name>
     <Symbol>fr_3</Symbol>
-    <Value>440</Value>
+    <Value>380</Value>
    </Parameter>
 
    <Parameter>
@@ -5347,14 +5351,14 @@
     <Index>108</Index>
     <Name>Gain Right 3</Name>
     <Symbol>gr_3</Symbol>
-    <Value>1.5488166809082</Value>
+    <Value>1.04712855815887</Value>
    </Parameter>
 
    <Parameter>
     <Index>109</Index>
     <Name>Quality factor Right 3</Name>
     <Symbol>qr_3</Symbol>
-    <Value>1.39999997615814</Value>
+    <Value>5</Value>
    </Parameter>
 
    <Parameter>
@@ -5403,7 +5407,7 @@
     <Index>117</Index>
     <Name>Frequency Left 4</Name>
     <Symbol>fl_4</Symbol>
-    <Value>480</Value>
+    <Value>520</Value>
    </Parameter>
 
    <Parameter>
@@ -5417,14 +5421,14 @@
     <Index>119</Index>
     <Name>Gain Left 4</Name>
     <Symbol>gl_4</Symbol>
-    <Value>0.86099374294281</Value>
+    <Value>1.27350306510925</Value>
    </Parameter>
 
    <Parameter>
     <Index>120</Index>
     <Name>Quality factor Left 4</Name>
     <Symbol>ql_4</Symbol>
-    <Value>4.5</Value>
+    <Value>1.39999997615814</Value>
    </Parameter>
 
    <Parameter>
@@ -5473,7 +5477,7 @@
     <Index>128</Index>
     <Name>Frequency Right 4</Name>
     <Symbol>fr_4</Symbol>
-    <Value>480</Value>
+    <Value>520</Value>
    </Parameter>
 
    <Parameter>
@@ -5487,14 +5491,14 @@
     <Index>130</Index>
     <Name>Gain Right 4</Name>
     <Symbol>gr_4</Symbol>
-    <Value>0.86099374294281</Value>
+    <Value>1.27350306510925</Value>
    </Parameter>
 
    <Parameter>
     <Index>131</Index>
     <Name>Quality factor Right 4</Name>
     <Symbol>qr_4</Symbol>
-    <Value>4.5</Value>
+    <Value>1.39999997615814</Value>
    </Parameter>
 
    <Parameter>
@@ -5543,7 +5547,7 @@
     <Index>139</Index>
     <Name>Frequency Left 5</Name>
     <Symbol>fl_5</Symbol>
-    <Value>820</Value>
+    <Value>1300</Value>
    </Parameter>
 
    <Parameter>
@@ -5557,14 +5561,14 @@
     <Index>141</Index>
     <Name>Gain Left 5</Name>
     <Symbol>gl_5</Symbol>
-    <Value>1.10917484760284</Value>
+    <Value>0.881048858165741</Value>
    </Parameter>
 
    <Parameter>
     <Index>142</Index>
     <Name>Quality factor Left 5</Name>
     <Symbol>ql_5</Symbol>
-    <Value>2.20000004768372</Value>
+    <Value>1.89999997615814</Value>
    </Parameter>
 
    <Parameter>
@@ -5613,7 +5617,7 @@
     <Index>150</Index>
     <Name>Frequency Right 5</Name>
     <Symbol>fr_5</Symbol>
-    <Value>820</Value>
+    <Value>1300</Value>
    </Parameter>
 
    <Parameter>
@@ -5627,14 +5631,14 @@
     <Index>152</Index>
     <Name>Gain Right 5</Name>
     <Symbol>gr_5</Symbol>
-    <Value>1.10917484760284</Value>
+    <Value>0.881048858165741</Value>
    </Parameter>
 
    <Parameter>
     <Index>153</Index>
     <Name>Quality factor Right 5</Name>
     <Symbol>qr_5</Symbol>
-    <Value>2.20000004768372</Value>
+    <Value>1.89999997615814</Value>
    </Parameter>
 
    <Parameter>
@@ -5683,7 +5687,7 @@
     <Index>161</Index>
     <Name>Frequency Left 6</Name>
     <Symbol>fl_6</Symbol>
-    <Value>1500</Value>
+    <Value>2500</Value>
    </Parameter>
 
    <Parameter>
@@ -5697,14 +5701,14 @@
     <Index>163</Index>
     <Name>Gain Left 6</Name>
     <Symbol>gl_6</Symbol>
-    <Value>0.870963573455811</Value>
+    <Value>1.46217715740204</Value>
    </Parameter>
 
    <Parameter>
     <Index>164</Index>
     <Name>Quality factor Left 6</Name>
     <Symbol>ql_6</Symbol>
-    <Value>2.09999990463257</Value>
+    <Value>2.29999995231628</Value>
    </Parameter>
 
    <Parameter>
@@ -5753,7 +5757,7 @@
     <Index>172</Index>
     <Name>Frequency Right 6</Name>
     <Symbol>fr_6</Symbol>
-    <Value>1500</Value>
+    <Value>2500</Value>
    </Parameter>
 
    <Parameter>
@@ -5767,14 +5771,14 @@
     <Index>174</Index>
     <Name>Gain Right 6</Name>
     <Symbol>gr_6</Symbol>
-    <Value>0.870963573455811</Value>
+    <Value>1.46217715740204</Value>
    </Parameter>
 
    <Parameter>
     <Index>175</Index>
     <Name>Quality factor Right 6</Name>
     <Symbol>qr_6</Symbol>
-    <Value>2.09999990463257</Value>
+    <Value>2.29999995231628</Value>
    </Parameter>
 
    <Parameter>
@@ -9342,7 +9346,7 @@
     <MappedMinimum>-56.5</MappedMinimum>
     <MappedMaximum>7</MappedMaximum>
     <MidiCC>7</MidiCC>
-    <Value>-18</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -9412,7 +9416,7 @@
     <Index>1</Index>
     <Name>Input gain</Name>
     <Symbol>g_in</Symbol>
-    <Value>1</Value>
+    <Value>0.999999463558197</Value>
    </Parameter>
 
    <Parameter>
@@ -9594,14 +9598,14 @@
     <Index>31</Index>
     <Name>Gain Left 0</Name>
     <Symbol>gl_0</Symbol>
-    <Value>0.248313307762146</Value>
+    <Value>0.285101860761642</Value>
    </Parameter>
 
    <Parameter>
     <Index>32</Index>
     <Name>Quality factor Left 0</Name>
     <Symbol>ql_0</Symbol>
-    <Value>6.28599977493286</Value>
+    <Value>6.72700023651123</Value>
    </Parameter>
 
    <Parameter>
@@ -9650,7 +9654,7 @@
     <Index>40</Index>
     <Name>Frequency Right 0</Name>
     <Symbol>fr_0</Symbol>
-    <Value>39.8499984741211</Value>
+    <Value>57.7000007629395</Value>
    </Parameter>
 
    <Parameter>
@@ -9664,14 +9668,14 @@
     <Index>42</Index>
     <Name>Gain Right 0</Name>
     <Symbol>gr_0</Symbol>
-    <Value>0.543250322341919</Value>
+    <Value>4.95450162887573</Value>
    </Parameter>
 
    <Parameter>
     <Index>43</Index>
     <Name>Quality factor Right 0</Name>
     <Symbol>qr_0</Symbol>
-    <Value>5.22700023651123</Value>
+    <Value>4.21000003814697</Value>
    </Parameter>
 
    <Parameter>
@@ -9720,7 +9724,7 @@
     <Index>51</Index>
     <Name>Frequency Left 1</Name>
     <Symbol>fl_1</Symbol>
-    <Value>96.6999969482422</Value>
+    <Value>96.8000030517578</Value>
    </Parameter>
 
    <Parameter>
@@ -9734,14 +9738,14 @@
     <Index>53</Index>
     <Name>Gain Left 1</Name>
     <Symbol>gl_1</Symbol>
-    <Value>4.41570425033569</Value>
+    <Value>3.75837397575378</Value>
    </Parameter>
 
    <Parameter>
     <Index>54</Index>
     <Name>Quality factor Left 1</Name>
     <Symbol>ql_1</Symbol>
-    <Value>7.47499990463257</Value>
+    <Value>7.5</Value>
    </Parameter>
 
    <Parameter>
@@ -9790,7 +9794,7 @@
     <Index>62</Index>
     <Name>Frequency Right 1</Name>
     <Symbol>fr_1</Symbol>
-    <Value>58.2999992370605</Value>
+    <Value>68.5</Value>
    </Parameter>
 
    <Parameter>
@@ -9804,14 +9808,14 @@
     <Index>64</Index>
     <Name>Gain Right 1</Name>
     <Symbol>gr_1</Symbol>
-    <Value>3.89045166969299</Value>
+    <Value>0.363078057765961</Value>
    </Parameter>
 
    <Parameter>
     <Index>65</Index>
     <Name>Quality factor Right 1</Name>
     <Symbol>qr_1</Symbol>
-    <Value>4.36199998855591</Value>
+    <Value>7.59299993515015</Value>
    </Parameter>
 
    <Parameter>
@@ -9860,7 +9864,7 @@
     <Index>73</Index>
     <Name>Frequency Left 2</Name>
     <Symbol>fl_2</Symbol>
-    <Value>101</Value>
+    <Value>102</Value>
    </Parameter>
 
    <Parameter>
@@ -9874,14 +9878,14 @@
     <Index>75</Index>
     <Name>Gain Left 2</Name>
     <Symbol>gl_2</Symbol>
-    <Value>0.175792351365089</Value>
+    <Value>0.223872095346451</Value>
    </Parameter>
 
    <Parameter>
     <Index>76</Index>
     <Name>Quality factor Left 2</Name>
     <Symbol>ql_2</Symbol>
-    <Value>4.10300016403198</Value>
+    <Value>4.75899982452393</Value>
    </Parameter>
 
    <Parameter>
@@ -9895,7 +9899,7 @@
     <Index>79</Index>
     <Name>Filter type Right 2</Name>
     <Symbol>ftr_2</Symbol>
-    <Value>1</Value>
+    <Value>5</Value>
    </Parameter>
 
    <Parameter>
@@ -9930,7 +9934,7 @@
     <Index>84</Index>
     <Name>Frequency Right 2</Name>
     <Symbol>fr_2</Symbol>
-    <Value>68.3000030517578</Value>
+    <Value>72.4000015258789</Value>
    </Parameter>
 
    <Parameter>
@@ -9944,14 +9948,14 @@
     <Index>86</Index>
     <Name>Gain Right 2</Name>
     <Symbol>gr_2</Symbol>
-    <Value>0.305492103099823</Value>
+    <Value>3.05492115020752</Value>
    </Parameter>
 
    <Parameter>
     <Index>87</Index>
     <Name>Quality factor Right 2</Name>
     <Symbol>qr_2</Symbol>
-    <Value>6.26200008392334</Value>
+    <Value>0.666670024394989</Value>
    </Parameter>
 
    <Parameter>
@@ -10000,7 +10004,7 @@
     <Index>95</Index>
     <Name>Frequency Left 3</Name>
     <Symbol>fl_3</Symbol>
-    <Value>125.5</Value>
+    <Value>127</Value>
    </Parameter>
 
    <Parameter>
@@ -10035,7 +10039,7 @@
     <Index>101</Index>
     <Name>Filter type Right 3</Name>
     <Symbol>ftr_3</Symbol>
-    <Value>5</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -10070,7 +10074,7 @@
     <Index>106</Index>
     <Name>Frequency Right 3</Name>
     <Symbol>fr_3</Symbol>
-    <Value>70.9000015258789</Value>
+    <Value>82.3000030517578</Value>
    </Parameter>
 
    <Parameter>
@@ -10084,14 +10088,14 @@
     <Index>108</Index>
     <Name>Gain Right 3</Name>
     <Symbol>gr_3</Symbol>
-    <Value>3.09029531478882</Value>
+    <Value>0.549540877342224</Value>
    </Parameter>
 
    <Parameter>
     <Index>109</Index>
     <Name>Quality factor Right 3</Name>
     <Symbol>qr_3</Symbol>
-    <Value>0.666670024394989</Value>
+    <Value>11.246000289917</Value>
    </Parameter>
 
    <Parameter>
@@ -10140,7 +10144,7 @@
     <Index>117</Index>
     <Name>Frequency Left 4</Name>
     <Symbol>fl_4</Symbol>
-    <Value>134.5</Value>
+    <Value>134</Value>
    </Parameter>
 
    <Parameter>
@@ -10154,14 +10158,14 @@
     <Index>119</Index>
     <Name>Gain Left 4</Name>
     <Symbol>gl_4</Symbol>
-    <Value>0.288403123617172</Value>
+    <Value>0.29174268245697</Value>
    </Parameter>
 
    <Parameter>
     <Index>120</Index>
     <Name>Quality factor Left 4</Name>
     <Symbol>ql_4</Symbol>
-    <Value>9.6899995803833</Value>
+    <Value>10.0719995498657</Value>
    </Parameter>
 
    <Parameter>
@@ -10210,7 +10214,7 @@
     <Index>128</Index>
     <Name>Frequency Right 4</Name>
     <Symbol>fr_4</Symbol>
-    <Value>81.8000030517578</Value>
+    <Value>101.5</Value>
    </Parameter>
 
    <Parameter>
@@ -10224,14 +10228,14 @@
     <Index>130</Index>
     <Name>Gain Right 4</Name>
     <Symbol>gr_4</Symbol>
-    <Value>0.60953688621521</Value>
+    <Value>0.319889515638351</Value>
    </Parameter>
 
    <Parameter>
     <Index>131</Index>
     <Name>Quality factor Right 4</Name>
     <Symbol>qr_4</Symbol>
-    <Value>14.6879997253418</Value>
+    <Value>9.91699981689453</Value>
    </Parameter>
 
    <Parameter>
@@ -10280,7 +10284,7 @@
     <Index>139</Index>
     <Name>Frequency Left 5</Name>
     <Symbol>fl_5</Symbol>
-    <Value>174.5</Value>
+    <Value>170.5</Value>
    </Parameter>
 
    <Parameter>
@@ -10294,14 +10298,14 @@
     <Index>141</Index>
     <Name>Gain Left 5</Name>
     <Symbol>gl_5</Symbol>
-    <Value>0.234422877430916</Value>
+    <Value>0.327340692281723</Value>
    </Parameter>
 
    <Parameter>
     <Index>142</Index>
     <Name>Quality factor Left 5</Name>
     <Symbol>ql_5</Symbol>
-    <Value>2</Value>
+    <Value>2.2720000743866</Value>
    </Parameter>
 
    <Parameter>
@@ -10350,7 +10354,7 @@
     <Index>150</Index>
     <Name>Frequency Right 5</Name>
     <Symbol>fr_5</Symbol>
-    <Value>114</Value>
+    <Value>107.5</Value>
    </Parameter>
 
    <Parameter>
@@ -10364,14 +10368,14 @@
     <Index>152</Index>
     <Name>Gain Right 5</Name>
     <Symbol>gr_5</Symbol>
-    <Value>2.26464414596558</Value>
+    <Value>6.83911752700806</Value>
    </Parameter>
 
    <Parameter>
     <Index>153</Index>
     <Name>Quality factor Right 5</Name>
     <Symbol>qr_5</Symbol>
-    <Value>6.90999984741211</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -10434,14 +10438,14 @@
     <Index>163</Index>
     <Name>Gain Left 6</Name>
     <Symbol>gl_6</Symbol>
-    <Value>2.04173803329468</Value>
+    <Value>2.98538279533386</Value>
    </Parameter>
 
    <Parameter>
     <Index>164</Index>
     <Name>Quality factor Left 6</Name>
     <Symbol>ql_6</Symbol>
-    <Value>7.47100019454956</Value>
+    <Value>7.07499980926514</Value>
    </Parameter>
 
    <Parameter>
@@ -10490,7 +10494,7 @@
     <Index>172</Index>
     <Name>Frequency Right 6</Name>
     <Symbol>fr_6</Symbol>
-    <Value>135.5</Value>
+    <Value>134.5</Value>
    </Parameter>
 
    <Parameter>
@@ -10504,14 +10508,14 @@
     <Index>174</Index>
     <Name>Gain Right 6</Name>
     <Symbol>gr_6</Symbol>
-    <Value>0.0549540854990482</Value>
+    <Value>0.0181970130652189</Value>
    </Parameter>
 
    <Parameter>
     <Index>175</Index>
     <Name>Quality factor Right 6</Name>
     <Symbol>qr_6</Symbol>
-    <Value>2.61899995803833</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -10560,7 +10564,7 @@
     <Index>183</Index>
     <Name>Frequency Left 7</Name>
     <Symbol>fl_7</Symbol>
-    <Value>307</Value>
+    <Value>275</Value>
    </Parameter>
 
    <Parameter>
@@ -10574,14 +10578,14 @@
     <Index>185</Index>
     <Name>Gain Left 7</Name>
     <Symbol>gl_7</Symbol>
-    <Value>4.46683645248413</Value>
+    <Value>2.29086756706238</Value>
    </Parameter>
 
    <Parameter>
     <Index>186</Index>
     <Name>Quality factor Left 7</Name>
     <Symbol>ql_7</Symbol>
-    <Value>1.56200003623962</Value>
+    <Value>6.25799989700317</Value>
    </Parameter>
 
    <Parameter>
@@ -10630,7 +10634,7 @@
     <Index>194</Index>
     <Name>Frequency Right 7</Name>
     <Symbol>fr_7</Symbol>
-    <Value>173.5</Value>
+    <Value>176</Value>
    </Parameter>
 
    <Parameter>
@@ -10644,14 +10648,14 @@
     <Index>196</Index>
     <Name>Gain Right 7</Name>
     <Symbol>gr_7</Symbol>
-    <Value>4.62381029129028</Value>
+    <Value>7.85235643386841</Value>
    </Parameter>
 
    <Parameter>
     <Index>197</Index>
     <Name>Quality factor Right 7</Name>
     <Symbol>qr_7</Symbol>
-    <Value>2.00300002098083</Value>
+    <Value>2.00099992752075</Value>
    </Parameter>
 
    <Parameter>
@@ -10700,7 +10704,7 @@
     <Index>205</Index>
     <Name>Frequency Left 8</Name>
     <Symbol>fl_8</Symbol>
-    <Value>321</Value>
+    <Value>380</Value>
    </Parameter>
 
    <Parameter>
@@ -10714,14 +10718,14 @@
     <Index>207</Index>
     <Name>Gain Left 8</Name>
     <Symbol>gl_8</Symbol>
-    <Value>0.298538267612457</Value>
+    <Value>1.88364911079407</Value>
    </Parameter>
 
    <Parameter>
     <Index>208</Index>
     <Name>Quality factor Left 8</Name>
     <Symbol>ql_8</Symbol>
-    <Value>5.76300001144409</Value>
+    <Value>7.5</Value>
    </Parameter>
 
    <Parameter>
@@ -10770,7 +10774,7 @@
     <Index>216</Index>
     <Name>Frequency Right 8</Name>
     <Symbol>fr_8</Symbol>
-    <Value>188</Value>
+    <Value>186.5</Value>
    </Parameter>
 
    <Parameter>
@@ -10784,14 +10788,14 @@
     <Index>218</Index>
     <Name>Gain Right 8</Name>
     <Symbol>gr_8</Symbol>
-    <Value>0.285101860761642</Value>
+    <Value>0.234422877430916</Value>
    </Parameter>
 
    <Parameter>
     <Index>219</Index>
     <Name>Quality factor Right 8</Name>
     <Symbol>qr_8</Symbol>
-    <Value>5.63600015640259</Value>
+    <Value>5.32399988174438</Value>
    </Parameter>
 
    <Parameter>
@@ -10840,7 +10844,7 @@
     <Index>227</Index>
     <Name>Frequency Left 9</Name>
     <Symbol>fl_9</Symbol>
-    <Value>461</Value>
+    <Value>453</Value>
    </Parameter>
 
    <Parameter>
@@ -10854,14 +10858,14 @@
     <Index>229</Index>
     <Name>Gain Left 9</Name>
     <Symbol>gl_9</Symbol>
-    <Value>0.506990671157837</Value>
+    <Value>0.691830933094025</Value>
    </Parameter>
 
    <Parameter>
     <Index>230</Index>
     <Name>Quality factor Left 9</Name>
     <Symbol>ql_9</Symbol>
-    <Value>2.46700000762939</Value>
+    <Value>1.72300004959106</Value>
    </Parameter>
 
    <Parameter>
@@ -10924,14 +10928,14 @@
     <Index>240</Index>
     <Name>Gain Right 9</Name>
     <Symbol>gr_9</Symbol>
-    <Value>4.31519079208374</Value>
+    <Value>4.95450162887573</Value>
    </Parameter>
 
    <Parameter>
     <Index>241</Index>
     <Name>Quality factor Right 9</Name>
     <Symbol>qr_9</Symbol>
-    <Value>7.49100017547607</Value>
+    <Value>6.90799999237061</Value>
    </Parameter>
 
    <Parameter>
@@ -10980,7 +10984,7 @@
     <Index>249</Index>
     <Name>Frequency Left 10</Name>
     <Symbol>fl_10</Symbol>
-    <Value>849</Value>
+    <Value>850</Value>
    </Parameter>
 
    <Parameter>
@@ -10994,14 +10998,14 @@
     <Index>251</Index>
     <Name>Gain Left 10</Name>
     <Symbol>gl_10</Symbol>
-    <Value>0.716143429279327</Value>
+    <Value>0.732824504375458</Value>
    </Parameter>
 
    <Parameter>
     <Index>252</Index>
     <Name>Quality factor Left 10</Name>
     <Symbol>ql_10</Symbol>
-    <Value>2.10500001907349</Value>
+    <Value>7.40799999237061</Value>
    </Parameter>
 
    <Parameter>
@@ -11050,7 +11054,7 @@
     <Index>260</Index>
     <Name>Frequency Right 10</Name>
     <Symbol>fr_10</Symbol>
-    <Value>378</Value>
+    <Value>379</Value>
    </Parameter>
 
    <Parameter>
@@ -11064,14 +11068,14 @@
     <Index>262</Index>
     <Name>Gain Right 10</Name>
     <Symbol>gr_10</Symbol>
-    <Value>3.71535229682922</Value>
+    <Value>7.85235643386841</Value>
    </Parameter>
 
    <Parameter>
     <Index>263</Index>
     <Name>Quality factor Right 10</Name>
     <Symbol>qr_10</Symbol>
-    <Value>7.5</Value>
+    <Value>7.39699983596802</Value>
    </Parameter>
 
    <Parameter>
@@ -11120,7 +11124,7 @@
     <Index>271</Index>
     <Name>Frequency Left 11</Name>
     <Symbol>fl_11</Symbol>
-    <Value>1265</Value>
+    <Value>1782</Value>
    </Parameter>
 
    <Parameter>
@@ -11134,14 +11138,14 @@
     <Index>273</Index>
     <Name>Gain Left 11</Name>
     <Symbol>gl_11</Symbol>
-    <Value>1.53108751773834</Value>
+    <Value>0.49545019865036</Value>
    </Parameter>
 
    <Parameter>
     <Index>274</Index>
     <Name>Quality factor Left 11</Name>
     <Symbol>ql_11</Symbol>
-    <Value>1.19500005245209</Value>
+    <Value>6.06400012969971</Value>
    </Parameter>
 
    <Parameter>
@@ -11190,7 +11194,7 @@
     <Index>282</Index>
     <Name>Frequency Right 11</Name>
     <Symbol>fr_11</Symbol>
-    <Value>416</Value>
+    <Value>393</Value>
    </Parameter>
 
    <Parameter>
@@ -11204,14 +11208,14 @@
     <Index>284</Index>
     <Name>Gain Right 11</Name>
     <Symbol>gr_11</Symbol>
-    <Value>0.45708817243576</Value>
+    <Value>0.331131100654602</Value>
    </Parameter>
 
    <Parameter>
     <Index>285</Index>
     <Name>Quality factor Right 11</Name>
     <Symbol>qr_11</Symbol>
-    <Value>1.2849999666214</Value>
+    <Value>2.48300004005432</Value>
    </Parameter>
 
    <Parameter>
@@ -11260,7 +11264,7 @@
     <Index>293</Index>
     <Name>Frequency Left 12</Name>
     <Symbol>fl_12</Symbol>
-    <Value>1995</Value>
+    <Value>2500</Value>
    </Parameter>
 
    <Parameter>
@@ -11274,14 +11278,14 @@
     <Index>295</Index>
     <Name>Gain Left 12</Name>
     <Symbol>gl_12</Symbol>
-    <Value>0.242660999298096</Value>
+    <Value>0.45708817243576</Value>
    </Parameter>
 
    <Parameter>
     <Index>296</Index>
     <Name>Quality factor Left 12</Name>
     <Symbol>ql_12</Symbol>
-    <Value>2.11500000953674</Value>
+    <Value>3.25699996948242</Value>
    </Parameter>
 
    <Parameter>
@@ -11330,7 +11334,7 @@
     <Index>304</Index>
     <Name>Frequency Right 12</Name>
     <Symbol>fr_12</Symbol>
-    <Value>726</Value>
+    <Value>737</Value>
    </Parameter>
 
    <Parameter>
@@ -11344,14 +11348,14 @@
     <Index>306</Index>
     <Name>Gain Right 12</Name>
     <Symbol>gr_12</Symbol>
-    <Value>1.64058983325958</Value>
+    <Value>1.71790838241577</Value>
    </Parameter>
 
    <Parameter>
     <Index>307</Index>
     <Name>Quality factor Right 12</Name>
     <Symbol>qr_12</Symbol>
-    <Value>7.5</Value>
+    <Value>6.87900018692017</Value>
    </Parameter>
 
    <Parameter>
@@ -11400,7 +11404,7 @@
     <Index>315</Index>
     <Name>Frequency Left 13</Name>
     <Symbol>fl_13</Symbol>
-    <Value>2054</Value>
+    <Value>4334</Value>
    </Parameter>
 
    <Parameter>
@@ -11414,14 +11418,14 @@
     <Index>317</Index>
     <Name>Gain Left 13</Name>
     <Symbol>gl_13</Symbol>
-    <Value>3.67282319068909</Value>
+    <Value>1.62181007862091</Value>
    </Parameter>
 
    <Parameter>
     <Index>318</Index>
     <Name>Quality factor Left 13</Name>
     <Symbol>ql_13</Symbol>
-    <Value>6.89900016784668</Value>
+    <Value>3.35800004005432</Value>
    </Parameter>
 
    <Parameter>
@@ -11470,7 +11474,7 @@
     <Index>326</Index>
     <Name>Frequency Right 13</Name>
     <Symbol>fr_13</Symbol>
-    <Value>1845</Value>
+    <Value>1007</Value>
    </Parameter>
 
    <Parameter>
@@ -11484,14 +11488,14 @@
     <Index>328</Index>
     <Name>Gain Right 13</Name>
     <Symbol>gr_13</Symbol>
-    <Value>0.530884444713593</Value>
+    <Value>0.776247084140778</Value>
    </Parameter>
 
    <Parameter>
     <Index>329</Index>
     <Name>Quality factor Right 13</Name>
     <Symbol>qr_13</Symbol>
-    <Value>6.02500009536743</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -11540,7 +11544,7 @@
     <Index>337</Index>
     <Name>Frequency Left 14</Name>
     <Symbol>fl_14</Symbol>
-    <Value>3095</Value>
+    <Value>6293</Value>
    </Parameter>
 
    <Parameter>
@@ -11554,14 +11558,14 @@
     <Index>339</Index>
     <Name>Gain Left 14</Name>
     <Symbol>gl_14</Symbol>
-    <Value>0.393550038337708</Value>
+    <Value>0.301995187997818</Value>
    </Parameter>
 
    <Parameter>
     <Index>340</Index>
     <Name>Quality factor Left 14</Name>
     <Symbol>ql_14</Symbol>
-    <Value>1.12399995326996</Value>
+    <Value>3.72699999809265</Value>
    </Parameter>
 
    <Parameter>
@@ -11610,7 +11614,7 @@
     <Index>348</Index>
     <Name>Frequency Right 14</Name>
     <Symbol>fr_14</Symbol>
-    <Value>5778</Value>
+    <Value>1851</Value>
    </Parameter>
 
    <Parameter>
@@ -11624,14 +11628,14 @@
     <Index>350</Index>
     <Name>Gain Right 14</Name>
     <Symbol>gr_14</Symbol>
-    <Value>0.602559566497803</Value>
+    <Value>0.512861371040344</Value>
    </Parameter>
 
    <Parameter>
     <Index>351</Index>
     <Name>Quality factor Right 14</Name>
     <Symbol>qr_14</Symbol>
-    <Value>3.98099994659424</Value>
+    <Value>6.01599979400635</Value>
    </Parameter>
 
    <Parameter>
@@ -11680,7 +11684,7 @@
     <Index>359</Index>
     <Name>Frequency Left 15</Name>
     <Symbol>fl_15</Symbol>
-    <Value>4027</Value>
+    <Value>7521</Value>
    </Parameter>
 
    <Parameter>
@@ -11694,14 +11698,14 @@
     <Index>361</Index>
     <Name>Gain Left 15</Name>
     <Symbol>gl_15</Symbol>
-    <Value>3.6307806968689</Value>
+    <Value>3.27340698242188</Value>
    </Parameter>
 
    <Parameter>
     <Index>362</Index>
     <Name>Quality factor Left 15</Name>
     <Symbol>ql_15</Symbol>
-    <Value>1</Value>
+    <Value>1.77300000190735</Value>
    </Parameter>
 
    <Parameter>
@@ -11750,7 +11754,7 @@
     <Index>370</Index>
     <Name>Frequency Right 15</Name>
     <Symbol>fr_15</Symbol>
-    <Value>8148</Value>
+    <Value>5747</Value>
    </Parameter>
 
    <Parameter>
@@ -11771,7 +11775,7 @@
     <Index>373</Index>
     <Name>Quality factor Right 15</Name>
     <Symbol>qr_15</Symbol>
-    <Value>3.36700010299683</Value>
+    <Value>3.92700004577637</Value>
    </Parameter>
 
    <Parameter>
@@ -11820,7 +11824,7 @@
     <Index>381</Index>
     <Name>Frequency Left 16</Name>
     <Symbol>fl_16</Symbol>
-    <Value>6143</Value>
+    <Value>7959</Value>
    </Parameter>
 
    <Parameter>
@@ -11834,14 +11838,14 @@
     <Index>383</Index>
     <Name>Gain Left 16</Name>
     <Symbol>gl_16</Symbol>
-    <Value>0.358921945095062</Value>
+    <Value>0.14454397559166</Value>
    </Parameter>
 
    <Parameter>
     <Index>384</Index>
     <Name>Quality factor Left 16</Name>
     <Symbol>ql_16</Symbol>
-    <Value>3.87599992752075</Value>
+    <Value>3.3659999370575</Value>
    </Parameter>
 
    <Parameter>
@@ -11855,7 +11859,7 @@
     <Index>387</Index>
     <Name>Filter type Right 16</Name>
     <Symbol>ftr_16</Symbol>
-    <Value>3</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -11890,7 +11894,7 @@
     <Index>392</Index>
     <Name>Frequency Right 16</Name>
     <Symbol>fr_16</Symbol>
-    <Value>9734</Value>
+    <Value>8178</Value>
    </Parameter>
 
    <Parameter>
@@ -11904,14 +11908,14 @@
     <Index>394</Index>
     <Name>Gain Right 16</Name>
     <Symbol>gr_16</Symbol>
-    <Value>0.431519061326981</Value>
+    <Value>0.446683585643768</Value>
    </Parameter>
 
    <Parameter>
     <Index>395</Index>
     <Name>Quality factor Right 16</Name>
     <Symbol>qr_16</Symbol>
-    <Value>0.666670024394989</Value>
+    <Value>3.35899996757507</Value>
    </Parameter>
 
    <Parameter>
@@ -11925,7 +11929,7 @@
     <Index>398</Index>
     <Name>Filter type Left 17</Name>
     <Symbol>ftl_17</Symbol>
-    <Value>1</Value>
+    <Value>3</Value>
    </Parameter>
 
    <Parameter>
@@ -11960,7 +11964,7 @@
     <Index>403</Index>
     <Name>Frequency Left 17</Name>
     <Symbol>fl_17</Symbol>
-    <Value>8055</Value>
+    <Value>9734</Value>
    </Parameter>
 
    <Parameter>
@@ -11974,14 +11978,14 @@
     <Index>405</Index>
     <Name>Gain Left 17</Name>
     <Symbol>gl_17</Symbol>
-    <Value>0.412097543478012</Value>
+    <Value>0.484172374010086</Value>
    </Parameter>
 
    <Parameter>
     <Index>406</Index>
     <Name>Quality factor Left 17</Name>
     <Symbol>ql_17</Symbol>
-    <Value>3.39299988746643</Value>
+    <Value>0.666670024394989</Value>
    </Parameter>
 
    <Parameter>
@@ -11995,7 +11999,7 @@
     <Index>409</Index>
     <Name>Filter type Right 17</Name>
     <Symbol>ftr_17</Symbol>
-    <Value>1</Value>
+    <Value>3</Value>
    </Parameter>
 
    <Parameter>
@@ -12030,7 +12034,7 @@
     <Index>414</Index>
     <Name>Frequency Right 17</Name>
     <Symbol>fr_17</Symbol>
-    <Value>12155</Value>
+    <Value>9734</Value>
    </Parameter>
 
    <Parameter>
@@ -12044,14 +12048,14 @@
     <Index>416</Index>
     <Name>Gain Right 17</Name>
     <Symbol>gr_17</Symbol>
-    <Value>0.822242617607117</Value>
+    <Value>0.38459175825119</Value>
    </Parameter>
 
    <Parameter>
     <Index>417</Index>
     <Name>Quality factor Right 17</Name>
     <Symbol>qr_17</Symbol>
-    <Value>3</Value>
+    <Value>0.666670024394989</Value>
    </Parameter>
 
    <Parameter>
@@ -12065,7 +12069,7 @@
     <Index>420</Index>
     <Name>Filter type Left 18</Name>
     <Symbol>ftl_18</Symbol>
-    <Value>3</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -12100,7 +12104,7 @@
     <Index>425</Index>
     <Name>Frequency Left 18</Name>
     <Symbol>fl_18</Symbol>
-    <Value>9734</Value>
+    <Value>14167</Value>
    </Parameter>
 
    <Parameter>
@@ -12114,14 +12118,14 @@
     <Index>427</Index>
     <Name>Gain Left 18</Name>
     <Symbol>gl_18</Symbol>
-    <Value>0.549540877342224</Value>
+    <Value>0.588843703269958</Value>
    </Parameter>
 
    <Parameter>
     <Index>428</Index>
     <Name>Quality factor Left 18</Name>
     <Symbol>ql_18</Symbol>
-    <Value>0.666670024394989</Value>
+    <Value>1.41600000858307</Value>
    </Parameter>
 
    <Parameter>
@@ -12135,14 +12139,14 @@
     <Index>431</Index>
     <Name>Filter type Right 18</Name>
     <Symbol>ftr_18</Symbol>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
     <Index>432</Index>
     <Name>Filter mode Right 18</Name>
     <Symbol>fmr_18</Symbol>
-    <Value>6</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -12170,7 +12174,7 @@
     <Index>436</Index>
     <Name>Frequency Right 18</Name>
     <Symbol>fr_18</Symbol>
-    <Value>16625</Value>
+    <Value>1091.26000976562</Value>
    </Parameter>
 
    <Parameter>
@@ -12184,14 +12188,14 @@
     <Index>438</Index>
     <Name>Gain Right 18</Name>
     <Symbol>gr_18</Symbol>
-    <Value>0.716143429279327</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>439</Index>
     <Name>Quality factor Right 18</Name>
     <Symbol>qr_18</Symbol>
-    <Value>1.75300002098083</Value>
+    <Value>4.3600001335144</Value>
    </Parameter>
 
    <Parameter>
@@ -12205,14 +12209,14 @@
     <Index>442</Index>
     <Name>Filter type Left 19</Name>
     <Symbol>ftl_19</Symbol>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
     <Index>443</Index>
     <Name>Filter mode Left 19</Name>
     <Symbol>fml_19</Symbol>
-    <Value>6</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -12240,7 +12244,7 @@
     <Index>447</Index>
     <Name>Frequency Left 19</Name>
     <Symbol>fl_19</Symbol>
-    <Value>14355</Value>
+    <Value>1354.18994140625</Value>
    </Parameter>
 
    <Parameter>
@@ -12254,14 +12258,14 @@
     <Index>449</Index>
     <Name>Gain Left 19</Name>
     <Symbol>gl_19</Symbol>
-    <Value>0.588843703269958</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>450</Index>
     <Name>Quality factor Left 19</Name>
     <Symbol>ql_19</Symbol>
-    <Value>1.56400001049042</Value>
+    <Value>4.3600001335144</Value>
    </Parameter>
 
    <Parameter>
@@ -12282,7 +12286,7 @@
     <Index>454</Index>
     <Name>Filter mode Right 19</Name>
     <Symbol>fmr_19</Symbol>
-    <Value>6</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -12310,7 +12314,7 @@
     <Index>458</Index>
     <Name>Frequency Right 19</Name>
     <Symbol>fr_19</Symbol>
-    <Value>1000</Value>
+    <Value>1354.18994140625</Value>
    </Parameter>
 
    <Parameter>
@@ -12331,7 +12335,7 @@
     <Index>461</Index>
     <Name>Quality factor Right 19</Name>
     <Symbol>qr_19</Symbol>
-    <Value>0.707109987735748</Value>
+    <Value>4.3600001335144</Value>
    </Parameter>
 
    <Parameter>
@@ -12352,7 +12356,7 @@
     <Index>465</Index>
     <Name>Filter mode Left 20</Name>
     <Symbol>fml_20</Symbol>
-    <Value>6</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -12380,7 +12384,7 @@
     <Index>469</Index>
     <Name>Frequency Left 20</Name>
     <Symbol>fl_20</Symbol>
-    <Value>1000</Value>
+    <Value>1680.46997070312</Value>
    </Parameter>
 
    <Parameter>
@@ -12401,7 +12405,7 @@
     <Index>472</Index>
     <Name>Quality factor Left 20</Name>
     <Symbol>ql_20</Symbol>
-    <Value>0.707109987735748</Value>
+    <Value>4.3600001335144</Value>
    </Parameter>
 
    <Parameter>
@@ -12422,7 +12426,7 @@
     <Index>476</Index>
     <Name>Filter mode Right 20</Name>
     <Symbol>fmr_20</Symbol>
-    <Value>6</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -12450,7 +12454,7 @@
     <Index>480</Index>
     <Name>Frequency Right 20</Name>
     <Symbol>fr_20</Symbol>
-    <Value>1000</Value>
+    <Value>1680.46997070312</Value>
    </Parameter>
 
    <Parameter>
@@ -12471,7 +12475,7 @@
     <Index>483</Index>
     <Name>Quality factor Right 20</Name>
     <Symbol>qr_20</Symbol>
-    <Value>0.707109987735748</Value>
+    <Value>4.3600001335144</Value>
    </Parameter>
 
    <Parameter>
@@ -12492,7 +12496,7 @@
     <Index>487</Index>
     <Name>Filter mode Left 21</Name>
     <Symbol>fml_21</Symbol>
-    <Value>6</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -12520,7 +12524,7 @@
     <Index>491</Index>
     <Name>Frequency Left 21</Name>
     <Symbol>fl_21</Symbol>
-    <Value>1000</Value>
+    <Value>2085.35009765625</Value>
    </Parameter>
 
    <Parameter>
@@ -12541,7 +12545,7 @@
     <Index>494</Index>
     <Name>Quality factor Left 21</Name>
     <Symbol>ql_21</Symbol>
-    <Value>0.707109987735748</Value>
+    <Value>4.3600001335144</Value>
    </Parameter>
 
    <Parameter>
@@ -12562,7 +12566,7 @@
     <Index>498</Index>
     <Name>Filter mode Right 21</Name>
     <Symbol>fmr_21</Symbol>
-    <Value>6</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -12590,7 +12594,7 @@
     <Index>502</Index>
     <Name>Frequency Right 21</Name>
     <Symbol>fr_21</Symbol>
-    <Value>1000</Value>
+    <Value>2085.35009765625</Value>
    </Parameter>
 
    <Parameter>
@@ -12611,7 +12615,7 @@
     <Index>505</Index>
     <Name>Quality factor Right 21</Name>
     <Symbol>qr_21</Symbol>
-    <Value>0.707109987735748</Value>
+    <Value>4.3600001335144</Value>
    </Parameter>
 
    <Parameter>
@@ -18660,14 +18664,6 @@
 
  <ExternalPatchbay>
   <Connection>
-   <Source>Blessing 2 ISO Harman:Output L</Source>
-   <Target>Blessing 2 ISO Harman Main EQ:Input L</Target>
-  </Connection>
-  <Connection>
-   <Source>Blessing 2 ISO Harman:Output R</Source>
-   <Target>Blessing 2 ISO Harman Main EQ:Input R</Target>
-  </Connection>
-  <Connection>
    <Source>LSP Loudness Compensator Stereo:Output L</Source>
    <Target>MOONDROP Dawn Pro Analog Stereo:playback_FL</Target>
   </Connection>
@@ -18684,14 +18680,6 @@
    <Target>LSP Loudness Compensator Stereo:Input R</Target>
   </Connection>
   <Connection>
-   <Source>Blessing 2 ISO Harman Main EQ:Output L</Source>
-   <Target>LSP Loudness Compensator Stereo:Input L</Target>
-  </Connection>
-  <Connection>
-   <Source>Blessing 2 ISO Harman Main EQ:Output R</Source>
-   <Target>LSP Loudness Compensator Stereo:Input R</Target>
-  </Connection>
-  <Connection>
    <Source>R70x Harman:Output L</Source>
    <Target>LSP Loudness Compensator Stereo:Input L</Target>
   </Connection>
@@ -18700,12 +18688,28 @@
    <Target>LSP Loudness Compensator Stereo:Input R</Target>
   </Connection>
   <Connection>
+   <Source>Blessing 2 ISO Custom Main EQ:Output L</Source>
+   <Target>LSP Loudness Compensator Stereo:Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>Blessing 2 ISO Custom Main EQ:Output R</Source>
+   <Target>LSP Loudness Compensator Stereo:Input R</Target>
+  </Connection>
+  <Connection>
+   <Source>Blessing 2 ISO Custom:Output L</Source>
+   <Target>Blessing 2 ISO Custom Main EQ:Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>Blessing 2 ISO Custom:Output R</Source>
+   <Target>Blessing 2 ISO Custom Main EQ:Input R</Target>
+  </Connection>
+  <Connection>
    <Source>myeffects_sink:monitor_FL</Source>
-   <Target>Blessing 2 ISO Harman:Input L</Target>
+   <Target>Blessing 2 ISO Custom:Input L</Target>
   </Connection>
   <Connection>
    <Source>myeffects_sink:monitor_FR</Source>
-   <Target>Blessing 2 ISO Harman:Input R</Target>
+   <Target>Blessing 2 ISO Custom:Input R</Target>
   </Connection>
   <Connection>
    <Source>Midi-Bridge:Virtual MIDI Card 1:(capture_0) VirMIDI 0-0</Source>
@@ -18724,29 +18728,20 @@
    <Position x1="105" y1="1205" x2="1164" y2="1118">
     <Name>BLE MIDI 1</Name>
    </Position>
-   <Position x1="607" y1="764">
-    <Name>Blessing 2 ISO Harman</Name>
-   </Position>
-   <Position x1="328" y1="826">
-    <Name>LSP Parametric Equalizer x32 LeftRight (2)</Name>
-   </Position>
    <Position x1="904" y1="948">
     <Name>LSP Loudness Compensator Stereo</Name>
    </Position>
    <Position x1="602" y1="973">
     <Name>Sven</Name>
    </Position>
-   <Position x1="647" y1="869">
-    <Name>Blessing 2 ISO Harman Main EQ</Name>
-   </Position>
-   <Position x1="305" y1="1116">
-    <Name>LSP Parametric Equalizer x32 LeftRight</Name>
-   </Position>
-   <Position x1="603" y1="1102" pluginId="4">
+   <Position x1="603" y1="1102">
     <Name>R70x Harman</Name>
    </Position>
-   <Position x1="52" y1="806">
-    <Name>C* Music Player</Name>
+   <Position x1="601" y1="756">
+    <Name>Blessing 2 ISO Custom</Name>
+   </Position>
+   <Position x1="623" y1="859" pluginId="1">
+    <Name>Blessing 2 ISO Custom Main EQ</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>
