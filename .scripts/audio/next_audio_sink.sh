@@ -25,6 +25,12 @@ get_sink_profile() {
     fi
 }
 
+remove_old_profile() {
+    for link in "$(pw-link -Iol "$1" | tail -n +2 | awk '{ print $1 }')" ; do
+        pw-link -d "$link"
+    done
+}
+
 if ! pactl list clients | grep "$output_node" > /dev/null 2>&1; then
     notify-send --expire-time 3000 "Error: Carla not started"
     exit 0
@@ -45,6 +51,10 @@ done
 # Don't particularly like this method of making it circular, but...
 [ -z "$new_active_sink" ] && new_active_sink="$first"
 
+# Disconnect the pipeline to avoid volume spikes
+remove_old_profile "myeffects_sink:monitor_FL"
+remove_old_profile "myeffects_sink:monitor_FR"
+
 # Set default sink for new audio playback
 pw-link -d "${output_node}:Output L" "${active_sink}:playback_FL"
 pw-link -d "${output_node}:Output R" "${active_sink}:playback_FR"
@@ -52,15 +62,10 @@ pw-link -d "${output_node}:Output R" "${active_sink}:playback_FR"
 pw-link "${output_node}:Output L" "${new_active_sink}:playback_FL"
 pw-link "${output_node}:Output R" "${new_active_sink}:playback_FR"
 
-old_profile="$(get_sink_profile "$active_sink")"
+# Apply new effects profile
 profile="$(get_sink_profile "$new_active_sink")"
-if [ "$profile" != "$old_profile" ]; then
-    pw-link -d "myeffects_sink:monitor_FL" "${old_profile}:Input L"
-    pw-link -d "myeffects_sink:monitor_FR" "${old_profile}:Input R"
-
-    pw-link "myeffects_sink:monitor_FL" "${profile}:Input L"
-    pw-link "myeffects_sink:monitor_FR" "${profile}:Input R"
-fi
+pw-link "myeffects_sink:monitor_FL" "${profile}:Input L"
+pw-link "myeffects_sink:monitor_FR" "${profile}:Input R"
 
 pactl set-sink-volume "$new_active_sink" 100%
 

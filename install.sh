@@ -97,7 +97,7 @@ install_essential () {
         "playerctl"
         "mpris-proxy-service"
         "carla" # equal loudness system volume
-        "lsp-plugins"
+        "lsp-plugins-lv2"
         "alsa-utils"
         "jq" # for waybar json scripting
         
