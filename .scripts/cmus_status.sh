@@ -26,7 +26,7 @@ fi
 
 echo "$file_dir" > "${STATE_DIR}/current_file"
 
-if [ ! -z "$file_dir" ]; then
+if [ -n "$file_dir" ]; then
     img_name="$(ls -S1 "$file_dir" | grep -oiE ".*(cover|folder|artwork|albumart|jacket).*\.(jpg|jpeg|png|tiff)" | head -1)"
     if [ "$img_name" == "" ]; then
         img_name="$(ls -S1 "$file_dir" | grep -oiE ".*\.(jpg|jpeg|png|tiff)" | head -1)"

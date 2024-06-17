@@ -19,7 +19,7 @@ nohup swww-daemon &
 swww img "$WALLPAPER1" -t none
 
 # other
-hyprctl setcursor Bibata-Modern-Classic 24
+hyprctl setcursor "$XCURSOR_THEME" 24
 
 # applets
 blueman-applet &

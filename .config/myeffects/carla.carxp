@@ -38,7 +38,7 @@
     <Index>1</Index>
     <Name>Input gain</Name>
     <Symbol>g_in</Symbol>
-    <Value>0.99999988079071</Value>
+    <Value>0.999999463558197</Value>
    </Parameter>
 
    <Parameter>
@@ -9423,7 +9423,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.0177827943116426</Value>
+    <Value>0.0354813374578953</Value>
    </Parameter>
 
    <Parameter>
@@ -18688,19 +18688,19 @@
    <Target>MOONDROP Dawn Pro Analog Stereo:playback_FR</Target>
   </Connection>
   <Connection>
-   <Source>R70x Harman:Output L</Source>
-   <Target>LSP Loudness Compensator Stereo:Input L</Target>
-  </Connection>
-  <Connection>
-   <Source>R70x Harman:Output R</Source>
-   <Target>LSP Loudness Compensator Stereo:Input R</Target>
-  </Connection>
-  <Connection>
    <Source>Sven:Output L</Source>
    <Target>LSP Loudness Compensator Stereo:Input L</Target>
   </Connection>
   <Connection>
    <Source>Sven:Output R</Source>
+   <Target>LSP Loudness Compensator Stereo:Input R</Target>
+  </Connection>
+  <Connection>
+   <Source>R70x Harman:Output L</Source>
+   <Target>LSP Loudness Compensator Stereo:Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>R70x Harman:Output R</Source>
    <Target>LSP Loudness Compensator Stereo:Input R</Target>
   </Connection>
   <Connection>
@@ -18716,32 +18716,32 @@
    <Target>LSP Loudness Compensator Stereo:events-in</Target>
   </Connection>
   <Positions>
+   <Position x1="267" y1="340">
+    <Name>myeffects_sink</Name>
+   </Position>
+   <Position x1="629" y1="466" x2="1137" y2="456">
+    <Name>GA102 High Definition Audio Controller Digital Stereo (HDMI)</Name>
+   </Position>
+   <Position x1="299" y1="701" x2="1023" y2="482">
+    <Name>Midi-Bridge</Name>
+   </Position>
+   <Position x1="174" y1="602" x2="1049" y2="515">
+    <Name>BLE MIDI 1</Name>
+   </Position>
    <Position x1="486" y1="153" pluginId="0">
     <Name>Blessing 2 ISO Custom</Name>
    </Position>
    <Position x1="508" y1="256" pluginId="1">
     <Name>Blessing 2 ISO Custom Main EQ</Name>
    </Position>
-   <Position x1="789" y1="345" pluginId="2">
+   <Position x1="771" y1="345" pluginId="2">
     <Name>LSP Loudness Compensator Stereo</Name>
-   </Position>
-   <Position x1="488" y1="499" pluginId="4">
-    <Name>R70x Harman</Name>
    </Position>
    <Position x1="487" y1="370" pluginId="3">
     <Name>Sven</Name>
    </Position>
-   <Position x1="267" y1="340">
-    <Name>myeffects_sink</Name>
-   </Position>
-   <Position x1="174" y1="245" x2="1063" y2="347">
-    <Name>MOONDROP Dawn Pro Analog Stereo</Name>
-   </Position>
-   <Position x1="174" y1="754" x2="1023" y2="482">
-    <Name>Midi-Bridge</Name>
-   </Position>
-   <Position x1="174" y1="602" x2="1049" y2="515">
-    <Name>BLE MIDI 1</Name>
+   <Position x1="488" y1="499" pluginId="4">
+    <Name>R70x Harman</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>
