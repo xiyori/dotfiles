@@ -10,13 +10,6 @@
 # TODO: Trigger a zenity or dmenu dialog with entr that asks whether to switch monitor and/or sound to hdmi? Could do
 # the same for mounting.
 
-output_node="LSP Loudness Compensator Stereo"
-
-if ! pactl list clients | grep "$output_node" > /dev/null 2>&1; then
-    notify-send --expire-time 3000 "Error: Carla not started"
-    exit 0
-fi
-
 active_sink="$(~/.scripts/audio/get_active_sink.sh)"
 for sink in $(~/.scripts/audio/list_sinks.sh) ; do
     [ -z "$first" ] && first="$sink" # Save the first index in case the current default is the last in the list
@@ -32,4 +25,4 @@ done
 # Don't particularly like this method of making it circular, but...
 [ -z "$new_active_sink" ] && new_active_sink="$first"
 
-~/.scripts/audio/set_active_sink.sh $new_active_sink
+~/.scripts/audio/set_active_sink.sh "$new_active_sink"
