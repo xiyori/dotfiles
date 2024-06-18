@@ -3,6 +3,9 @@
 function handle {
     if [[ ${1:0:11} == "closewindow" ]] && hyprctl activeworkspace | grep "windows: 0" > /dev/null ; then
         active_id="$(hyprctl activeworkspace | grep "workspace ID" | awk '{ print $3 }')"
+        if (( active_id > 0 )); then
+            return 0
+        fi
         regex=".* on monitor (.*)\:"
         if [[ "$(hyprctl activeworkspace | grep "on monitor")" =~ $regex ]]; then
             active_monitor="${BASH_REMATCH[1]}"
@@ -26,7 +29,7 @@ function handle {
                 prev_id="$id"
             fi
         done
-        if [ -z "$prev_id" ]; then
+        if [ -z "$prev_id" ] || [ -z "$find_next" ]; then
             if [ -z "$next_id" ]; then
                 prev_id=1
             else

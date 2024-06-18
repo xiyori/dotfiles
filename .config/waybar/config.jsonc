@@ -218,7 +218,7 @@
         "exec": "~/.scripts/audio/custom_sound.sh",
         "return-type": "json",
         "on-click": "~/.scripts/audio/player.sh play-pause",
-        "on-click-right": "~/.scripts/audio/next_audio_sink.sh",
+        "on-click-right": "~/.scripts/audio/next_active_sink.sh",
         "on-scroll-up": "~/.scripts/audio/volume.sh up",
         "on-scroll-down": "~/.scripts/audio/volume.sh down",
         "signal": 1,
