@@ -44,12 +44,6 @@ get_sink_profile() {
     fi
 }
 
-remove_old_profile() {
-    for link in "$(pw-link -Iol "$1" | tail -n +2 | awk '{ print $1 }')" ; do
-        pw-link -d "$link"
-    done
-}
-
 if ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&1; then
     notify-send --expire-time 3000 "Error: Carla not started"
     exit 0
@@ -59,8 +53,8 @@ active_sink="$(~/.scripts/audio/get_active_sink.sh)"
 new_active_sink="$1"
 
 # Disconnect the pipeline to avoid volume spikes
-remove_old_profile "myeffects_sink:monitor_FL"
-remove_old_profile "myeffects_sink:monitor_FR"
+~/.scripts/audio/remove_old_profile.sh "myeffects_sink:monitor_FL"
+~/.scripts/audio/remove_old_profile.sh "myeffects_sink:monitor_FR"
 
 # Set default sink for new audio playback
 pw-link -d "${output_node}:Output L" "${active_sink}:playback_FL"
