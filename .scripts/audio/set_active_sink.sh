@@ -56,6 +56,8 @@ new_active_sink="$1"
 ~/.scripts/audio/remove_old_profile.sh "myeffects_sink:monitor_FL"
 ~/.scripts/audio/remove_old_profile.sh "myeffects_sink:monitor_FR"
 
+sleep 0.1
+
 # Set default sink for new audio playback
 pw-link -d "${output_node}:Output L" "${active_sink}:playback_FL"
 pw-link -d "${output_node}:Output R" "${active_sink}:playback_FR"
