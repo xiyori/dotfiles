@@ -119,6 +119,7 @@ install_essential () {
         "polkit-gnome" # auth dialogs
         "swaylock-effects" # lock screen
         "hypridle" # turn off screen
+        "xorg-xrdb" # for .Xresources
 
         # wifi - network management
         "networkmanager" # for network management
@@ -161,6 +162,8 @@ install_essential () {
     _create_symlink .config/mimeapps.list
     _create_symlink .config/systemd/user/auto-monitor.service
     _create_symlink .config/systemd/user/switch-out-from-empty.service
+
+    ln -s "$(pwd)/assets/hrir_hesuvi" ~/hrir_hesuvi
 
     echo "setting up packages"
 
