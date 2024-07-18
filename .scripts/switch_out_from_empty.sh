@@ -10,6 +10,9 @@ function handle {
             echo "Unknown error, cannot find active monitor"
             return 1
         fi
+        if (( active_id > 0 )); then
+            return 0
+        fi
         prev_id=""
         next_id=""
         find_next=""

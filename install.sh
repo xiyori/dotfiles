@@ -210,6 +210,7 @@ install_optional () {
         "btop" # for performance monitoring
         "bat" # cat with the looks
         "ristretto" # image viewer
+        "qimgv-git" # image viewer
         "rofi-emoji-git" # emoji picker
         "noto-fonts-emoji" # emoji font
         "hyprpicker" # color picker
