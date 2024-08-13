@@ -32,12 +32,12 @@ if [ -n "$file_dir" ]; then
         img_name="$(ls -S1 "$file_dir" | grep -oiE ".*\.(jpg|jpeg|png|tiff)" | head -1)"
     fi
     if ! cp "${file_dir}/${img_name}" "$COVER_PATH" ; then
-        # ffmpeg -i "$file_path" -vframes 1 -update true -an "${STATE_DIR}/cover.jpg"
-        # if [ -f "${STATE_DIR}/cover.jpg" ]; then
-        #     mv "${STATE_DIR}/cover.jpg" "$COVER_PATH"
-        # else
+        ffmpeg -i "$file_path" -an -c:v copy "${STATE_DIR}/cover.jpg"
+        if cp "${STATE_DIR}/cover.jpg" "$COVER_PATH" ; then
+            rm "${STATE_DIR}/cover.jpg"
+        else
             cp "${STATE_DIR}/placeholder.png" "$COVER_PATH"
-        # fi
+        fi
     fi
 else
     cp "${STATE_DIR}/placeholder.png" "$COVER_PATH"

@@ -11778,7 +11778,7 @@
     <Index>1</Index>
     <Name>Input gain</Name>
     <Symbol>g_in</Symbol>
-    <Value>1.00000011920929</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -12429,14 +12429,14 @@
     <Index>105</Index>
     <Name>Gain 7</Name>
     <Symbol>g_7</Symbol>
-    <Value>0.660693466663361</Value>
+    <Value>0.501187264919281</Value>
    </Parameter>
 
    <Parameter>
     <Index>106</Index>
     <Name>Quality factor 7</Name>
     <Symbol>q_7</Symbol>
-    <Value>1.70000004768372</Value>
+    <Value>2.34999990463257</Value>
    </Parameter>
 
    <Parameter>
@@ -12485,7 +12485,7 @@
     <Index>114</Index>
     <Name>Frequency 8</Name>
     <Symbol>f_8</Symbol>
-    <Value>14000</Value>
+    <Value>17000</Value>
    </Parameter>
 
    <Parameter>
@@ -12499,14 +12499,14 @@
     <Index>116</Index>
     <Name>Gain 8</Name>
     <Symbol>g_8</Symbol>
-    <Value>0.630957365036011</Value>
+    <Value>0.794328212738037</Value>
    </Parameter>
 
    <Parameter>
     <Index>117</Index>
     <Name>Quality factor 8</Name>
     <Symbol>q_8</Symbol>
-    <Value>1.29999995231628</Value>
+    <Value>0.699999988079071</Value>
    </Parameter>
 
    <Parameter>
@@ -14200,6 +14200,9 @@
    </Position>
    <Position x1="484" y1="253" pluginId="4">
     <Name>Blessing 3 Custom</Name>
+   </Position>
+   <Position x1="944" y1="698" x2="1222" y2="361">
+    <Name>Renoir Radeon High Definition Audio Controller HDMI / DisplayPort 1 Output</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>
