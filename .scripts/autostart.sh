@@ -19,6 +19,7 @@ nohup swww-daemon &
 swww img "$WALLPAPER1" -t none
 
 # other
+powerline-daemon
 hyprctl setcursor "$XCURSOR_THEME" 24
 
 # applets
