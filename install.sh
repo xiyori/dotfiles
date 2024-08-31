@@ -120,6 +120,7 @@ install_essential () {
         "swaylock-effects" # lock screen
         "hypridle" # turn off screen
         "xorg-xrdb" # for .Xresources
+        "xorg-xsetroot" # for cursor size stability
 
         # wifi - network management
         "networkmanager" # for network management
@@ -195,6 +196,7 @@ install_essential () {
     sudo systemctl enable NetworkManager.service
     sudo systemctl enable ufw.service
     sudo systemctl enable bluetooth.service
+    sudo systemctl enable systemd-timesyncd.service
     systemctl --user enable pipewire pipewire-pulse wireplumber
     systemctl --user enable mpris-proxy.service
     systemctl --user enable auto-monitor.service

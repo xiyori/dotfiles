@@ -11785,7 +11785,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.00501187285408378</Value>
+    <Value>0.0501187182962894</Value>
    </Parameter>
 
    <Parameter>
@@ -23414,14 +23414,6 @@
    <Target>LSP Loudness Compensator Stereo:Input R</Target>
   </Connection>
   <Connection>
-   <Source>DBR-62:Output L</Source>
-   <Target>LSP Loudness Compensator Stereo:Input L</Target>
-  </Connection>
-  <Connection>
-   <Source>DBR-62:Output R</Source>
-   <Target>LSP Loudness Compensator Stereo:Input R</Target>
-  </Connection>
-  <Connection>
    <Source>R70x ISO Custom:Output L</Source>
    <Target>LSP Loudness Compensator Stereo:Input L</Target>
   </Connection>
@@ -23436,14 +23428,6 @@
   <Connection>
    <Source>Virtual Surround:Output R</Source>
    <Target>Virtual Surround Sink:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Blessing 3 Custom:Output L</Source>
-   <Target>LSP Loudness Compensator Stereo:Input L</Target>
-  </Connection>
-  <Connection>
-   <Source>Blessing 3 Custom:Output R</Source>
-   <Target>LSP Loudness Compensator Stereo:Input R</Target>
   </Connection>
   <Connection>
    <Source>DBR-62 Standing:Output L</Source>
@@ -23462,6 +23446,22 @@
    <Target>LSP Loudness Compensator Stereo:Input R</Target>
   </Connection>
   <Connection>
+   <Source>Blessing 3 Custom:Output L</Source>
+   <Target>LSP Loudness Compensator Stereo:Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>Blessing 3 Custom:Output R</Source>
+   <Target>LSP Loudness Compensator Stereo:Input R</Target>
+  </Connection>
+  <Connection>
+   <Source>DBR-62:Output L</Source>
+   <Target>LSP Loudness Compensator Stereo:Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>DBR-62:Output R</Source>
+   <Target>LSP Loudness Compensator Stereo:Input R</Target>
+  </Connection>
+  <Connection>
    <Source>Midi-Bridge:Virtual MIDI Card 1:(capture_0) VirMIDI 0-0</Source>
    <Target>LSP Loudness Compensator Stereo:events-in</Target>
   </Connection>
@@ -23472,34 +23472,34 @@
    <Position x1="267" y1="340">
     <Name>myeffects_sink</Name>
    </Position>
+   <Position x1="747" y1="842" x2="1109" y2="441">
+    <Name>USB-C to 3.5mm Headphone Jack Adapter Analog Stereo</Name>
+   </Position>
+   <Position x1="761" y1="938" x2="1137" y2="459">
+    <Name>GA102 High Definition Audio Controller Digital Stereo (HDMI)</Name>
+   </Position>
    <Position x1="299" y1="701" x2="1023" y2="482">
     <Name>Midi-Bridge</Name>
    </Position>
    <Position x1="174" y1="602" x2="1049" y2="515">
     <Name>BLE MIDI 1</Name>
    </Position>
-   <Position x1="771" y1="345">
+   <Position x1="771" y1="345" pluginId="0">
     <Name>LSP Loudness Compensator Stereo</Name>
    </Position>
-   <Position x1="484" y1="370">
+   <Position x1="484" y1="370" pluginId="1">
     <Name>DBR-62</Name>
    </Position>
-   <Position x1="485" y1="487">
+   <Position x1="485" y1="487" pluginId="2">
     <Name>R70x ISO Custom</Name>
    </Position>
-   <Position x1="463" y1="597">
+   <Position x1="463" y1="597" pluginId="3">
     <Name>Virtual Surround</Name>
    </Position>
-   <Position x1="484" y1="253">
+   <Position x1="484" y1="253" pluginId="4">
     <Name>Blessing 3 Custom</Name>
    </Position>
-   <Position x1="761" y1="938" x2="1137" y2="459">
-    <Name>GA102 High Definition Audio Controller Digital Stereo (HDMI)</Name>
-   </Position>
-   <Position x1="747" y1="842" x2="1109" y2="441">
-    <Name>USB-C to 3.5mm Headphone Jack Adapter Analog Stereo</Name>
-   </Position>
-   <Position x1="469" y1="832">
+   <Position x1="469" y1="832" pluginId="5">
     <Name>DBR-62 Standing</Name>
    </Position>
    <Position x1="468" y1="936" pluginId="6">

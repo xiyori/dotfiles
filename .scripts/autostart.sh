@@ -20,7 +20,8 @@ swww img "$WALLPAPER1" -t none
 
 # other
 powerline-daemon
-hyprctl setcursor "$XCURSOR_THEME" 24
+hyprctl setcursor "$XCURSOR_THEME" $XCURSOR_SIZE
+xsetroot -xcf "/usr/share/icons/$XCURSOR_THEME/cursors/left_ptr" $XCURSOR_SIZE
 
 # applets
 blueman-applet &
