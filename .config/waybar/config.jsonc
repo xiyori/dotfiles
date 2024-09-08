@@ -215,6 +215,7 @@
         // "scroll-step": 1, // %, can be a float
         "format": "{}", // {format_source}
         "tooltip": true,
+        "escape": true,
         "exec": "~/.scripts/audio/custom_sound.sh",
         "return-type": "json",
         "on-click": "~/.scripts/audio/player.sh play-pause",
