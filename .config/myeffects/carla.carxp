@@ -4776,7 +4776,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.0501187182962894</Value>
+    <Value>0.60953688621521</Value>
    </Parameter>
 
    <Parameter>
@@ -4804,14 +4804,14 @@
     <Index>6</Index>
     <Name>Graph zoom</Name>
     <Symbol>zoom</Symbol>
-    <Value>0.0158500000834465</Value>
+    <Value>0.0158489290624857</Value>
    </Parameter>
 
    <Parameter>
     <Index>7</Index>
     <Name>Filter select</Name>
     <Symbol>fsel</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -4881,14 +4881,14 @@
     <Index>21</Index>
     <Name>Filter type 0</Name>
     <Symbol>ft_0</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>22</Index>
     <Name>Filter mode 0</Name>
     <Symbol>fm_0</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -4916,7 +4916,7 @@
     <Index>26</Index>
     <Name>Frequency 0</Name>
     <Symbol>f_0</Symbol>
-    <Value>16</Value>
+    <Value>20</Value>
    </Parameter>
 
    <Parameter>
@@ -4930,14 +4930,14 @@
     <Index>28</Index>
     <Name>Gain 0</Name>
     <Symbol>g_0</Symbol>
-    <Value>1</Value>
+    <Value>1.16144859790802</Value>
    </Parameter>
 
    <Parameter>
     <Index>29</Index>
     <Name>Quality factor 0</Name>
     <Symbol>q_0</Symbol>
-    <Value>0</Value>
+    <Value>0.600000023841858</Value>
    </Parameter>
 
    <Parameter>
@@ -4951,14 +4951,14 @@
     <Index>32</Index>
     <Name>Filter type 1</Name>
     <Symbol>ft_1</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>33</Index>
     <Name>Filter mode 1</Name>
     <Symbol>fm_1</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -4986,7 +4986,7 @@
     <Index>37</Index>
     <Name>Frequency 1</Name>
     <Symbol>f_1</Symbol>
-    <Value>20</Value>
+    <Value>330</Value>
    </Parameter>
 
    <Parameter>
@@ -5000,14 +5000,14 @@
     <Index>39</Index>
     <Name>Gain 1</Name>
     <Symbol>g_1</Symbol>
-    <Value>1</Value>
+    <Value>0.891250908374786</Value>
    </Parameter>
 
    <Parameter>
     <Index>40</Index>
     <Name>Quality factor 1</Name>
     <Symbol>q_1</Symbol>
-    <Value>0</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -5021,14 +5021,14 @@
     <Index>43</Index>
     <Name>Filter type 2</Name>
     <Symbol>ft_2</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>44</Index>
     <Name>Filter mode 2</Name>
     <Symbol>fm_2</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -5056,7 +5056,7 @@
     <Index>48</Index>
     <Name>Frequency 2</Name>
     <Symbol>f_2</Symbol>
-    <Value>25</Value>
+    <Value>490</Value>
    </Parameter>
 
    <Parameter>
@@ -5070,14 +5070,14 @@
     <Index>50</Index>
     <Name>Gain 2</Name>
     <Symbol>g_2</Symbol>
-    <Value>1</Value>
+    <Value>1.07151925563812</Value>
    </Parameter>
 
    <Parameter>
     <Index>51</Index>
     <Name>Quality factor 2</Name>
     <Symbol>q_2</Symbol>
-    <Value>0</Value>
+    <Value>3</Value>
    </Parameter>
 
    <Parameter>
@@ -5091,14 +5091,14 @@
     <Index>54</Index>
     <Name>Filter type 3</Name>
     <Symbol>ft_3</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>55</Index>
     <Name>Filter mode 3</Name>
     <Symbol>fm_3</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -5126,7 +5126,7 @@
     <Index>59</Index>
     <Name>Frequency 3</Name>
     <Symbol>f_3</Symbol>
-    <Value>31.5</Value>
+    <Value>2200</Value>
    </Parameter>
 
    <Parameter>
@@ -5140,14 +5140,14 @@
     <Index>61</Index>
     <Name>Gain 3</Name>
     <Symbol>g_3</Symbol>
-    <Value>1</Value>
+    <Value>1.12201845645905</Value>
    </Parameter>
 
    <Parameter>
     <Index>62</Index>
     <Name>Quality factor 3</Name>
     <Symbol>q_3</Symbol>
-    <Value>0</Value>
+    <Value>2.79999995231628</Value>
    </Parameter>
 
    <Parameter>
@@ -5161,14 +5161,14 @@
     <Index>65</Index>
     <Name>Filter type 4</Name>
     <Symbol>ft_4</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>66</Index>
     <Name>Filter mode 4</Name>
     <Symbol>fm_4</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -5196,7 +5196,7 @@
     <Index>70</Index>
     <Name>Frequency 4</Name>
     <Symbol>f_4</Symbol>
-    <Value>40</Value>
+    <Value>3100</Value>
    </Parameter>
 
    <Parameter>
@@ -5210,14 +5210,14 @@
     <Index>72</Index>
     <Name>Gain 4</Name>
     <Symbol>g_4</Symbol>
-    <Value>1</Value>
+    <Value>0.630957365036011</Value>
    </Parameter>
 
    <Parameter>
     <Index>73</Index>
     <Name>Quality factor 4</Name>
     <Symbol>q_4</Symbol>
-    <Value>0</Value>
+    <Value>0.300000011920929</Value>
    </Parameter>
 
    <Parameter>
@@ -5231,14 +5231,14 @@
     <Index>76</Index>
     <Name>Filter type 5</Name>
     <Symbol>ft_5</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>77</Index>
     <Name>Filter mode 5</Name>
     <Symbol>fm_5</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -5266,7 +5266,7 @@
     <Index>81</Index>
     <Name>Frequency 5</Name>
     <Symbol>f_5</Symbol>
-    <Value>50</Value>
+    <Value>3200</Value>
    </Parameter>
 
    <Parameter>
@@ -5280,14 +5280,14 @@
     <Index>83</Index>
     <Name>Gain 5</Name>
     <Symbol>g_5</Symbol>
-    <Value>1</Value>
+    <Value>0.870963573455811</Value>
    </Parameter>
 
    <Parameter>
     <Index>84</Index>
     <Name>Quality factor 5</Name>
     <Symbol>q_5</Symbol>
-    <Value>0</Value>
+    <Value>4.40000009536743</Value>
    </Parameter>
 
    <Parameter>
@@ -5301,14 +5301,14 @@
     <Index>87</Index>
     <Name>Filter type 6</Name>
     <Symbol>ft_6</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>88</Index>
     <Name>Filter mode 6</Name>
     <Symbol>fm_6</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -5336,7 +5336,7 @@
     <Index>92</Index>
     <Name>Frequency 6</Name>
     <Symbol>f_6</Symbol>
-    <Value>63</Value>
+    <Value>6000</Value>
    </Parameter>
 
    <Parameter>
@@ -5350,14 +5350,14 @@
     <Index>94</Index>
     <Name>Gain 6</Name>
     <Symbol>g_6</Symbol>
-    <Value>1</Value>
+    <Value>0.841395139694214</Value>
    </Parameter>
 
    <Parameter>
     <Index>95</Index>
     <Name>Quality factor 6</Name>
     <Symbol>q_6</Symbol>
-    <Value>0</Value>
+    <Value>5</Value>
    </Parameter>
 
    <Parameter>
@@ -5371,14 +5371,14 @@
     <Index>98</Index>
     <Name>Filter type 7</Name>
     <Symbol>ft_7</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>99</Index>
     <Name>Filter mode 7</Name>
     <Symbol>fm_7</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -5406,7 +5406,7 @@
     <Index>103</Index>
     <Name>Frequency 7</Name>
     <Symbol>f_7</Symbol>
-    <Value>80</Value>
+    <Value>12600</Value>
    </Parameter>
 
    <Parameter>
@@ -5420,14 +5420,14 @@
     <Index>105</Index>
     <Name>Gain 7</Name>
     <Symbol>g_7</Symbol>
-    <Value>1</Value>
+    <Value>0.595662117004395</Value>
    </Parameter>
 
    <Parameter>
     <Index>106</Index>
     <Name>Quality factor 7</Name>
     <Symbol>q_7</Symbol>
-    <Value>0</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -5441,14 +5441,14 @@
     <Index>109</Index>
     <Name>Filter type 8</Name>
     <Symbol>ft_8</Symbol>
-    <Value>0</Value>
+    <Value>5</Value>
    </Parameter>
 
    <Parameter>
     <Index>110</Index>
     <Name>Filter mode 8</Name>
     <Symbol>fm_8</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -5476,7 +5476,7 @@
     <Index>114</Index>
     <Name>Frequency 8</Name>
     <Symbol>f_8</Symbol>
-    <Value>100</Value>
+    <Value>200</Value>
    </Parameter>
 
    <Parameter>
@@ -5490,14 +5490,14 @@
     <Index>116</Index>
     <Name>Gain 8</Name>
     <Symbol>g_8</Symbol>
-    <Value>1</Value>
+    <Value>0.933254301548004</Value>
    </Parameter>
 
    <Parameter>
     <Index>117</Index>
     <Name>Quality factor 8</Name>
     <Symbol>q_8</Symbol>
-    <Value>0</Value>
+    <Value>0.699999988079071</Value>
    </Parameter>
 
    <Parameter>
@@ -5511,14 +5511,14 @@
     <Index>120</Index>
     <Name>Filter type 9</Name>
     <Symbol>ft_9</Symbol>
-    <Value>0</Value>
+    <Value>3</Value>
    </Parameter>
 
    <Parameter>
     <Index>121</Index>
     <Name>Filter mode 9</Name>
     <Symbol>fm_9</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -5546,7 +5546,7 @@
     <Index>125</Index>
     <Name>Frequency 9</Name>
     <Symbol>f_9</Symbol>
-    <Value>125</Value>
+    <Value>17000</Value>
    </Parameter>
 
    <Parameter>
@@ -5560,14 +5560,14 @@
     <Index>127</Index>
     <Name>Gain 9</Name>
     <Symbol>g_9</Symbol>
-    <Value>1</Value>
+    <Value>1.10917484760284</Value>
    </Parameter>
 
    <Parameter>
     <Index>128</Index>
     <Name>Quality factor 9</Name>
     <Symbol>q_9</Symbol>
-    <Value>0</Value>
+    <Value>0.699999988079071</Value>
    </Parameter>
 
    <Parameter>
@@ -21153,22 +21153,6 @@
    <Target>LSP Loudness Compensator Stereo:Input R</Target>
   </Connection>
   <Connection>
-   <Source>BTR7:Output L</Source>
-   <Target>LSP Loudness Compensator Stereo:Input L</Target>
-  </Connection>
-  <Connection>
-   <Source>BTR7:Output R</Source>
-   <Target>LSP Loudness Compensator Stereo:Input R</Target>
-  </Connection>
-  <Connection>
-   <Source>DBR-62 Standing:Output L</Source>
-   <Target>LSP Loudness Compensator Stereo:Input L</Target>
-  </Connection>
-  <Connection>
-   <Source>DBR-62 Standing:Output R</Source>
-   <Target>LSP Loudness Compensator Stereo:Input R</Target>
-  </Connection>
-  <Connection>
    <Source>DBR-62 Bed:Output L</Source>
    <Target>LSP Loudness Compensator Stereo:Input L</Target>
   </Connection>
@@ -21182,6 +21166,22 @@
   </Connection>
   <Connection>
    <Source>Buds2 Pro ANC:Output R</Source>
+   <Target>LSP Loudness Compensator Stereo:Input R</Target>
+  </Connection>
+  <Connection>
+   <Source>DBR-62 Standing:Output L</Source>
+   <Target>LSP Loudness Compensator Stereo:Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>DBR-62 Standing:Output R</Source>
+   <Target>LSP Loudness Compensator Stereo:Input R</Target>
+  </Connection>
+  <Connection>
+   <Source>BTR7:Output L</Source>
+   <Target>LSP Loudness Compensator Stereo:Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>BTR7:Output R</Source>
    <Target>LSP Loudness Compensator Stereo:Input R</Target>
   </Connection>
   <Connection>
@@ -21206,38 +21206,26 @@
    <Position x1="174" y1="602" x2="1049" y2="515">
     <Name>BLE MIDI 1</Name>
    </Position>
-   <Position x1="771" y1="345">
+   <Position x1="771" y1="345" pluginId="0">
     <Name>LSP Loudness Compensator Stereo</Name>
    </Position>
-   <Position x1="485" y1="269">
+   <Position x1="485" y1="269" pluginId="1">
     <Name>DBR-62</Name>
-   </Position>
-   <Position x1="485" y1="487">
-    <Name>R70x ISO Custom</Name>
-   </Position>
-   <Position x1="463" y1="597">
-    <Name>Virtual Surround</Name>
-   </Position>
-   <Position x1="485" y1="182">
-    <Name>Blessing 3 Custom</Name>
-   </Position>
-   <Position x1="485" y1="356">
-    <Name>DBR-62 Standing</Name>
-   </Position>
-   <Position x1="485" y1="443">
-    <Name>DBR-62 Bed</Name>
-   </Position>
-   <Position x1="485" y1="529">
-    <Name>Buds2 Pro ANC</Name>
-   </Position>
-   <Position x1="485" y1="615">
-    <Name>Buds2 Pro Passive</Name>
-   </Position>
-   <Position x1="219" y1="501">
-    <Name>Audio Gain (Stereo)</Name>
    </Position>
    <Position x1="485" y1="183" pluginId="2">
     <Name>BTR7</Name>
+   </Position>
+   <Position x1="485" y1="356" pluginId="3">
+    <Name>DBR-62 Standing</Name>
+   </Position>
+   <Position x1="485" y1="443" pluginId="4">
+    <Name>DBR-62 Bed</Name>
+   </Position>
+   <Position x1="485" y1="529" pluginId="5">
+    <Name>Buds2 Pro ANC</Name>
+   </Position>
+   <Position x1="485" y1="615" pluginId="6">
+    <Name>Buds2 Pro Passive</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>

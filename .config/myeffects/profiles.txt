@@ -1,3 +1,4 @@
 alsa_output.usb-FiiO_FiiO_BTR7-00.analog-stereo	BTR7
+alsa_output.usb-FiiO_FiiO_BTR7_ABCDEF0123456789-00.analog-stereo	BTR7
 alsa_output.usb-MOONDROP_MOONDROP_Dawn_Pro_MOONDROP_Dawn_Pro-00.analog-stereo	DBR-62
 bluez_output.B0_54_76_4E_67_7E.1	Buds2 Pro ANC
