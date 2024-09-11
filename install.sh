@@ -117,7 +117,7 @@ install_essential () {
         "socat" # for hyprland socket scripts
         "python-requests" # for wttr script
         "polkit-gnome" # auth dialogs
-        "swaylock-effects" # lock screen
+        "hyprlock" # lock screen
         "hypridle" # turn off screen
         "xorg-xrdb" # for .Xresources
         "xorg-xsetroot" # for cursor size stability

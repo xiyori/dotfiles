@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+# hyprlock
+~/.scripts/lock &
+
 # Policy Authentication Agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
