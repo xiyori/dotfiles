@@ -12,6 +12,6 @@ else
 fi
 
 if [ "$tooltip" == "" ]; then
-    tooltip="$(~/.scripts/audio/active_sink_nick.sh)"
+    tooltip="$(hyprctl splash)"
 fi
 echo "$tooltip"
