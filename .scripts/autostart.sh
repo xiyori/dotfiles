@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # hyprlock
-~/.scripts/lock &
+{ ~/.scripts/lock || hyprctl dispatch exit ; } &
 
 # Policy Authentication Agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &

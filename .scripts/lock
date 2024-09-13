@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-hyprctl switchxkblayout glorious-gmmk-pro-ansi 0 && hyprlock || hyprctl dispatch exit
+hyprctl switchxkblayout glorious-gmmk-pro-ansi 0 && hyprlock
