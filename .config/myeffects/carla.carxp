@@ -2927,7 +2927,7 @@
     <Index>442</Index>
     <Name>Filter type Left 19</Name>
     <Symbol>ftl_19</Symbol>
-    <Value>0</Value>
+    <Value>3</Value>
    </Parameter>
 
    <Parameter>
@@ -2962,7 +2962,7 @@
     <Index>447</Index>
     <Name>Frequency Left 19</Name>
     <Symbol>fl_19</Symbol>
-    <Value>1000</Value>
+    <Value>5500</Value>
    </Parameter>
 
    <Parameter>
@@ -2976,14 +2976,14 @@
     <Index>449</Index>
     <Name>Gain Left 19</Name>
     <Symbol>gl_19</Symbol>
-    <Value>1</Value>
+    <Value>0.86099374294281</Value>
    </Parameter>
 
    <Parameter>
     <Index>450</Index>
     <Name>Quality factor Left 19</Name>
     <Symbol>ql_19</Symbol>
-    <Value>0.707109987735748</Value>
+    <Value>0.699999988079071</Value>
    </Parameter>
 
    <Parameter>
@@ -3067,7 +3067,7 @@
     <Index>464</Index>
     <Name>Filter type Left 20</Name>
     <Symbol>ftl_20</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -3102,7 +3102,7 @@
     <Index>469</Index>
     <Name>Frequency Left 20</Name>
     <Symbol>fl_20</Symbol>
-    <Value>1000</Value>
+    <Value>19400</Value>
    </Parameter>
 
    <Parameter>
@@ -3116,14 +3116,14 @@
     <Index>471</Index>
     <Name>Gain Left 20</Name>
     <Symbol>gl_20</Symbol>
-    <Value>1</Value>
+    <Value>1.60324537754059</Value>
    </Parameter>
 
    <Parameter>
     <Index>472</Index>
     <Name>Quality factor Left 20</Name>
     <Symbol>ql_20</Symbol>
-    <Value>0.707109987735748</Value>
+    <Value>1.5</Value>
    </Parameter>
 
    <Parameter>
@@ -3137,7 +3137,7 @@
     <Index>475</Index>
     <Name>Filter type Right 20</Name>
     <Symbol>ftr_20</Symbol>
-    <Value>0</Value>
+    <Value>3</Value>
    </Parameter>
 
    <Parameter>
@@ -3172,7 +3172,7 @@
     <Index>480</Index>
     <Name>Frequency Right 20</Name>
     <Symbol>fr_20</Symbol>
-    <Value>1000</Value>
+    <Value>5000</Value>
    </Parameter>
 
    <Parameter>
@@ -3186,14 +3186,14 @@
     <Index>482</Index>
     <Name>Gain Right 20</Name>
     <Symbol>gr_20</Symbol>
-    <Value>1</Value>
+    <Value>0.86099374294281</Value>
    </Parameter>
 
    <Parameter>
     <Index>483</Index>
     <Name>Quality factor Right 20</Name>
     <Symbol>qr_20</Symbol>
-    <Value>0.707109987735748</Value>
+    <Value>0.699999988079071</Value>
    </Parameter>
 
    <Parameter>
@@ -3214,7 +3214,7 @@
     <Index>487</Index>
     <Name>Filter mode Left 21</Name>
     <Symbol>fml_21</Symbol>
-    <Value>6</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -3242,7 +3242,7 @@
     <Index>491</Index>
     <Name>Frequency Left 21</Name>
     <Symbol>fl_21</Symbol>
-    <Value>1000</Value>
+    <Value>177.739379882812</Value>
    </Parameter>
 
    <Parameter>
@@ -3256,14 +3256,14 @@
     <Index>493</Index>
     <Name>Gain Left 21</Name>
     <Symbol>gl_21</Symbol>
-    <Value>1</Value>
+    <Value>0.276057779788971</Value>
    </Parameter>
 
    <Parameter>
     <Index>494</Index>
     <Name>Quality factor Left 21</Name>
     <Symbol>ql_21</Symbol>
-    <Value>0.707109987735748</Value>
+    <Value>0.5</Value>
    </Parameter>
 
    <Parameter>
@@ -3277,7 +3277,7 @@
     <Index>497</Index>
     <Name>Filter type Right 21</Name>
     <Symbol>ftr_21</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -3312,7 +3312,7 @@
     <Index>502</Index>
     <Name>Frequency Right 21</Name>
     <Symbol>fr_21</Symbol>
-    <Value>1000</Value>
+    <Value>20000</Value>
    </Parameter>
 
    <Parameter>
@@ -3326,14 +3326,14 @@
     <Index>504</Index>
     <Name>Gain Right 21</Name>
     <Symbol>gr_21</Symbol>
-    <Value>1</Value>
+    <Value>1.62181007862091</Value>
    </Parameter>
 
    <Parameter>
     <Index>505</Index>
     <Name>Quality factor Right 21</Name>
     <Symbol>qr_21</Symbol>
-    <Value>0.707109987735748</Value>
+    <Value>1.39999997615814</Value>
    </Parameter>
 
    <Parameter>
@@ -3452,7 +3452,7 @@
     <Index>524</Index>
     <Name>Frequency Right 22</Name>
     <Symbol>fr_22</Symbol>
-    <Value>2587.7900390625</Value>
+    <Value>236.183792114258</Value>
    </Parameter>
 
    <Parameter>
@@ -3466,14 +3466,14 @@
     <Index>526</Index>
     <Name>Gain Right 22</Name>
     <Symbol>gr_22</Symbol>
-    <Value>1</Value>
+    <Value>0.38106581568718</Value>
    </Parameter>
 
    <Parameter>
     <Index>527</Index>
     <Name>Quality factor Right 22</Name>
     <Symbol>qr_22</Symbol>
-    <Value>4.3600001335144</Value>
+    <Value>0.5</Value>
    </Parameter>
 
    <Parameter>
@@ -21153,6 +21153,22 @@
    <Target>LSP Loudness Compensator Stereo:Input R</Target>
   </Connection>
   <Connection>
+   <Source>BTR7:Output L</Source>
+   <Target>LSP Loudness Compensator Stereo:Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>BTR7:Output R</Source>
+   <Target>LSP Loudness Compensator Stereo:Input R</Target>
+  </Connection>
+  <Connection>
+   <Source>DBR-62 Standing:Output L</Source>
+   <Target>LSP Loudness Compensator Stereo:Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>DBR-62 Standing:Output R</Source>
+   <Target>LSP Loudness Compensator Stereo:Input R</Target>
+  </Connection>
+  <Connection>
    <Source>DBR-62 Bed:Output L</Source>
    <Target>LSP Loudness Compensator Stereo:Input L</Target>
   </Connection>
@@ -21166,22 +21182,6 @@
   </Connection>
   <Connection>
    <Source>Buds2 Pro ANC:Output R</Source>
-   <Target>LSP Loudness Compensator Stereo:Input R</Target>
-  </Connection>
-  <Connection>
-   <Source>DBR-62 Standing:Output L</Source>
-   <Target>LSP Loudness Compensator Stereo:Input L</Target>
-  </Connection>
-  <Connection>
-   <Source>DBR-62 Standing:Output R</Source>
-   <Target>LSP Loudness Compensator Stereo:Input R</Target>
-  </Connection>
-  <Connection>
-   <Source>BTR7:Output L</Source>
-   <Target>LSP Loudness Compensator Stereo:Input L</Target>
-  </Connection>
-  <Connection>
-   <Source>BTR7:Output R</Source>
    <Target>LSP Loudness Compensator Stereo:Input R</Target>
   </Connection>
   <Connection>
@@ -21226,6 +21226,9 @@
    </Position>
    <Position x1="485" y1="615" pluginId="6">
     <Name>Buds2 Pro Passive</Name>
+   </Position>
+   <Position x1="632" y1="741" x2="1187" y2="721">
+    <Name>GA102 High Definition Audio Controller Digital Stereo (HDMI)</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>
