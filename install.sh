@@ -21,8 +21,8 @@ install_yay () {
         echo "yay is installed"
     else
         echo "yay is not installed, installing now"
-        git clone https://aur.archlinux.org/yay-git.git yay-git
-        cd yay-git
+        git clone https://aur.archlinux.org/yay.git yay
+        cd yay
         makepkg -si
         cd ..
         echo "yay has been installed"
