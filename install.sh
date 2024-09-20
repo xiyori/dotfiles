@@ -172,7 +172,7 @@ install_essential () {
     echo "snd-virmidi" | sudo tee -a /etc/modules-load.d/virmidi.conf > /dev/null
 
     # For the proper starting of terminal apps from GTK
-    sudo ln -s "$(pwd)/xdg-terminal-exec" /usr/bin/xdg-terminal-exec
+    sudo ln -s "$(pwd)/.scripts/xdg-terminal-exec" /usr/bin/xdg-terminal-exec
     
     # gsettings
     gsettings set org.gnome.desktop.interface gtk-theme 'catppuccin-mocha-mauve-standard+default-dark'
@@ -288,7 +288,6 @@ install_extra () {
         "cups"
         "cups-pdf"
         "nss-mdns"
-        "avahi"
         "joplin-appimage"
     )
     install "${packages[@]}"
@@ -302,11 +301,15 @@ install_extra () {
     _create_symlink .config/GIMP/2.10/toolrc
 
     sudo rm /etc/greetd/config.toml
-    sudo ln -s "$(pwd)/config.toml" /etc/greetd/config.toml
-    sudo rm /etc/systemd/resolved.conf
-    sudo ln -s "$(pwd)/resolved.conf" /etc/systemd/resolved.conf
+    sudo ln -s "$(pwd)/configs/config.toml" /etc/greetd/config.toml
+    
+    sudo mkdir /etc/systemd/resolved.conf.d
+    sudo cp configs/20-dns-servers.conf /etc/systemd/resolved.conf.d/
+
     sudo rm /etc/resolv.conf
     sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+    
+    sudo ln -s "$(pwd)/configs/90-dns-over-tls.conf" /etc/NetworkManager/conf.d/90-dns-over-tls.conf
 
     # Services
     sudo systemctl enable greetd.service
