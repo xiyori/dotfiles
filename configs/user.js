@@ -286,7 +286,7 @@ user_pref("browser.newtabpage.activity-stream.default.sites", "");
 
 user_pref("browser.tabs.insertAfterCurrent", false); // New Tab insertion
 
-user_pref("full-screen-api.ignore-widgets", true); // Fake Fullscreen
+//user_pref("full-screen-api.ignore-widgets", true); // Fake Fullscreen
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *

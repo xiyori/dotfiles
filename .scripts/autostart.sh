@@ -14,6 +14,7 @@ dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT
 ~/.scripts/audio/startup.sh
 
 # waybar
+ln -s $XDG_RUNTIME_DIR/hypr /tmp/hypr
 echo "" > /tmp/custom_monitor_waybar
 ~/.scripts/launch_waybar &
 

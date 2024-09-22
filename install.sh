@@ -241,7 +241,7 @@ install_optional () {
     mkdir -p ~/.local/share/icons
     ln -s "$(pwd)/assets/placeholder.png" ~/.local/state/cmus_status/placeholder.png
     ln -s "$(pwd)/assets/cmus.svg" ~/.local/share/icons/cmus.svg
-    desktop-file-install --dir=$HOME/.local/share/applications cmus.desktop
+    desktop-file-install --dir=$HOME/.local/share/applications configs/cmus.desktop
 
     # App themes
     git clone https://github.com/catppuccin/bat.git "$(bat --config-dir)"
