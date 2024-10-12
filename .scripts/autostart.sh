@@ -30,4 +30,4 @@ xsetroot -xcf "/usr/share/icons/$XCURSOR_THEME/cursors/left_ptr" $XCURSOR_SIZE
 # applets
 blueman-applet &
 nm-applet &
-wlsunset -l 56.2 -L 36.3 & disown
+wlsunset -l 56.2 -L 36.3 > /dev/null 2>&1 & disown

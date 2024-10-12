@@ -1,0 +1,4 @@
+$if Bash
+# Control Backspace
+"\C-H": "\x1b\x7f"
+$endif
