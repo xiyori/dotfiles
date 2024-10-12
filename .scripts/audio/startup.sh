@@ -10,7 +10,7 @@ if [[ "$(wpctl status | grep "\. myeffects_sink")" =~ $regex ]]; then
     wpctl set-volume @DEFAULT_AUDIO_SINK@ 1
     echo 4D > /tmp/loudness  # 65db initial loudness
     if ! pgrep carla ; then
-        nohup carla ~/.config/myeffects/carla.carxp > /dev/null 2>&1 &
+        carla ~/.config/myeffects/carla.carxp > /tmp/carla.log 2>&1 & disown
     fi
 else
     echo "audio effects startup failed"

@@ -19,7 +19,7 @@ echo "" > /tmp/custom_monitor_waybar
 ~/.scripts/launch_waybar &
 
 # wallpaper
-nohup swww-daemon &
+swww-daemon > /tmp/swww.log 2>&1 & disown
 swww img "$WALLPAPER1" -t none
 
 # other
@@ -30,4 +30,4 @@ xsetroot -xcf "/usr/share/icons/$XCURSOR_THEME/cursors/left_ptr" $XCURSOR_SIZE
 # applets
 blueman-applet &
 nm-applet &
-wlsunset -l 56.2 -L 36.3 &
+wlsunset -l 56.2 -L 36.3 & disown
