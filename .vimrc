@@ -18,7 +18,7 @@ vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <C-r><C-o>+
-imap <C-BS> <C-W>
+nnoremap <BS> a<C-W>
 nnoremap <C-z> :u<CR>
 inoremap <C-z> <C-o>:u<CR>
 "Remove all trailing whitespace by pressing F5

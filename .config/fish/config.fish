@@ -10,6 +10,4 @@ if status is-interactive
     set fish_greeting
 
     set VIRTUAL_ENV_DISABLE_PROMPT 1
-
-    bind \b 'backward-kill-word'
 end

@@ -29,7 +29,7 @@ save_to_clipboard = true
 [keyboard]
 bindings = [
 { key = "V", mods = "Control", action = "Paste" },
-# { key = "Backspace", mods = "Control", chars = "\u001b\u007f" },
+{ key = "Backspace", mods = "Control", chars = "\u001b\u007f" },
 { key = "Delete", mods = "Control", chars = "\u001bd" },
 ]
 
