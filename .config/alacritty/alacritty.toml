@@ -1,6 +1,9 @@
+[general]
 import = [
     "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
 ]
+
+[terminal]
 shell = "fish"
 
 [window]
