@@ -1,8 +1,9 @@
 #!/bin/bash
 
-~/.scripts/audio/remove_old_profile.sh "myeffects_sink:monitor_FL"
-~/.scripts/audio/remove_old_profile.sh "myeffects_sink:monitor_FR"
+output_node="LSP Loudness Compensator Stereo"
+~/.scripts/audio/remove_old_profile.sh "${output_node}:Output L"
+~/.scripts/audio/remove_old_profile.sh "${output_node}:Output R"
 
 profile="$1"
-pw-link "myeffects_sink:monitor_FL" "${profile}:Input L"
-pw-link "myeffects_sink:monitor_FR" "${profile}:Input R"
+pw-link "${output_node}:Output L" "${profile}:Input L"
+pw-link "${output_node}:Output R" "${profile}:Input R"

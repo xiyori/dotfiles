@@ -11,7 +11,7 @@ if ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&
     exit 0
 fi
 
-~/.scripts/audio/detect_sink_change.sh
+# ~/.scripts/audio/detect_sink_change.sh
 
 volume="0x$(cat /tmp/loudness)"
 volume="$(printf "%d" "$volume")"
