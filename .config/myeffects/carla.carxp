@@ -183,7 +183,7 @@
     <Index>7</Index>
     <Name>Filter select</Name>
     <Symbol>fsel</Symbol>
-    <Value>6</Value>
+    <Value>4</Value>
    </Parameter>
 
    <Parameter>
@@ -3256,7 +3256,7 @@
     <Index>492</Index>
     <Name>Filter mute Left 21</Name>
     <Symbol>xml_21</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -3326,7 +3326,7 @@
     <Index>503</Index>
     <Name>Filter mute Right 21</Name>
     <Symbol>xmr_21</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
