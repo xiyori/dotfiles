@@ -98,3 +98,5 @@ pactl set-sink-volume "$new_active_sink" 100%
 pkill -RTMIN+1 waybar
 
 notify-send --expire-time 3000 "Audio: $(~/.scripts/audio/active_sink_nick.sh)"
+
+unlock

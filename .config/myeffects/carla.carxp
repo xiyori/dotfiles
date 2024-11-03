@@ -148,7 +148,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.0562341213226318</Value>
+    <Value>0.281838297843933</Value>
    </Parameter>
 
    <Parameter>
@@ -4809,7 +4809,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.00794328562915325</Value>
+    <Value>0.0501187182962894</Value>
    </Parameter>
 
    <Parameter>
@@ -4844,7 +4844,7 @@
     <Index>7</Index>
     <Name>Filter select</Name>
     <Symbol>fsel</Symbol>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -5495,14 +5495,14 @@
     <Index>112</Index>
     <Name>Filter mode 8</Name>
     <Symbol>fm_8</Symbol>
-    <Value>2</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
     <Index>113</Index>
     <Name>Filter slope 8</Name>
     <Symbol>s_8</Symbol>
-    <Value>3</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -5523,7 +5523,7 @@
     <Index>116</Index>
     <Name>Frequency 8</Name>
     <Symbol>f_8</Symbol>
-    <Value>80</Value>
+    <Value>14000</Value>
    </Parameter>
 
    <Parameter>
@@ -5537,14 +5537,14 @@
     <Index>118</Index>
     <Name>Gain 8</Name>
     <Symbol>g_8</Symbol>
-    <Value>1</Value>
+    <Value>0.630957365036011</Value>
    </Parameter>
 
    <Parameter>
     <Index>119</Index>
     <Name>Quality factor 8</Name>
     <Symbol>q_8</Symbol>
-    <Value>0</Value>
+    <Value>1.29999995231628</Value>
    </Parameter>
 
    <Parameter>
@@ -5558,7 +5558,7 @@
     <Index>122</Index>
     <Name>Filter type 9</Name>
     <Symbol>ft_9</Symbol>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -5593,7 +5593,7 @@
     <Index>127</Index>
     <Name>Frequency 9</Name>
     <Symbol>f_9</Symbol>
-    <Value>1600</Value>
+    <Value>14000</Value>
    </Parameter>
 
    <Parameter>
@@ -5607,14 +5607,14 @@
     <Index>129</Index>
     <Name>Gain 9</Name>
     <Symbol>g_9</Symbol>
-    <Value>0.966050863265991</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>130</Index>
     <Name>Quality factor 9</Name>
     <Symbol>q_9</Symbol>
-    <Value>3</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -5628,14 +5628,14 @@
     <Index>133</Index>
     <Name>Filter type 10</Name>
     <Symbol>ft_10</Symbol>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
     <Index>134</Index>
     <Name>Filter mode 10</Name>
     <Symbol>fm_10</Symbol>
-    <Value>6</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -5663,7 +5663,7 @@
     <Index>138</Index>
     <Name>Frequency 10</Name>
     <Symbol>f_10</Symbol>
-    <Value>3200</Value>
+    <Value>160</Value>
    </Parameter>
 
    <Parameter>
@@ -5677,14 +5677,14 @@
     <Index>140</Index>
     <Name>Gain 10</Name>
     <Symbol>g_10</Symbol>
-    <Value>1.24451458454132</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>141</Index>
     <Name>Quality factor 10</Name>
     <Symbol>q_10</Symbol>
-    <Value>1.29999995231628</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -5698,14 +5698,14 @@
     <Index>144</Index>
     <Name>Filter type 11</Name>
     <Symbol>ft_11</Symbol>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
     <Index>145</Index>
     <Name>Filter mode 11</Name>
     <Symbol>fm_11</Symbol>
-    <Value>6</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -5733,7 +5733,7 @@
     <Index>149</Index>
     <Name>Frequency 11</Name>
     <Symbol>f_11</Symbol>
-    <Value>4600</Value>
+    <Value>200</Value>
    </Parameter>
 
    <Parameter>
@@ -5747,14 +5747,14 @@
     <Index>151</Index>
     <Name>Gain 11</Name>
     <Symbol>g_11</Symbol>
-    <Value>0.954992592334747</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>152</Index>
     <Name>Quality factor 11</Name>
     <Symbol>q_11</Symbol>
-    <Value>6</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -5768,14 +5768,14 @@
     <Index>155</Index>
     <Name>Filter type 12</Name>
     <Symbol>ft_12</Symbol>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
     <Index>156</Index>
     <Name>Filter mode 12</Name>
     <Symbol>fm_12</Symbol>
-    <Value>6</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -5803,7 +5803,7 @@
     <Index>160</Index>
     <Name>Frequency 12</Name>
     <Symbol>f_12</Symbol>
-    <Value>6000</Value>
+    <Value>250</Value>
    </Parameter>
 
    <Parameter>
@@ -5817,14 +5817,14 @@
     <Index>162</Index>
     <Name>Gain 12</Name>
     <Symbol>g_12</Symbol>
-    <Value>0.954992592334747</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>163</Index>
     <Name>Quality factor 12</Name>
     <Symbol>q_12</Symbol>
-    <Value>3</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -5873,7 +5873,7 @@
     <Index>171</Index>
     <Name>Frequency 13</Name>
     <Symbol>f_13</Symbol>
-    <Value>29.1186180114746</Value>
+    <Value>315</Value>
    </Parameter>
 
    <Parameter>
@@ -5887,14 +5887,14 @@
     <Index>173</Index>
     <Name>Gain 13</Name>
     <Symbol>g_13</Symbol>
-    <Value>0.416503071784973</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>174</Index>
     <Name>Quality factor 13</Name>
     <Symbol>q_13</Symbol>
-    <Value>0.5</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -9595,11 +9595,11 @@
    <Position x1="267" y1="339">
     <Name>myeffects_sink</Name>
    </Position>
-   <Position x1="1036" y1="601" x2="1109" y2="378">
-    <Name>USB-C to 3.5mm Headphone Jack Adapter Analog Stereo</Name>
-   </Position>
    <Position x1="775" y1="896" x2="1166" y2="461">
     <Name>MOONDROP Dawn Pro Analog Stereo</Name>
+   </Position>
+   <Position x1="1036" y1="601" x2="1109" y2="378">
+    <Name>USB-C to 3.5mm Headphone Jack Adapter Analog Stereo</Name>
    </Position>
    <Position x1="1049" y1="145" x2="1137" y2="252">
     <Name>GA102 High Definition Audio Controller Digital Stereo (HDMI)</Name>
