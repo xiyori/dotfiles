@@ -1,2 +1,2 @@
-alsa_output.usb-Apple__Inc._USB-C_to_3.5mm_Headphone_Jack_Adapter_DWH31320DN0JKLTAY-00.analog-stereo	SB-1000
+alsa_output.usb-SMSL_SMSL_USB_AUDIO-00.analog-stereo	DBR-62
 alsa_output.usb-MOONDROP_MOONDROP_Dawn_Pro_MOONDROP_Dawn_Pro-00.analog-stereo	Blessing 3
