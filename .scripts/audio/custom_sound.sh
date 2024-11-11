@@ -16,7 +16,7 @@ fi
 volume="0x$(cat /tmp/loudness)"
 volume="$(printf "%d" "$volume")"
 volume=$(((volume - 127) / 2 + 90))
-sink="$(~/.scripts/audio/get_active_sink.sh)"
+sink="$(~/.scripts/audio/list_active_sinks.sh | head -1)"
 nick="$(~/.scripts/audio/active_sink_nick.sh)"
 
 artist=$(playerctl metadata 2> /dev/null | grep xesam:artist)

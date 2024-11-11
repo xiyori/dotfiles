@@ -16,7 +16,9 @@ case "$1" in
     delta="-0x0a"
   ;;
   mute)
-    pactl set-sink-mute "$(~/.scripts/audio/get_active_sink.sh)" toggle
+    for active_sink in $(~/.scripts/audio/list_active_sinks.sh) ; do
+        pactl set-sink-mute "$active_sink" toggle
+    done
     exit 0
   ;;
 esac

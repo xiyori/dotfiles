@@ -40,28 +40,18 @@ if ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&
     exit 0
 fi
 
-active_sink="$(~/.scripts/audio/get_active_sink.sh)"
+active_sinks="$(~/.scripts/audio/list_active_sinks.sh)"
 new_active_sink="$1"
 
 # Disconnect profile from loudness 
 ~/.scripts/audio/remove_output_links.sh "${output_node}:Output L"
 ~/.scripts/audio/remove_output_links.sh "${output_node}:Output R"
 
-# Disconnect profile from sink
-~/.scripts/audio/remove_input_links.sh "${active_sink}:playback_FL"
-~/.scripts/audio/remove_input_links.sh "${active_sink}:playback_FR"
-
-# Disconnect sub profile and sink if any
-sub_profile="$(cat ~/.config/myeffects/sub_profiles.txt | grep "^$active_sink")"
-if [ -n "$sub_profile" ]; then
-    sub_sink="$(echo "$sub_profile" | cut -f 2)"
-
-    ~/.scripts/audio/remove_output_links.sh "${output_node}:Output L"
-    ~/.scripts/audio/remove_output_links.sh "${output_node}:Output R"
-
-    ~/.scripts/audio/remove_input_links.sh "${sub_sink}:playback_FL"
-    ~/.scripts/audio/remove_input_links.sh "${sub_sink}:playback_FR"
-fi
+# Disconnect profile from sink(s)
+for active_sink in $active_sinks ; do
+    ~/.scripts/audio/remove_input_links.sh "${active_sink}:playback_FL"
+    ~/.scripts/audio/remove_input_links.sh "${active_sink}:playback_FR"
+done
 
 profile="$(cat ~/.config/myeffects/profiles.txt | grep "$new_active_sink" | cut -f 2)"
 if [ -z "$profile" ]; then

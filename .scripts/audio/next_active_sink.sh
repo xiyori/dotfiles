@@ -10,16 +10,20 @@
 # TODO: Trigger a zenity or dmenu dialog with entr that asks whether to switch monitor and/or sound to hdmi? Could do
 # the same for mounting.
 
-active_sink="$(~/.scripts/audio/get_active_sink.sh)"
+active_sinks="$(~/.scripts/audio/list_active_sinks.sh)"
 for sink in $(~/.scripts/audio/list_sinks.sh) ; do
     [ -z "$first" ] && first="$sink" # Save the first index in case the current default is the last in the list
-    if [ "$sink" == "$active_sink" ]; then
-        next=1;
     # Subsequent pass, don't need continue above
-    elif [ -n "$next" ]; then
+    if [ -n "$next" ]; then
         new_active_sink="$sink"
         break
     fi
+    for active_sink in $active_sinks ; do
+        if [ "$sink" == "$active_sink" ]; then
+            next=1
+            break
+        fi
+    done
 done
 
 # Don't particularly like this method of making it circular, but...

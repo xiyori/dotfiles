@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -n "$(~/.scripts/audio/get_active_sink.sh)" ]; then
+if [ -n "$(~/.scripts/audio/list_active_sinks.sh)" ]; then
     exit 0
 fi
 
