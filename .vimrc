@@ -14,6 +14,7 @@ set list
 set completeopt=menu,menuone
 set iskeyword-=_
 setlocal spell spelllang=en_us
+command! Vb normal! <C-v>
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
