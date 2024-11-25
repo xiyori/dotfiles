@@ -267,6 +267,7 @@ install_extra () {
         "sshfs"
         "libreoffice-still"
         "libreoffice-still-ru"
+        "networkmanager-openconnect"
         "code"
         "code-features"
         "wireguard-tools"
@@ -287,6 +288,7 @@ install_extra () {
         "obs-studio"
         "cups"
         "cups-pdf"
+        "system-config-printer"
         "nss-mdns"
         "joplin-appimage"
     )
@@ -314,6 +316,7 @@ install_extra () {
     # Services
     sudo systemctl enable greetd.service
     sudo systemctl enable systemd-resolved.service
+    sudo systemctl enable cups.socket
 }
 
 if [[ "$#" > 2 ]]; then
