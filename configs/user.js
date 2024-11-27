@@ -18,7 +18,7 @@
  * SECTION: FASTFOX                                                         *
 ****************************************************************************/
 /** GENERAL ***/
-user_pref("content.notify.interval", 100000);
+user_pref("content.notify.interval", 1000);
 
 /** GFX ***/
 user_pref("gfx.canvas.accelerated.cache-items", 4096);
@@ -29,12 +29,12 @@ user_pref("gfx.content.skia-font-cache-size", 20);
 user_pref("browser.cache.jsbc_compression_level", 3);
 
 /** MEDIA CACHE ***/
-user_pref("media.memory_cache_max_size", 65536);
+user_pref("media.memory_cache_max_size", 1048576);
 user_pref("media.cache_readahead_limit", 7200);
 user_pref("media.cache_resume_threshold", 3600);
 
 /** IMAGE CACHE ***/
-user_pref("image.mem.decode_bytes_at_a_time", 32768);
+user_pref("image.mem.decode_bytes_at_a_time", 65536);
 
 /** NETWORK ***/
 user_pref("network.http.max-connections", 1800);
@@ -81,7 +81,7 @@ user_pref("security.tls.enable_0rtt_data", false);
 
 /** DISK AVOIDANCE ***/
 user_pref("browser.privatebrowsing.forceMediaMemoryCache", true);
-user_pref("browser.sessionstore.interval", 60000);
+user_pref("browser.sessionstore.interval", 600000);
 
 /** SHUTDOWN & SANITIZING ***/
 user_pref("privacy.history.custom", true);
@@ -244,6 +244,35 @@ user_pref("extensions.formautofill.creditCards.enabled", false);
 
 // PREF: disable disk cache
 user_pref("browser.cache.disk.enable", false);
+user_pref("browser.cache.disk.metadata_memory_limit", 1000);
+user_pref("browser.cache.frecency_half_life_hours", 12);
+user_pref("browser.cache.memory.capacity", 8388608);
+user_pref("browser.cache.memory.max_entry_size", 102400);
+user_pref("browser.low_commit_space_threshold_mb", 84480);
+user_pref("image.cache.size", 10485760);
+user_pref("image.mem.shared.unmap.min_expiration_ms", 120000);
+user_pref("media.cache_readahead_limit", 7200);
+user_pref("media.cache_readahead_limit.cellular", 3600);
+user_pref("media.cache_size", 5120000);
+user_pref("media.memory_caches_combined_limit_kb", 2097152);
+user_pref("media.memory_caches_combined_limit_pc_sysmem", 20);
+user_pref("network.buffer.cache.count", 128);
+user_pref("network.buffer.cache.size", 262144);
+user_pref("network.dnsCacheEntries", 1000);
+user_pref("network.dnsCacheExpirationGracePeriod", 240);
+
+// PREF: use more gpu resources
+user_pref("gfx-shader-check.ptr-size", 8);
+user_pref("gfx.canvas.accelerated.force-enabled", true);
+user_pref("gfx.canvas.accelerated.gpu-path-size", 8);
+user_pref("gfx.webgpu.force-dom.webgpu.indirect-dispatch.enabled", true);
+user_pref("gfx.webgpu.force-enabled", true);
+user_pref("gfx.webrender.all", true);
+user_pref("gfx.webrender.compositor.force-enabled", true);
+user_pref("gfx.webrender.precache-shaders", true);
+user_pref("gfx.webrender.software.d3d11", false);
+user_pref("gfx.webrender.super-resolution.nvidia", true);
+user_pref("media.hardware-video-decoding.force-enabled", true);
 
 // PREF: enforce certificate pinning
 // [ERROR] MOZILLA_PKIX_ERROR_KEY_PINNING_FAILURE
