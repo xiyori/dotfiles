@@ -7,6 +7,8 @@ if status is-interactive
     source /usr/share/powerline/bindings/fish/powerline-setup.fish
     powerline-setup
 
+    alias yay_tor="env https_proxy=socks5://127.0.0.1:9050 http_proxy=socks5h://127.0.0.1:9050 yay"
+
     set fish_greeting
 
     set VIRTUAL_ENV_DISABLE_PROMPT 1

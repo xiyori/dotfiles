@@ -9,19 +9,20 @@ if [ ! -f /etc/arch-release ]; then
 fi
 
 # Calculate updates for each service
-AUR=$(yay -Qua | wc -l)
+# AUR=$(yay -Qua | wc -l)
 OFFICIAL=$(checkupdates | wc -l)
 
 # If the parameter is "update", update all services
 if [ "$1" = "update" ]; then
-    alacritty -e yay -Syu --devel
+    alacritty -e sudo pacman -Syu
     pkill -RTMIN+4 waybar
 fi
 
 # If there aren't any parameters, return the total number of updates
 if [ "$1" = "" ]; then
     # Calculate total number of updates
-    COUNT=$((OFFICIAL+AUR))
+    # COUNT=$((OFFICIAL+AUR))
+    COUNT=$OFFICIAL
     # If there are updates, the script will output the following:   Updates
     # If there are no updates, the script will output nothing.
 
