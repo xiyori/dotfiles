@@ -291,6 +291,7 @@ install_extra () {
         "system-config-printer"
         "nss-mdns"
         "joplin-appimage"
+        "rnote"
     )
     install "${packages[@]}"
 
