@@ -10,6 +10,10 @@
   <UIBridgesTimeout>4000</UIBridgesTimeout>
  </EngineSettings>
 
+ <Transport>
+  <BeatsPerMinute>120</BeatsPerMinute>
+ </Transport>
+
  <!-- LSP Loudness Compensator Stereo -->
  <Plugin>
   <Info>
@@ -10294,6 +10298,2406 @@
   </Data>
  </Plugin>
 
+ <!-- LSP Parametric Equalizer x32 Stereo -->
+ <Plugin>
+  <Info>
+   <Type>LV2</Type>
+   <Name>Buds2 Pro ANC</Name>
+   <URI>http://lsp-plug.in/plugins/lv2/para_equalizer_x32_stereo</URI>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x1</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Enabled</Name>
+    <Symbol>enabled</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Input gain</Name>
+    <Symbol>g_in</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Output gain</Name>
+    <Symbol>g_out</Symbol>
+    <Value>0.0501187182962894</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>3</Index>
+    <Name>Equalizer mode</Name>
+    <Symbol>mode</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>4</Index>
+    <Name>FFT reactivity</Name>
+    <Symbol>react</Symbol>
+    <Value>0.200000002980232</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>5</Index>
+    <Name>Shift gain</Name>
+    <Symbol>shift</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>6</Index>
+    <Name>Graph zoom</Name>
+    <Symbol>zoom</Symbol>
+    <Value>0.0158489290624857</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>7</Index>
+    <Name>Filter select</Name>
+    <Symbol>fsel</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>8</Index>
+    <Name>Inspected filter identifier</Name>
+    <Symbol>insp_id</Symbol>
+    <Value>-1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>9</Index>
+    <Name>Inspect frequency range</Name>
+    <Symbol>insp_r</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>10</Index>
+    <Name>Automatically inspect filter when editing</Name>
+    <Symbol>insp_on</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>11</Index>
+    <Name>Input FFT graph enable Left</Name>
+    <Symbol>ife_l</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>12</Index>
+    <Name>Output FFT graph enable Left</Name>
+    <Symbol>ofe_l</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>13</Index>
+    <Name>Return FFT graph enable Left</Name>
+    <Symbol>rfe_l</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>14</Index>
+    <Name>Input FFT graph enable Right</Name>
+    <Symbol>ife_r</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>15</Index>
+    <Name>Output FFT graph enable Right</Name>
+    <Symbol>ofe_r</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>16</Index>
+    <Name>Return FFT graph enable Right</Name>
+    <Symbol>rfe_r</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>17</Index>
+    <Name>Output balance</Name>
+    <Symbol>bal</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>18</Index>
+    <Name>Frequency shift</Name>
+    <Symbol>frqs</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>23</Index>
+    <Name>Filter type 0</Name>
+    <Symbol>ft_0</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>24</Index>
+    <Name>Filter mode 0</Name>
+    <Symbol>fm_0</Symbol>
+    <Value>6</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>25</Index>
+    <Name>Filter slope 0</Name>
+    <Symbol>s_0</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>26</Index>
+    <Name>Filter solo 0</Name>
+    <Symbol>xs_0</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>27</Index>
+    <Name>Filter mute 0</Name>
+    <Symbol>xm_0</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>28</Index>
+    <Name>Frequency 0</Name>
+    <Symbol>f_0</Symbol>
+    <Value>150</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>29</Index>
+    <Name>Filter Width 0</Name>
+    <Symbol>w_0</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>30</Index>
+    <Name>Gain 0</Name>
+    <Symbol>g_0</Symbol>
+    <Value>1.20226442813873</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>31</Index>
+    <Name>Quality factor 0</Name>
+    <Symbol>q_0</Symbol>
+    <Value>0.5</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>32</Index>
+    <Name>Hue 0</Name>
+    <Symbol>hue_0</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>34</Index>
+    <Name>Filter type 1</Name>
+    <Symbol>ft_1</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>35</Index>
+    <Name>Filter mode 1</Name>
+    <Symbol>fm_1</Symbol>
+    <Value>6</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>36</Index>
+    <Name>Filter slope 1</Name>
+    <Symbol>s_1</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>37</Index>
+    <Name>Filter solo 1</Name>
+    <Symbol>xs_1</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>38</Index>
+    <Name>Filter mute 1</Name>
+    <Symbol>xm_1</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>39</Index>
+    <Name>Frequency 1</Name>
+    <Symbol>f_1</Symbol>
+    <Value>490</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>40</Index>
+    <Name>Filter Width 1</Name>
+    <Symbol>w_1</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>41</Index>
+    <Name>Gain 1</Name>
+    <Symbol>g_1</Symbol>
+    <Value>1.08392691612244</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>42</Index>
+    <Name>Quality factor 1</Name>
+    <Symbol>q_1</Symbol>
+    <Value>3</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>43</Index>
+    <Name>Hue 1</Name>
+    <Symbol>hue_1</Symbol>
+    <Value>0.03125</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>45</Index>
+    <Name>Filter type 2</Name>
+    <Symbol>ft_2</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>46</Index>
+    <Name>Filter mode 2</Name>
+    <Symbol>fm_2</Symbol>
+    <Value>6</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>47</Index>
+    <Name>Filter slope 2</Name>
+    <Symbol>s_2</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>48</Index>
+    <Name>Filter solo 2</Name>
+    <Symbol>xs_2</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>49</Index>
+    <Name>Filter mute 2</Name>
+    <Symbol>xm_2</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>50</Index>
+    <Name>Frequency 2</Name>
+    <Symbol>f_2</Symbol>
+    <Value>780</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>51</Index>
+    <Name>Filter Width 2</Name>
+    <Symbol>w_2</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>52</Index>
+    <Name>Gain 2</Name>
+    <Symbol>g_2</Symbol>
+    <Value>0.803526103496552</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>53</Index>
+    <Name>Quality factor 2</Name>
+    <Symbol>q_2</Symbol>
+    <Value>3.29999995231628</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>54</Index>
+    <Name>Hue 2</Name>
+    <Symbol>hue_2</Symbol>
+    <Value>0.0625</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>56</Index>
+    <Name>Filter type 3</Name>
+    <Symbol>ft_3</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>57</Index>
+    <Name>Filter mode 3</Name>
+    <Symbol>fm_3</Symbol>
+    <Value>6</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>58</Index>
+    <Name>Filter slope 3</Name>
+    <Symbol>s_3</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>59</Index>
+    <Name>Filter solo 3</Name>
+    <Symbol>xs_3</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>60</Index>
+    <Name>Filter mute 3</Name>
+    <Symbol>xm_3</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>61</Index>
+    <Name>Frequency 3</Name>
+    <Symbol>f_3</Symbol>
+    <Value>1000</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>62</Index>
+    <Name>Filter Width 3</Name>
+    <Symbol>w_3</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>63</Index>
+    <Name>Gain 3</Name>
+    <Symbol>g_3</Symbol>
+    <Value>1.12201845645905</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>64</Index>
+    <Name>Quality factor 3</Name>
+    <Symbol>q_3</Symbol>
+    <Value>4.30000019073486</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>65</Index>
+    <Name>Hue 3</Name>
+    <Symbol>hue_3</Symbol>
+    <Value>0.09375</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>67</Index>
+    <Name>Filter type 4</Name>
+    <Symbol>ft_4</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>68</Index>
+    <Name>Filter mode 4</Name>
+    <Symbol>fm_4</Symbol>
+    <Value>6</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>69</Index>
+    <Name>Filter slope 4</Name>
+    <Symbol>s_4</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>70</Index>
+    <Name>Filter solo 4</Name>
+    <Symbol>xs_4</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>71</Index>
+    <Name>Filter mute 4</Name>
+    <Symbol>xm_4</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>72</Index>
+    <Name>Frequency 4</Name>
+    <Symbol>f_4</Symbol>
+    <Value>2400</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>73</Index>
+    <Name>Filter Width 4</Name>
+    <Symbol>w_4</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>74</Index>
+    <Name>Gain 4</Name>
+    <Symbol>g_4</Symbol>
+    <Value>1.14815366268158</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>75</Index>
+    <Name>Quality factor 4</Name>
+    <Symbol>q_4</Symbol>
+    <Value>2.5</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>76</Index>
+    <Name>Hue 4</Name>
+    <Symbol>hue_4</Symbol>
+    <Value>0.125</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>78</Index>
+    <Name>Filter type 5</Name>
+    <Symbol>ft_5</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>79</Index>
+    <Name>Filter mode 5</Name>
+    <Symbol>fm_5</Symbol>
+    <Value>6</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>80</Index>
+    <Name>Filter slope 5</Name>
+    <Symbol>s_5</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>81</Index>
+    <Name>Filter solo 5</Name>
+    <Symbol>xs_5</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>82</Index>
+    <Name>Filter mute 5</Name>
+    <Symbol>xm_5</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>83</Index>
+    <Name>Frequency 5</Name>
+    <Symbol>f_5</Symbol>
+    <Value>3300</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>84</Index>
+    <Name>Filter Width 5</Name>
+    <Symbol>w_5</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>85</Index>
+    <Name>Gain 5</Name>
+    <Symbol>g_5</Symbol>
+    <Value>0.758577585220337</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>86</Index>
+    <Name>Quality factor 5</Name>
+    <Symbol>q_5</Symbol>
+    <Value>4.5</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>87</Index>
+    <Name>Hue 5</Name>
+    <Symbol>hue_5</Symbol>
+    <Value>0.15625</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>89</Index>
+    <Name>Filter type 6</Name>
+    <Symbol>ft_6</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>90</Index>
+    <Name>Filter mode 6</Name>
+    <Symbol>fm_6</Symbol>
+    <Value>6</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>91</Index>
+    <Name>Filter slope 6</Name>
+    <Symbol>s_6</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>92</Index>
+    <Name>Filter solo 6</Name>
+    <Symbol>xs_6</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>93</Index>
+    <Name>Filter mute 6</Name>
+    <Symbol>xm_6</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>94</Index>
+    <Name>Frequency 6</Name>
+    <Symbol>f_6</Symbol>
+    <Value>5200</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>95</Index>
+    <Name>Filter Width 6</Name>
+    <Symbol>w_6</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>96</Index>
+    <Name>Gain 6</Name>
+    <Symbol>g_6</Symbol>
+    <Value>0.616595029830933</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>97</Index>
+    <Name>Quality factor 6</Name>
+    <Symbol>q_6</Symbol>
+    <Value>2.20000004768372</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>98</Index>
+    <Name>Hue 6</Name>
+    <Symbol>hue_6</Symbol>
+    <Value>0.1875</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>100</Index>
+    <Name>Filter type 7</Name>
+    <Symbol>ft_7</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>101</Index>
+    <Name>Filter mode 7</Name>
+    <Symbol>fm_7</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>102</Index>
+    <Name>Filter slope 7</Name>
+    <Symbol>s_7</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>103</Index>
+    <Name>Filter solo 7</Name>
+    <Symbol>xs_7</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>104</Index>
+    <Name>Filter mute 7</Name>
+    <Symbol>xm_7</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>105</Index>
+    <Name>Frequency 7</Name>
+    <Symbol>f_7</Symbol>
+    <Value>80</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>106</Index>
+    <Name>Filter Width 7</Name>
+    <Symbol>w_7</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>107</Index>
+    <Name>Gain 7</Name>
+    <Symbol>g_7</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>108</Index>
+    <Name>Quality factor 7</Name>
+    <Symbol>q_7</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>109</Index>
+    <Name>Hue 7</Name>
+    <Symbol>hue_7</Symbol>
+    <Value>0.21875</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>111</Index>
+    <Name>Filter type 8</Name>
+    <Symbol>ft_8</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>112</Index>
+    <Name>Filter mode 8</Name>
+    <Symbol>fm_8</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>113</Index>
+    <Name>Filter slope 8</Name>
+    <Symbol>s_8</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>114</Index>
+    <Name>Filter solo 8</Name>
+    <Symbol>xs_8</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>115</Index>
+    <Name>Filter mute 8</Name>
+    <Symbol>xm_8</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>116</Index>
+    <Name>Frequency 8</Name>
+    <Symbol>f_8</Symbol>
+    <Value>100</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>117</Index>
+    <Name>Filter Width 8</Name>
+    <Symbol>w_8</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>118</Index>
+    <Name>Gain 8</Name>
+    <Symbol>g_8</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>119</Index>
+    <Name>Quality factor 8</Name>
+    <Symbol>q_8</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>120</Index>
+    <Name>Hue 8</Name>
+    <Symbol>hue_8</Symbol>
+    <Value>0.25</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>122</Index>
+    <Name>Filter type 9</Name>
+    <Symbol>ft_9</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>123</Index>
+    <Name>Filter mode 9</Name>
+    <Symbol>fm_9</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>124</Index>
+    <Name>Filter slope 9</Name>
+    <Symbol>s_9</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>125</Index>
+    <Name>Filter solo 9</Name>
+    <Symbol>xs_9</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>126</Index>
+    <Name>Filter mute 9</Name>
+    <Symbol>xm_9</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>127</Index>
+    <Name>Frequency 9</Name>
+    <Symbol>f_9</Symbol>
+    <Value>125</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>128</Index>
+    <Name>Filter Width 9</Name>
+    <Symbol>w_9</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>129</Index>
+    <Name>Gain 9</Name>
+    <Symbol>g_9</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>130</Index>
+    <Name>Quality factor 9</Name>
+    <Symbol>q_9</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>131</Index>
+    <Name>Hue 9</Name>
+    <Symbol>hue_9</Symbol>
+    <Value>0.28125</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>133</Index>
+    <Name>Filter type 10</Name>
+    <Symbol>ft_10</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>134</Index>
+    <Name>Filter mode 10</Name>
+    <Symbol>fm_10</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>135</Index>
+    <Name>Filter slope 10</Name>
+    <Symbol>s_10</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>136</Index>
+    <Name>Filter solo 10</Name>
+    <Symbol>xs_10</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>137</Index>
+    <Name>Filter mute 10</Name>
+    <Symbol>xm_10</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>138</Index>
+    <Name>Frequency 10</Name>
+    <Symbol>f_10</Symbol>
+    <Value>160</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>139</Index>
+    <Name>Filter Width 10</Name>
+    <Symbol>w_10</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>140</Index>
+    <Name>Gain 10</Name>
+    <Symbol>g_10</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>141</Index>
+    <Name>Quality factor 10</Name>
+    <Symbol>q_10</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>142</Index>
+    <Name>Hue 10</Name>
+    <Symbol>hue_10</Symbol>
+    <Value>0.3125</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>144</Index>
+    <Name>Filter type 11</Name>
+    <Symbol>ft_11</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>145</Index>
+    <Name>Filter mode 11</Name>
+    <Symbol>fm_11</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>146</Index>
+    <Name>Filter slope 11</Name>
+    <Symbol>s_11</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>147</Index>
+    <Name>Filter solo 11</Name>
+    <Symbol>xs_11</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>148</Index>
+    <Name>Filter mute 11</Name>
+    <Symbol>xm_11</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>149</Index>
+    <Name>Frequency 11</Name>
+    <Symbol>f_11</Symbol>
+    <Value>200</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>150</Index>
+    <Name>Filter Width 11</Name>
+    <Symbol>w_11</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>151</Index>
+    <Name>Gain 11</Name>
+    <Symbol>g_11</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>152</Index>
+    <Name>Quality factor 11</Name>
+    <Symbol>q_11</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>153</Index>
+    <Name>Hue 11</Name>
+    <Symbol>hue_11</Symbol>
+    <Value>0.34375</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>155</Index>
+    <Name>Filter type 12</Name>
+    <Symbol>ft_12</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>156</Index>
+    <Name>Filter mode 12</Name>
+    <Symbol>fm_12</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>157</Index>
+    <Name>Filter slope 12</Name>
+    <Symbol>s_12</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>158</Index>
+    <Name>Filter solo 12</Name>
+    <Symbol>xs_12</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>159</Index>
+    <Name>Filter mute 12</Name>
+    <Symbol>xm_12</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>160</Index>
+    <Name>Frequency 12</Name>
+    <Symbol>f_12</Symbol>
+    <Value>250</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>161</Index>
+    <Name>Filter Width 12</Name>
+    <Symbol>w_12</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>162</Index>
+    <Name>Gain 12</Name>
+    <Symbol>g_12</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>163</Index>
+    <Name>Quality factor 12</Name>
+    <Symbol>q_12</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>164</Index>
+    <Name>Hue 12</Name>
+    <Symbol>hue_12</Symbol>
+    <Value>0.375</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>166</Index>
+    <Name>Filter type 13</Name>
+    <Symbol>ft_13</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>167</Index>
+    <Name>Filter mode 13</Name>
+    <Symbol>fm_13</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>168</Index>
+    <Name>Filter slope 13</Name>
+    <Symbol>s_13</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>169</Index>
+    <Name>Filter solo 13</Name>
+    <Symbol>xs_13</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>170</Index>
+    <Name>Filter mute 13</Name>
+    <Symbol>xm_13</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>171</Index>
+    <Name>Frequency 13</Name>
+    <Symbol>f_13</Symbol>
+    <Value>315</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>172</Index>
+    <Name>Filter Width 13</Name>
+    <Symbol>w_13</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>173</Index>
+    <Name>Gain 13</Name>
+    <Symbol>g_13</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>174</Index>
+    <Name>Quality factor 13</Name>
+    <Symbol>q_13</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>175</Index>
+    <Name>Hue 13</Name>
+    <Symbol>hue_13</Symbol>
+    <Value>0.40625</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>177</Index>
+    <Name>Filter type 14</Name>
+    <Symbol>ft_14</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>178</Index>
+    <Name>Filter mode 14</Name>
+    <Symbol>fm_14</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>179</Index>
+    <Name>Filter slope 14</Name>
+    <Symbol>s_14</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>180</Index>
+    <Name>Filter solo 14</Name>
+    <Symbol>xs_14</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>181</Index>
+    <Name>Filter mute 14</Name>
+    <Symbol>xm_14</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>182</Index>
+    <Name>Frequency 14</Name>
+    <Symbol>f_14</Symbol>
+    <Value>400</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>183</Index>
+    <Name>Filter Width 14</Name>
+    <Symbol>w_14</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>184</Index>
+    <Name>Gain 14</Name>
+    <Symbol>g_14</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>185</Index>
+    <Name>Quality factor 14</Name>
+    <Symbol>q_14</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>186</Index>
+    <Name>Hue 14</Name>
+    <Symbol>hue_14</Symbol>
+    <Value>0.4375</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>188</Index>
+    <Name>Filter type 15</Name>
+    <Symbol>ft_15</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>189</Index>
+    <Name>Filter mode 15</Name>
+    <Symbol>fm_15</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>190</Index>
+    <Name>Filter slope 15</Name>
+    <Symbol>s_15</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>191</Index>
+    <Name>Filter solo 15</Name>
+    <Symbol>xs_15</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>192</Index>
+    <Name>Filter mute 15</Name>
+    <Symbol>xm_15</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>193</Index>
+    <Name>Frequency 15</Name>
+    <Symbol>f_15</Symbol>
+    <Value>500</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>194</Index>
+    <Name>Filter Width 15</Name>
+    <Symbol>w_15</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>195</Index>
+    <Name>Gain 15</Name>
+    <Symbol>g_15</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>196</Index>
+    <Name>Quality factor 15</Name>
+    <Symbol>q_15</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>197</Index>
+    <Name>Hue 15</Name>
+    <Symbol>hue_15</Symbol>
+    <Value>0.46875</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>199</Index>
+    <Name>Filter type 16</Name>
+    <Symbol>ft_16</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>200</Index>
+    <Name>Filter mode 16</Name>
+    <Symbol>fm_16</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>201</Index>
+    <Name>Filter slope 16</Name>
+    <Symbol>s_16</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>202</Index>
+    <Name>Filter solo 16</Name>
+    <Symbol>xs_16</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>203</Index>
+    <Name>Filter mute 16</Name>
+    <Symbol>xm_16</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>204</Index>
+    <Name>Frequency 16</Name>
+    <Symbol>f_16</Symbol>
+    <Value>630</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>205</Index>
+    <Name>Filter Width 16</Name>
+    <Symbol>w_16</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>206</Index>
+    <Name>Gain 16</Name>
+    <Symbol>g_16</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>207</Index>
+    <Name>Quality factor 16</Name>
+    <Symbol>q_16</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>208</Index>
+    <Name>Hue 16</Name>
+    <Symbol>hue_16</Symbol>
+    <Value>0.5</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>210</Index>
+    <Name>Filter type 17</Name>
+    <Symbol>ft_17</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>211</Index>
+    <Name>Filter mode 17</Name>
+    <Symbol>fm_17</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>212</Index>
+    <Name>Filter slope 17</Name>
+    <Symbol>s_17</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>213</Index>
+    <Name>Filter solo 17</Name>
+    <Symbol>xs_17</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>214</Index>
+    <Name>Filter mute 17</Name>
+    <Symbol>xm_17</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>215</Index>
+    <Name>Frequency 17</Name>
+    <Symbol>f_17</Symbol>
+    <Value>800</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>216</Index>
+    <Name>Filter Width 17</Name>
+    <Symbol>w_17</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>217</Index>
+    <Name>Gain 17</Name>
+    <Symbol>g_17</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>218</Index>
+    <Name>Quality factor 17</Name>
+    <Symbol>q_17</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>219</Index>
+    <Name>Hue 17</Name>
+    <Symbol>hue_17</Symbol>
+    <Value>0.53125</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>221</Index>
+    <Name>Filter type 18</Name>
+    <Symbol>ft_18</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>222</Index>
+    <Name>Filter mode 18</Name>
+    <Symbol>fm_18</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>223</Index>
+    <Name>Filter slope 18</Name>
+    <Symbol>s_18</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>224</Index>
+    <Name>Filter solo 18</Name>
+    <Symbol>xs_18</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>225</Index>
+    <Name>Filter mute 18</Name>
+    <Symbol>xm_18</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>226</Index>
+    <Name>Frequency 18</Name>
+    <Symbol>f_18</Symbol>
+    <Value>1000</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>227</Index>
+    <Name>Filter Width 18</Name>
+    <Symbol>w_18</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>228</Index>
+    <Name>Gain 18</Name>
+    <Symbol>g_18</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>229</Index>
+    <Name>Quality factor 18</Name>
+    <Symbol>q_18</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>230</Index>
+    <Name>Hue 18</Name>
+    <Symbol>hue_18</Symbol>
+    <Value>0.5625</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>232</Index>
+    <Name>Filter type 19</Name>
+    <Symbol>ft_19</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>233</Index>
+    <Name>Filter mode 19</Name>
+    <Symbol>fm_19</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>234</Index>
+    <Name>Filter slope 19</Name>
+    <Symbol>s_19</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>235</Index>
+    <Name>Filter solo 19</Name>
+    <Symbol>xs_19</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>236</Index>
+    <Name>Filter mute 19</Name>
+    <Symbol>xm_19</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>237</Index>
+    <Name>Frequency 19</Name>
+    <Symbol>f_19</Symbol>
+    <Value>1250</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>238</Index>
+    <Name>Filter Width 19</Name>
+    <Symbol>w_19</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>239</Index>
+    <Name>Gain 19</Name>
+    <Symbol>g_19</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>240</Index>
+    <Name>Quality factor 19</Name>
+    <Symbol>q_19</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>241</Index>
+    <Name>Hue 19</Name>
+    <Symbol>hue_19</Symbol>
+    <Value>0.59375</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>243</Index>
+    <Name>Filter type 20</Name>
+    <Symbol>ft_20</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>244</Index>
+    <Name>Filter mode 20</Name>
+    <Symbol>fm_20</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>245</Index>
+    <Name>Filter slope 20</Name>
+    <Symbol>s_20</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>246</Index>
+    <Name>Filter solo 20</Name>
+    <Symbol>xs_20</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>247</Index>
+    <Name>Filter mute 20</Name>
+    <Symbol>xm_20</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>248</Index>
+    <Name>Frequency 20</Name>
+    <Symbol>f_20</Symbol>
+    <Value>1600</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>249</Index>
+    <Name>Filter Width 20</Name>
+    <Symbol>w_20</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>250</Index>
+    <Name>Gain 20</Name>
+    <Symbol>g_20</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>251</Index>
+    <Name>Quality factor 20</Name>
+    <Symbol>q_20</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>252</Index>
+    <Name>Hue 20</Name>
+    <Symbol>hue_20</Symbol>
+    <Value>0.625</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>254</Index>
+    <Name>Filter type 21</Name>
+    <Symbol>ft_21</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>255</Index>
+    <Name>Filter mode 21</Name>
+    <Symbol>fm_21</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>256</Index>
+    <Name>Filter slope 21</Name>
+    <Symbol>s_21</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>257</Index>
+    <Name>Filter solo 21</Name>
+    <Symbol>xs_21</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>258</Index>
+    <Name>Filter mute 21</Name>
+    <Symbol>xm_21</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>259</Index>
+    <Name>Frequency 21</Name>
+    <Symbol>f_21</Symbol>
+    <Value>2000</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>260</Index>
+    <Name>Filter Width 21</Name>
+    <Symbol>w_21</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>261</Index>
+    <Name>Gain 21</Name>
+    <Symbol>g_21</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>262</Index>
+    <Name>Quality factor 21</Name>
+    <Symbol>q_21</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>263</Index>
+    <Name>Hue 21</Name>
+    <Symbol>hue_21</Symbol>
+    <Value>0.65625</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>265</Index>
+    <Name>Filter type 22</Name>
+    <Symbol>ft_22</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>266</Index>
+    <Name>Filter mode 22</Name>
+    <Symbol>fm_22</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>267</Index>
+    <Name>Filter slope 22</Name>
+    <Symbol>s_22</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>268</Index>
+    <Name>Filter solo 22</Name>
+    <Symbol>xs_22</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>269</Index>
+    <Name>Filter mute 22</Name>
+    <Symbol>xm_22</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>270</Index>
+    <Name>Frequency 22</Name>
+    <Symbol>f_22</Symbol>
+    <Value>2500</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>271</Index>
+    <Name>Filter Width 22</Name>
+    <Symbol>w_22</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>272</Index>
+    <Name>Gain 22</Name>
+    <Symbol>g_22</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>273</Index>
+    <Name>Quality factor 22</Name>
+    <Symbol>q_22</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>274</Index>
+    <Name>Hue 22</Name>
+    <Symbol>hue_22</Symbol>
+    <Value>0.6875</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>276</Index>
+    <Name>Filter type 23</Name>
+    <Symbol>ft_23</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>277</Index>
+    <Name>Filter mode 23</Name>
+    <Symbol>fm_23</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>278</Index>
+    <Name>Filter slope 23</Name>
+    <Symbol>s_23</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>279</Index>
+    <Name>Filter solo 23</Name>
+    <Symbol>xs_23</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>280</Index>
+    <Name>Filter mute 23</Name>
+    <Symbol>xm_23</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>281</Index>
+    <Name>Frequency 23</Name>
+    <Symbol>f_23</Symbol>
+    <Value>3150</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>282</Index>
+    <Name>Filter Width 23</Name>
+    <Symbol>w_23</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>283</Index>
+    <Name>Gain 23</Name>
+    <Symbol>g_23</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>284</Index>
+    <Name>Quality factor 23</Name>
+    <Symbol>q_23</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>285</Index>
+    <Name>Hue 23</Name>
+    <Symbol>hue_23</Symbol>
+    <Value>0.71875</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>287</Index>
+    <Name>Filter type 24</Name>
+    <Symbol>ft_24</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>288</Index>
+    <Name>Filter mode 24</Name>
+    <Symbol>fm_24</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>289</Index>
+    <Name>Filter slope 24</Name>
+    <Symbol>s_24</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>290</Index>
+    <Name>Filter solo 24</Name>
+    <Symbol>xs_24</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>291</Index>
+    <Name>Filter mute 24</Name>
+    <Symbol>xm_24</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>292</Index>
+    <Name>Frequency 24</Name>
+    <Symbol>f_24</Symbol>
+    <Value>4000</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>293</Index>
+    <Name>Filter Width 24</Name>
+    <Symbol>w_24</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>294</Index>
+    <Name>Gain 24</Name>
+    <Symbol>g_24</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>295</Index>
+    <Name>Quality factor 24</Name>
+    <Symbol>q_24</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>296</Index>
+    <Name>Hue 24</Name>
+    <Symbol>hue_24</Symbol>
+    <Value>0.75</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>298</Index>
+    <Name>Filter type 25</Name>
+    <Symbol>ft_25</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>299</Index>
+    <Name>Filter mode 25</Name>
+    <Symbol>fm_25</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>300</Index>
+    <Name>Filter slope 25</Name>
+    <Symbol>s_25</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>301</Index>
+    <Name>Filter solo 25</Name>
+    <Symbol>xs_25</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>302</Index>
+    <Name>Filter mute 25</Name>
+    <Symbol>xm_25</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>303</Index>
+    <Name>Frequency 25</Name>
+    <Symbol>f_25</Symbol>
+    <Value>5000</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>304</Index>
+    <Name>Filter Width 25</Name>
+    <Symbol>w_25</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>305</Index>
+    <Name>Gain 25</Name>
+    <Symbol>g_25</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>306</Index>
+    <Name>Quality factor 25</Name>
+    <Symbol>q_25</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>307</Index>
+    <Name>Hue 25</Name>
+    <Symbol>hue_25</Symbol>
+    <Value>0.78125</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>309</Index>
+    <Name>Filter type 26</Name>
+    <Symbol>ft_26</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>310</Index>
+    <Name>Filter mode 26</Name>
+    <Symbol>fm_26</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>311</Index>
+    <Name>Filter slope 26</Name>
+    <Symbol>s_26</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>312</Index>
+    <Name>Filter solo 26</Name>
+    <Symbol>xs_26</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>313</Index>
+    <Name>Filter mute 26</Name>
+    <Symbol>xm_26</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>314</Index>
+    <Name>Frequency 26</Name>
+    <Symbol>f_26</Symbol>
+    <Value>6300</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>315</Index>
+    <Name>Filter Width 26</Name>
+    <Symbol>w_26</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>316</Index>
+    <Name>Gain 26</Name>
+    <Symbol>g_26</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>317</Index>
+    <Name>Quality factor 26</Name>
+    <Symbol>q_26</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>318</Index>
+    <Name>Hue 26</Name>
+    <Symbol>hue_26</Symbol>
+    <Value>0.8125</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>320</Index>
+    <Name>Filter type 27</Name>
+    <Symbol>ft_27</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>321</Index>
+    <Name>Filter mode 27</Name>
+    <Symbol>fm_27</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>322</Index>
+    <Name>Filter slope 27</Name>
+    <Symbol>s_27</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>323</Index>
+    <Name>Filter solo 27</Name>
+    <Symbol>xs_27</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>324</Index>
+    <Name>Filter mute 27</Name>
+    <Symbol>xm_27</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>325</Index>
+    <Name>Frequency 27</Name>
+    <Symbol>f_27</Symbol>
+    <Value>8000</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>326</Index>
+    <Name>Filter Width 27</Name>
+    <Symbol>w_27</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>327</Index>
+    <Name>Gain 27</Name>
+    <Symbol>g_27</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>328</Index>
+    <Name>Quality factor 27</Name>
+    <Symbol>q_27</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>329</Index>
+    <Name>Hue 27</Name>
+    <Symbol>hue_27</Symbol>
+    <Value>0.84375</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>331</Index>
+    <Name>Filter type 28</Name>
+    <Symbol>ft_28</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>332</Index>
+    <Name>Filter mode 28</Name>
+    <Symbol>fm_28</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>333</Index>
+    <Name>Filter slope 28</Name>
+    <Symbol>s_28</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>334</Index>
+    <Name>Filter solo 28</Name>
+    <Symbol>xs_28</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>335</Index>
+    <Name>Filter mute 28</Name>
+    <Symbol>xm_28</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>336</Index>
+    <Name>Frequency 28</Name>
+    <Symbol>f_28</Symbol>
+    <Value>10000</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>337</Index>
+    <Name>Filter Width 28</Name>
+    <Symbol>w_28</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>338</Index>
+    <Name>Gain 28</Name>
+    <Symbol>g_28</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>339</Index>
+    <Name>Quality factor 28</Name>
+    <Symbol>q_28</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>340</Index>
+    <Name>Hue 28</Name>
+    <Symbol>hue_28</Symbol>
+    <Value>0.875</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>342</Index>
+    <Name>Filter type 29</Name>
+    <Symbol>ft_29</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>343</Index>
+    <Name>Filter mode 29</Name>
+    <Symbol>fm_29</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>344</Index>
+    <Name>Filter slope 29</Name>
+    <Symbol>s_29</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>345</Index>
+    <Name>Filter solo 29</Name>
+    <Symbol>xs_29</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>346</Index>
+    <Name>Filter mute 29</Name>
+    <Symbol>xm_29</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>347</Index>
+    <Name>Frequency 29</Name>
+    <Symbol>f_29</Symbol>
+    <Value>12500</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>348</Index>
+    <Name>Filter Width 29</Name>
+    <Symbol>w_29</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>349</Index>
+    <Name>Gain 29</Name>
+    <Symbol>g_29</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>350</Index>
+    <Name>Quality factor 29</Name>
+    <Symbol>q_29</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>351</Index>
+    <Name>Hue 29</Name>
+    <Symbol>hue_29</Symbol>
+    <Value>0.90625</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>353</Index>
+    <Name>Filter type 30</Name>
+    <Symbol>ft_30</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>354</Index>
+    <Name>Filter mode 30</Name>
+    <Symbol>fm_30</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>355</Index>
+    <Name>Filter slope 30</Name>
+    <Symbol>s_30</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>356</Index>
+    <Name>Filter solo 30</Name>
+    <Symbol>xs_30</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>357</Index>
+    <Name>Filter mute 30</Name>
+    <Symbol>xm_30</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>358</Index>
+    <Name>Frequency 30</Name>
+    <Symbol>f_30</Symbol>
+    <Value>16000</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>359</Index>
+    <Name>Filter Width 30</Name>
+    <Symbol>w_30</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>360</Index>
+    <Name>Gain 30</Name>
+    <Symbol>g_30</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>361</Index>
+    <Name>Quality factor 30</Name>
+    <Symbol>q_30</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>362</Index>
+    <Name>Hue 30</Name>
+    <Symbol>hue_30</Symbol>
+    <Value>0.9375</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>364</Index>
+    <Name>Filter type 31</Name>
+    <Symbol>ft_31</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>365</Index>
+    <Name>Filter mode 31</Name>
+    <Symbol>fm_31</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>366</Index>
+    <Name>Filter slope 31</Name>
+    <Symbol>s_31</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>367</Index>
+    <Name>Filter solo 31</Name>
+    <Symbol>xs_31</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>368</Index>
+    <Name>Filter mute 31</Name>
+    <Symbol>xm_31</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>369</Index>
+    <Name>Frequency 31</Name>
+    <Symbol>f_31</Symbol>
+    <Value>20000</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>370</Index>
+    <Name>Filter Width 31</Name>
+    <Symbol>w_31</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>371</Index>
+    <Name>Gain 31</Name>
+    <Symbol>g_31</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>372</Index>
+    <Name>Quality factor 31</Name>
+    <Symbol>q_31</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>373</Index>
+    <Name>Hue 31</Name>
+    <Symbol>hue_31</Symbol>
+    <Value>0.96875</Value>
+   </Parameter>
+
+   <CustomData>
+    <Type>http://lv2plug.in/ns/ext/atom#String</Type>
+    <Key>http://lsp-plug.in/plugins/lv2/para_equalizer_x32_stereo/ports#send</Key>
+    <Value></Value>
+   </CustomData>
+
+   <CustomData>
+    <Type>http://lv2plug.in/ns/ext/atom#String</Type>
+    <Key>http://lsp-plug.in/plugins/lv2/para_equalizer_x32_stereo/ports#return</Key>
+    <Value></Value>
+   </CustomData>
+  </Data>
+ </Plugin>
+
  <ExternalPatchbay>
   <Connection>
    <Source>DBR-62 In:Output L</Source>
@@ -10319,32 +12723,29 @@
    <Position x1="267" y1="339">
     <Name>myeffects_sink</Name>
    </Position>
-   <Position x1="480" y1="692" x2="1100" y2="425">
-    <Name>USB-C to 3.5mm Headphone Jack Adapter Analog Stereo</Name>
-   </Position>
-   <Position x1="775" y1="822" x2="1099" y2="337">
-    <Name>SMSL USB AUDIO Analog Stereo</Name>
-   </Position>
    <Position x1="36" y1="697" x2="1022" y2="681">
     <Name>Midi-Bridge</Name>
    </Position>
    <Position x1="174" y1="602" x2="1049" y2="515">
     <Name>BLE MIDI 1</Name>
    </Position>
-   <Position x1="446" y1="339" pluginId="0">
+   <Position x1="446" y1="339">
     <Name>LSP Loudness Compensator Stereo</Name>
    </Position>
-   <Position x1="770" y1="255" pluginId="1">
+   <Position x1="770" y1="255">
     <Name>Blessing 3</Name>
    </Position>
-   <Position x1="770" y1="422" pluginId="2">
+   <Position x1="770" y1="422">
     <Name>SB-1000</Name>
    </Position>
-   <Position x1="770" y1="338" pluginId="3">
+   <Position x1="770" y1="338">
     <Name>DBR-62 In</Name>
    </Position>
-   <Position x1="935" y1="338" pluginId="4">
+   <Position x1="935" y1="338">
     <Name>DBR-62 Out</Name>
+   </Position>
+   <Position x1="770" y1="507" pluginId="5">
+    <Name>Buds2 Pro ANC</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>
