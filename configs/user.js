@@ -276,6 +276,9 @@ user_pref("network.dnsCacheExpirationGracePeriod", 240);
 // 2 = strict
 user_pref("security.cert_pinning.enforcement_level", 2);
 
+// PREF: default pdf zoom
+user_pref("pdfjs.defaultZoomValue", "page-width");
+
 // PREF: set DoH provider
 user_pref("network.trr.uri", "https://dns.quad9.net/dns-query");
 
