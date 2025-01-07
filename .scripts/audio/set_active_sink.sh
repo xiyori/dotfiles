@@ -92,7 +92,12 @@ else
     fi
 fi
 
-pactl set-sink-volume "$new_active_sink" 100%
+# Set bluetooth volume to -20db
+if grep bluez <<< "$new_active_sink" ; then
+    pactl set-sink-volume $new_active_sink 30419
+else
+    pactl set-sink-volume "$new_active_sink" 100%
+fi
 
 pkill -RTMIN+1 waybar
 

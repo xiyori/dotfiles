@@ -9609,7 +9609,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.0501187182962894</Value>
+    <Value>0.501187264919281</Value>
    </Parameter>
 
    <Parameter>
@@ -11995,41 +11995,26 @@
    <Position x1="267" y1="339">
     <Name>myeffects_sink</Name>
    </Position>
-   <Position x1="775" y1="822" x2="1137" y2="342">
-    <Name>SMSL USB AUDIO Analog Stereo</Name>
-   </Position>
-   <Position x1="775" y1="896" x2="1137" y2="263">
-    <Name>MOONDROP Dawn Pro Analog Stereo</Name>
-   </Position>
-   <Position x1="775" y1="970" x2="1137" y2="418">
-    <Name>USB-C to 3.5mm Headphone Jack Adapter Analog Stereo</Name>
-   </Position>
    <Position x1="36" y1="697" x2="1022" y2="681">
     <Name>Midi-Bridge</Name>
    </Position>
    <Position x1="174" y1="602" x2="1049" y2="515">
     <Name>BLE MIDI 1</Name>
    </Position>
-   <Position x1="446" y1="339">
+   <Position x1="446" y1="339" pluginId="0">
     <Name>LSP Loudness Compensator Stereo</Name>
    </Position>
-   <Position x1="770" y1="254">
+   <Position x1="770" y1="254" pluginId="1">
     <Name>Blessing 3</Name>
    </Position>
-   <Position x1="770" y1="422">
+   <Position x1="770" y1="422" pluginId="2">
     <Name>SB-1000</Name>
-   </Position>
-   <Position x1="770" y1="338">
-    <Name>DBR-62 In</Name>
-   </Position>
-   <Position x1="935" y1="338">
-    <Name>DBR-62 Out</Name>
-   </Position>
-   <Position x1="770" y1="506">
-    <Name>Buds2 Pro ANC</Name>
    </Position>
    <Position x1="770" y1="338" pluginId="3">
     <Name>DBR-62</Name>
+   </Position>
+   <Position x1="770" y1="506" pluginId="4">
+    <Name>Buds2 Pro ANC</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>

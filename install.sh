@@ -279,6 +279,7 @@ install_extra () {
         "vim-supertab"
         "vim-jedi"
         "python-pynvim"
+        "pavucontrol"
         "wev"
         "torbrowser-launcher"
         "obfs4proxy"
