@@ -76,6 +76,7 @@ install_essential () {
         
         # File Management & Utilities
         "thunar"
+        "xfce4-settings"
         "catfish"
         "gvfs"
         "tumbler"
@@ -293,6 +294,7 @@ install_extra () {
         "nss-mdns"
         "joplin-appimage"
         "rnote"
+        "rsync"
     )
     install "${packages[@]}"
 

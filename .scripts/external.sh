@@ -1,7 +1,8 @@
 #!/bin/bash
 
-hyprctl keyword monitor "HDMI-A-1,preferred,auto,2"
+monitor="$(cat /tmp/custom_monitor_waybar_monitor)"
+hyprctl keyword monitor "$monitor,preferred,auto,1"
 sleep 2
 hyprctl keyword monitor "eDP-1,disable"
-echo "{\"text\":\"󰶐 \",\"tooltip\":\"External monitor only\"}" > /tmp/custom_monitor_waybar
+echo "{\"text\":\"󰶐 \",\"tooltip\":\"$monitor only\"}" > /tmp/custom_monitor_waybar
 pkill -RTMIN+3 waybar
