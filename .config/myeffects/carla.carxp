@@ -372,7 +372,7 @@
     <Index>39</Index>
     <Name>Frequency 1</Name>
     <Symbol>f_1</Symbol>
-    <Value>330</Value>
+    <Value>130</Value>
    </Parameter>
 
    <Parameter>
@@ -386,14 +386,14 @@
     <Index>41</Index>
     <Name>Gain 1</Name>
     <Symbol>g_1</Symbol>
-    <Value>0.891250908374786</Value>
+    <Value>0.841395139694214</Value>
    </Parameter>
 
    <Parameter>
     <Index>42</Index>
     <Name>Quality factor 1</Name>
     <Symbol>q_1</Symbol>
-    <Value>2</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -442,7 +442,7 @@
     <Index>50</Index>
     <Name>Frequency 2</Name>
     <Symbol>f_2</Symbol>
-    <Value>490</Value>
+    <Value>230</Value>
    </Parameter>
 
    <Parameter>
@@ -456,14 +456,14 @@
     <Index>52</Index>
     <Name>Gain 2</Name>
     <Symbol>g_2</Symbol>
-    <Value>1.07151925563812</Value>
+    <Value>0.86099374294281</Value>
    </Parameter>
 
    <Parameter>
     <Index>53</Index>
     <Name>Quality factor 2</Name>
     <Symbol>q_2</Symbol>
-    <Value>3</Value>
+    <Value>0.899999976158142</Value>
    </Parameter>
 
    <Parameter>
@@ -512,7 +512,7 @@
     <Index>61</Index>
     <Name>Frequency 3</Name>
     <Symbol>f_3</Symbol>
-    <Value>2200</Value>
+    <Value>410</Value>
    </Parameter>
 
    <Parameter>
@@ -526,14 +526,14 @@
     <Index>63</Index>
     <Name>Gain 3</Name>
     <Symbol>g_3</Symbol>
-    <Value>1.12201845645905</Value>
+    <Value>1.09647822380066</Value>
    </Parameter>
 
    <Parameter>
     <Index>64</Index>
     <Name>Quality factor 3</Name>
     <Symbol>q_3</Symbol>
-    <Value>2.79999995231628</Value>
+    <Value>3</Value>
    </Parameter>
 
    <Parameter>
@@ -582,7 +582,7 @@
     <Index>72</Index>
     <Name>Frequency 4</Name>
     <Symbol>f_4</Symbol>
-    <Value>3100</Value>
+    <Value>1100</Value>
    </Parameter>
 
    <Parameter>
@@ -596,14 +596,14 @@
     <Index>74</Index>
     <Name>Gain 4</Name>
     <Symbol>g_4</Symbol>
-    <Value>0.630957365036011</Value>
+    <Value>0.891250908374786</Value>
    </Parameter>
 
    <Parameter>
     <Index>75</Index>
     <Name>Quality factor 4</Name>
     <Symbol>q_4</Symbol>
-    <Value>0.300000011920929</Value>
+    <Value>1.5</Value>
    </Parameter>
 
    <Parameter>
@@ -652,7 +652,7 @@
     <Index>83</Index>
     <Name>Frequency 5</Name>
     <Symbol>f_5</Symbol>
-    <Value>3200</Value>
+    <Value>2300</Value>
    </Parameter>
 
    <Parameter>
@@ -666,14 +666,14 @@
     <Index>85</Index>
     <Name>Gain 5</Name>
     <Symbol>g_5</Symbol>
-    <Value>0.870963573455811</Value>
+    <Value>1.23026871681213</Value>
    </Parameter>
 
    <Parameter>
     <Index>86</Index>
     <Name>Quality factor 5</Name>
     <Symbol>q_5</Symbol>
-    <Value>4.40000009536743</Value>
+    <Value>2.20000004768372</Value>
    </Parameter>
 
    <Parameter>
@@ -722,7 +722,7 @@
     <Index>94</Index>
     <Name>Frequency 6</Name>
     <Symbol>f_6</Symbol>
-    <Value>6000</Value>
+    <Value>3100</Value>
    </Parameter>
 
    <Parameter>
@@ -736,14 +736,14 @@
     <Index>96</Index>
     <Name>Gain 6</Name>
     <Symbol>g_6</Symbol>
-    <Value>0.841395139694214</Value>
+    <Value>0.630957365036011</Value>
    </Parameter>
 
    <Parameter>
     <Index>97</Index>
     <Name>Quality factor 6</Name>
     <Symbol>q_6</Symbol>
-    <Value>5</Value>
+    <Value>0.300000011920929</Value>
    </Parameter>
 
    <Parameter>
@@ -792,7 +792,7 @@
     <Index>105</Index>
     <Name>Frequency 7</Name>
     <Symbol>f_7</Symbol>
-    <Value>12600</Value>
+    <Value>5000</Value>
    </Parameter>
 
    <Parameter>
@@ -806,14 +806,14 @@
     <Index>107</Index>
     <Name>Gain 7</Name>
     <Symbol>g_7</Symbol>
-    <Value>0.595662117004395</Value>
+    <Value>0.881048858165741</Value>
    </Parameter>
 
    <Parameter>
     <Index>108</Index>
     <Name>Quality factor 7</Name>
     <Symbol>q_7</Symbol>
-    <Value>2</Value>
+    <Value>4.40000009536743</Value>
    </Parameter>
 
    <Parameter>
@@ -827,7 +827,7 @@
     <Index>111</Index>
     <Name>Filter type 8</Name>
     <Symbol>ft_8</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -862,7 +862,7 @@
     <Index>116</Index>
     <Name>Frequency 8</Name>
     <Symbol>f_8</Symbol>
-    <Value>105</Value>
+    <Value>6000</Value>
    </Parameter>
 
    <Parameter>
@@ -876,14 +876,14 @@
     <Index>118</Index>
     <Name>Gain 8</Name>
     <Symbol>g_8</Symbol>
-    <Value>1.58489322662354</Value>
+    <Value>0.841395139694214</Value>
    </Parameter>
 
    <Parameter>
     <Index>119</Index>
     <Name>Quality factor 8</Name>
     <Symbol>q_8</Symbol>
-    <Value>0.699999988079071</Value>
+    <Value>5</Value>
    </Parameter>
 
    <Parameter>
@@ -897,7 +897,7 @@
     <Index>122</Index>
     <Name>Filter type 9</Name>
     <Symbol>ft_9</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -932,7 +932,7 @@
     <Index>127</Index>
     <Name>Frequency 9</Name>
     <Symbol>f_9</Symbol>
-    <Value>14000</Value>
+    <Value>12600</Value>
    </Parameter>
 
    <Parameter>
@@ -946,14 +946,14 @@
     <Index>129</Index>
     <Name>Gain 9</Name>
     <Symbol>g_9</Symbol>
-    <Value>1</Value>
+    <Value>0.668343901634216</Value>
    </Parameter>
 
    <Parameter>
     <Index>130</Index>
     <Name>Quality factor 9</Name>
     <Symbol>q_9</Symbol>
-    <Value>0</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -967,14 +967,14 @@
     <Index>133</Index>
     <Name>Filter type 10</Name>
     <Symbol>ft_10</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>134</Index>
     <Name>Filter mode 10</Name>
     <Symbol>fm_10</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -1002,7 +1002,7 @@
     <Index>138</Index>
     <Name>Frequency 10</Name>
     <Symbol>f_10</Symbol>
-    <Value>160</Value>
+    <Value>15000</Value>
    </Parameter>
 
    <Parameter>
@@ -1016,14 +1016,14 @@
     <Index>140</Index>
     <Name>Gain 10</Name>
     <Symbol>g_10</Symbol>
-    <Value>1</Value>
+    <Value>0.933254301548004</Value>
    </Parameter>
 
    <Parameter>
     <Index>141</Index>
     <Name>Quality factor 10</Name>
     <Symbol>q_10</Symbol>
-    <Value>0</Value>
+    <Value>2.5</Value>
    </Parameter>
 
    <Parameter>
@@ -2996,7 +2996,7 @@
     <Index>74</Index>
     <Name>Gain 4</Name>
     <Symbol>g_4</Symbol>
-    <Value>3.16227769851685</Value>
+    <Value>2.88403129577637</Value>
    </Parameter>
 
    <Parameter>
@@ -3066,7 +3066,7 @@
     <Index>85</Index>
     <Name>Gain 5</Name>
     <Symbol>g_5</Symbol>
-    <Value>2.95120906829834</Value>
+    <Value>3.05492115020752</Value>
    </Parameter>
 
    <Parameter>
@@ -3136,7 +3136,7 @@
     <Index>96</Index>
     <Name>Gain 6</Name>
     <Symbol>g_6</Symbol>
-    <Value>0.31622776389122</Value>
+    <Value>0.285101860761642</Value>
    </Parameter>
 
    <Parameter>
@@ -4983,7 +4983,7 @@
     <Index>7</Index>
     <Name>Filter select</Name>
     <Symbol>fsel</Symbol>
-    <Value>3</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -5137,7 +5137,7 @@
     <Index>33</Index>
     <Name>Gain Left 0</Name>
     <Symbol>gl_0</Symbol>
-    <Value>0.17378006875515</Value>
+    <Value>0.165958672761917</Value>
    </Parameter>
 
    <Parameter>
@@ -5277,7 +5277,7 @@
     <Index>55</Index>
     <Name>Gain Left 1</Name>
     <Symbol>gl_1</Symbol>
-    <Value>2.45470905303955</Value>
+    <Value>2.31739473342896</Value>
    </Parameter>
 
    <Parameter>
@@ -5417,7 +5417,7 @@
     <Index>77</Index>
     <Name>Gain Left 2</Name>
     <Symbol>gl_2</Symbol>
-    <Value>0.49545019865036</Value>
+    <Value>0.467735141515732</Value>
    </Parameter>
 
    <Parameter>
@@ -5487,7 +5487,7 @@
     <Index>88</Index>
     <Name>Gain Right 2</Name>
     <Symbol>gr_2</Symbol>
-    <Value>3.16227769851685</Value>
+    <Value>2.88403129577637</Value>
    </Parameter>
 
    <Parameter>
@@ -5557,7 +5557,7 @@
     <Index>99</Index>
     <Name>Gain Left 3</Name>
     <Symbol>gl_3</Symbol>
-    <Value>1.79887092113495</Value>
+    <Value>1.69824361801147</Value>
    </Parameter>
 
    <Parameter>
@@ -5627,7 +5627,7 @@
     <Index>110</Index>
     <Name>Gain Right 3</Name>
     <Symbol>gr_3</Symbol>
-    <Value>0.213796213269234</Value>
+    <Value>0.184077188372612</Value>
    </Parameter>
 
    <Parameter>
@@ -5697,7 +5697,7 @@
     <Index>121</Index>
     <Name>Gain Left 4</Name>
     <Symbol>gl_4</Symbol>
-    <Value>0.323593646287918</Value>
+    <Value>0.278612107038498</Value>
    </Parameter>
 
    <Parameter>
@@ -5767,7 +5767,7 @@
     <Index>132</Index>
     <Name>Gain Right 4</Name>
     <Symbol>gr_4</Symbol>
-    <Value>0.484172374010086</Value>
+    <Value>0.451855927705765</Value>
    </Parameter>
 
    <Parameter>
@@ -5837,7 +5837,7 @@
     <Index>143</Index>
     <Name>Gain Left 5</Name>
     <Symbol>gl_5</Symbol>
-    <Value>0.275422871112823</Value>
+    <Value>0.254097253084183</Value>
    </Parameter>
 
    <Parameter>
@@ -9609,7 +9609,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.501187264919281</Value>
+    <Value>0.0501187182962894</Value>
    </Parameter>
 
    <Parameter>
@@ -9763,7 +9763,7 @@
     <Index>28</Index>
     <Name>Frequency 0</Name>
     <Symbol>f_0</Symbol>
-    <Value>150</Value>
+    <Value>110</Value>
    </Parameter>
 
    <Parameter>
@@ -9777,7 +9777,7 @@
     <Index>30</Index>
     <Name>Gain 0</Name>
     <Symbol>g_0</Symbol>
-    <Value>1.20226442813873</Value>
+    <Value>0.724435985088348</Value>
    </Parameter>
 
    <Parameter>
@@ -9833,7 +9833,7 @@
     <Index>39</Index>
     <Name>Frequency 1</Name>
     <Symbol>f_1</Symbol>
-    <Value>490</Value>
+    <Value>180</Value>
    </Parameter>
 
    <Parameter>
@@ -9847,14 +9847,14 @@
     <Index>41</Index>
     <Name>Gain 1</Name>
     <Symbol>g_1</Symbol>
-    <Value>1.08392691612244</Value>
+    <Value>0.944060862064362</Value>
    </Parameter>
 
    <Parameter>
     <Index>42</Index>
     <Name>Quality factor 1</Name>
     <Symbol>q_1</Symbol>
-    <Value>3</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -9903,7 +9903,7 @@
     <Index>50</Index>
     <Name>Frequency 2</Name>
     <Symbol>f_2</Symbol>
-    <Value>780</Value>
+    <Value>410</Value>
    </Parameter>
 
    <Parameter>
@@ -9917,14 +9917,14 @@
     <Index>52</Index>
     <Name>Gain 2</Name>
     <Symbol>g_2</Symbol>
-    <Value>0.803526103496552</Value>
+    <Value>1.08392691612244</Value>
    </Parameter>
 
    <Parameter>
     <Index>53</Index>
     <Name>Quality factor 2</Name>
     <Symbol>q_2</Symbol>
-    <Value>3.29999995231628</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -9973,7 +9973,7 @@
     <Index>61</Index>
     <Name>Frequency 3</Name>
     <Symbol>f_3</Symbol>
-    <Value>1000</Value>
+    <Value>440</Value>
    </Parameter>
 
    <Parameter>
@@ -9987,14 +9987,14 @@
     <Index>63</Index>
     <Name>Gain 3</Name>
     <Symbol>g_3</Symbol>
-    <Value>1.12201845645905</Value>
+    <Value>1.46217715740204</Value>
    </Parameter>
 
    <Parameter>
     <Index>64</Index>
     <Name>Quality factor 3</Name>
     <Symbol>q_3</Symbol>
-    <Value>4.30000019073486</Value>
+    <Value>0.899999976158142</Value>
    </Parameter>
 
    <Parameter>
@@ -10043,7 +10043,7 @@
     <Index>72</Index>
     <Name>Frequency 4</Name>
     <Symbol>f_4</Symbol>
-    <Value>2400</Value>
+    <Value>520</Value>
    </Parameter>
 
    <Parameter>
@@ -10057,14 +10057,14 @@
     <Index>74</Index>
     <Name>Gain 4</Name>
     <Symbol>g_4</Symbol>
-    <Value>1.14815366268158</Value>
+    <Value>0.912010848522186</Value>
    </Parameter>
 
    <Parameter>
     <Index>75</Index>
     <Name>Quality factor 4</Name>
     <Symbol>q_4</Symbol>
-    <Value>2.5</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -10113,7 +10113,7 @@
     <Index>83</Index>
     <Name>Frequency 5</Name>
     <Symbol>f_5</Symbol>
-    <Value>3300</Value>
+    <Value>1300</Value>
    </Parameter>
 
    <Parameter>
@@ -10127,14 +10127,14 @@
     <Index>85</Index>
     <Name>Gain 5</Name>
     <Symbol>g_5</Symbol>
-    <Value>0.758577585220337</Value>
+    <Value>1.08392691612244</Value>
    </Parameter>
 
    <Parameter>
     <Index>86</Index>
     <Name>Quality factor 5</Name>
     <Symbol>q_5</Symbol>
-    <Value>4.5</Value>
+    <Value>1.5</Value>
    </Parameter>
 
    <Parameter>
@@ -10183,7 +10183,7 @@
     <Index>94</Index>
     <Name>Frequency 6</Name>
     <Symbol>f_6</Symbol>
-    <Value>5200</Value>
+    <Value>2600</Value>
    </Parameter>
 
    <Parameter>
@@ -10197,14 +10197,14 @@
     <Index>96</Index>
     <Name>Gain 6</Name>
     <Symbol>g_6</Symbol>
-    <Value>0.616595029830933</Value>
+    <Value>0.841395139694214</Value>
    </Parameter>
 
    <Parameter>
     <Index>97</Index>
     <Name>Quality factor 6</Name>
     <Symbol>q_6</Symbol>
-    <Value>2.20000004768372</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -10218,14 +10218,14 @@
     <Index>100</Index>
     <Name>Filter type 7</Name>
     <Symbol>ft_7</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>101</Index>
     <Name>Filter mode 7</Name>
     <Symbol>fm_7</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -10253,7 +10253,7 @@
     <Index>105</Index>
     <Name>Frequency 7</Name>
     <Symbol>f_7</Symbol>
-    <Value>80</Value>
+    <Value>6300</Value>
    </Parameter>
 
    <Parameter>
@@ -10267,14 +10267,14 @@
     <Index>107</Index>
     <Name>Gain 7</Name>
     <Symbol>g_7</Symbol>
-    <Value>1</Value>
+    <Value>0.506990671157837</Value>
    </Parameter>
 
    <Parameter>
     <Index>108</Index>
     <Name>Quality factor 7</Name>
     <Symbol>q_7</Symbol>
-    <Value>0</Value>
+    <Value>1.89999997615814</Value>
    </Parameter>
 
    <Parameter>
@@ -10288,14 +10288,14 @@
     <Index>111</Index>
     <Name>Filter type 8</Name>
     <Symbol>ft_8</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>112</Index>
     <Name>Filter mode 8</Name>
     <Symbol>fm_8</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -10323,7 +10323,7 @@
     <Index>116</Index>
     <Name>Frequency 8</Name>
     <Symbol>f_8</Symbol>
-    <Value>100</Value>
+    <Value>8800</Value>
    </Parameter>
 
    <Parameter>
@@ -10337,14 +10337,14 @@
     <Index>118</Index>
     <Name>Gain 8</Name>
     <Symbol>g_8</Symbol>
-    <Value>1</Value>
+    <Value>3.75837397575378</Value>
    </Parameter>
 
    <Parameter>
     <Index>119</Index>
     <Name>Quality factor 8</Name>
     <Symbol>q_8</Symbol>
-    <Value>0</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -10358,14 +10358,14 @@
     <Index>122</Index>
     <Name>Filter type 9</Name>
     <Symbol>ft_9</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>123</Index>
     <Name>Filter mode 9</Name>
     <Symbol>fm_9</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -10393,7 +10393,7 @@
     <Index>127</Index>
     <Name>Frequency 9</Name>
     <Symbol>f_9</Symbol>
-    <Value>125</Value>
+    <Value>12000</Value>
    </Parameter>
 
    <Parameter>
@@ -10407,14 +10407,14 @@
     <Index>129</Index>
     <Name>Gain 9</Name>
     <Symbol>g_9</Symbol>
-    <Value>1</Value>
+    <Value>0.251188635826111</Value>
    </Parameter>
 
    <Parameter>
     <Index>130</Index>
     <Name>Quality factor 9</Name>
     <Symbol>q_9</Symbol>
-    <Value>0</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -14395,8 +14395,14 @@
    <Position x1="267" y1="339">
     <Name>myeffects_sink</Name>
    </Position>
+   <Position x1="775" y1="822" x2="1133" y2="338">
+    <Name>SMSL USB AUDIO Analog Stereo</Name>
+   </Position>
    <Position x1="775" y1="896" x2="1137" y2="263">
     <Name>MOONDROP Dawn Pro Analog Stereo</Name>
+   </Position>
+   <Position x1="775" y1="970" x2="1133" y2="421">
+    <Name>USB-C to 3.5mm Headphone Jack Adapter Analog Stereo</Name>
    </Position>
    <Position x1="36" y1="697" x2="1022" y2="681">
     <Name>Midi-Bridge</Name>

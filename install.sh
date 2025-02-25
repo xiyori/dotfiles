@@ -279,6 +279,7 @@ install_extra () {
         "vim-commentary"
         "vim-supertab"
         "vim-jedi"
+        "vim-suda-git"
         "python-pynvim"
         "pavucontrol"
         "wev"
