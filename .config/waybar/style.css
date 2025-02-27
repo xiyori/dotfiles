@@ -82,6 +82,7 @@ tooltip {
 #memory,
 #disk,
 #temperature,
+#custom-fancontrol,
 #custom-monitor,
 #custom-sound,
 #custom-music,
@@ -116,6 +117,13 @@ tooltip {
 #waybar.empty #window {
   background: none;
   box-shadow: none;
+}
+
+/* =============================== */
+/* Monitor Module */
+#custom-fancontrol {
+  color: @red;
+  padding-right: 11px;
 }
 
 /* =============================== */

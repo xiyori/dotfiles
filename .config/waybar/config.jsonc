@@ -22,6 +22,7 @@
         //"disk#data",
         "battery",
         "backlight",
+        //"custom/fancontrol",
         "custom/monitor",
         "hyprland/workspaces"
     ],
@@ -31,7 +32,7 @@
     "modules-right": [
         "tray",
         "custom/updates",
-        "custom/notifications",
+        //"custom/notifications",
         // "network",
         "custom/sound",
         // "wireplumber",
@@ -80,9 +81,9 @@
     },
     "temperature#cpu": {
         // "thermal-zone": 2,
-        //"hwmon-path": "/sys/class/hwmon/hwmon5/temp2_input",
-        "critical-threshold": 70,
-        "format-critical": "{icon} {temperatureC}°C",
+        //"hwmon-path": "/tmp/hwmon4/temp1_input",
+        "critical-threshold": 75,
+        "format-critical": "<span color='#F38BA8'>{icon} {temperatureC}°C</span>",
         "format": "{icon} {temperatureC}°C",
         "format-icons": [
             "",
@@ -95,9 +96,9 @@
     },
     "temperature#gpu": {
         // "thermal-zone": 2,
-        "hwmon-path": "/tmp/nvidia-temp/temp",
+        "hwmon-path": "/tmp/nvidia-temp/temp_gpu",
         "critical-threshold": 70,
-        "format-critical": "{icon} {temperatureC}°C",
+        "format-critical": "<span color='#F38BA8'>{icon} {temperatureC}°C</span>",
         "format": "{icon} {temperatureC}°C",
         "format-icons": [
             ""
@@ -134,6 +135,14 @@
         "on-click": "~/.scripts/mirror.sh",
         "on-click-right": "~/.scripts/external.sh",
         "signal": 3
+    },
+    "custom/fancontrol": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{}", // {format_source}
+        "interval": 60,
+        "tooltip": true,
+        "exec": "~/.scripts/fancontrol_status.sh",
+        "return-type": "json"
     },
     "custom/updates": {
         "format": "{}",

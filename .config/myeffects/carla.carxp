@@ -9609,7 +9609,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.0501187182962894</Value>
+    <Value>0.501187264919281</Value>
    </Parameter>
 
    <Parameter>
@@ -14389,6 +14389,22 @@
   </Connection>
   <Connection>
    <Source>Midi-Bridge:Virtual MIDI Card 1:(capture_0) VirMIDI 0-0</Source>
+   <Target>LSP Loudness Compensator Stereo:events-in</Target>
+  </Connection>
+  <Connection>
+   <Source>Midi-Bridge:Virtual MIDI Card 1:(capture_0) VirMIDI 1-0</Source>
+   <Target>LSP Loudness Compensator Stereo:events-in</Target>
+  </Connection>
+  <Connection>
+   <Source>Midi-Bridge:Virtual MIDI Card 1:(capture_0) VirMIDI 2-0</Source>
+   <Target>LSP Loudness Compensator Stereo:events-in</Target>
+  </Connection>
+  <Connection>
+   <Source>Midi-Bridge:Virtual MIDI Card 1:(capture_0) VirMIDI 3-0</Source>
+   <Target>LSP Loudness Compensator Stereo:events-in</Target>
+  </Connection>
+  <Connection>
+   <Source>Midi-Bridge:Virtual MIDI Card 1:(capture_0) VirMIDI 4-0</Source>
    <Target>LSP Loudness Compensator Stereo:events-in</Target>
   </Connection>
   <Positions>
