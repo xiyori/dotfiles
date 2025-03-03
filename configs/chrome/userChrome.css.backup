@@ -1,0 +1,59 @@
+#TabsToolbar { visibility: collapse !important; }
+#titlebar { visibility: collapse; }
+
+/* Hide splitter, when using Tree Style Tab. */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] + #sidebar-splitter {
+  display: none !important;
+}
+/* Hide sidebar header, when using Tree Style Tab. */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  visibility: collapse;
+}
+
+#sidebar-box[positionend]{ direction: rtl }
+#sidebar-box[positionend] > *{ direction: ltr }
+
+#sidebar-box[positionend]:-moz-locale-dir(rtl){ direction: ltr }
+#sidebar-box[positionend]:-moz-locale-dir(rtl) > *{ direction: rtl }
+
+/* Shrink sidebar until hovered, when using Tree Style Tab. */
+#sidebar-box:not([sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]) {
+  min-width: var(--wide-tab-width) !important;
+  max-width: none !important;
+}
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
+  /*overflow: hidden !important;*/
+  position: relative !important;
+  min-width: var(--thin-tab-width) !important;
+  width: var(--thin-tab-width) !important;
+  max-width: var(--thin-tab-width) !important;
+  /*margin-left: calc(var(--wide-tab-width) * -1 + 20px) !important;
+  margin-left: 0 !important;*/
+  z-index: 1;
+}
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar {
+  min-width: var(--wide-tab-width) !important;
+  transition: margin-right 300ms linear 500ms !important;
+  margin-right: calc(var(--wide-tab-width) * -1) !important;
+  will-change: margin-right;
+}
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover #sidebar {
+  transition: margin-right 120ms !important;
+  margin-right: 0 !important;
+  /*max-width: var(--wide-tab-width) !important;*/
+  /*margin-left: 0 !important;
+  margin-left: calc(var(--wide-tab-width) * -1) !important;*/
+}
+#sidebar{
+  border-inline: 1px solid rgb(40,40,40);
+  border-inline-width: 0px 1px;
+}
+
+#sidebar-box:not([positionend]) > :-moz-locale-dir(rtl),
+#sidebar-box[positionend] > *{
+  border-inline-width: 1px 0px;
+}
+
+:root { --thin-tab-width: 1px; }
+:root { --wide-tab-width: 280px; }
+

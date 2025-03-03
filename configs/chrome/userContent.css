@@ -1,0 +1,11 @@
+@-moz-document unobservable-document() {
+  .pdfViewer {
+    filter: brightness(80%) invert(100%) hue-rotate(180deg);
+  }
+}
+
+@-moz-document url("about:home"), url("about:newtab"), url("about:blank") {
+  body {
+    background: #1e1e2e !important;
+  }
+}
