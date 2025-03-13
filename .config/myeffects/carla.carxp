@@ -14388,23 +14388,23 @@
    <Target>LSP Loudness Compensator Stereo:Input R</Target>
   </Connection>
   <Connection>
-   <Source>Midi-Bridge:Virtual MIDI Card 1:(capture_0) VirMIDI 0-0</Source>
+   <Source>Midi-Bridge:Virtual Raw MIDI 0-0VirMIDI 0-0 (capture)</Source>
    <Target>LSP Loudness Compensator Stereo:events-in</Target>
   </Connection>
   <Connection>
-   <Source>Midi-Bridge:Virtual MIDI Card 1:(capture_0) VirMIDI 1-0</Source>
+   <Source>Midi-Bridge:Virtual Raw MIDI 0-0VirMIDI 1-0 (capture)</Source>
    <Target>LSP Loudness Compensator Stereo:events-in</Target>
   </Connection>
   <Connection>
-   <Source>Midi-Bridge:Virtual MIDI Card 1:(capture_0) VirMIDI 2-0</Source>
+   <Source>Midi-Bridge:Virtual Raw MIDI 0-0VirMIDI 2-0 (capture)</Source>
    <Target>LSP Loudness Compensator Stereo:events-in</Target>
   </Connection>
   <Connection>
-   <Source>Midi-Bridge:Virtual MIDI Card 1:(capture_0) VirMIDI 3-0</Source>
+   <Source>Midi-Bridge:Virtual Raw MIDI 0-0VirMIDI 3-0 (capture)</Source>
    <Target>LSP Loudness Compensator Stereo:events-in</Target>
   </Connection>
   <Connection>
-   <Source>Midi-Bridge:Virtual MIDI Card 1:(capture_0) VirMIDI 4-0</Source>
+   <Source>Midi-Bridge:Virtual Raw MIDI 0-0VirMIDI 4-0 (capture)</Source>
    <Target>LSP Loudness Compensator Stereo:events-in</Target>
   </Connection>
   <Positions>

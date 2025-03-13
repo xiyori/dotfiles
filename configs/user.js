@@ -279,6 +279,10 @@ user_pref("security.cert_pinning.enforcement_level", 2);
 // PREF: default pdf zoom
 user_pref("pdfjs.defaultZoomValue", "page-width");
 
+// PREF: site zoom
+user_pref("toolkit.zoomManager.zoomValues", ".3,.4,.5,.6,.7,.8,.9,1,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2,2.4,3,4,5");
+//user_pref("toolkit.zoomManager.zoomValues", ".3,.4,.5,.6,.7,.8,.9,1,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2,2.4,3,4,5");
+
 // PREF: set DoH provider
 user_pref("network.trr.uri", "https://dns.quad9.net/dns-query");
 

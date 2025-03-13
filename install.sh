@@ -110,6 +110,8 @@ install_essential () {
         "grim"
         "slurp"
         "wl-clipboard"
+        "wl-clip-persist"
+        "cliphist"
 
         # System
         "brightnessctl" # screen brightness

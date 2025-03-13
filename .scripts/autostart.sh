@@ -26,6 +26,9 @@ swww img "$WALLPAPER1" -t none
 powerline-daemon
 hyprctl setcursor "$XCURSOR_THEME" $XCURSOR_SIZE
 xsetroot -xcf "/usr/share/icons/$XCURSOR_THEME/cursors/left_ptr" $XCURSOR_SIZE
+wl-clip-persist --clipboard regular &
+wl-paste --type text --watch cliphist store & # Stores only text data
+wl-paste --type image --watch cliphist store & # Stores only image data
 
 # applets
 blueman-applet &

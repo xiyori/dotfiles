@@ -13,6 +13,7 @@ while : ; do
     echo "$temp_gpu" > /tmp/nvidia-temp/temp_gpu
 
     temp_cpu="$(cat /tmp/hwmon4/temp1_input)"
+    echo "$temp_cpu" > /tmp/nvidia-temp/temp_cpu
     echo "$((temp_gpu > temp_cpu ? temp_gpu : temp_cpu))" > /tmp/nvidia-temp/temp_max_gpu_cpu
 
     tail -n +2 /tmp/nvidia-temp/temp_cpu_history > /tmp/nvidia-temp/temp_cpu_history.tmp && mv /tmp/nvidia-temp/temp_cpu_history.tmp /tmp/nvidia-temp/temp_cpu_history
