@@ -179,7 +179,9 @@ install_essential () {
     
     # gsettings
     gsettings set org.gnome.desktop.interface gtk-theme 'catppuccin-mocha-mauve-standard+default-dark'
-    # gsettings set org.gnome.desktop.interface font-name 'Noto Sans'
+    gsettings set org.gnome.desktop.interface font-name 'Noto Sans 11'
+    gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans 11'
+    gsettings set org.gnome.desktop.interface monospace-font-name 'Noto Sans Mono 11'
     gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
     gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 
