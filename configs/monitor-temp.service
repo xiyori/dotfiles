@@ -1,11 +1,11 @@
 [Unit]
-Description=NVidia GPU temperature reader
+Description=NVidia GPU (and CPU) temperature monitoring and processing
 #RequiredBy=fancontrol.service
 Before=fancontrol.service
 After=lm_sensors.service
 
 [Service]
-ExecStart=/usr/local/bin/nvidia-temp.sh
+ExecStart=/usr/local/bin/monitor-temp.sh
 
 [Install]
 WantedBy=multi-user.target
