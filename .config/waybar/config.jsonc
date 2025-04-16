@@ -34,6 +34,7 @@
         "custom/updates",
         //"custom/notifications",
         // "network",
+        "custom/autogain",
         "custom/sound",
         // "wireplumber",
         "hyprland/language",
@@ -220,6 +221,17 @@
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "pavucontrol"
     }, */
+    "custom/autogain": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{}", // {format_source}
+        "tooltip": true,
+        "escape": true,
+        "exec": "~/.scripts/audio/auto_gain_status.sh",
+        "return-type": "json",
+        "on-click": "~/.scripts/audio/auto_gain.sh",
+        "on-click-right": "~/.scripts/audio/auto_gain.sh reset",
+        "signal": 2
+    },
     "custom/sound": {
         // "scroll-step": 1, // %, can be a float
         "format": "{}", // {format_source}
@@ -231,8 +243,8 @@
         "on-click-right": "~/.scripts/audio/next_active_sink.sh",
         "on-scroll-up": "~/.scripts/audio/volume.sh up",
         "on-scroll-down": "~/.scripts/audio/volume.sh down",
-        "signal": 1,
-        "interval": 2
+        "interval": 2,
+        "signal": 1
     },
     "backlight": {
         // "device": "acpi_video1",

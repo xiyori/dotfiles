@@ -84,6 +84,7 @@ tooltip {
 #temperature,
 #custom-fancontrol,
 #custom-monitor,
+#custom-autogain,
 #custom-sound,
 #custom-music,
 #custom-updates,
@@ -321,6 +322,11 @@ tooltip {
   border-bottom-right-radius: 0;
   margin-right: 0px;
   padding-right: 5px;
+}
+
+#custom-autogain {
+  color: @red;
+  padding-right: 18px;
 }
 
 /* =============================== */

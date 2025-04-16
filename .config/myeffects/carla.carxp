@@ -38,7 +38,12 @@
     <Index>1</Index>
     <Name>Input gain</Name>
     <Symbol>input</Symbol>
-    <Value>1.00000011920929</Value>
+    <MidiChannel>2</MidiChannel>
+    <MappedControlIndex>7</MappedControlIndex>
+    <MappedMinimum>1</MappedMinimum>
+    <MappedMaximum>4.32000017166138</MappedMaximum>
+    <MidiCC>7</MidiCC>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -14378,33 +14383,76 @@
   </Data>
  </Plugin>
 
+ <!-- Big Meter -->
+ <Plugin>
+  <Info>
+   <Type>INTERNAL</Type>
+   <Name>Big Meter</Name>
+   <Label>bigmeter</Label>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x0</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Color</Name>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Style</Name>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Out Left</Name>
+    <MidiChannel>5</MidiChannel>
+    <MappedControlIndex>7</MappedControlIndex>
+    <MappedMinimum>0</MappedMinimum>
+    <MappedMaximum>1</MappedMaximum>
+    <MidiCC>7</MidiCC>
+   </Parameter>
+
+   <Parameter>
+    <Index>3</Index>
+    <Name>Out Right</Name>
+    <MidiChannel>4</MidiChannel>
+    <MappedControlIndex>7</MappedControlIndex>
+    <MappedMinimum>0</MappedMinimum>
+    <MappedMaximum>1</MappedMaximum>
+    <MidiCC>7</MidiCC>
+   </Parameter>
+  </Data>
+ </Plugin>
+
  <ExternalPatchbay>
   <Connection>
    <Source>myeffects_sink:monitor_FL</Source>
    <Target>LSP Loudness Compensator Stereo:Input L</Target>
   </Connection>
   <Connection>
+   <Source>myeffects_sink:monitor_FL</Source>
+   <Target>Big Meter:input_1</Target>
+  </Connection>
+  <Connection>
    <Source>myeffects_sink:monitor_FR</Source>
    <Target>LSP Loudness Compensator Stereo:Input R</Target>
   </Connection>
   <Connection>
+   <Source>myeffects_sink:monitor_FR</Source>
+   <Target>Big Meter:input_2</Target>
+  </Connection>
+  <Connection>
+   <Source>Big Meter:events-out</Source>
+   <Target>Midi-Bridge:Virtual Raw MIDI 0-0VirMIDI 0-0 (playback)</Target>
+  </Connection>
+  <Connection>
    <Source>Midi-Bridge:Virtual Raw MIDI 0-0VirMIDI 0-0 (capture)</Source>
-   <Target>LSP Loudness Compensator Stereo:events-in</Target>
-  </Connection>
-  <Connection>
-   <Source>Midi-Bridge:Virtual Raw MIDI 0-0VirMIDI 1-0 (capture)</Source>
-   <Target>LSP Loudness Compensator Stereo:events-in</Target>
-  </Connection>
-  <Connection>
-   <Source>Midi-Bridge:Virtual Raw MIDI 0-0VirMIDI 2-0 (capture)</Source>
-   <Target>LSP Loudness Compensator Stereo:events-in</Target>
-  </Connection>
-  <Connection>
-   <Source>Midi-Bridge:Virtual Raw MIDI 0-0VirMIDI 3-0 (capture)</Source>
-   <Target>LSP Loudness Compensator Stereo:events-in</Target>
-  </Connection>
-  <Connection>
-   <Source>Midi-Bridge:Virtual Raw MIDI 0-0VirMIDI 4-0 (capture)</Source>
    <Target>LSP Loudness Compensator Stereo:events-in</Target>
   </Connection>
   <Positions>
@@ -14420,13 +14468,13 @@
    <Position x1="775" y1="970" x2="1133" y2="421">
     <Name>USB-C to 3.5mm Headphone Jack Adapter Analog Stereo</Name>
    </Position>
-   <Position x1="36" y1="697" x2="1022" y2="681">
+   <Position x1="36" y1="697" x2="770" y2="136">
     <Name>Midi-Bridge</Name>
    </Position>
    <Position x1="174" y1="602" x2="1049" y2="515">
     <Name>BLE MIDI 1</Name>
    </Position>
-   <Position x1="446" y1="339" pluginId="0">
+   <Position x1="447" y1="338" pluginId="0">
     <Name>LSP Loudness Compensator Stereo</Name>
    </Position>
    <Position x1="770" y1="254" pluginId="1">
@@ -14443,6 +14491,9 @@
    </Position>
    <Position x1="770" y1="590" pluginId="5">
     <Name>R70x</Name>
+   </Position>
+   <Position x1="491" y1="227" pluginId="6">
+    <Name>Big Meter</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>

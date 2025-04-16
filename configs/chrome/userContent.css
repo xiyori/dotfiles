@@ -1,6 +1,7 @@
 @-moz-document unobservable-document() {
-  .pdfViewer {
+  body:has(.pdfViewer) {
     filter: brightness(80%) invert(100%) hue-rotate(180deg);
+    background-color: #333333 !important;
   }
 }
 

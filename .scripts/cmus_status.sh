@@ -9,12 +9,12 @@ file_path=$(echo "$@" | grep -o "file .* artist")
 file_path="${file_path:5:-7}"
 if [[ "$file_path" == cue://* ]]; then
     file_path="$(dirname "${file_path:6}")"
-elif [ "$file_path" == "" ]; then
+elif [ -z "$file_path" ]; then
     file_path=$(echo "$@" | grep -o "file .*")
     file_path="${file_path:5}"
 fi
 
-if [ "$file_path" == "" ]; then
+if [ -z "$file_path" ]; then
     file_dir=""
 else
     file_dir="$(dirname "${file_path}")"
@@ -28,7 +28,7 @@ echo "$file_dir" > "${STATE_DIR}/current_file"
 
 if [ -n "$file_dir" ]; then
     img_name="$(ls -S1 "$file_dir" | grep -oiE ".*(cover|folder|artwork|albumart|jacket|front).*\.(jpg|jpeg|png|tiff)" | head -1)"
-    if [ "$img_name" == "" ]; then
+    if [ -z "$img_name" ]; then
         img_name="$(ls -S1 "$file_dir" | grep -oiE ".*\.(jpg|jpeg|png|tiff)" | head -1)"
     fi
     if ! cp "${file_dir}/${img_name}" "$COVER_PATH" ; then

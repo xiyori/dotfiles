@@ -24,13 +24,13 @@ artist="$(convert_to_json "${artist#*artist}")"
 title="$(playerctl metadata 2> /dev/null | grep xesam:title)"
 title="$(convert_to_json "${title#*title}")"
 
-if [ "$artist" == "" ]; then
+if [ -z "$artist" ]; then
     tooltip="$title"
 else
     tooltip="$artist - $title"
 fi
 
-if [ "$tooltip" == "" ]; then
+if [ -z "$tooltip" ]; then
     tooltip="$nick"
 fi
 

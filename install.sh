@@ -101,6 +101,7 @@ install_essential () {
         "lsp-plugins-lv2"
         "alsa-utils"
         "jq" # for waybar json scripting
+        "bc" # for auto gain scripting
         
         # Desktop Integration
         "xdg-desktop-portal-gtk" # needed for theming
