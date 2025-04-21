@@ -225,6 +225,7 @@ install_optional () {
         "qimgv-git" # image viewer
         "rofi-emoji-git" # emoji picker
         "noto-fonts-emoji" # emoji font
+        "wtype" # input tool for emoji
         "hyprpicker" # color picker
         "imagemagick" # for color picker script
         "tty-clock" # to flex

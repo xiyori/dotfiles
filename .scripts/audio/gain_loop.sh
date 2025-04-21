@@ -66,17 +66,22 @@ while read -r line; do
                 fi
                 set_gain "$gain_db"
 
+                if (( $(echo "$gain_db == 0" | bc -l) )); then
+                    notify-send --expire-time 3000 "Auto Gain: Off"
+                    break
+                fi
+
                 pkill -RTMIN+2 waybar
             elif (( $(echo "$new_gain_db < $gain_db" | bc -l) )); then
                 gain_db="$new_gain_db"
                 set_gain "$gain_db"
 
-                pkill -RTMIN+2 waybar
-
                 if (( $(echo "$gain_db == 0" | bc -l) )); then
                     notify-send --expire-time 3000 "Auto Gain: Off"
                     break
                 fi
+
+                pkill -RTMIN+2 waybar
             fi
         fi
     fi
