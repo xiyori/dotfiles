@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if ! pactl list short sinks | grep myeffects_sink ; then
-    pw-cli create-node adapter '{ factory.name=support.null-audio-sink node.name="myeffects_sink" node.description="myeffects_sink" media.class=Audio/Sink object.linger=true audio.position=[FL FR] }'
+    pw-cli create-node adapter '{ factory.name=support.null-audio-sink node.name="myeffects_sink" node.description="myeffects_sink" media.class=Audio/Sink object.linger=true monitor.channel-volumes=true audio.position=[FL FR] }'
 fi
 
 regex=".* ([0-9]+)\. myeffects_sink.*"

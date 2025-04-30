@@ -33,3 +33,5 @@ wl-paste --watch cliphist store &
 blueman-applet &
 nm-applet &
 wlsunset -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
+
+~/.scripts/audio/utility_loop.sh

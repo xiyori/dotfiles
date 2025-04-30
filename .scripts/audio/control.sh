@@ -1,7 +1,7 @@
 #!/bin/bash
 
 case "$1" in 
-  play-pause|next|previous)
+  play-pause|next|previous|status|metadata)
     ~/.scripts/audio/player.sh "$1"
   ;;
   *)

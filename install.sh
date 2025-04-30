@@ -157,6 +157,7 @@ install_essential () {
     _create_symlink .config/myeffects
     _create_symlink .config/nvim
     _create_symlink .config/pipewire
+    _create_symlink .config/wireplumber
     _create_symlink .config/powerline
     _create_symlink .config/waybar
     _create_symlink .config/wlogout

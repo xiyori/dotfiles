@@ -1,17 +1,14 @@
 #!/bin/bash
 
-artist=$(playerctl metadata 2> /dev/null | grep xesam:artist)
+artist=$(~/.scripts/audio/player.sh metadata 2> /dev/null | grep xesam:artist)
 artist="$(echo ${artist#*artist})"
-title="$(playerctl metadata 2> /dev/null | grep xesam:title)"
+echo "$artist" > /tmp/current_artist
+title="$(~/.scripts/audio/player.sh metadata 2> /dev/null | grep xesam:title)"
 title="$(echo ${title#*title})"
+echo "$title" > /tmp/current_title
 
 if [ -z "$artist" ]; then
-    tooltip="$title"
+    echo "$title" > /tmp/current_tooltip
 else
-    tooltip="$artist - $title"
+    echo "$artist - $title" > /tmp/current_tooltip
 fi
-
-if [ -z "$tooltip" ]; then
-    tooltip="$(hyprctl splash)"
-fi
-echo "$tooltip"
