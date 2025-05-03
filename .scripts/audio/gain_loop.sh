@@ -1,16 +1,17 @@
 #!/bin/bash
 
-threshold=10  # 10db
-max_boost=6   # 6db
-distance_thresh=20
+threshold=20  # db
+max_boost=15  # db
+distance_thresh=20 # amidi readings
 count_thresh=5
 
 function set_gain {
-    gain_raw="$(bc -l <<< "$1 * 100 / $threshold")"
-    gain_raw="$(printf '%.0f\n' "$gain_raw")"
-    gain_hex="$(printf "%X" "$gain_raw")"
-    device="$(~/.scripts/audio/midi_device.sh)"
-    amidi -p "$device" -S "B1 07 $gain_hex"  # send volume control to MIDI channel 2
+    # gain_raw="$(bc -l <<< "$1 * 100 / $threshold")"
+    # gain_raw="$(printf '%.0f\n' "$gain_raw")"
+    # gain_hex="$(printf "%X" "$gain_raw")"
+    # device="$(~/.scripts/audio/midi_device.sh)"
+    # amidi -p "$device" -S "B1 07 $gain_hex"  # send volume control to MIDI channel 2
+    pactl set-sink-volume gain_sink "$1db"
     echo "$1" > /tmp/auto_gain
 }
 

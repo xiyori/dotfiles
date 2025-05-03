@@ -11,8 +11,6 @@
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all &
 
-~/.scripts/audio/startup.sh
-
 # waybar
 ln -s $XDG_RUNTIME_DIR/hypr /tmp/hypr
 echo "" > /tmp/custom_monitor_waybar
@@ -32,6 +30,8 @@ wl-paste --watch cliphist store &
 # applets
 blueman-applet &
 nm-applet &
-wlsunset -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
+wlsunset -t 3400 -T 4600 -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
+# wlsunset -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
 
+~/.scripts/audio/startup.sh
 ~/.scripts/audio/utility_loop.sh

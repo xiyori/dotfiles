@@ -38,11 +38,6 @@
     <Index>1</Index>
     <Name>Input gain</Name>
     <Symbol>input</Symbol>
-    <MidiChannel>2</MidiChannel>
-    <MappedControlIndex>7</MappedControlIndex>
-    <MappedMinimum>1</MappedMinimum>
-    <MappedMaximum>4.32000017166138</MappedMaximum>
-    <MidiCC>7</MidiCC>
     <Value>1</Value>
    </Parameter>
 
@@ -14433,7 +14428,7 @@
  <ExternalPatchbay>
   <Connection>
    <Source>myeffects_sink:monitor_FL</Source>
-   <Target>LSP Loudness Compensator Stereo:Input L</Target>
+   <Target>gain_sink:playback_FL</Target>
   </Connection>
   <Connection>
    <Source>myeffects_sink:monitor_FL</Source>
@@ -14441,11 +14436,19 @@
   </Connection>
   <Connection>
    <Source>myeffects_sink:monitor_FR</Source>
-   <Target>LSP Loudness Compensator Stereo:Input R</Target>
+   <Target>gain_sink:playback_FR</Target>
   </Connection>
   <Connection>
    <Source>myeffects_sink:monitor_FR</Source>
    <Target>Big Meter:input_2</Target>
+  </Connection>
+  <Connection>
+   <Source>gain_sink:monitor_FL</Source>
+   <Target>LSP Loudness Compensator Stereo:Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>gain_sink:monitor_FR</Source>
+   <Target>LSP Loudness Compensator Stereo:Input R</Target>
   </Connection>
   <Connection>
    <Source>Big Meter:events-out</Source>
@@ -14456,40 +14459,37 @@
    <Target>LSP Loudness Compensator Stereo:events-in</Target>
   </Connection>
   <Positions>
-   <Position x1="267" y1="339">
+   <Position x1="213" y1="226">
     <Name>myeffects_sink</Name>
    </Position>
-   <Position x1="775" y1="970" x2="1133" y2="421">
-    <Name>USB-C to 3.5mm Headphone Jack Adapter Analog Stereo</Name>
+   <Position x1="392" y1="338">
+    <Name>gain_sink</Name>
    </Position>
-   <Position x1="775" y1="822" x2="1133" y2="338">
-    <Name>SMSL USB AUDIO Analog Stereo</Name>
-   </Position>
-   <Position x1="36" y1="697" x2="770" y2="136">
+   <Position x1="148" y1="697" x2="882" y2="136">
     <Name>Midi-Bridge</Name>
    </Position>
-   <Position x1="174" y1="602" x2="1049" y2="515">
+   <Position x1="286" y1="602" x2="1161" y2="515">
     <Name>BLE MIDI 1</Name>
    </Position>
-   <Position x1="447" y1="338" pluginId="0">
+   <Position x1="559" y1="338" pluginId="0">
     <Name>LSP Loudness Compensator Stereo</Name>
    </Position>
-   <Position x1="770" y1="254" pluginId="1">
+   <Position x1="882" y1="254" pluginId="1">
     <Name>Blessing 3</Name>
    </Position>
-   <Position x1="770" y1="422" pluginId="2">
+   <Position x1="882" y1="422" pluginId="2">
     <Name>SB-1000</Name>
    </Position>
-   <Position x1="770" y1="338" pluginId="3">
+   <Position x1="882" y1="338" pluginId="3">
     <Name>DBR-62</Name>
    </Position>
-   <Position x1="770" y1="506" pluginId="4">
+   <Position x1="882" y1="506" pluginId="4">
     <Name>Buds2 Pro ANC</Name>
    </Position>
-   <Position x1="770" y1="590" pluginId="5">
+   <Position x1="882" y1="590" pluginId="5">
     <Name>R70x</Name>
    </Position>
-   <Position x1="491" y1="227" pluginId="6">
+   <Position x1="603" y1="227" pluginId="6">
     <Name>Big Meter</Name>
    </Position>
   </Positions>

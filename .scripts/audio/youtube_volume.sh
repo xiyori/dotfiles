@@ -10,4 +10,6 @@ fi
 
 volume="$(bc -l <<< "-($volume)")"
 
-pactl set-sink-volume myeffects_sink "${volume}db"
+if ! pgrep "gain_loop.sh" > /dev/null 2>&1 ; then
+    pactl set-sink-volume gain_sink "${volume}db"
+fi
