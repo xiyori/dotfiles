@@ -89,4 +89,4 @@ while read -r line; do
     distance=$(( distance + 1 ))
 done < <(amidi -p "hw:0,0" -d)
 
-pkill amidi
+killall amidi
