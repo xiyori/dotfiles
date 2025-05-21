@@ -227,6 +227,7 @@ user_pref("browser.newtabpage.activity-stream.showWeather", false);
 user_pref("media.memory_cache_max_size", 1048576);
 user_pref("image.mem.decode_bytes_at_a_time", 65536);
 user_pref("browser.sessionstore.interval", 600000);
+user_pref("browser.backspace_action", 0);
 
 // PREF: Ctrl-Tab cycle by recently used
 user_pref("browser.ctrlTab.sortByRecentlyUsed", true);

@@ -25,12 +25,12 @@ powerline-daemon
 hyprctl setcursor "$XCURSOR_THEME" $XCURSOR_SIZE
 xsetroot -xcf "/usr/share/icons/$XCURSOR_THEME/cursors/left_ptr" $XCURSOR_SIZE
 killall wl-clip-persist ; wl-clip-persist --clipboard regular &
-killall wl-paste ; wl-paste --watch cliphist store &
+# killall wl-paste ; cliphist wipe ; wl-paste --watch cliphist store &
 
 # applets
 blueman-applet &
 nm-applet &
-# wlsunset -t 3400 -T 4600 -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
+# killall wlsunset ; wlsunset -t 3400 -T 4600 -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
 killall wlsunset ; wlsunset -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
 
 ~/.scripts/audio/startup.sh
