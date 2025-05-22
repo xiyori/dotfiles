@@ -35,6 +35,7 @@
         //"custom/notifications",
         // "network",
         "custom/autogain",
+        "custom/soundprofile",
         "custom/sound",
         // "wireplumber",
         "hyprland/language",
@@ -232,6 +233,16 @@
         "on-click-right": "~/.scripts/audio/auto_gain.sh reset",
         "signal": 2
     },
+    "custom/soundprofile": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{}", // {format_source}
+        "tooltip": true,
+        "escape": true,
+        "exec": "~/.scripts/audio/profile_status.sh",
+        "return-type": "json",
+        "on-click": "~/.scripts/audio/next_profile.sh",
+        "signal": 5
+    },
     "custom/sound": {
         // "scroll-step": 1, // %, can be a float
         "format": "{}", // {format_source}
@@ -241,8 +252,8 @@
         "return-type": "json",
         "on-click": "~/.scripts/audio/player.sh play-pause",
         "on-click-right": "~/.scripts/audio/next_active_sink.sh",
-        "on-scroll-up": "~/.scripts/audio/volume.sh up",
-        "on-scroll-down": "~/.scripts/audio/volume.sh down",
+        "on-scroll-up": "~/.scripts/audio/control.sh up",
+        "on-scroll-down": "~/.scripts/audio/control.sh down",
         "interval": 2,
         "signal": 1
     },

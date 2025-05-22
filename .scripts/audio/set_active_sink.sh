@@ -42,8 +42,9 @@ fi
 
 active_sinks="$(~/.scripts/audio/list_active_sinks.sh)"
 new_active_sink="$1"
+profile="$2"
 
-# Disconnect profile from loudness 
+# Disconnect profile(s) from loudness
 ~/.scripts/audio/remove_output_links.sh "${output_node}:Output L"
 ~/.scripts/audio/remove_output_links.sh "${output_node}:Output R"
 
@@ -53,17 +54,25 @@ for active_sink in $active_sinks ; do
     ~/.scripts/audio/remove_input_links.sh "${active_sink}:playback_FR"
 done
 
-profiles="$(cat ~/.config/myeffects/profiles.txt | grep "$new_active_sink")"
-if [ -z "$profiles" ]; then
+volume="$(echo "$profile" | cut -f 3)"
+
+# Set sink volume
+if [ -z "$volume" ]; then
+    pactl set-sink-volume "$new_active_sink" 100%
+else
+    pactl set-sink-volume "$new_active_sink" "$volume"
+fi
+
+in_profile="$(echo "$profile" | cut -f 2)"
+out_profile="$in_profile"
+
+if [ -z "$in_profile" ]; then
     # No profile found, connect directly to sink
     pw-link "${output_node}:Output L" "${new_active_sink}:playback_FL"
     pw-link "${output_node}:Output R" "${new_active_sink}:playback_FR"
+
+    message="$(~/.scripts/audio/active_sink_nick.sh)"
 else
-    in_profile="$(echo "$profiles" | cut -f 2)"
-    out_profile="$(echo "$profiles" | cut -f 3)"
-    if [ -z "$out_profile" ]; then
-        out_profile="$in_profile"
-    fi
     # Connect new effects profile to sink
     pw-link "${out_profile}:Output L" "${new_active_sink}:playback_FL"
     pw-link "${out_profile}:Output R" "${new_active_sink}:playback_FR"
@@ -72,35 +81,39 @@ else
     pw-link "${output_node}:Output L" "${in_profile}:Input L"
     pw-link "${output_node}:Output R" "${in_profile}:Input R"
 
+    message="$in_profile"
+
     # Connect sub profile and sink if any
-    sub_profiles="$(cat ~/.config/myeffects/sub_profiles.txt | grep "^$new_active_sink")"
-    if [ -n "$sub_profiles" ]; then
-        sub_sink="$(echo "$sub_profiles" | cut -f 2)"
-        in_sub_profile="$(echo "$sub_profiles" | cut -f 3)"
-        out_sub_profile="$(echo "$sub_profiles" | cut -f 3)"
-        if [ -z "$out_sub_profile" ]; then
-            out_sub_profile="$in_sub_profile"
+    sub_profile="$(cat ~/.config/myeffects/sub_profiles.txt | grep "^$in_profile")"
+    if [ -n "$sub_profile" ]; then
+        sub_sink="$(echo "$sub_profile" | cut -f 2)"
+        sub_volume="$(echo "$sub_profile" | cut -f 4)"
+
+        # Set sink volume
+        if [ -z "$sub_volume" ]; then
+            pactl set-sink-volume "$sub_sink" 100%
+        else
+            pactl set-sink-volume "$sub_sink" "$sub_volume"
         fi
 
+        in_sub_profile="$(echo "$sub_profile" | cut -f 3)"
+        out_sub_profile="$in_sub_profile"
+
+        # Connect new effects profile to sink
         pw-link "${out_sub_profile}:Output L" "${sub_sink}:playback_FL"
         pw-link "${out_sub_profile}:Output R" "${sub_sink}:playback_FR"
 
+        # Connect loudness to profile
         pw-link "${output_node}:Output L" "${in_sub_profile}:Input L"
         pw-link "${output_node}:Output R" "${in_sub_profile}:Input R"
-
-        pactl set-sink-volume "$sub_sink" 100%
     fi
 fi
 
-# Set bluetooth volume to -20db
-if grep bluez <<< "$new_active_sink" ; then
-    pactl set-sink-volume $new_active_sink 30419
-else
-    pactl set-sink-volume "$new_active_sink" 100%
-fi
+echo "$in_profile" > /tmp/active_profile
 
 pkill -RTMIN+1 waybar
+pkill -RTMIN+5 waybar
 
-notify-send --expire-time 3000 "Audio: $(~/.scripts/audio/active_sink_nick.sh)"
+notify-send --expire-time 3000 "Audio: $message"
 
 unlock

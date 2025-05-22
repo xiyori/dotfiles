@@ -85,6 +85,7 @@ tooltip {
 #custom-fancontrol,
 #custom-monitor,
 #custom-autogain,
+#custom-soundprofile,
 #custom-sound,
 #custom-music,
 #custom-updates,
@@ -322,6 +323,11 @@ tooltip {
   border-bottom-right-radius: 0;
   margin-right: 0px;
   padding-right: 5px;
+}
+
+#custom-soundprofile {
+  padding-right: 17px;
+  color: @green;
 }
 
 #custom-autogain {

@@ -29,4 +29,6 @@ done
 # Don't particularly like this method of making it circular, but...
 [ -z "$new_active_sink" ] && new_active_sink="$first"
 
-~/.scripts/audio/set_active_sink.sh "$new_active_sink"
+profile="$(cat ~/.config/myeffects/profiles.txt | grep -m 1 "^$new_active_sink")"
+
+~/.scripts/audio/set_active_sink.sh "$new_active_sink" "$profile"

@@ -1,4 +1,5 @@
 alsa_output.usb-SMSL_SMSL_USB_AUDIO-00.analog-stereo	DBR-62
+alsa_output.usb-SMSL_SMSL_USB_AUDIO-00.analog-stereo	HE1000
 alsa_output.usb-MOONDROP_MOONDROP_Dawn_Pro_MOONDROP_Dawn_Pro-00.analog-stereo	Blessing 3
-bluez_output.B0_54_76_4E_67_7E.1	Buds2 Pro ANC
+bluez_output.B0_54_76_4E_67_7E.1	Buds2 Pro ANC	30419
 alsa_output.usb-TempoTec_SONATA_Audio_5000000001-01.analog-stereo	R70x
