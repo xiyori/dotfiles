@@ -9,6 +9,10 @@ convert_to_json() {
 sink="$(~/.scripts/audio/list_active_sinks.sh | head -1)"
 nick="$(~/.scripts/audio/active_sink_nick.sh)"
 
+if [ -z "$sink" ]; then
+    exit 0
+fi
+
 case "$(pactl get-sink-mute "$sink")" in
   *yes)
     echo 1 > /tmp/muted

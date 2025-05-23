@@ -124,6 +124,8 @@ install_essential () {
         "hypridle" # turn off screen
         "xorg-xrdb" # for .Xresources
         "xorg-xsetroot" # for cursor size stability
+        "qt5-wayland"
+        "qt6-wayland"
 
         # wifi - network management
         "networkmanager" # for network management

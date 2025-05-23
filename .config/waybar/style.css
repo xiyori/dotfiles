@@ -327,7 +327,7 @@ tooltip {
 
 #custom-soundprofile {
   padding-right: 17px;
-  color: @green;
+  color: @subtext1;
 }
 
 #custom-autogain {

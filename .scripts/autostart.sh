@@ -33,5 +33,5 @@ nm-applet &
 # killall wlsunset ; wlsunset -t 3400 -T 4600 -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
 killall wlsunset ; wlsunset -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
 
+killall utility_loop.sh ; ~/.scripts/audio/utility_loop.sh > /dev/null 2>&1 & disown
 ~/.scripts/audio/startup.sh
-killall utility_loop.sh ; ~/.scripts/audio/utility_loop.sh
