@@ -2,8 +2,8 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     //"gtk-layer-shell": "false",
-    //"output": ["eDP-1", "HDMI-A-1"],
-    "height": 45, // Waybar height (to be removed for auto height)
+    //"output": "!DP-1",
+    "height": 50, // Waybar height (to be removed for auto height)
     // "width": 2560, // Waybar width
     "spacing": 0, // Gaps between modules (0px) Adjusted in the css
     "margin-top": 0,

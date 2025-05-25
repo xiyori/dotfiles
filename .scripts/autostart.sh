@@ -11,11 +11,6 @@
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all &
 
-# waybar
-ln -s $XDG_RUNTIME_DIR/hypr /tmp/hypr
-echo "" > /tmp/custom_monitor_waybar
-~/.scripts/launch_waybar &
-
 # wallpaper
 swww-daemon > /tmp/swww.log 2>&1 & disown
 swww img "$WALLPAPER1" -t none
@@ -24,7 +19,7 @@ swww img "$WALLPAPER1" -t none
 powerline-daemon
 hyprctl setcursor "$XCURSOR_THEME" $XCURSOR_SIZE
 xsetroot -xcf "/usr/share/icons/$XCURSOR_THEME/cursors/left_ptr" $XCURSOR_SIZE
-killall wl-clip-persist ; wl-clip-persist --clipboard regular &
+killall wl-clip-persist ; wl-clip-persist --clipboard regular > /dev/null 2>&1 & disown
 # killall wl-paste ; cliphist wipe ; wl-paste --watch cliphist store &
 
 # applets
@@ -33,5 +28,9 @@ nm-applet &
 # killall wlsunset ; wlsunset -t 3400 -T 4600 -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
 killall wlsunset ; wlsunset -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
 
-killall utility_loop.sh ; ~/.scripts/audio/utility_loop.sh > /dev/null 2>&1 & disown
 ~/.scripts/audio/startup.sh
+
+# waybar
+ln -s $XDG_RUNTIME_DIR/hypr /tmp/hypr
+echo "" > /tmp/custom_monitor_waybar
+~/.scripts/launch_waybar

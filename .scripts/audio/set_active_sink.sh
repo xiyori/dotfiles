@@ -35,12 +35,12 @@ exlock_now || exit 1
 
 output_node="LSP Loudness Compensator Stereo"
 
-if ! pactl list clients | grep "$output_node" > /dev/null 2>&1 ; then
+if ! pactl list clients | grep "Big Meter" > /dev/null 2>&1 ; then
     exit 0
 fi
-if [ "$(ps -o etimes= -p "$(pgrep carla)")" -lt 7 ]; then
-    exit 0
-fi
+# if [ "$(ps -o etimes= -p "$(pgrep carla)")" -lt 7 ]; then
+#     exit 0
+# fi
 
 active_sinks="$(~/.scripts/audio/list_active_sinks.sh)"
 new_active_sink="$1"
