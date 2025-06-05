@@ -10,7 +10,7 @@
 # TODO: Trigger a zenity or dmenu dialog with entr that asks whether to switch monitor and/or sound to hdmi? Could do
 # the same for mounting.
 
-active_sinks="$(~/.scripts/audio/list_active_sinks.sh)"
+active_sink="$(~/.scripts/audio/get_active_sink.sh)"
 for sink in $(~/.scripts/audio/list_sinks.sh) ; do
     [ -z "$first" ] && first="$sink" # Save the first index in case the current default is the last in the list
     # Subsequent pass, don't need continue above

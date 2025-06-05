@@ -6,7 +6,7 @@ convert_to_json() {
     echo "${tmp:1:-1}"
 }
 
-sink="$(~/.scripts/audio/list_active_sinks.sh | head -1)"
+sink="$(~/.scripts/audio/get_active_sink.sh)"
 nick="$(~/.scripts/audio/active_sink_nick.sh)"
 
 if [ -z "$sink" ]; then

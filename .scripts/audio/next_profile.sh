@@ -1,6 +1,6 @@
 #!/bin/bash
 
-active_sink="$(~/.scripts/audio/list_active_sinks.sh | head -1)"
+active_sink="$(~/.scripts/audio/get_active_sink.sh)"
 profiles="$(cat ~/.config/myeffects/profiles.txt | grep "^$active_sink")"
 active_profile="$(cat /tmp/active_profile)"
 
