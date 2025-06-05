@@ -200,7 +200,7 @@ install_essential () {
     cp rofi/basic/.local/share/rofi/themes/* ~/.local/share/rofi/themes/
 
     # Services
-    sudo cp configs/monitor-temp.service /usr/lib/systemd/system/monitor-temp.service
+    sudo cp configs/monitor-temp.service /etc/systemd/system/monitor-temp.service
     sudo ln -s "$(pwd)/.scripts/monitor-temp.sh" /usr/local/bin/monitor-temp.sh
     sudo systemctl enable monitor-temp.service
 

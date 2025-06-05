@@ -9801,7 +9801,7 @@
     <Index>7</Index>
     <Name>Filter select</Name>
     <Symbol>fsel</Symbol>
-    <Value>2</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -10760,7 +10760,7 @@
     <Index>160</Index>
     <Name>Frequency 12</Name>
     <Symbol>f_12</Symbol>
-    <Value>11000</Value>
+    <Value>11500</Value>
    </Parameter>
 
    <Parameter>
@@ -10781,7 +10781,7 @@
     <Index>163</Index>
     <Name>Quality factor 12</Name>
     <Symbol>q_12</Symbol>
-    <Value>2</Value>
+    <Value>1.5</Value>
    </Parameter>
 
    <Parameter>
@@ -10844,7 +10844,7 @@
     <Index>173</Index>
     <Name>Gain 13</Name>
     <Symbol>g_13</Symbol>
-    <Value>1.99526226520538</Value>
+    <Value>2.51188635826111</Value>
    </Parameter>
 
    <Parameter>
@@ -12195,20 +12195,33 @@
  </Plugin>
 
  <ExternalPatchbay>
-  <Connection>
-   <Source>myeffects_sink:monitor_FL</Source>
-   <Target>gain_sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>myeffects_sink:monitor_FR</Source>
-   <Target>gain_sink:playback_FR</Target>
-  </Connection>
   <Positions>
+   <Position x1="213" y1="226">
+    <Name>myeffects_sink</Name>
+   </Position>
+   <Position x1="775" y1="896" x2="1134" y2="420">
+    <Name>USB-C to 3.5mm Headphone Jack Adapter Analog Stereo</Name>
+   </Position>
+   <Position x1="775" y1="896" x2="1131" y2="336">
+    <Name>SMSL USB AUDIO Analog Stereo</Name>
+   </Position>
+   <Position x1="392" y1="338">
+    <Name>gain_sink</Name>
+   </Position>
+   <Position x1="148" y1="697" x2="882" y2="136">
+    <Name>Midi-Bridge</Name>
+   </Position>
+   <Position x1="286" y1="602" x2="1161" y2="515">
+    <Name>BLE MIDI 1</Name>
+   </Position>
    <Position x1="559" y1="338" pluginId="0">
     <Name>LSP Loudness Compensator Stereo</Name>
    </Position>
    <Position x1="882" y1="254" pluginId="1">
     <Name>Blessing 3</Name>
+   </Position>
+   <Position x1="882" y1="338" pluginId="2">
+    <Name>DBR-62</Name>
    </Position>
    <Position x1="882" y1="422" pluginId="3">
     <Name>SB-1000</Name>
@@ -12219,26 +12232,11 @@
    <Position x1="882" y1="590" pluginId="5">
     <Name>HE1000</Name>
    </Position>
-   <Position x1="882" y1="338" pluginId="2">
-    <Name>DBR-62</Name>
-   </Position>
-   <Position x1="213" y1="226">
-    <Name>myeffects_sink</Name>
-   </Position>
-   <Position x1="775" y1="896" x2="1131" y2="336">
-    <Name>SMSL USB AUDIO Analog Stereo</Name>
-   </Position>
-   <Position x1="392" y1="338">
-    <Name>gain_sink</Name>
-   </Position>
    <Position x1="603" y1="227" pluginId="6">
     <Name>Big Meter</Name>
    </Position>
-   <Position x1="148" y1="697" x2="882" y2="136">
-    <Name>Midi-Bridge</Name>
-   </Position>
-   <Position x1="286" y1="602" x2="1161" y2="515">
-    <Name>BLE MIDI 1</Name>
+   <Position x1="474" y1="462" x2="1133" y2="252">
+    <Name>MOONDROP Dawn Pro Analog Stereo</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>

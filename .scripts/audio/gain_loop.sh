@@ -1,7 +1,7 @@
 #!/bin/bash
 
-threshold=20  # db
-max_boost=15  # db
+threshold=25  # db
+max_boost=20  # db
 distance_thresh=20 # amidi readings
 count_thresh=5
 

@@ -10,7 +10,7 @@ if ! pactl list short sinks | grep gain_sink ; then
 fi
 
 regex=".* ([0-9]+)\. myeffects_sink.*"
-if [[ "$(wpctl status | grep "\. myeffects_sink")" =~ $regex ]]; then
+if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
     wpctl set-default "${BASH_REMATCH[1]}"
     wpctl set-volume @DEFAULT_AUDIO_SINK@ 1
     echo 4D > /tmp/loudness  # 65db initial loudness
