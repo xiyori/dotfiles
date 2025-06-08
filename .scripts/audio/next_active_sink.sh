@@ -18,12 +18,9 @@ for sink in $(~/.scripts/audio/list_sinks.sh) ; do
         new_active_sink="$sink"
         break
     fi
-    for active_sink in $active_sinks ; do
-        if [ "$sink" == "$active_sink" ]; then
-            next=1
-            break
-        fi
-    done
+    if [ "$sink" == "$active_sink" ]; then
+        next=1
+    fi
 done
 
 # Don't particularly like this method of making it circular, but...
