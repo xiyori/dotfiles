@@ -52,6 +52,8 @@ install_essential () {
     packages=(
         # Package Management & Utilities
         "pacman-contrib" # pacman utilities
+        "reflector"      # update mirrorlist
+        "rsync"          # use rsync mirrors
         
         # Terminals & Shells
         "alacritty" # for terminal management
@@ -178,7 +180,10 @@ install_essential () {
     echo "snd-virmidi" | sudo tee -a /etc/modules-load.d/virmidi.conf > /dev/null
 
     # For the proper starting of terminal apps from GTK
-    sudo ln -s "$(pwd)/.scripts/xdg-terminal-exec" /usr/bin/xdg-terminal-exec
+    sudo ln -sf "$(pwd)/.scripts/xdg-terminal-exec" /usr/bin/xdg-terminal-exec
+
+    # Reflector config
+    sudo ln -sf "$(pwd)/configs/reflector.conf" /etc/xdg/reflector/reflector.conf
     
     # gsettings
     gsettings set org.gnome.desktop.interface gtk-theme 'catppuccin-mocha-mauve-standard+default-dark'
@@ -209,6 +214,7 @@ install_essential () {
     sudo systemctl enable ufw.service
     sudo systemctl enable bluetooth.service
     sudo systemctl enable systemd-timesyncd.service
+    sudo systemctl enable reflector.timer
     systemctl --user enable pipewire pipewire-pulse wireplumber
     systemctl --user enable mpris-proxy.service
     systemctl --user enable auto-monitor.service
@@ -307,7 +313,6 @@ install_extra () {
         "nss-mdns"
         "joplin-appimage"
         "rnote"
-        "rsync"
     )
     install "${packages[@]}"
 
@@ -319,14 +324,12 @@ install_extra () {
     _create_symlink .config/GIMP/2.10/sessionrc
     _create_symlink .config/GIMP/2.10/toolrc
 
-    sudo rm /etc/greetd/config.toml
-    sudo ln -s "$(pwd)/configs/config.toml" /etc/greetd/config.toml
+    sudo ln -sf "$(pwd)/configs/config.toml" /etc/greetd/config.toml
     
     sudo mkdir /etc/systemd/resolved.conf.d
     sudo cp configs/20-dns-servers.conf /etc/systemd/resolved.conf.d/
 
-    sudo rm /etc/resolv.conf
-    sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+    sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
     
     sudo ln -s "$(pwd)/configs/90-dns-over-tls.conf" /etc/NetworkManager/conf.d/90-dns-over-tls.conf
 
