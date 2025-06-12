@@ -214,6 +214,7 @@ install_essential () {
     sudo systemctl enable ufw.service
     sudo systemctl enable bluetooth.service
     sudo systemctl enable systemd-timesyncd.service
+    sudo systemctl enable fstrim.timer
     sudo systemctl enable reflector.timer
     systemctl --user enable pipewire pipewire-pulse wireplumber
     systemctl --user enable mpris-proxy.service
