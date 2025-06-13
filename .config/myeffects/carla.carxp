@@ -9801,7 +9801,7 @@
     <Index>7</Index>
     <Name>Filter select</Name>
     <Symbol>fsel</Symbol>
-    <Value>1</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -10620,7 +10620,7 @@
     <Index>138</Index>
     <Name>Frequency 10</Name>
     <Symbol>f_10</Symbol>
-    <Value>7200</Value>
+    <Value>7000</Value>
    </Parameter>
 
    <Parameter>
@@ -10634,7 +10634,7 @@
     <Index>140</Index>
     <Name>Gain 10</Name>
     <Symbol>g_10</Symbol>
-    <Value>0.354813367128372</Value>
+    <Value>0.31622776389122</Value>
    </Parameter>
 
    <Parameter>
@@ -10760,7 +10760,7 @@
     <Index>160</Index>
     <Name>Frequency 12</Name>
     <Symbol>f_12</Symbol>
-    <Value>11500</Value>
+    <Value>11000</Value>
    </Parameter>
 
    <Parameter>
@@ -10781,7 +10781,7 @@
     <Index>163</Index>
     <Name>Quality factor 12</Name>
     <Symbol>q_12</Symbol>
-    <Value>1.5</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -10844,7 +10844,7 @@
     <Index>173</Index>
     <Name>Gain 13</Name>
     <Symbol>g_13</Symbol>
-    <Value>2.51188635826111</Value>
+    <Value>1.99526226520538</Value>
    </Parameter>
 
    <Parameter>
@@ -11145,14 +11145,14 @@
     <Index>221</Index>
     <Name>Filter type 18</Name>
     <Symbol>ft_18</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>222</Index>
     <Name>Filter mode 18</Name>
     <Symbol>fm_18</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -11180,7 +11180,7 @@
     <Index>226</Index>
     <Name>Frequency 18</Name>
     <Symbol>f_18</Symbol>
-    <Value>30.7660694122314</Value>
+    <Value>12600</Value>
    </Parameter>
 
    <Parameter>
@@ -11194,14 +11194,14 @@
     <Index>228</Index>
     <Name>Gain 18</Name>
     <Symbol>g_18</Symbol>
-    <Value>0.29376494884491</Value>
+    <Value>0.891250908374786</Value>
    </Parameter>
 
    <Parameter>
     <Index>229</Index>
     <Name>Quality factor 18</Name>
     <Symbol>q_18</Symbol>
-    <Value>0.5</Value>
+    <Value>4</Value>
    </Parameter>
 
    <Parameter>
@@ -11215,14 +11215,14 @@
     <Index>232</Index>
     <Name>Filter type 19</Name>
     <Symbol>ft_19</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>233</Index>
     <Name>Filter mode 19</Name>
     <Symbol>fm_19</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -11250,7 +11250,7 @@
     <Index>237</Index>
     <Name>Frequency 19</Name>
     <Symbol>f_19</Symbol>
-    <Value>1250</Value>
+    <Value>5300</Value>
    </Parameter>
 
    <Parameter>
@@ -11264,14 +11264,14 @@
     <Index>239</Index>
     <Name>Gain 19</Name>
     <Symbol>g_19</Symbol>
-    <Value>1</Value>
+    <Value>1.41253757476807</Value>
    </Parameter>
 
    <Parameter>
     <Index>240</Index>
     <Name>Quality factor 19</Name>
     <Symbol>q_19</Symbol>
-    <Value>0</Value>
+    <Value>3</Value>
    </Parameter>
 
    <Parameter>
@@ -11285,14 +11285,14 @@
     <Index>243</Index>
     <Name>Filter type 20</Name>
     <Symbol>ft_20</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>244</Index>
     <Name>Filter mode 20</Name>
     <Symbol>fm_20</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -11320,7 +11320,7 @@
     <Index>248</Index>
     <Name>Frequency 20</Name>
     <Symbol>f_20</Symbol>
-    <Value>1600</Value>
+    <Value>5750</Value>
    </Parameter>
 
    <Parameter>
@@ -11334,14 +11334,14 @@
     <Index>250</Index>
     <Name>Gain 20</Name>
     <Symbol>g_20</Symbol>
-    <Value>1</Value>
+    <Value>0.891250908374786</Value>
    </Parameter>
 
    <Parameter>
     <Index>251</Index>
     <Name>Quality factor 20</Name>
     <Symbol>q_20</Symbol>
-    <Value>0</Value>
+    <Value>4</Value>
    </Parameter>
 
    <Parameter>
