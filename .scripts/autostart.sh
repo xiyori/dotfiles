@@ -23,8 +23,8 @@ killall wl-clip-persist ; wl-clip-persist --clipboard regular > /dev/null 2>&1 &
 # killall wl-paste ; cliphist wipe ; wl-paste --watch cliphist store &
 
 # applets
-blueman-applet &
-nm-applet &
+blueman-applet & disown
+nm-applet & disown
 # killall wlsunset ; wlsunset -t 3400 -T 4600 -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
 killall wlsunset ; wlsunset -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
 
