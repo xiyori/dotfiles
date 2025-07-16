@@ -33,7 +33,8 @@ unlock()            { _lock u; }   # drop a lock
 # Simplest example is avoiding running multiple instances of script.
 exlock_now || exit 1
 
-output_node="LSP Loudness Compensator Stereo"
+ll_status="$(cat /tmp/low_latency)"
+output_node="$([ "$ll_status" == "low_latency" ] && echo "gain_sink:monitor_F" || echo "LSP Loudness Compensator Stereo:Output ")"
 
 if ! pactl list clients | grep "Big Meter" > /dev/null 2>&1 ; then
     exit 0
@@ -47,8 +48,8 @@ new_active_sink="$1"
 profile="$2"
 
 # Disconnect profile(s) from loudness
-~/.scripts/audio/remove_output_links.sh "${output_node}:Output L"
-~/.scripts/audio/remove_output_links.sh "${output_node}:Output R"
+~/.scripts/audio/remove_output_links.sh "${output_node}L"
+~/.scripts/audio/remove_output_links.sh "${output_node}R"
 
 # Disconnect profile from sink(s)
 for active_sink in $active_sinks ; do
@@ -70,8 +71,8 @@ out_profile="$in_profile"
 
 if [ -z "$in_profile" ]; then
     # No profile found, connect directly to sink
-    pw-link "${output_node}:Output L" "${new_active_sink}:playback_FL"
-    pw-link "${output_node}:Output R" "${new_active_sink}:playback_FR"
+    pw-link "${output_node}L" "${new_active_sink}:playback_FL"
+    pw-link "${output_node}R" "${new_active_sink}:playback_FR"
 
     message="$(~/.scripts/audio/active_sink_nick.sh)"
 else
@@ -80,8 +81,8 @@ else
     pw-link "${out_profile}:Output R" "${new_active_sink}:playback_FR"
 
     # Connect loudness to profile
-    pw-link "${output_node}:Output L" "${in_profile}:Input L"
-    pw-link "${output_node}:Output R" "${in_profile}:Input R"
+    pw-link "${output_node}L" "${in_profile}:Input L"
+    pw-link "${output_node}R" "${in_profile}:Input R"
 
     message="$in_profile"
 
@@ -106,8 +107,8 @@ else
         pw-link "${out_sub_profile}:Output R" "${sub_sink}:playback_FR"
 
         # Connect loudness to profile
-        pw-link "${output_node}:Output L" "${in_sub_profile}:Input L"
-        pw-link "${output_node}:Output R" "${in_sub_profile}:Input R"
+        pw-link "${output_node}L" "${in_sub_profile}:Input L"
+        pw-link "${output_node}R" "${in_sub_profile}:Input R"
     fi
 fi
 
