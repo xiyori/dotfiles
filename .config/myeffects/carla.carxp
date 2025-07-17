@@ -64,7 +64,7 @@
     <MappedMinimum>-56.5</MappedMinimum>
     <MappedMaximum>7</MappedMaximum>
     <MidiCC>7</MidiCC>
-    <Value>-18</Value>
+    <Value>-13</Value>
    </Parameter>
 
    <Parameter>
@@ -9766,7 +9766,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.3388441561</Value>
+    <Value>0.338844180107117</Value>
    </Parameter>
 
    <Parameter>
@@ -10690,7 +10690,7 @@
     <Index>149</Index>
     <Name>Frequency 11</Name>
     <Symbol>f_11</Symbol>
-    <Value>8600</Value>
+    <Value>8600.0029296875</Value>
    </Parameter>
 
    <Parameter>
@@ -10704,7 +10704,7 @@
     <Index>151</Index>
     <Name>Gain 11</Name>
     <Symbol>g_11</Symbol>
-    <Value>5.62341356277466</Value>
+    <Value>5.18800067901611</Value>
    </Parameter>
 
    <Parameter>
@@ -10760,7 +10760,7 @@
     <Index>160</Index>
     <Name>Frequency 12</Name>
     <Symbol>f_12</Symbol>
-    <Value>11000</Value>
+    <Value>11000.001953125</Value>
    </Parameter>
 
    <Parameter>
@@ -10774,7 +10774,7 @@
     <Index>162</Index>
     <Name>Gain 12</Name>
     <Symbol>g_12</Symbol>
-    <Value>0.177827939391136</Value>
+    <Value>0.223872095346451</Value>
    </Parameter>
 
    <Parameter>
@@ -10844,7 +10844,7 @@
     <Index>173</Index>
     <Name>Gain 13</Name>
     <Symbol>g_13</Symbol>
-    <Value>1.99526226520538</Value>
+    <Value>1.77827942371368</Value>
    </Parameter>
 
    <Parameter>
@@ -11145,7 +11145,7 @@
     <Index>221</Index>
     <Name>Filter type 18</Name>
     <Symbol>ft_18</Symbol>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -11264,7 +11264,7 @@
     <Index>239</Index>
     <Name>Gain 19</Name>
     <Symbol>g_19</Symbol>
-    <Value>1.41253757476807</Value>
+    <Value>1.58489322662354</Value>
    </Parameter>
 
    <Parameter>
@@ -11320,7 +11320,7 @@
     <Index>248</Index>
     <Name>Frequency 20</Name>
     <Symbol>f_20</Symbol>
-    <Value>5750</Value>
+    <Value>5600</Value>
    </Parameter>
 
    <Parameter>
@@ -11334,14 +11334,14 @@
     <Index>250</Index>
     <Name>Gain 20</Name>
     <Symbol>g_20</Symbol>
-    <Value>0.891250908374786</Value>
+    <Value>0.707945764064789</Value>
    </Parameter>
 
    <Parameter>
     <Index>251</Index>
     <Name>Quality factor 20</Name>
     <Symbol>q_20</Symbol>
-    <Value>4</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -12202,16 +12202,16 @@
    <Position x1="775" y1="896" x2="1134" y2="420">
     <Name>USB-C to 3.5mm Headphone Jack Adapter Analog Stereo</Name>
    </Position>
-   <Position x1="775" y1="896" x2="1131" y2="336">
-    <Name>SMSL USB AUDIO Analog Stereo</Name>
+   <Position x1="775" y1="822" x2="1135" y2="337">
+    <Name>E50 Headphones</Name>
    </Position>
    <Position x1="392" y1="338">
     <Name>gain_sink</Name>
    </Position>
-   <Position x1="148" y1="697" x2="882" y2="136">
+   <Position x1="148" y1="697" x2="882" y2="119">
     <Name>Midi-Bridge</Name>
    </Position>
-   <Position x1="286" y1="602" x2="1161" y2="515">
+   <Position x1="286" y1="602" x2="1258" y2="524">
     <Name>BLE MIDI 1</Name>
    </Position>
    <Position x1="559" y1="338" pluginId="0">
@@ -12235,8 +12235,8 @@
    <Position x1="603" y1="227" pluginId="6">
     <Name>Big Meter</Name>
    </Position>
-   <Position x1="474" y1="462" x2="1133" y2="252">
-    <Name>MOONDROP Dawn Pro Analog Stereo</Name>
+   <Position x1="76" y1="443" x2="1134" y2="503">
+    <Name>M Series Pro</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>

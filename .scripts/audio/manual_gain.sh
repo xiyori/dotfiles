@@ -54,12 +54,10 @@ case "$1" in
   ;;
 esac
 
-volume="$(cat /tmp/loudness)"
-new_volume="$(awk '$0<30{$0=30}$0>90{$0=90}1' <<<$((volume + delta)))"
-new_volume_raw=$((2 * new_volume - 53))
-new_volume_hex="$(printf "%X" "$new_volume_raw")"
-device="$(~/.scripts/audio/midi_device.sh)"
-amidi -p "$device" -S "B2 07 $new_volume_hex"  # send volume control to MIDI channel 3
-echo "$new_volume" > /tmp/loudness
+volume="$(pactl get-sink-volume gain_sink | head -1 | cut -d "/" -f 3 | cut -d "d" -f 1 | xargs)"
+new_volume="$(echo "$volume + $delta" | bc -l | awk '{print int($1)}' | awk '$0<-53{$0=-53}$0>7{$0=7}1')"
+delta="$(bc -l <<< "$new_volume - $volume")"
+pactl set-sink-volume gain_sink "+${delta}db"
+echo $((new_volume + 83)) > /tmp/loudness
 
 unlock

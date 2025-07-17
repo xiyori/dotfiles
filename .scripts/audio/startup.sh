@@ -11,12 +11,17 @@ regex=".* ([0-9]+)\. myeffects_sink.*"
 if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
     wpctl set-default "${BASH_REMATCH[1]}"
     wpctl set-volume @DEFAULT_AUDIO_SINK@ 1
-    echo 4D > /tmp/loudness  # 65db initial loudness
+    echo 65 > /tmp/loudness  # 65db initial loudness
     if ! pgrep carla ; then
         killall utility_loop.sh > /dev/null 2>&1
         if [ -n "$1" ]; then
             export PIPEWIRE_LATENCY="64/48000"
             echo "low_latency" > /tmp/low_latency
+            pactl set-sink-volume gain_sink 100%
+            pactl set-sink-volume gain_sink -18db  # 65db initial loudness
+        else
+            export PIPEWIRE_LATENCY="2048/48000"
+            echo "default" > /tmp/low_latency
         fi
         carla ~/.config/myeffects/carla.carxp > /tmp/carla.log 2>&1 & disown
         # pid="$!"
@@ -26,11 +31,8 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
         while ! pactl list clients | grep "Big Meter" > /dev/null 2>&1 ; do
             sleep 1
         done
-        ~/.scripts/audio/link_nodes.sh "$1"
-        if [ -z "$1" ]; then
-            ~/.scripts/audio/utility_loop.sh > /dev/null 2>&1 & disown
-            echo "default" > /tmp/low_latency
-        fi
+        ~/.scripts/audio/link_nodes.sh "$1" > /dev/null 2>&1
+        ~/.scripts/audio/utility_loop.sh "$1" > /dev/null 2>&1 & disown
     fi
 else
     echo "audio effects startup failed"

@@ -5,12 +5,8 @@ if ! pactl list clients | grep "Big Meter" > /dev/null 2>&1 ; then
     exit 0
 fi
 
-volume="0x$(cat /tmp/loudness)"
-volume="$(printf "%d" "$volume")"
-volume=$(((volume - 127) / 2 + 90))
-
+volume="$(cat /tmp/loudness)"
 tooltip="$(cat /tmp/waybar_tooltip)"
-
 muted="$(cat /tmp/muted)"
 
 if (( volume > 83 )); then
