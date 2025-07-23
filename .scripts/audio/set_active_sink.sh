@@ -36,7 +36,7 @@ exlock_now || exit 1
 ll_status="$(cat /tmp/low_latency)"
 output_node="$([ "$ll_status" == "low_latency" ] && echo "gain_sink:monitor_F" || echo "LSP Loudness Compensator Stereo:Output ")"
 
-if ! pactl list clients | grep "Big Meter" > /dev/null 2>&1 ; then
+if ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&1 ; then
     exit 0
 fi
 # if [ "$(ps -o etimes= -p "$(pgrep carla)")" -lt 7 ]; then

@@ -15,12 +15,14 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
     if ! pgrep carla ; then
         killall utility_loop.sh > /dev/null 2>&1
         if [ -n "$1" ]; then
-            export PIPEWIRE_LATENCY="64/48000"
+            # export PIPEWIRE_LATENCY="64/48000"
+            pw-metadata -n settings 0 clock.force-quantum 64
             echo "low_latency" > /tmp/low_latency
             pactl set-sink-volume gain_sink 100%
             pactl set-sink-volume gain_sink -18db  # 65db initial loudness
         else
-            export PIPEWIRE_LATENCY="2048/48000"
+            # export PIPEWIRE_LATENCY="2048/48000"
+            pw-metadata -n settings 0 clock.force-quantum 1024
             echo "default" > /tmp/low_latency
         fi
         carla ~/.config/myeffects/carla.carxp > /tmp/carla.log 2>&1 & disown
@@ -28,7 +30,7 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
         # while [ "$(ps -o etimes= -p "$pid")" -lt 7 ]; do
         #     sleep 1
         # done
-        while ! pactl list clients | grep "Big Meter" > /dev/null 2>&1 ; do
+        while ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&1 ; do
             sleep 1
         done
         ~/.scripts/audio/link_nodes.sh "$1" > /dev/null 2>&1

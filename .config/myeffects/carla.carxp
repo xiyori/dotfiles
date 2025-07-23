@@ -14,109 +14,6 @@
   <BeatsPerMinute>120</BeatsPerMinute>
  </Transport>
 
- <!-- LSP Loudness Compensator Stereo -->
- <Plugin>
-  <Info>
-   <Type>LV2</Type>
-   <Name>LSP Loudness Compensator Stereo</Name>
-   <URI>http://lsp-plug.in/plugins/lv2/loud_comp_stereo</URI>
-  </Info>
-
-  <Data>
-   <Active>Yes</Active>
-   <ControlChannel>1</ControlChannel>
-   <Options>0x1</Options>
-
-   <Parameter>
-    <Index>0</Index>
-    <Name>Enabled</Name>
-    <Symbol>enabled</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>1</Index>
-    <Name>Input gain</Name>
-    <Symbol>input</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>2</Index>
-    <Name>Loudness contour standard</Name>
-    <Symbol>std</Symbol>
-    <Value>4</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>3</Index>
-    <Name>FFT size</Name>
-    <Symbol>fft</Symbol>
-    <Value>4</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>4</Index>
-    <Name>Output volume</Name>
-    <Symbol>volume</Symbol>
-    <MidiChannel>3</MidiChannel>
-    <MappedControlIndex>7</MappedControlIndex>
-    <MappedMinimum>-56.5</MappedMinimum>
-    <MappedMaximum>7</MappedMaximum>
-    <MidiCC>7</MidiCC>
-    <Value>-13</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>5</Index>
-    <Name>Enable reference generator</Name>
-    <Symbol>refer</Symbol>
-    <Value>0</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>6</Index>
-    <Name>Type of reference generator</Name>
-    <Symbol>reftype</Symbol>
-    <Value>2</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>7</Index>
-    <Name>Hard-clipping enable</Name>
-    <Symbol>hclip</Symbol>
-    <Value>0</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>8</Index>
-    <Name>Hard-clipping range</Name>
-    <Symbol>hcrange</Symbol>
-    <Value>6</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>9</Index>
-    <Name>Clean hard-clipping indicators</Name>
-    <Symbol>hcclean</Symbol>
-    <Value>0</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>10</Index>
-    <Name>Equalization curve is shown relative to the volume</Name>
-    <Symbol>relspec</Symbol>
-    <Value>0</Value>
-   </Parameter>
-
-   <CustomData>
-    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
-    <Key>CarlaSkinIsCompacted</Key>
-    <Value>false</Value>
-   </CustomData>
-  </Data>
- </Plugin>
-
  <!-- LSP Parametric Equalizer x32 Stereo -->
  <Plugin>
   <Info>
@@ -148,7 +45,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.501187264919281</Value>
+    <Value>0.562341332435608</Value>
    </Parameter>
 
    <Parameter>
@@ -183,7 +80,7 @@
     <Index>7</Index>
     <Name>Filter select</Name>
     <Symbol>fsel</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -946,7 +843,7 @@
     <Index>129</Index>
     <Name>Gain 9</Name>
     <Symbol>g_9</Symbol>
-    <Value>0.668343901634216</Value>
+    <Value>0.724435985088348</Value>
    </Parameter>
 
    <Parameter>
@@ -1002,7 +899,7 @@
     <Index>138</Index>
     <Name>Frequency 10</Name>
     <Symbol>f_10</Symbol>
-    <Value>15000</Value>
+    <Value>14000</Value>
    </Parameter>
 
    <Parameter>
@@ -1016,14 +913,14 @@
     <Index>140</Index>
     <Name>Gain 10</Name>
     <Symbol>g_10</Symbol>
-    <Value>0.933254301548004</Value>
+    <Value>1.25892543792725</Value>
    </Parameter>
 
    <Parameter>
     <Index>141</Index>
     <Name>Quality factor 10</Name>
     <Symbol>q_10</Symbol>
-    <Value>2.5</Value>
+    <Value>3</Value>
    </Parameter>
 
    <Parameter>
@@ -1037,14 +934,14 @@
     <Index>144</Index>
     <Name>Filter type 11</Name>
     <Symbol>ft_11</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>145</Index>
     <Name>Filter mode 11</Name>
     <Symbol>fm_11</Symbol>
-    <Value>0</Value>
+    <Value>6</Value>
    </Parameter>
 
    <Parameter>
@@ -1072,7 +969,7 @@
     <Index>149</Index>
     <Name>Frequency 11</Name>
     <Symbol>f_11</Symbol>
-    <Value>200</Value>
+    <Value>16000</Value>
    </Parameter>
 
    <Parameter>
@@ -1086,14 +983,14 @@
     <Index>151</Index>
     <Name>Gain 11</Name>
     <Symbol>g_11</Symbol>
-    <Value>1</Value>
+    <Value>0.630957365036011</Value>
    </Parameter>
 
    <Parameter>
     <Index>152</Index>
     <Name>Quality factor 11</Name>
     <Symbol>q_11</Symbol>
-    <Value>0</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>
@@ -2548,7 +2445,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.177827939391136</Value>
+    <Value>0.199525997042656</Value>
    </Parameter>
 
    <Parameter>
@@ -4954,7 +4851,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.398107171058655</Value>
+    <Value>0.446684002876282</Value>
    </Parameter>
 
    <Parameter>
@@ -9766,7 +9663,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.338844180107117</Value>
+    <Value>0.380189418792725</Value>
    </Parameter>
 
    <Parameter>
@@ -10690,7 +10587,7 @@
     <Index>149</Index>
     <Name>Frequency 11</Name>
     <Symbol>f_11</Symbol>
-    <Value>8600.0029296875</Value>
+    <Value>8600</Value>
    </Parameter>
 
    <Parameter>
@@ -10704,7 +10601,7 @@
     <Index>151</Index>
     <Name>Gain 11</Name>
     <Symbol>g_11</Symbol>
-    <Value>5.18800067901611</Value>
+    <Value>5.24807453155518</Value>
    </Parameter>
 
    <Parameter>
@@ -10844,7 +10741,7 @@
     <Index>173</Index>
     <Name>Gain 13</Name>
     <Symbol>g_13</Symbol>
-    <Value>1.77827942371368</Value>
+    <Value>1.58489322662354</Value>
    </Parameter>
 
    <Parameter>
@@ -11054,7 +10951,7 @@
     <Index>206</Index>
     <Name>Gain 16</Name>
     <Symbol>g_16</Symbol>
-    <Value>1.99526226520538</Value>
+    <Value>1.77827942371368</Value>
    </Parameter>
 
    <Parameter>
@@ -11075,7 +10972,7 @@
     <Index>210</Index>
     <Name>Filter type 17</Name>
     <Symbol>ft_17</Symbol>
-    <Value>3</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>
@@ -11110,7 +11007,7 @@
     <Index>215</Index>
     <Name>Frequency 17</Name>
     <Symbol>f_17</Symbol>
-    <Value>6000</Value>
+    <Value>8000</Value>
    </Parameter>
 
    <Parameter>
@@ -11124,14 +11021,14 @@
     <Index>217</Index>
     <Name>Gain 17</Name>
     <Symbol>g_17</Symbol>
-    <Value>0.841395139694214</Value>
+    <Value>0.794328212738037</Value>
    </Parameter>
 
    <Parameter>
     <Index>218</Index>
     <Name>Quality factor 17</Name>
     <Symbol>q_17</Symbol>
-    <Value>0.699999988079071</Value>
+    <Value>5</Value>
    </Parameter>
 
    <Parameter>
@@ -11180,7 +11077,7 @@
     <Index>226</Index>
     <Name>Frequency 18</Name>
     <Symbol>f_18</Symbol>
-    <Value>12600</Value>
+    <Value>12480</Value>
    </Parameter>
 
    <Parameter>
@@ -11194,14 +11091,14 @@
     <Index>228</Index>
     <Name>Gain 18</Name>
     <Symbol>g_18</Symbol>
-    <Value>0.891250908374786</Value>
+    <Value>0.707945764064789</Value>
    </Parameter>
 
    <Parameter>
     <Index>229</Index>
     <Name>Quality factor 18</Name>
     <Symbol>q_18</Symbol>
-    <Value>4</Value>
+    <Value>5</Value>
    </Parameter>
 
    <Parameter>
@@ -12142,48 +12039,151 @@
  </Plugin>
 
  <!-- Big Meter -->
+ <!-- <Plugin> -->
+ <!--  <Info> -->
+ <!--   <Type>INTERNAL</Type> -->
+ <!--   <Name>Big Meter</Name> -->
+ <!--   <Label>bigmeter</Label> -->
+ <!--  </Info> -->
+ <!---->
+ <!--  <Data> -->
+ <!--   <Active>Yes</Active> -->
+ <!--   <ControlChannel>1</ControlChannel> -->
+ <!--   <Options>0x0</Options> -->
+ <!---->
+ <!--   <Parameter> -->
+ <!--    <Index>0</Index> -->
+ <!--    <Name>Color</Name> -->
+ <!--    <Value>1</Value> -->
+ <!--   </Parameter> -->
+ <!---->
+ <!--   <Parameter> -->
+ <!--    <Index>1</Index> -->
+ <!--    <Name>Style</Name> -->
+ <!--    <Value>1</Value> -->
+ <!--   </Parameter> -->
+ <!---->
+ <!--   <Parameter> -->
+ <!--    <Index>2</Index> -->
+ <!--    <Name>Out Left</Name> -->
+ <!--    <MidiChannel>5</MidiChannel> -->
+ <!--    <MappedControlIndex>7</MappedControlIndex> -->
+ <!--    <MappedMinimum>0</MappedMinimum> -->
+ <!--    <MappedMaximum>1</MappedMaximum> -->
+ <!--    <MidiCC>7</MidiCC> -->
+ <!--   </Parameter> -->
+ <!---->
+ <!--   <Parameter> -->
+ <!--    <Index>3</Index> -->
+ <!--    <Name>Out Right</Name> -->
+ <!--    <MidiChannel>4</MidiChannel> -->
+ <!--    <MappedControlIndex>7</MappedControlIndex> -->
+ <!--    <MappedMinimum>0</MappedMinimum> -->
+ <!--    <MappedMaximum>1</MappedMaximum> -->
+ <!--    <MidiCC>7</MidiCC> -->
+ <!--   </Parameter> -->
+ <!---->
+ <!--   <CustomData> -->
+ <!--    <Type>http://kxstudio.sf.net/ns/carla/property</Type> -->
+ <!--    <Key>CarlaSkinIsCompacted</Key> -->
+ <!--    <Value>false</Value> -->
+ <!--   </CustomData> -->
+ <!--  </Data> -->
+ <!-- </Plugin> -->
+
+ <!-- LSP Loudness Compensator Stereo -->
  <Plugin>
   <Info>
-   <Type>INTERNAL</Type>
-   <Name>Big Meter</Name>
-   <Label>bigmeter</Label>
+   <Type>LV2</Type>
+   <Name>LSP Loudness Compensator Stereo</Name>
+   <URI>http://lsp-plug.in/plugins/lv2/loud_comp_stereo</URI>
   </Info>
 
   <Data>
    <Active>Yes</Active>
    <ControlChannel>1</ControlChannel>
-   <Options>0x0</Options>
+   <Options>0x1</Options>
 
    <Parameter>
     <Index>0</Index>
-    <Name>Color</Name>
+    <Name>Enabled</Name>
+    <Symbol>enabled</Symbol>
     <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>1</Index>
-    <Name>Style</Name>
+    <Name>Input gain</Name>
+    <Symbol>input</Symbol>
     <Value>1</Value>
    </Parameter>
 
    <Parameter>
     <Index>2</Index>
-    <Name>Out Left</Name>
-    <MidiChannel>5</MidiChannel>
-    <MappedControlIndex>7</MappedControlIndex>
-    <MappedMinimum>0</MappedMinimum>
-    <MappedMaximum>1</MappedMaximum>
-    <MidiCC>7</MidiCC>
+    <Name>Loudness contour standard</Name>
+    <Symbol>std</Symbol>
+    <Value>4</Value>
    </Parameter>
 
    <Parameter>
     <Index>3</Index>
-    <Name>Out Right</Name>
-    <MidiChannel>4</MidiChannel>
+    <Name>FFT size</Name>
+    <Symbol>fft</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>4</Index>
+    <Name>Output volume</Name>
+    <Symbol>volume</Symbol>
+    <MidiChannel>3</MidiChannel>
     <MappedControlIndex>7</MappedControlIndex>
-    <MappedMinimum>0</MappedMinimum>
-    <MappedMaximum>1</MappedMaximum>
+    <MappedMinimum>-56.5</MappedMinimum>
+    <MappedMaximum>7</MappedMaximum>
     <MidiCC>7</MidiCC>
+    <Value>-18</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>5</Index>
+    <Name>Enable reference generator</Name>
+    <Symbol>refer</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>6</Index>
+    <Name>Type of reference generator</Name>
+    <Symbol>reftype</Symbol>
+    <Value>2</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>7</Index>
+    <Name>Hard-clipping enable</Name>
+    <Symbol>hclip</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>8</Index>
+    <Name>Hard-clipping range</Name>
+    <Symbol>hcrange</Symbol>
+    <Value>6</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>9</Index>
+    <Name>Clean hard-clipping indicators</Name>
+    <Symbol>hcclean</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>10</Index>
+    <Name>Equalization curve is shown relative to the volume</Name>
+    <Symbol>relspec</Symbol>
+    <Value>0</Value>
    </Parameter>
 
    <CustomData>
@@ -12201,6 +12201,9 @@
    </Position>
    <Position x1="775" y1="896" x2="1134" y2="420">
     <Name>USB-C to 3.5mm Headphone Jack Adapter Analog Stereo</Name>
+   </Position>
+   <Position x1="775" y1="970" x2="1131" y2="254">
+    <Name>MOONDROP Dawn Pro Analog Stereo</Name>
    </Position>
    <Position x1="775" y1="822" x2="1135" y2="337">
     <Name>E50 Headphones</Name>
@@ -12235,7 +12238,7 @@
    <Position x1="603" y1="227" pluginId="6">
     <Name>Big Meter</Name>
    </Position>
-   <Position x1="76" y1="443" x2="1134" y2="503">
+   <Position x1="46" y1="475" x2="1136" y2="505">
     <Name>M Series Pro</Name>
    </Position>
   </Positions>
