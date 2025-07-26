@@ -8,7 +8,7 @@ while read -r line; do
         echo $max_level
         exit 0
     fi
-    if [ -z "$line" ]; then
+    if [[ -z "$line" ]]; then
         continue
     fi
     level="$(printf "%d\n" "0x$(echo "$line" | cut -d " " -f 3)")"

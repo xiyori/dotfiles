@@ -11,7 +11,7 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
     echo 65 > /tmp/loudness  # 65db initial loudness
     if ! pgrep carla ; then
         killall utility_loop.sh > /dev/null 2>&1
-        if [ -n "$1" ]; then
+        if [[ -n "$1" ]]; then
             # export PIPEWIRE_LATENCY="64/48000"
             pw-metadata -n settings 0 clock.force-quantum 64
             echo "low_latency" > /tmp/low_latency
@@ -23,7 +23,7 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
         fi
         carla ~/.config/myeffects/carla.carxp > /tmp/carla.log 2>&1 & disown
         # pid="$!"
-        # while [ "$(ps -o etimes= -p "$pid")" -lt 7 ]; do
+        # while [[ "$(ps -o etimes= -p "$pid")" -lt 7 ]]; do
         #     sleep 1
         # done
         while ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&1 ; do

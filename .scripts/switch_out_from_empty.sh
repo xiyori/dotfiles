@@ -22,19 +22,19 @@ function handle {
                     prev_id="$id"
                     break
                 fi
-                if [ -n "$find_next" ]; then
+                if [[ -n "$find_next" ]]; then
                     next_id="$id"
                     break
                 fi
-                if [ "$id" == "$active_id" ]; then
+                if [[ "$id" == "$active_id" ]]; then
                     find_next=1
                     continue
                 fi
                 prev_id="$id"
             fi
         done
-        if [ -z "$prev_id" ]; then
-            if [ -z "$next_id" ]; then
+        if [[ -z "$prev_id" ]]; then
+            if [[ -z "$next_id" ]]; then
                 prev_id=1
             else
                 prev_id="$next_id"

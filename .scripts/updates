@@ -4,7 +4,7 @@
 # https://github.com/speltriao/Pacman-Update-for-GNOME-Shell
 
 # If the operating system is not Arch Linux, exit the script successfully
-if [ ! -f /etc/arch-release ]; then
+if [[ ! -f /etc/arch-release ]]; then
     exit 0
 fi
 
@@ -13,13 +13,13 @@ fi
 OFFICIAL=$(checkupdates | wc -l)
 
 # If the parameter is "update", update all services
-if [ "$1" = "update" ]; then
+if [[ "$1" = "update" ]]; then
     alacritty -e yay -Syu --devel
     pkill -RTMIN+4 waybar
 fi
 
 # If there aren't any parameters, return the total number of updates
-if [ "$1" = "" ]; then
+if [[ "$1" == "" ]]; then
     # Calculate total number of updates
     # COUNT=$((OFFICIAL+AUR))
     COUNT=$OFFICIAL

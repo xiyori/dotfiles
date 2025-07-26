@@ -15,11 +15,6 @@ function set_gain {
     echo "$1" > /tmp/auto_gain
 }
 
-function level2gain {
-    tmp="$(bc -l <<< "2 * 20 * l(127 / $1) / l(10)")"
-    printf '%.1f\n' "$(bc -l <<< "$(printf '%.0f\n' "$tmp") / 2")"
-}
-
 pkill -RTMIN+2 waybar
 
 max_level=0
@@ -28,7 +23,7 @@ level_history=()
 distance_history=()
 distance=0
 while read -r line; do
-    if [ -z "$line" ]; then
+    if [[ -z "$line" ]]; then
         continue
     fi
 

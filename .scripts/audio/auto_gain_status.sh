@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ "$(cat /tmp/low_latency)" == "low_latency" ] && exit 0
+[[ "$(cat /tmp/low_latency)" == "low_latency" ]] && exit 0
 
 gain="$(cat /tmp/auto_gain)"
 if pgrep "gain_loop.sh" > /dev/null 2>&1 ; then
@@ -10,4 +10,4 @@ elif (( $(echo "$gain != 0" | bc -l) )); then
     tooltip="Youtube Gain: On"
     icon="󰗃"
 fi
-[ -n "$tooltip" ] && echo "{\"text\":\"$icon +${gain}db\",\"tooltip\":\"${tooltip}\"}"
+[[ -n "$tooltip" ]] && echo "{\"text\":\"$icon +${gain}db\",\"tooltip\":\"${tooltip}\"}"

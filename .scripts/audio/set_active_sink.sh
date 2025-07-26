@@ -33,12 +33,12 @@ unlock()            { _lock u; }   # drop a lock
 # Simplest example is avoiding running multiple instances of script.
 exlock_now || exit 1
 
-output_node="$([ "$(cat /tmp/low_latency)" == "low_latency" ] && echo "myeffects_sink:monitor_F" || echo "LSP Loudness Compensator Stereo:Output ")"
+output_node="$([[ "$(cat /tmp/low_latency)" == "low_latency" ]] && echo "myeffects_sink:monitor_F" || echo "LSP Loudness Compensator Stereo:Output ")"
 
 if ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&1 ; then
     exit 0
 fi
-# if [ "$(ps -o etimes= -p "$(pgrep carla)")" -lt 7 ]; then
+# if [[ "$(ps -o etimes= -p "$(pgrep carla)")" -lt 7 ]]; then
 #     exit 0
 # fi
 
@@ -59,7 +59,7 @@ done
 volume="$(echo "$profile" | cut -f 3)"
 
 # Set sink volume
-if [ -z "$volume" ]; then
+if [[ -z "$volume" ]]; then
     pactl set-sink-volume "$new_active_sink" 100%
 else
     pactl set-sink-volume "$new_active_sink" "$volume"
@@ -68,7 +68,7 @@ fi
 in_profile="$(echo "$profile" | cut -f 2)"
 out_profile="$in_profile"
 
-if [ -z "$in_profile" ]; then
+if [[ -z "$in_profile" ]]; then
     # No profile found, connect directly to sink
     pw-link "${output_node}L" "${new_active_sink}:playback_FL"
     pw-link "${output_node}R" "${new_active_sink}:playback_FR"
@@ -87,12 +87,12 @@ else
 
     # Connect sub profile and sink if any
     sub_profile="$(cat ~/.config/myeffects/sub_profiles.txt | grep "^$in_profile")"
-    if [ -n "$sub_profile" ]; then
+    if [[ -n "$sub_profile" ]]; then
         sub_sink="$(echo "$sub_profile" | cut -f 2)"
         sub_volume="$(echo "$sub_profile" | cut -f 4)"
 
         # Set sink volume
-        if [ -z "$sub_volume" ]; then
+        if [[ -z "$sub_volume" ]]; then
             pactl set-sink-volume "$sub_sink" 100%
         else
             pactl set-sink-volume "$sub_sink" "$sub_volume"

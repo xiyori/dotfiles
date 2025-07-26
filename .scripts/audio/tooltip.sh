@@ -9,7 +9,7 @@ convert_to_json() {
 sink="$(~/.scripts/audio/get_active_sink.sh)"
 nick="$(~/.scripts/audio/active_sink_nick.sh)"
 
-if [ -z "$sink" ]; then
+if [[ -z "$sink" ]]; then
     exit 0
 fi
 
@@ -24,7 +24,7 @@ esac
 
 tooltip="$(cat /tmp/current_tooltip | convert_to_json)"
 
-if [ -z "$tooltip" ]; then
+if [[ -z "$tooltip" ]]; then
     tooltip="$nick"
 fi
 

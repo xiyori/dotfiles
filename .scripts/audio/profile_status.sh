@@ -2,7 +2,7 @@
 
 profile="$(cat /tmp/active_profile)"
 
-if [ -z "$profile" ]; then
+if [[ -z "$profile" ]]; then
     exit 0
 fi
 

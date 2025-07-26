@@ -12,19 +12,19 @@
 
 active_sink="$(~/.scripts/audio/get_active_sink.sh)"
 for sink in $(~/.scripts/audio/list_sinks.sh) ; do
-    [ -z "$first" ] && first="$sink" # Save the first index in case the current default is the last in the list
+    [[ -z "$first" ]] && first="$sink" # Save the first index in case the current default is the last in the list
     # Subsequent pass, don't need continue above
-    if [ -n "$next" ]; then
+    if [[ -n "$next" ]]; then
         new_active_sink="$sink"
         break
     fi
-    if [ "$sink" == "$active_sink" ]; then
+    if [[ "$sink" == "$active_sink" ]]; then
         next=1
     fi
 done
 
 # Don't particularly like this method of making it circular, but...
-[ -z "$new_active_sink" ] && new_active_sink="$first"
+[[ -z "$new_active_sink" ]] && new_active_sink="$first"
 
 profile="$(cat ~/.config/myeffects/profiles.txt | grep -m 1 "^$new_active_sink")"
 

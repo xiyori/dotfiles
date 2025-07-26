@@ -1,12 +1,12 @@
 #!/bin/bash
 
-[ "$(cat /tmp/low_latency)" == "low_latency" ] && exit 0
+[[ "$(cat /tmp/low_latency)" == "low_latency" ]] && exit 0
 
-if [ "$1" == "reset" ]; then
+if [[ "$1" == "reset" ]]; then
     killall "gain_loop.sh"
     killall amidi
 
-    if [ ! -f /tmp/auto_gain ]; then
+    if [[ ! -f /tmp/auto_gain ]]; then
         echo 0 > /tmp/auto_gain
     fi
     notify-send --expire-time 3000 "Auto Gain: Reset"

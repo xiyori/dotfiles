@@ -5,7 +5,7 @@ case "$1" in
     ~/.scripts/audio/player.sh "$1"
   ;;
   *)
-    if [ "$(cat /tmp/low_latency)" == "low_latency" ]; then
+    if [[ "$(cat /tmp/low_latency)" == "low_latency" ]]; then
         ~/.scripts/audio/bypass_volume.sh "$1"
     else
         ~/.scripts/audio/volume.sh "$1"

@@ -2,7 +2,7 @@
 
 tooltip="$(cat /tmp/current_tooltip)"
 
-if [ -z "$tooltip" ]; then
+if [[ -z "$tooltip" ]]; then
     tooltip="$(hyprctl splash)"
 fi
 
