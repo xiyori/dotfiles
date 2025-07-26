@@ -33,8 +33,7 @@ unlock()            { _lock u; }   # drop a lock
 # Simplest example is avoiding running multiple instances of script.
 exlock_now || exit 1
 
-ll_status="$(cat /tmp/low_latency)"
-output_node="$([ "$ll_status" == "low_latency" ] && echo "gain_sink:monitor_F" || echo "LSP Loudness Compensator Stereo:Output ")"
+output_node="$([ "$(cat /tmp/low_latency)" == "low_latency" ] && echo "myeffects_sink:monitor_F" || echo "LSP Loudness Compensator Stereo:Output ")"
 
 if ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&1 ; then
     exit 0

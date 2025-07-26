@@ -1,16 +1,13 @@
 #!/bin/bash
 
 if ! pactl list short sinks | grep myeffects_sink ; then
-    pw-cli create-node adapter '{ factory.name=support.null-audio-sink node.name="myeffects_sink" node.description="myeffects_sink" media.class=Audio/Sink object.linger=true audio.position=[FL FR] }'
-fi
-if ! pactl list short sinks | grep gain_sink ; then
-    pw-cli create-node adapter '{ factory.name=support.null-audio-sink node.name="gain_sink" node.description="gain_sink" media.class=Audio/Sink object.linger=true monitor.channel-volumes=true audio.position=[FL FR] }'
+    pw-cli create-node adapter '{ factory.name=support.null-audio-sink node.name="myeffects_sink" node.description="myeffects_sink" media.class=Audio/Sink object.linger=true monitor.channel-volumes=true audio.position=[FL FR] }'
 fi
 
 regex=".* ([0-9]+)\. myeffects_sink.*"
 if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
     wpctl set-default "${BASH_REMATCH[1]}"
-    wpctl set-volume @DEFAULT_AUDIO_SINK@ 1
+    pactl set-sink-volume myeffects_sink 100%
     echo 65 > /tmp/loudness  # 65db initial loudness
     if ! pgrep carla ; then
         killall utility_loop.sh > /dev/null 2>&1
@@ -18,8 +15,7 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
             # export PIPEWIRE_LATENCY="64/48000"
             pw-metadata -n settings 0 clock.force-quantum 64
             echo "low_latency" > /tmp/low_latency
-            pactl set-sink-volume gain_sink 100%
-            pactl set-sink-volume gain_sink -18db  # 65db initial loudness
+            pactl set-sink-volume myeffects_sink -18db  # 65db initial loudness
         else
             # export PIPEWIRE_LATENCY="2048/48000"
             pw-metadata -n settings 0 clock.force-quantum 1024

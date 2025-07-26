@@ -172,8 +172,6 @@ install_essential () {
     _create_symlink .config/systemd/user/auto-monitor.service
     _create_symlink .config/systemd/user/switch-out-from-empty.service
 
-    ln -s "$(pwd)/assets/hrir_hesuvi" ~/hrir_hesuvi
-
     echo "setting up packages"
 
     # For MIDI loudness control
