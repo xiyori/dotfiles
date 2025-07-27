@@ -5,11 +5,17 @@ if ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&
     exit 0
 fi
 
-volume="$(cat /tmp/loudness)"
-tooltip="$(cat /tmp/waybar_tooltip)"
 muted="$(cat /tmp/muted)"
+player_status="$(cat /tmp/player_status)"
+volume="$(cat /tmp/loudness)"
 
-if (( volume > 83 )); then
+if (( muted == 1 )); then
+    icon="󰖁"
+elif (( player_status == 1 )); then
+    icon="󰐊"
+elif (( player_status == 2 )); then
+    icon="󰏤"
+elif (( volume > 83 )); then
     icon="󰝝"
 elif (( volume >= 70 )); then
     icon="󰕾"
@@ -19,17 +25,12 @@ else
     icon="󰕿"
 fi
 
-case $(~/.scripts/audio/player.sh status 2> /dev/null) in 
-  Playing)
-    icon="󰐊"
-  ;;
-  Paused)
-    icon="󰏤"
-  ;;
-esac
-
-if [[ $muted -eq 1 ]]; then
-    icon="󰖁"
+metadata="$(cat /tmp/player_metadata)"
+nick="$(cat /tmp/active_sink_nick)"
+if [[ -z "$metadata" ]]; then
+    tooltip="$nick"
+else
+    tooltip="${metadata:1:-1}"
 fi
 
 echo "{\"text\": \"${icon} ${volume}db\",\"tooltip\":\"$tooltip\"}"

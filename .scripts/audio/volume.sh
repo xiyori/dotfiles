@@ -46,12 +46,6 @@ case "$1" in
   coarse_down)
     delta="-5"
   ;;
-  mute)
-    for active_sink in $(~/.scripts/audio/list_active_sinks.sh) ; do
-        pactl set-sink-mute "$active_sink" toggle
-    done
-    exit 0
-  ;;
 esac
 
 volume="$(cat /tmp/loudness)"

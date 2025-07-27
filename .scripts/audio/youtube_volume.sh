@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[[ "$(cat /tmp/low_latency)" == "low_latency" ]] && exit 0
+
 volume="$(pactl get-sink-volume myeffects_sink | ~/.scripts/audio/get_pactl_volume.sh)"
 new_volume="$(pactl list sink-inputs | awk '/Corked:|Volume:|media.name / {print $0};' | grep --after-context 2 "Corked: no" | grep --before-context 1 " - YouTube" | ~/.scripts/audio/get_pactl_volume.sh)"
 

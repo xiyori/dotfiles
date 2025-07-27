@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tooltip="$(cat /tmp/current_tooltip)"
+tooltip="$(cat /tmp/player_metadata)"
 
 if [[ -z "$tooltip" ]]; then
     tooltip="$(hyprctl splash)"

@@ -30,7 +30,6 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
             sleep 1
         done
         ~/.scripts/audio/link_nodes.sh "$1" > /dev/null 2>&1
-        ~/.scripts/audio/utility_loop.sh "$1" > /dev/null 2>&1 & disown
     fi
 else
     echo "audio effects startup failed"
