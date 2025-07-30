@@ -19,7 +19,7 @@ def on_properties_changed(interface_name, changed_properties, invalidated_proper
             # print(key)
             if key == "PlaybackStatus":
                 if properties == "Playing":
-                    run_command('echo "1" > /tmp/player_status && sleep 0.5 && ~/.scripts/audio/youtube_volume.sh')
+                    run_command('echo "1" > /tmp/player_status && ~/.scripts/audio/youtube_volume.sh')
                 elif properties == "Paused":
                     run_command('echo "2" > /tmp/player_status')
                 else:

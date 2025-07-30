@@ -181,7 +181,7 @@ install_essential () {
     sudo ln -sf "$(pwd)/.scripts/xdg-terminal-exec" /usr/bin/xdg-terminal-exec
 
     # Reflector config
-    sudo ln -sf "$(pwd)/configs/reflector.conf" /etc/xdg/reflector/reflector.conf
+    sudo cp configs/reflector.conf /etc/xdg/reflector/
     
     # gsettings
     gsettings set org.gnome.desktop.interface gtk-theme 'catppuccin-mocha-mauve-standard+default-dark'

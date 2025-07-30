@@ -29,7 +29,8 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
         while ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&1 ; do
             sleep 1
         done
-        ~/.scripts/audio/link_nodes.sh "$1" > /dev/null 2>&1
+        ~/.scripts/audio/link_nodes.sh "$1"
+        ~/.scripts/audio/detect_sink_change.sh
     fi
 else
     echo "audio effects startup failed"
