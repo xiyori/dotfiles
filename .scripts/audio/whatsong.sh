@@ -5,9 +5,10 @@ artist="$(echo ${artist#*artist})"
 title="$(~/.scripts/audio/player.sh metadata 2> /dev/null | grep xesam:title)"
 title="$(echo ${title#*title})"
 
-if [[ -z "$artist" ]]; then
-    metadata="$title"
+if [[ -z "$title" ]]; then
+    echo > /tmp/player_metadata
+elif [[ -z "$artist" ]]; then
+    echo "$title" | jq -R . > /tmp/player_metadata
 else
-    metadata="$artist - $title"
+    echo "$artist - $title" | jq -R . > /tmp/player_metadata
 fi
-echo "$metadata" | jq -R . > /tmp/player_metadata

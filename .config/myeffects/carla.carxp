@@ -12196,7 +12196,7 @@
 
  <ExternalPatchbay>
   <Positions>
-   <Position x1="213" y1="226">
+   <Position x1="392" y1="338">
     <Name>myeffects_sink</Name>
    </Position>
    <Position x1="775" y1="896" x2="1134" y2="420">
@@ -12208,10 +12208,7 @@
    <Position x1="775" y1="822" x2="1135" y2="337">
     <Name>E50 Headphones</Name>
    </Position>
-   <Position x1="392" y1="338">
-    <Name>gain_sink</Name>
-   </Position>
-   <Position x1="148" y1="697" x2="882" y2="119">
+   <Position x1="148" y1="697" x2="882" y2="697">
     <Name>Midi-Bridge</Name>
    </Position>
    <Position x1="286" y1="602" x2="1258" y2="524">
@@ -12234,9 +12231,6 @@
    </Position>
    <Position x1="882" y1="590" pluginId="5">
     <Name>HE1000</Name>
-   </Position>
-   <Position x1="603" y1="227" pluginId="6">
-    <Name>Big Meter</Name>
    </Position>
    <Position x1="46" y1="475" x2="1136" y2="505">
     <Name>M Series Pro</Name>

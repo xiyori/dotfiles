@@ -21,9 +21,9 @@ def on_properties_changed(interface_name, changed_properties, invalidated_proper
                 if properties == "Playing":
                     run_command('echo "1" > /tmp/player_status && ~/.scripts/audio/youtube_volume.sh')
                 elif properties == "Paused":
-                    run_command('echo "2" > /tmp/player_status')
+                    run_command('echo 2 > /tmp/player_status')
                 else:
-                    run_command('echo "0" > /tmp/player_status')
+                    run_command('echo 0 > /tmp/player_status')
                 run_command('pkill -RTMIN+1 waybar')
             elif key == "Metadata":
                 # print(properties)
@@ -32,9 +32,9 @@ def on_properties_changed(interface_name, changed_properties, invalidated_proper
                     metadata += " - "
                 metadata += properties.get("xesam:title", "")
                 if metadata == "":
-                    run_command('echo "0" > /tmp/player_status && echo "" > /tmp/player_metadata')
+                    run_command('echo 0 > /tmp/player_status && echo > /tmp/player_metadata')
                 else:
-                    run_command('echo "{metadata}" | jq -R . > /tmp/player_metadata')
+                    run_command(f'echo "{metadata}" | jq -R . > /tmp/player_metadata')
                 run_command(f'~/.scripts/audio/player_status.sh && pkill -RTMIN+1 waybar && sleep 0.5 && ~/.scripts/audio/youtube_volume.sh')
     # Detect audio sink disconnect
     if interface_name == "org.freedesktop.systemd1.Device":
