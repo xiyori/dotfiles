@@ -13,7 +13,7 @@ dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT
 
 # wallpaper
 swww-daemon > /tmp/swww.log 2>&1 & disown
-swww img "$WALLPAPER1" -t none
+# swww img "$WALLPAPER1" -t none
 
 # other
 powerline-daemon
@@ -25,8 +25,8 @@ killall wl-clip-persist ; wl-clip-persist --clipboard regular > /dev/null 2>&1 &
 # applets
 blueman-applet & disown
 nm-applet & disown
-# killall wlsunset ; wlsunset -t 3400 -T 4600 -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
-killall wlsunset ; wlsunset -l 56.2 -L 36.3 > /dev/null 2>&1 & disown
+killall wlsunset ; wlsunset -t 3400 -T 4600 -l 56.2 -L 36.3 > /tmp/wlsunset.log 2>&1 & disown
+# killall wlsunset ; wlsunset -l 56.2 -L 36.3 > /tmp/wlsunset.log 2>&1 & disown
 
 ~/.scripts/audio/startup.sh
 

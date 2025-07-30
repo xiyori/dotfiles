@@ -171,6 +171,8 @@ install_essential () {
     _create_symlink .config/mimeapps.list
     _create_symlink .config/systemd/user/auto-monitor.service
     _create_symlink .config/systemd/user/switch-out-from-empty.service
+    _create_symlink .config/systemd/user/cycle-wallpaper.timer
+    _create_symlink .config/systemd/user/cycle-wallpaper.service
 
     echo "setting up packages"
 
@@ -255,7 +257,7 @@ install_optional () {
     echo "setting up packages"
     
     # Cmus status
-    mkdir -p ~/.local/state/cmus_status/cover
+    mkdir -p ~/.local/state/cmus_status
     mkdir -p ~/.local/share/icons
     ln -s "$(pwd)/assets/placeholder.png" ~/.local/state/cmus_status/placeholder.png
     ln -s "$(pwd)/assets/cmus.svg" ~/.local/share/icons/cmus.svg

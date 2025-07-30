@@ -1,2 +1,12 @@
 #!/usr/bin/bash
+
+cat <<EOF > ~/.config/hypr/background.conf
+background {
+    monitor =
+    path = $(~/.scripts/query_wallpaper.sh)
+    blur_passes = 2
+    blur_size = 3
+}
+EOF
+
 hyprctl switchxkblayout current 0 ; pgrep hyprlock || hyprlock

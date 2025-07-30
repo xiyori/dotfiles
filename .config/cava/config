@@ -69,10 +69,10 @@ bar_spacing = 1
 # For alsa 'source' will be the capture device.
 # For fifo 'source' will be the path to fifo-file.
 # For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where 'AA:BB:CC:DD:EE:FF' will be squeezelite's MAC address
-method = pulse
+; method = pulse
 ; source = auto
 
-; method = pipewire
+method = pipewire
 ; source = auto
 
 ; method = alsa
@@ -107,7 +107,7 @@ method = pulse
 # 'sdl' uses the Simple DirectMedia Layer to render in a graphical context.
 # 'sdl_glsl' uses SDL to create an OpenGL context. Write your own shaders or
 # use one of the predefined ones.
-; method = ncurses
+; method = noncurses
 
 # Orientation of the visualization. Can be 'bottom', 'top', 'left' or 'right'.
 # Default is 'bottom'. Other orientations are only supported on sdl and ncruses

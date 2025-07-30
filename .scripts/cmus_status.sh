@@ -1,8 +1,8 @@
 #!/bin/bash
 
-STATE_DIR="$HOME/.local/state/cmus_status"
-COVER_DIR="${STATE_DIR}/cover"
-COVER_PATH="$COVER_DIR/cmus_status_cover.jpg"
+STATE_DIR="/tmp/cmus_status"
+COVER_PATH="$STATE_DIR/cmus_status_cover.jpg"
+PLACEHOLDER_PATH="$HOME/.local/state/cmus_status/placeholder.png"
 
 status=$2
 file_path=$(echo "$@" | grep -o "file .* artist")
@@ -36,9 +36,9 @@ if [[ -n "$file_dir" ]]; then
         if cp "${STATE_DIR}/cover.jpg" "$COVER_PATH" ; then
             rm "${STATE_DIR}/cover.jpg"
         else
-            cp "${STATE_DIR}/placeholder.png" "$COVER_PATH"
+            cp "$PLACEHOLDER_PATH" "$COVER_PATH"
         fi
     fi
 else
-    cp "${STATE_DIR}/placeholder.png" "$COVER_PATH"
+    cp "$PLACEHOLDER_PATH" "$COVER_PATH"
 fi
