@@ -1,8 +1,9 @@
 #!/bin/bash
 
-artist=$(~/.scripts/audio/player.sh metadata 2> /dev/null | grep xesam:artist)
+metadata="$(~/.scripts/audio/player.sh metadata 2> /dev/null)"
+artist="$(echo "$metadata" | grep xesam:artist)"
 artist="$(echo ${artist#*artist})"
-title="$(~/.scripts/audio/player.sh metadata 2> /dev/null | grep xesam:title)"
+title="$(echo "$metadata" | grep xesam:title)"
 title="$(echo ${title#*title})"
 
 if [[ -z "$title" ]]; then

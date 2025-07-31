@@ -2,8 +2,8 @@
 Description=Detect external monitor connection
 
 [Service]
-StandardOutput=syslog
-StandardError=syslog
+StandardOutput=journal
+StandardError=journal
 ExecStart=%h/.scripts/auto_monitor.sh
 Restart=always
 RestartSec=5

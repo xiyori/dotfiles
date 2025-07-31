@@ -173,6 +173,7 @@ install_essential () {
     _create_symlink .config/systemd/user/switch-out-from-empty.service
     _create_symlink .config/systemd/user/cycle-wallpaper.timer
     _create_symlink .config/systemd/user/cycle-wallpaper.service
+    _create_symlink .config/systemd/user/dbus-monitor.service
 
     echo "setting up packages"
 

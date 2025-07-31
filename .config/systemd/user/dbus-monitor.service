@@ -1,0 +1,12 @@
+[Unit]
+Description=Monitor audio-related D-Bus events
+
+[Service]
+StandardOutput=syslog
+StandardError=syslog
+ExecStart=%h/.scripts/audio/dbus_monitor.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
