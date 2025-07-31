@@ -1,8 +1,5 @@
 #!/usr/bin/bash
 
-# hyprlock
-{ ~/.scripts/lock || hyprctl dispatch exit ; } &
-
 # Policy Authentication Agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
@@ -13,7 +10,10 @@ dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT
 
 # wallpaper
 swww-daemon > /tmp/swww.log 2>&1 & disown
-# swww img "$WALLPAPER1" -t none
+systemctl --user start cycle-wallpaper.service
+
+# hyprlock
+{ ~/.scripts/lock || hyprctl dispatch exit ; } &
 
 # other
 powerline-daemon

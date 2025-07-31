@@ -253,6 +253,7 @@ install_optional () {
     _create_symlink .config/calcurse/conf
     _create_symlink .config/calcurse/keys
     _create_symlink .config/cava/config
+    _create_symlink .config/fastfetch
 
     echo "setting up packages"
     

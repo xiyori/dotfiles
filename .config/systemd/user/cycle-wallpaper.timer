@@ -2,7 +2,9 @@
 Description=Cycle to next wallpaper
 
 [Timer]
-OnCalendar=0/1:00:00
+; OnCalendar=0/1:00:00
+; OnBootSec=10min
+OnUnitActiveSec=30min
 Persistent=false
 
 [Install]
