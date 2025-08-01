@@ -1,7 +1,6 @@
 :root {
-    --toolbox-bgcolor-inactive: #11111b !important;
-    --toolbox-bgcolor: #11111b !important;
-    --chrome-content-separator-color: #11111b !important;
+    --toolbox-bgcolor-inactive: var(--toolbox-bgcolor) !important;
+    --chrome-content-separator-color: var(--toolbox-bgcolor) !important;
 }
 
 .titlebar-buttonbox-container,
@@ -15,5 +14,5 @@
 }
 
 #tabbrowser-tabbox {
-    box-shadow: none;
+    box-shadow: none !important;
 }
