@@ -10,7 +10,7 @@ dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT
 
 # wallpaper
 swww-daemon > /tmp/swww.log 2>&1 & disown
-systemctl --user start cycle-wallpaper.service
+~/.scripts/wallpaper.sh init
 
 # hyprlock
 { ~/.scripts/lock || hyprctl dispatch exit ; } &
@@ -25,9 +25,12 @@ killall wl-clip-persist ; wl-clip-persist --clipboard regular > /dev/null 2>&1 &
 # applets
 blueman-applet & disown
 nm-applet & disown
-killall wlsunset ; wlsunset -t 3400 -T 4600 -l 56.2 -L 36.3 > /tmp/wlsunset.log 2>&1 & disown
-# killall wlsunset ; wlsunset -l 56.2 -L 36.3 > /tmp/wlsunset.log 2>&1 & disown
 
+# wlsunset
+killall wlsunset ; wlsunset -t 3400 -T 4600 -l $LATITUDE -L $LONGITUDE > /tmp/wlsunset.log 2>&1 & disown
+# killall wlsunset ; wlsunset -l $LATITUDE -L $LONGITUDE > /tmp/wlsunset.log 2>&1 & disown
+
+# audio
 ~/.scripts/audio/startup.sh
 
 # waybar
