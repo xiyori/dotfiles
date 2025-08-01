@@ -1,17 +1,19 @@
-#TabsToolbar { visibility: collapse !important; }
-#titlebar { visibility: collapse; }
-
-/* Hide splitter, when using Tree Style Tab. */
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] + #sidebar-splitter {
-  display: none !important;
-}
-/* Hide sidebar header, when using Tree Style Tab. */
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
-  visibility: collapse;
+:root {
+    --toolbox-bgcolor-inactive: #11111b !important;
+    --toolbox-bgcolor: #11111b !important;
+    --chrome-content-separator-color: #11111b !important;
 }
 
-#sidebar-box[positionend]{ direction: rtl }
-#sidebar-box[positionend] > *{ direction: ltr }
+.titlebar-buttonbox-container,
+#sidebar-tools-and-extensions-splitter,
+.tools-and-extensions {
+    display: none !important;
+}
 
-#sidebar-box[positionend]:-moz-locale-dir(rtl){ direction: ltr }
-#sidebar-box[positionend]:-moz-locale-dir(rtl) > *{ direction: rtl }
+#navigator-toolbox {
+    background-color: #1e1e2e !important;
+}
+
+#tabbrowser-tabbox {
+    box-shadow: none;
+}
