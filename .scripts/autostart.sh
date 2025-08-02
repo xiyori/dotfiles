@@ -5,7 +5,7 @@
 
 # https://wiki.hyprland.org/FAQ/#some-of-my-apps-take-a-really-long-time-to-open
 # https://gist.github.com/PowerBall253/2dea6ddf6974ba4e5d26c3139ffb7580
-systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP LATITUDE LONGITUDE &
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all &
 
 # wallpaper
@@ -27,8 +27,8 @@ blueman-applet & disown
 nm-applet & disown
 
 # wlsunset
-# killall wlsunset ; wlsunset -t 3400 -T 4600 -l $LATITUDE -L $LONGITUDE > /tmp/wlsunset.log 2>&1 & disown
-killall wlsunset ; wlsunset -l $LATITUDE -L $LONGITUDE > /tmp/wlsunset.log 2>&1 & disown
+killall wlsunset ; wlsunset -t 3400 -T 4600 -l $LATITUDE -L $LONGITUDE > /tmp/wlsunset.log 2>&1 & disown
+# killall wlsunset ; wlsunset -l $LATITUDE -L $LONGITUDE > /tmp/wlsunset.log 2>&1 & disown
 
 # audio
 ~/.scripts/audio/startup.sh

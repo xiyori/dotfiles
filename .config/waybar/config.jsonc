@@ -369,6 +369,6 @@
         "exec": "echo '{\"text\":\"⏻\",\"tooltip\":\"Power\"}'",
         "return-type": "json",
         "on-click": "~/.scripts/logout.sh",
-        "on-click-right": "~/.scripts/wallpaper.sh"
+        "on-click-right": "~/.scripts/wallpaper.sh next"
     }
 }

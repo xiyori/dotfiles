@@ -65,7 +65,7 @@ install_essential () {
         "neovim-catppuccin"
         
         # Launchers & Notifications
-        "rofi-lbonn-wayland-git" # for launching applications
+        "rofi" # for launching applications
         "xfce4-notifyd" # for notifications
         
         # Desktop Customization

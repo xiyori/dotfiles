@@ -40,7 +40,7 @@ fi
 
 tail +2 "$queue_file" > "${queue_file}.tmp" && mv "${queue_file}.tmp" "$queue_file"
 
-if [[ -z "$1" ]]; then
+if [[ -z "$1" || "$1" == "next" ]]; then
     trans="-t wipe --transition-angle 30"
 else
     trans="-t none"

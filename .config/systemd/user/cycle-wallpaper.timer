@@ -2,7 +2,7 @@
 Description=Cycle to next wallpaper
 
 [Timer]
-OnCalendar=0/0:30:00
+OnCalendar=*:0/30
 
 [Install]
 WantedBy=timers.target
