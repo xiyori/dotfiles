@@ -63,7 +63,7 @@ while read -r line; do
                 set_gain "$gain_db"
 
                 if (( $(echo "$gain_db == 0" | bc -l) )); then
-                    notify-send --expire-time 3000 "Auto Gain: Off"
+                    notify-send -e -h boolean:SWAYNC_BYPASS_DND:true -u low "Auto Gain: Off"
                     break
                 fi
 
@@ -73,7 +73,7 @@ while read -r line; do
                 set_gain "$gain_db"
 
                 if (( $(echo "$gain_db == 0" | bc -l) )); then
-                    notify-send --expire-time 3000 "Auto Gain: Off"
+                    notify-send -e -h boolean:SWAYNC_BYPASS_DND:true -u low "Auto Gain: Off"
                     break
                 fi
 

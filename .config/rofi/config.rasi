@@ -17,9 +17,9 @@ configuration{
 @theme "catppuccin-mocha"
 
 * {
-    border-col: #cba6f7;
+    border-col: #f5c2e7;
     selected-col: #313244;
-    blue: #cba6f7;
+    blue: #f5c2e7;
     fg-col2: #a6e3a1;
     width: 800;
     font: "sans-serif 12";

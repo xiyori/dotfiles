@@ -66,7 +66,7 @@ install_essential () {
         
         # Launchers & Notifications
         "rofi" # for launching applications
-        "xfce4-notifyd" # for notifications
+        "swaync" # for notifications
         
         # Desktop Customization
         "swww" # for wallpapers
@@ -119,6 +119,7 @@ install_essential () {
         "brightnessctl" # screen brightness
         "wlogout" # power menu
         "wlsunset" # night light (redshift)
+        "sunwait" # wallpaper mode
         "socat" # for hyprland socket scripts
         "python-requests" # for wttr script
         "polkit-gnome" # auth dialogs
@@ -221,6 +222,8 @@ install_essential () {
     systemctl --user enable mpris-proxy.service
     systemctl --user enable auto-monitor.service
     systemctl --user enable switch-out-from-empty.service
+    systemctl --user enable dbus-monitor.service
+    systemctl --user enable cycle-wallpaper.timer
 }
 
 install_optional () {

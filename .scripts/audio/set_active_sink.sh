@@ -105,9 +105,9 @@ else
         pw-link "${out_sub_profile}:Output L" "${sub_sink}:playback_FL"
         pw-link "${out_sub_profile}:Output R" "${sub_sink}:playback_FR"
 
-        # Connect loudness to profile
-        pw-link "${output_node}L" "${in_sub_profile}:Input L"
-        pw-link "${output_node}R" "${in_sub_profile}:Input R"
+        # Connect profile to sub profile
+        pw-link "${out_profile}:Output L" "${in_sub_profile}:Input L"
+        pw-link "${out_profile}:Output R" "${in_sub_profile}:Input R"
     fi
 fi
 
@@ -118,6 +118,6 @@ echo "$(~/.scripts/audio/active_sink_nick.sh)" > /tmp/active_sink_nick
 pkill -RTMIN+1 waybar
 pkill -RTMIN+5 waybar
 
-notify-send --expire-time 3000 "Audio: $message"
+notify-send -e -h boolean:SWAYNC_BYPASS_DND:true -u low "Audio: $message"
 
 unlock

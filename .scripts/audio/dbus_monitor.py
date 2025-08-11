@@ -52,6 +52,7 @@ def on_name_owner_changed(bus_name, old_owner, new_owner):
     if bus_name.startswith('org.mpris.MediaPlayer2'):
         # print(f"MPRIS player {bus_name} is now owned by {new_owner}")
         run_command('( ~/.scripts/audio/player_status.sh ; ~/.scripts/audio/whatsong.sh ; pkill -RTMIN+1 waybar ) & disown')
+        run_command('~/.scripts/audio/youtube_volume.sh & disown')
         # session_bus = dbus.SessionBus()
         # media_player_iface = 'org.mpris.MediaPlayer2.Player'
         #
