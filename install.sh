@@ -166,6 +166,7 @@ install_essential () {
     _create_symlink .config/waybar
     _create_symlink .config/wlogout
     _create_symlink .config/rofi
+    _create_symlink .config/swaync
     _create_symlink .config/chromium-flags.conf
     _create_symlink .config/code-flags.conf
     _create_symlink .config/electron-flags.conf
