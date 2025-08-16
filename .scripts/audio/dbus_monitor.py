@@ -10,7 +10,7 @@ prev_metadata = ""
 def run_command(command):
     # Run the custom command
     import subprocess
-    print(command, file=sys.stderr)
+    # print(command, file=sys.stderr)
     subprocess.run(command, shell=True)
 
 def on_properties_changed(interface_name, changed_properties, invalidated_properties):
@@ -19,6 +19,7 @@ def on_properties_changed(interface_name, changed_properties, invalidated_proper
         for key, properties in changed_properties.items():
             # print(key)
             if key == "PlaybackStatus":
+                # print(properties)
                 if properties == "Playing":
                     status = 1
                 elif properties == "Paused":
@@ -27,13 +28,13 @@ def on_properties_changed(interface_name, changed_properties, invalidated_proper
                     status = 0
                 run_command(f'echo {status} > /tmp/player_status && pkill -RTMIN+1 waybar')
                 if status == 1:
-                    run_command('~/.scripts/audio/youtube_volume.sh & disown')
+                    run_command('~/.scripts/audio/youtube_gain.sh & disown')
             elif key == "Metadata":
-                # print(properties)
                 metadata = properties.get("xesam:artist", [""])[0]
                 if metadata != "":
                     metadata += " - "
                 metadata += properties.get("xesam:title", "")
+                print(metadata)
                 if metadata == prev_metadata:
                     return
                 prev_metadata = metadata
@@ -41,7 +42,7 @@ def on_properties_changed(interface_name, changed_properties, invalidated_proper
                     run_command('echo 0 > /tmp/player_status && echo > /tmp/player_metadata')
                 else:
                     run_command(f'echo "{metadata}" | jq -R . > /tmp/player_metadata')
-                run_command('pkill -RTMIN+1 waybar')
+                run_command('pkill -RTMIN+1 waybar ; ~/.scripts/audio/youtube_gain.sh & disown')
     # Detect audio sink disconnect
     elif interface_name == "org.freedesktop.systemd1.Device":
         for key, properties in changed_properties.items():
@@ -52,7 +53,7 @@ def on_name_owner_changed(bus_name, old_owner, new_owner):
     if bus_name.startswith('org.mpris.MediaPlayer2'):
         # print(f"MPRIS player {bus_name} is now owned by {new_owner}")
         run_command('( ~/.scripts/audio/player_status.sh ; ~/.scripts/audio/whatsong.sh ; pkill -RTMIN+1 waybar ) & disown')
-        run_command('~/.scripts/audio/youtube_volume.sh & disown')
+        run_command('~/.scripts/audio/youtube_gain.sh & disown')
         # session_bus = dbus.SessionBus()
         # media_player_iface = 'org.mpris.MediaPlayer2.Player'
         #

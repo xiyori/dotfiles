@@ -83,7 +83,7 @@ else
     pw-link "${output_node}L" "${in_profile}:Input L"
     pw-link "${output_node}R" "${in_profile}:Input R"
 
-    message="$in_profile"
+    message=" $(cat ~/.config/myeffects/icons.txt | grep -F "$in_profile" | cut -f 2)  $in_profile"
 
     # Connect sub profile and sink if any
     sub_profile="$(cat ~/.config/myeffects/sub_profiles.txt | grep "^$in_profile")"

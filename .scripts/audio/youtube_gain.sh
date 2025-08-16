@@ -39,7 +39,12 @@ flag=0
 i=0
 while [[ "$flag" -eq 0 && "$i" -lt 20 ]]; do
     volume="$(pactl get-sink-volume myeffects_sink | ~/.scripts/audio/get_pactl_volume.sh)"
-    new_volume="$(pactl list sink-inputs | awk '/Corked:|Volume:|media.name / {print $0};' | grep --after-context 2 "Corked: no" | grep --before-context 1 " - YouTube" | ~/.scripts/audio/get_pactl_volume.sh)"
+    active_sources="$(pactl list sink-inputs | awk '/Corked:|Volume:|media.name / {print $0};' | grep --after-context 2 "Corked: no")"
+
+    unset new_volume
+    if [[ "$(echo "$active_sources" | grep "Corked" | wc -l)" -eq 1 ]]; then
+        new_volume="$(echo "$active_sources" | grep --before-context 1 " - YouTube" | ~/.scripts/audio/get_pactl_volume.sh)"
+    fi
 
     if [[ -z "$new_volume" ]]; then
         new_volume="0"
@@ -53,6 +58,8 @@ while [[ "$flag" -eq 0 && "$i" -lt 20 ]]; do
         pactl set-sink-volume myeffects_sink "${new_volume}db"
         echo "$new_volume" > /tmp/auto_gain
         pkill -RTMIN+2 waybar
+    else
+        flag=0
     fi
 
     if [[ "$i" -lt 10 ]]; then
