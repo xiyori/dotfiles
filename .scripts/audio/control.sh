@@ -10,16 +10,7 @@ case "$1" in
     for active_sink in $(~/.scripts/audio/list_active_sinks.sh) ; do
         pactl set-sink-mute "$active_sink" toggle
     done
-    case "$(pactl get-sink-mute "$active_sink")" in
-      *yes)
-        echo 1 > /tmp/muted
-        message="󰖁  Mute sound"
-      ;;
-      *)
-        echo 0 > /tmp/muted
-        message="󰕾  Unmute sound"
-      ;;
-    esac
+    message="$(~/.scripts/audio/mute_status.sh "$active_sink")"
     hyprctl activewindow | grep "fullscreen: 0" || notify-send -e -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low "$message"
   ;;
   *)

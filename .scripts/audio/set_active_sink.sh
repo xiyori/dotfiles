@@ -114,6 +114,7 @@ fi
 echo "$in_profile" > /tmp/active_profile
 echo "$new_active_sink" > /tmp/active_sink
 echo "$(~/.scripts/audio/active_sink_nick.sh)" > /tmp/active_sink_nick
+~/.scripts/audio/mute_status.sh
 
 pkill -RTMIN+1 waybar
 pkill -RTMIN+5 waybar
