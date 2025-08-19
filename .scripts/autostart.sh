@@ -8,12 +8,16 @@
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP LATITUDE LONGITUDE &
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all &
 
+# monitors
+xrdb -merge ~/.Xresources
+~/.scripts/startup_monitor.sh
+
 # wallpaper
 swww-daemon > /tmp/swww.log 2>&1 & disown
 ~/.scripts/wallpaper.sh init
 
 # hyprlock
-{ ~/.scripts/lock || hyprctl dispatch exit ; } &
+{ ~/.scripts/lock && swww img "$(~/.scripts/wallpaper.sh query)" || hyprctl dispatch exit ; } &
 
 # other
 powerline-daemon

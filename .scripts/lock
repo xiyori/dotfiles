@@ -3,7 +3,7 @@
 cat <<EOF > ~/.config/hypr/background.conf
 background {
     monitor =
-    path = $(~/.scripts/query_wallpaper.sh)
+    path = $(~/.scripts/wallpaper.sh query)
     blur_passes = 2
     blur_size = 5
 }
