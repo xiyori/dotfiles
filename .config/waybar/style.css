@@ -412,7 +412,7 @@ tooltip {
 
 /* Notifications Module */
 #custom-notifications {
-  color: @pink;
+  color: @text;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding-left: 5px;
@@ -423,7 +423,7 @@ tooltip {
 /* =============================== */
 /* Tray Module */
 #tray {
-  color: @pink;
+  color: @text;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   margin-right: 0px;

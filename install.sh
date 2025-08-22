@@ -62,7 +62,6 @@ install_essential () {
         
         # Text Editors
         "neovim"
-        "neovim-catppuccin"
         
         # Launchers & Notifications
         "rofi" # for launching applications
@@ -85,7 +84,7 @@ install_essential () {
         "thunar-volman"
         "thunar-archive-plugin"
         "thunar-media-tags-plugin"
-        "engrampa"
+        "xarchiver"
         
         # Fonts
         "ttf-firacode-nerd"
@@ -168,7 +167,6 @@ install_essential () {
     _create_symlink .config/rofi
     _create_symlink .config/swaync
     _create_symlink .config/chromium-flags.conf
-    _create_symlink .config/code-flags.conf
     _create_symlink .config/electron-flags.conf
     _create_symlink .config/mimeapps.list
     _create_symlink .config/systemd/user/auto-monitor.service
@@ -294,17 +292,12 @@ install_extra () {
         "libreoffice-still"
         "libreoffice-still-ru"
         "networkmanager-openconnect"
-        "code"
-        "code-features"
         "wireguard-tools"
         "systemd-resolvconf"
         "android-file-transfer"
         "noto-fonts-cjk"
         "dconf-editor"
-        "vim-commentary"
-        "vim-supertab"
         "vim-jedi"
-        "vim-suda-git"
         "python-pynvim"
         "pavucontrol"
         "wev"

@@ -319,7 +319,7 @@ user_pref("browser.newtabpage.activity-stream.showSponsored", false); // Sponsor
 // [NOTE] This does not block you from adding your own.
 user_pref("browser.newtabpage.activity-stream.default.sites", "");
 
-user_pref("browser.tabs.insertAfterCurrent", false); // New Tab insertion
+user_pref("browser.tabs.insertAfterCurrent", true); // New Tab insertion
 
 //user_pref("full-screen-api.ignore-widgets", true); // Fake Fullscreen
 
