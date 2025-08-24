@@ -150,7 +150,6 @@ install_essential () {
 
     _create_symlink .scripts
     _create_symlink .gtkrc-2.0
-    _create_symlink .vimrc
     _create_symlink .Xresources
     _create_symlink .config/alacritty/alacritty.toml
     _create_symlink .config/fish/config.fish
@@ -297,8 +296,6 @@ install_extra () {
         "android-file-transfer"
         "noto-fonts-cjk"
         "dconf-editor"
-        "vim-jedi"
-        "python-pynvim"
         "pavucontrol"
         "wev"
         "torbrowser-launcher"
