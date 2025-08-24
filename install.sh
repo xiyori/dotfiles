@@ -64,7 +64,7 @@ install_essential () {
         "neovim"
         
         # Launchers & Notifications
-        "rofi" # for launching applications
+        "rofi-wayland" # for launching applications
         "swaync" # for notifications
         
         # Desktop Customization
@@ -232,8 +232,9 @@ install_optional () {
         "cmatrix-git" # for fun
         "btop" # for performance monitoring
         "bat" # cat with the looks
+        "tree" # ls but recursive
         "ristretto" # image viewer
-        "qimgv-git" # image viewer
+        "qimgv" # image viewer
         "rofi-emoji-git" # emoji picker
         "noto-fonts-emoji" # emoji font
         "wtype" # input tool for emoji

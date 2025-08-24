@@ -8,6 +8,7 @@ vim.api.nvim_create_user_command('Vb', 'normal! <C-v>', {})
 o.shell = '/usr/bin/fish'
 -- o.tabstop = 4
 -- o.shiftwidth = 4
+-- o.softtabstop = 4
 -- o.smarttab = true
 o.wrap = true
 -- o.autoindent = true
