@@ -85,6 +85,7 @@ install_essential () {
         "thunar-archive-plugin"
         "thunar-media-tags-plugin"
         "xarchiver"
+        "zip"
         
         # Fonts
         "ttf-firacode-nerd"

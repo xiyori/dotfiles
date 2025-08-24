@@ -21,6 +21,20 @@ M.base46 = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
   },
+  hl_add = {
+    St_EmptySpace_venv = {
+      fg = "grey",
+      bg = "grey",
+    },
+    St_venv = {
+      fg = "white",
+      bg = "grey",
+    },
+    St_venv_sep = {
+      bg = "lightbg",
+      fg = "grey",
+    },
+  },
 
   changed_themes = {
     catppuccin = {
@@ -40,6 +54,9 @@ M.base46 = {
 -- }
 
 local myutils = {
+  venv = function()
+    return os.getenv "VIRTUAL_ENV_PROMPT" or ""
+  end,
   file = function()
     local icon = "󰈚"
     local buf = utils.stbufnr()
@@ -65,7 +82,7 @@ local myutils = {
     if rawget(vim, "lsp") then
       for _, client in ipairs(vim.lsp.get_clients()) do
         if client.attached_buffers[utils.stbufnr()] then
-          return (vim.o.columns > 100 and " " .. client.name .. " ") or " LSP "
+          return (vim.o.columns > 100 and "  " .. client.name .. " ") or "   "
         end
       end
     end
@@ -78,12 +95,35 @@ M.ui = {
   statusline = {
     theme = "default",
     separator_style = sep_style,
-    order = { "mode", "myfile", "git", "%=", "lsp_msg", "%=", "diagnostics", "mylsp", "cwd", "cursor" },
+    order = { "mymode", "venv", "myfile", "mygit", "%=", "lsp_msg", "%=", "diagnostics", "mylsp", "cwd", "cursor" },
     modules = {
+      mymode = function()
+        if not utils.is_activewin() then
+          return ""
+        end
+
+        local modes = utils.modes
+
+        local m = vim.api.nvim_get_mode().mode
+
+        local current_mode = "%#St_" .. modes[m][2] .. "Mode#  " .. modes[m][1]
+        local mode_sep1 = "%#St_" .. modes[m][2] .. "ModeSep#" .. sep_r
+        return current_mode .. mode_sep1
+      end,
+      venv = function()
+        local venv_prompt = myutils.venv()
+        return (
+          venv_prompt ~= ""
+          and ("%#ST_EmptySpace_venv#" .. sep_r .. "%#St_venv#" .. venv_prompt .. " %#St_venv_sep#" .. sep_r)
+        ) or ("%#ST_EmptySpace#" .. sep_r)
+      end,
       myfile = function()
         local x = myutils.file()
         local name = " " .. x[2]
-        return "%#St_file# " .. x[1] .. name .. "%#St_file_sep#" .. sep_r
+        return "%#St_file# " .. x[1] .. name .. " %#St_file_sep#" .. sep_r
+      end,
+      mygit = function()
+        return (vim.o.columns > 90 and ("%#St_gitIcons#" .. utils.git())) or ""
       end,
       mylsp = function()
         return "%#St_Lsp#" .. myutils.lsp()

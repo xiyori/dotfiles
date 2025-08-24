@@ -13,5 +13,7 @@ map("n", "<C-z>", ":u<CR>")
 map("i", "<C-z>", "<C-o>:u<CR>")
 map("n", "<C-a>", "ggVG")
 map("i", "<C-a>", "<ESC>ggVG")
+map("n", "<C-/>", "gcc", { desc = "toggle comment", remap = true })
+map("v", "<C-/>", "gc", { desc = "toggle comment", remap = true })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
