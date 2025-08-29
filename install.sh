@@ -206,6 +206,8 @@ install_essential () {
     cp rofi/basic/.local/share/rofi/themes/* ~/.local/share/rofi/themes/
 
     # Services
+    sudo mkdir /etc/systemd/system/paccache.timer.d
+    sudo cp configs/paccache-override.conf /etc/systemd/system/paccache.timer.d/override.conf
     sudo cp configs/monitor-temp.service /etc/systemd/system/monitor-temp.service
     sudo ln -s "$(pwd)/.scripts/monitor-temp.sh" /usr/local/bin/monitor-temp.sh
     sudo systemctl enable monitor-temp.service
@@ -217,6 +219,7 @@ install_essential () {
     sudo systemctl enable systemd-timesyncd.service
     sudo systemctl enable fstrim.timer
     sudo systemctl enable reflector.timer
+    sudo systemctl enable paccache.timer
     systemctl --user enable pipewire pipewire-pulse wireplumber
     systemctl --user enable mpris-proxy.service
     systemctl --user enable auto-monitor.service
