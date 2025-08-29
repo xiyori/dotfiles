@@ -16,7 +16,6 @@ return {
 
       keymap = {
         preset = "super-tab",
-        ["<Right>"] = { "accept", "fallback" },
         ["<Tab>"] = {
           function(cmp)
             if cmp.snippet_active() then
@@ -25,7 +24,11 @@ return {
               return cmp.select_and_accept()
             end
           end,
-          "snippet_forward",
+          function(cmp)
+            if cmp.snippet_active() then
+              return cmp.snippet_forward()
+            end
+          end,
           function(cmp)
             if has_words_before() then
               return cmp.show()
@@ -33,7 +36,14 @@ return {
           end,
           "fallback",
         },
-        ["<S-Tab>"] = { "snippet_backward", "fallback" },
+        ["<S-Tab>"] = {
+          function(cmp)
+            if cmp.snippet_active() then
+              return cmp.snippet_forward()
+            end
+          end,
+          "fallback",
+        },
       },
 
       -- completion = {
