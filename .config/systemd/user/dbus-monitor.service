@@ -2,8 +2,8 @@
 Description=Monitor audio-related D-Bus events
 
 [Service]
-StandardOutput=syslog
-StandardError=syslog
+StandardOutput=journal
+StandardError=journal
 ExecStart=%h/.scripts/audio/dbus_monitor.py
 Restart=always
 RestartSec=5
