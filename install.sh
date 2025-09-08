@@ -64,7 +64,7 @@ install_essential () {
         "neovim"
         
         # Launchers & Notifications
-        "rofi-wayland" # for launching applications
+        "rofi" # for launching applications
         "swaync" # for notifications
         
         # Desktop Customization
