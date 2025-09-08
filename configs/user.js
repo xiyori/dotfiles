@@ -223,6 +223,9 @@ user_pref("media.memory_cache_max_size", 1048576);
 user_pref("image.mem.decode_bytes_at_a_time", 65536);
 user_pref("browser.sessionstore.interval", 600000);
 
+// PREF: Startup
+user_pref("browser.startup.page", 3);
+
 // PREF: Ctrl-Tab cycle by recently used
 user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 

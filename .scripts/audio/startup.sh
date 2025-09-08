@@ -18,7 +18,7 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
             pactl set-sink-volume myeffects_sink -18db  # 65db initial loudness
         else
             # export PIPEWIRE_LATENCY="2048/48000"
-            pw-metadata -n settings 0 clock.force-quantum 1024
+            pw-metadata -n settings 0 clock.force-quantum 2048
             echo "default" > /tmp/low_latency
         fi
         carla ~/.config/myeffects/carla.carxp > /tmp/carla.log 2>&1 & disown
