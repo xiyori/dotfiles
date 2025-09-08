@@ -1,7 +1,7 @@
 #!/bin/bash
 
 output_node="LSP Loudness Compensator Stereo"
-midi_device="$(.scripts/audio/midi_device.sh | cut -d ":" -f 2 | tr "," "-")"
+midi_device="$(~/.scripts/audio/midi_device.sh | cut -d ":" -f 2 | tr "," "-")"
 midi_bridge="Midi-Bridge:Virtual Raw MIDI ${midi_device}VirMIDI ${midi_device}"
 
 pw-link "${midi_bridge} (capture)" "${output_node}:events-in"
