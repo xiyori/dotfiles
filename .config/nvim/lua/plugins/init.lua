@@ -25,6 +25,7 @@ return {
         "vimdoc",
         "fish",
         "bash",
+        "python",
       },
     },
   },
