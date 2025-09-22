@@ -12,7 +12,7 @@ if [[ "$1" == "reset" ]]; then
     notify-send -e -h boolean:SWAYNC_BYPASS_DND:true -u low "Auto Gain: Reset"
 
     ~/.scripts/audio/gain_loop.sh
-elif pgrep "gain_loop.sh" > /dev/null 2>&1 ; then
+elif (( "$(echo "$(cat /tmp/auto_gain) != 0" | bc -l)" )) || pgrep "gain_loop.sh" > /dev/null 2>&1 ; then
     killall "gain_loop.sh"
     killall amidi
     # device="$(~/.scripts/audio/midi_device.sh)"
