@@ -10,7 +10,6 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
     pactl set-sink-volume myeffects_sink 100%
     echo 65 > /tmp/loudness  # 65db initial loudness
     if ! pgrep carla ; then
-        killall utility_loop.sh > /dev/null 2>&1
         if [[ -n "$1" ]]; then
             # export PIPEWIRE_LATENCY="64/48000"
             pw-metadata -n settings 0 clock.force-quantum 64
