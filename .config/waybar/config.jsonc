@@ -16,7 +16,7 @@
         "cpu",
         "memory",
         "temperature#cpu",
-        "temperature#gpu",
+        //"temperature#gpu",
         "disk#default",
         // "disk#system",
         // "disk#data",

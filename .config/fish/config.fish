@@ -13,4 +13,5 @@ if status is-interactive
     set -x SYSTEMD_EDITOR nvim
 
     set VIRTUAL_ENV_DISABLE_PROMPT 1
+    set fish_color_command blue
 end
