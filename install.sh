@@ -31,7 +31,8 @@ install_yay () {
 }
 
 install () {
-    yay -S --needed $*
+    echo -e "Installing packages...\n\tSee package_install.log for details."
+    yay -S --needed $* >> package_install.log 2>&1
 }
 
 _create_symlink () {
@@ -86,6 +87,7 @@ install_essential () {
         "thunar-media-tags-plugin"
         "xarchiver"
         "zip"
+        "unzip"
         
         # Fonts
         "ttf-firacode-nerd"
@@ -187,7 +189,7 @@ install_essential () {
     sudo cp configs/reflector.conf /etc/xdg/reflector/
     
     # gsettings
-    gsettings set org.gnome.desktop.interface gtk-theme 'catppuccin-mocha-mauve-standard+default-dark'
+    gsettings set org.gnome.desktop.interface gtk-theme 'catppuccin-mocha-mauve-standard+default'
     gsettings set org.gnome.desktop.interface font-name 'Noto Sans 11'
     gsettings set org.gnome.desktop.interface document-font-name 'Noto Sans 11'
     gsettings set org.gnome.desktop.interface monospace-font-name 'Noto Sans Mono 11'
@@ -201,9 +203,8 @@ install_essential () {
     mkdir -p ~/.config/alacritty/themes
     git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 
-    git clone https://github.com/catppuccin/rofi
-    mkdir -p ~/.local/share/rofi/themes/
-    cp rofi/basic/.local/share/rofi/themes/* ~/.local/share/rofi/themes/
+    mkdir -p ~/.local/share/rofi
+    ln -sf "$(pwd)/configs/themes" ~/.local/share/rofi/themes
 
     # Services
     sudo mkdir /etc/systemd/system/paccache.timer.d
@@ -233,7 +234,7 @@ install_optional () {
     packages=(
         # System Info Display
         "fastfetch" # to flex
-        "cmatrix-git" # for fun
+        "cmatrix" # for fun
         "btop" # for performance monitoring
         "bat" # cat with the looks
         "tree" # ls but recursive
@@ -287,12 +288,14 @@ install_extra () {
     packages=(
         "font-manager"
         "firefox"
+        "librewolf-bin"
         "telegram-desktop"
         "gimp"
         "mpv"
         "mpv-mpris"
         "openssh"
         "sshfs"
+        "npm"
         "libreoffice-still"
         "libreoffice-still-ru"
         "networkmanager-openconnect"
