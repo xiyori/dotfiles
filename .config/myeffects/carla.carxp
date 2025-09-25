@@ -12343,6 +12343,17 @@
     <Value>0</Value>
    </Parameter>
 
+   <Parameter>
+    <Index>13</Index>
+    <Name>Input signal LUFS</Name>
+    <Symbol>lufs_il</Symbol>
+    <MidiChannel>3</MidiChannel>
+    <MappedControlIndex>7</MappedControlIndex>
+    <MappedMinimum>-72</MappedMinimum>
+    <MappedMaximum>24</MappedMaximum>
+    <MidiCC>7</MidiCC>
+   </Parameter>
+
    <CustomData>
     <Type>http://kxstudio.sf.net/ns/carla/property</Type>
     <Key>CarlaSkinIsCompacted</Key>
@@ -12359,6 +12370,18 @@
 
  <ExternalPatchbay>
   <Positions>
+   <Position x1="392" y1="338">
+    <Name>myeffects_sink</Name>
+   </Position>
+   <Position x1="148" y1="697" x2="882" y2="697">
+    <Name>Midi-Bridge</Name>
+   </Position>
+   <Position x1="286" y1="602" x2="1258" y2="524">
+    <Name>BLE MIDI 1</Name>
+   </Position>
+   <Position x1="882" y1="170" pluginId="0">
+    <Name>Meta</Name>
+   </Position>
    <Position x1="882" y1="254" pluginId="1">
     <Name>Daybreak</Name>
    </Position>
@@ -12376,18 +12399,6 @@
    </Position>
    <Position x1="559" y1="338" pluginId="6">
     <Name>LSP Loudness Compensator Stereo</Name>
-   </Position>
-   <Position x1="882" y1="170" pluginId="0">
-    <Name>Meta</Name>
-   </Position>
-   <Position x1="392" y1="338">
-    <Name>myeffects_sink</Name>
-   </Position>
-   <Position x1="148" y1="697" x2="882" y2="697">
-    <Name>Midi-Bridge</Name>
-   </Position>
-   <Position x1="286" y1="602" x2="1258" y2="524">
-    <Name>BLE MIDI 1</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>

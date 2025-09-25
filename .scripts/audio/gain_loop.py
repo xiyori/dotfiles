@@ -30,7 +30,6 @@ def set_gain(gain: float):
 
 
 def main():
-    run_command("pkill -RTMIN+2 waybar")
     average_lufs = None
     with open("/tmp/auto_gain", "r") as fp:
         current_gain = float(fp.read())
@@ -55,20 +54,22 @@ def main():
         if average_lufs is None or iter < COOLDOWN:
             continue
         new_gain = int(max(0, min(MAX_GAIN, TARGET_LUFS - average_lufs)) * 2) / 2
+        if new_gain == current_gain:
+            continue
         if current_gain == 0 and average_lufs > THRESHOLD_LUFS:
             current_gain = new_gain
             set_gain(current_gain)
-            if current_gain == 0:
-                send_notif()
-                break
+            # if current_gain == 0:
+            #     send_notif()
+            #     break
             run_command("pkill -RTMIN+2 waybar")
         # elif new_gain < current_gain:
         elif current_gain != 0:
             current_gain = new_gain
             set_gain(current_gain)
-            if current_gain == 0:
-                send_notif()
-                break
+            # if current_gain == 0:
+            #     send_notif()
+            #     break
             run_command("pkill -RTMIN+2 waybar")
 
 

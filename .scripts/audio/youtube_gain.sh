@@ -33,7 +33,7 @@ unlock()            { _lock u; }   # drop a lock
 # Simplest example is avoiding running multiple instances of script.
 exlock_now || exit 1
 
-[[ "$(cat /tmp/low_latency)" == "low_latency" ]] || pgrep "gain_loop.py" > /dev/null 2>&1 && exit 0
+[[ "$(cat /tmp/low_latency)" == "low_latency" ]] || [[ "$(cat /tmp/auto_gain_enabled)" -eq 1 ]] && exit 0
 
 flag=0
 i=0
