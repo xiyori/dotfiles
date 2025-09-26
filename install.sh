@@ -31,8 +31,8 @@ install_yay () {
 }
 
 install () {
-    echo -e "Installing packages...\n\tSee package_install.log for details."
-    yay -S --needed $* >> package_install.log 2>&1
+    echo -e "Installation in progress...\n\tSee package_install.log for details."
+    yay -Syu --needed --noconfirm $* >> package_install.log 2>&1
 }
 
 _create_symlink () {
@@ -211,7 +211,6 @@ install_essential () {
     sudo cp configs/paccache-override.conf /etc/systemd/system/paccache.timer.d/override.conf
     sudo cp configs/monitor-temp.service /etc/systemd/system/monitor-temp.service
     sudo ln -s "$(pwd)/.scripts/monitor-temp.sh" /usr/local/bin/monitor-temp.sh
-    sudo systemctl enable monitor-temp.service
 
     sudo ufw enable
     sudo systemctl enable NetworkManager.service
