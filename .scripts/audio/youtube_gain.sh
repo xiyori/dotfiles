@@ -53,7 +53,7 @@ while [[ "$flag" -eq 0 && "$i" -lt 20 ]]; do
         flag=1
     fi
 
-    new_volume="$(bc -l <<< "-($new_volume)")"
+    new_volume="$(bc -l <<< "x=-($new_volume); if(x<1) print 0; x")"
 
     if (( $(echo "$volume != $new_volume" | bc -l) )); then
         pactl set-sink-volume myeffects_sink "${new_volume}db"

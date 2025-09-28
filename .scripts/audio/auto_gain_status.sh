@@ -10,4 +10,7 @@ elif (( $(echo "$gain != 0" | bc -l) )); then
     tooltip="Youtube Gain: On"
     icon="󰗃"
 fi
-[[ -n "$tooltip" ]] && echo "{\"text\":\"$icon +${gain}db\",\"tooltip\":\"${tooltip}\"}"
+if (( "$(echo "$gain >= 0" | bc -l)" )); then
+    gain="+$gain"
+fi
+[[ -n "$tooltip" ]] && echo "{\"text\":\"$icon ${gain}db\",\"tooltip\":\"${tooltip}\"}"

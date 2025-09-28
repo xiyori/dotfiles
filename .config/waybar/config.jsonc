@@ -65,8 +65,8 @@
             // "active": "",
             "default": ""
         },
-        "on-scroll-up": "~/.scripts/workspace_swipe.py next",
-        "on-scroll-down": "~/.scripts/workspace_swipe.py prev",
+        "on-scroll-up": "~/.scripts/workspace_swipe.py prev",
+        "on-scroll-down": "~/.scripts/workspace_swipe.py next",
         "on-click": "activate"
     },
     "cpu": {
@@ -231,6 +231,8 @@
         "return-type": "json",
         "on-click": "~/.scripts/audio/auto_gain.sh",
         "on-click-right": "~/.scripts/audio/auto_gain.sh reset",
+        "on-scroll-up": "~/.scripts/audio/manual_gain.sh up",
+        "on-scroll-down": "~/.scripts/audio/manual_gain.sh down",
         "signal": 2
     },
     "custom/soundprofile": {
@@ -250,7 +252,7 @@
         "escape": true,
         "exec": "~/.scripts/audio/custom_sound.sh",
         "return-type": "json",
-        "on-click": "~/.scripts/audio/player.sh play-pause",
+        "on-click": "~/.scripts/audio/control.sh custom_action",  // play-pause or open widget depending on tablet mode
         "on-click-right": "~/.scripts/audio/next_active_sink.sh",
         "on-scroll-up": "~/.scripts/audio/control.sh up",
         "on-scroll-down": "~/.scripts/audio/control.sh down",

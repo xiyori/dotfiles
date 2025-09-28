@@ -1,0 +1,45 @@
+(defwindow sound-window
+  :monitor 0 ;; Optional for X11
+  :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore true
+  :geometry (geometry :x "20px" :y "5px" :anchor "top right")
+  (sound-controls))
+
+(defpoll play_icon :interval "5s"
+  `[[ "$(cat /tmp/player_status)" -eq 2 ]] && echo "󰐊" || echo "󰏤"`)
+(defvar volume 65)
+
+(defwidget sound-controls []
+  (box :class "sound-controls" :orientation "h" :space-evenly false :spacing 10 :halign "center" :valign "center"
+    ;; Previous button
+    (button
+      :class "sound-btn small-btn"
+      :onclick "~/.scripts/audio/control.sh previous"
+      "󰒮")
+
+    ;; Play/Pause button
+    (button
+      :class "sound-btn"
+      :onclick "~/.scripts/audio/control.sh play-pause && eww poll play_icon"
+      play_icon)
+
+    ;; Next button
+    (button
+      :class "sound-btn small-btn"
+      :onclick "~/.scripts/audio/control.sh next"
+      "󰒭")
+
+    ;; Volume slider
+    (scale
+      :class "volume-slider"
+      :min 40 :max 84
+      :value volume
+      :onchange "~/.scripts/audio/control.sh {}")
+
+    ;; Next sink button
+      (button
+        :class "sound-btn sink-btn"
+        :onclick "~/.scripts/audio/next_active_sink.sh"
+        "")))
+

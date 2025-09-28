@@ -26,6 +26,7 @@ return {
         "fish",
         "bash",
         "python",
+        "yuck"
       },
     },
   },

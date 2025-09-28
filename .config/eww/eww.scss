@@ -1,0 +1,41 @@
+/* style the window container */
+.sound-window {
+  background: unset;
+}
+
+.sound-controls {
+  font-family: monospace;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #f5c2e7;
+  background: rgba(30, 30, 46, 1);
+  box-shadow: 0 0 10px 0 #1a1a1aaa;
+}
+
+.sound-btn {
+  border-radius: 50%;
+  padding: 5px;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.small-btn {
+  font-size: 20px;
+  margin: 5px 0 5px 0;
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.sink-btn {
+  font-size: 20px;
+  padding: 5px 5px 5px 0;
+  min-width: 45px;
+}
+
+.volume-slider {
+  min-width: 160px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+

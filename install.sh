@@ -351,6 +351,7 @@ install_touch () {
         "detect-tablet-mode-git" # tablet mode detection
         "iio-hyprland-git" # screen rotation
         "squeekboard" # on-screen keyboard
+        "eww-git" # sound control widget
     )
     install "${packages[@]}"
 
@@ -358,6 +359,7 @@ install_touch () {
     echo "creating symlinks"
 
     _create_symlink .config/watch_tablet.yml
+    _create_symlink .config/eww
 
     echo "setting up packages"
 

@@ -33,7 +33,6 @@ unlock()            { _lock u; }   # drop a lock
 # Simplest example is avoiding running multiple instances of script.
 exlock_now || exit 1
 
-volume="$(cat /tmp/loudness)"
 case "$1" in
   up)
     delta="1"
@@ -47,17 +46,17 @@ case "$1" in
   coarse_down)
     delta="-5"
   ;;
-  *)
-    volume="$1"
-    delta=0
-  ;;
 esac
 
-new_volume="$(awk '$0<30{$0=30}$0>90{$0=90}1' <<<$((volume + delta)))"
-new_volume_raw=$((2 * new_volume - 53))
-new_volume_hex="$(printf "%X" "$new_volume_raw")"
-device="$(~/.scripts/audio/midi_device.sh)"
-amidi -p "$device" -S "B2 07 $new_volume_hex"  # send volume control to MIDI channel 3
-echo "$new_volume" > /tmp/loudness
+echo 1 > /tmp/auto_gain_enabled
+killall "gain_loop.py"
+
+volume="$(pactl get-sink-volume myeffects_sink | ~/.scripts/audio/get_pactl_volume.sh)"
+new_volume="$(echo "$volume + $delta" | bc -l | awk '{print int($1)}' | awk '$0<-53{$0=-53}$0>7{$0=7}1')"
+delta="$(bc -l <<< "$new_volume - $volume")"
+pactl set-sink-volume myeffects_sink "+${delta}db"
+echo "$new_volume" > /tmp/auto_gain
+
+pkill -RTMIN+2 waybar
 
 unlock
