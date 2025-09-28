@@ -1,0 +1,10 @@
+input_device: /dev/input/by-path/platform-INTC107B:00-event
+modes:
+  laptop:
+    - killall squeekboard
+    - killall iio-hyprland
+    - gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled false
+  tablet:
+    - squeekboard & disown
+    - iio-hyprland & disown
+    - gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled true

@@ -42,3 +42,8 @@ killall wlsunset ; wlsunset -l $LATITUDE -L $LONGITUDE > /tmp/wlsunset.log 2>&1 
 ln -s $XDG_RUNTIME_DIR/hypr /tmp/hypr
 echo "" > /tmp/custom_monitor_waybar
 ~/.scripts/launch_waybar
+
+# touch
+# systemctl start iio-sensor-proxy.service
+# watch_tablet & disown
+# hyprpm reload -n

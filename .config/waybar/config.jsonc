@@ -65,8 +65,8 @@
             // "active": "",
             "default": ""
         },
-        "on-scroll-up": "hyprctl dispatch workspace m-1",
-        "on-scroll-down": "hyprctl dispatch workspace m+1",
+        "on-scroll-up": "~/.scripts/workspace_swipe.py next",
+        "on-scroll-down": "~/.scripts/workspace_swipe.py prev",
         "on-click": "activate"
     },
     "cpu": {

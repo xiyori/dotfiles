@@ -10,6 +10,7 @@ print_help () {
     echo "  optional              install optional programs from rice video"
     echo "  extra                 install xiyori's personal apps"
     echo "  all                   all of the above"
+    echo "  touch                 touchscreen, stylus & tablet support"
     echo "    if no target is given, display the help screen"
     echo
     echo "OPTIONS:"
@@ -343,6 +344,32 @@ install_extra () {
     sudo systemctl enable cups.socket
 }
 
+install_touch () {
+    echo "installing touchscreen & tablet packages"
+    packages=(
+        "iio-sensor-proxy" # for performance monitoring
+        "detect-tablet-mode-git" # tablet mode detection
+        "iio-hyprland-git" # screen rotation
+        "squeekboard" # on-screen keyboard
+    )
+    install "${packages[@]}"
+
+    # Symlinks
+    echo "creating symlinks"
+
+    _create_symlink .config/watch_tablet.yml
+
+    echo "setting up packages"
+
+    # Touch gestures
+    hyprpm update
+    hyprpm add https://github.com/horriblename/hyprgrass
+    hyprpm enable hyprgrass
+
+    # Load sensors modules
+    echo -e "intel-ishtp-hid\nhid-sensor-hub" | sudo tee -a /etc/modules-load.d/intel_hid.conf > /dev/null
+}
+
 if [[ "$#" > 2 ]]; then
     echo "ERROR: too many arguments"
     echo
@@ -362,6 +389,10 @@ case "$1" in
     extra)
         install_yay
         install_extra
+    ;;
+    touch)
+        install_yay
+        install_touch
     ;;
     all)
         install_yay
