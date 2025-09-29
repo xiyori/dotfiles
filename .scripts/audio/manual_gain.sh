@@ -52,7 +52,7 @@ echo 1 > /tmp/auto_gain_enabled
 killall "gain_loop.py"
 
 volume="$(pactl get-sink-volume myeffects_sink | ~/.scripts/audio/get_pactl_volume.sh)"
-new_volume="$(echo "$volume + $delta" | bc -l | awk '{print int($1)}' | awk '$0<-53{$0=-53}$0>7{$0=7}1')"
+new_volume="$(echo "$volume + $delta" | bc -l | awk '{print int($1)}' | awk '$0<-25{$0=-25}$0>25{$0=25}1')"
 delta="$(bc -l <<< "$new_volume - $volume")"
 pactl set-sink-volume myeffects_sink "+${delta}db"
 echo "$new_volume" > /tmp/auto_gain

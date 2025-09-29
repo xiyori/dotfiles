@@ -19,7 +19,9 @@ case "$argument" in
         pactl set-sink-mute "$active_sink" toggle
     done
     message="$(~/.scripts/audio/mute_status.sh "$active_sink")"
-    hyprctl activewindow | grep "fullscreen: 0" || notify-send -e -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low "$message"
+    # hyprctl activewindow | grep "fullscreen: 0" ||
+    notify-send -e -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low "$message"
+    pkill -RTMIN+1 waybar
   ;;
   *)
     if [[ "$(cat /tmp/low_latency)" == "low_latency" ]]; then
@@ -27,22 +29,14 @@ case "$argument" in
     else
         ~/.scripts/audio/volume.sh "$argument"
     fi
-    volume="$(cat /tmp/loudness | awk '$0<40{$0=40}$0>83{$0=83}1')"
-    volume=$(((volume - 40) * 100 / (83 - 40)))
-    if ! hyprctl activewindow | grep "fullscreen: 0" ; then
-        case "$argument" in
-          *up)
-            icon="󰝝 "
-          ;;
-          *down)
-            icon="󰝞 "
-          ;;
-          *)
-            icon=""
-          ;;
-        esac
-        [[ -n "$icon" ]] && notify-send -e -h int:value:"$volume" -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low --expire-time 1000 "$icon $(cat /tmp/loudness)db"
-    fi
+    case "$argument" in
+      *up|*down)
+        volume="$(cat /tmp/loudness | awk '$0<40{$0=40}$0>83{$0=83}1')"
+        volume=$(( (volume - 40) * 100 / (83 - 40) ))
+        icon="$(~/.scripts/audio/volume_icon.sh)"
+        notify-send -e -h int:value:"$volume" -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low --expire-time 1000 "$icon $(cat /tmp/loudness)db"
+      ;;
+    esac
     pkill -RTMIN+1 waybar
   ;;
 esac

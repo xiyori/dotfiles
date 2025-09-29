@@ -5,7 +5,7 @@
 gain="$(cat /tmp/auto_gain)"
 if [[ "$(cat /tmp/auto_gain_enabled)" -eq 1 ]] ; then
     tooltip="Auto Gain: On"
-    icon=""
+    icon="󱄠"
 elif (( $(echo "$gain != 0" | bc -l) )); then
     tooltip="Youtube Gain: On"
     icon="󰗃"

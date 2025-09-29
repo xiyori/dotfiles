@@ -15,14 +15,8 @@ elif (( player_status == 1 )); then
     icon="󰐊"
 elif (( player_status == 2 )); then
     icon="󰏤"
-elif (( volume > 83 )); then
-    icon="󰝝"
-elif (( volume >= 70 )); then
-    icon="󰕾"
-elif (( volume >= 60 )); then
-    icon="󰖀"
 else
-    icon="󰕿"
+    icon="$(~/.scripts/audio/volume_icon.sh)"
 fi
 
 metadata="$(cat /tmp/player_metadata)"
