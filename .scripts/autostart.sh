@@ -44,8 +44,6 @@ echo "" > /tmp/custom_monitor_waybar
 ~/.scripts/launch_waybar
 
 # touch
-# eww daemon
-# systemctl start iio-sensor-proxy.service
 # echo 0 > /tmp/tablet_mode
 # watch_tablet & disown
 # hyprpm reload -n
