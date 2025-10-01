@@ -1,6 +1,8 @@
 #!/bin/bash
 
 argument="$1"
+notify="${2:-notify}"
+
 case "$argument" in
   custom_action)
     if [[ "$(cat /tmp/tablet_mode)" -eq 1 ]]; then
@@ -12,15 +14,16 @@ case "$argument" in
   play-pause|next|previous|status|metadata)
     ~/.scripts/audio/player.sh "$argument"
     pkill -USR2 hyprlock
-    exit 0
   ;;
   mute)
     for active_sink in $(~/.scripts/audio/list_active_sinks.sh) ; do
-        pactl set-sink-mute "$active_sink" toggle
-    done
-    message="$(~/.scripts/audio/mute_status.sh "$active_sink")"
+      pactl set-sink-mute "$active_sink" toggle
+    done 
     # hyprctl activewindow | grep "fullscreen: 0" ||
-    notify-send -e -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low "$message"
+    message="$(~/.scripts/audio/mute_status.sh "$active_sink")"
+    if [[ "$notify" == "notify" ]]; then
+      notify-send -e -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low "$message"
+    fi
     pkill -RTMIN+1 waybar
   ;;
   *)
@@ -29,15 +32,17 @@ case "$argument" in
     else
         ~/.scripts/audio/volume.sh "$argument"
     fi
-    case "$argument" in
-      *up|*down)
-        volume="$(cat /tmp/loudness | awk '$0<40{$0=40}$0>83{$0=83}1')"
-        volume=$(( (volume - 40) * 100 / (83 - 40) ))
-        icon="$(~/.scripts/audio/volume_icon.sh)"
-        notify-send -e -h int:value:"$volume" -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low --expire-time 1000 "$icon $(cat /tmp/loudness)db"
-      ;;
-    esac
-    pkill -RTMIN+1 waybar
+    if [[ "$notify" == "notify" ]]; then
+      case "$argument" in
+        *up|*down)
+          volume="$(cat /tmp/loudness | awk '$0<40{$0=40}$0>83{$0=83}1')"
+          volume=$(( (volume - 40) * 100 / (83 - 40) ))
+          icon="$(~/.scripts/audio/volume_icon.sh)"
+          notify-send -e -h int:value:"$volume" -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low --expire-time 1000 "$icon $(cat /tmp/loudness)db"
+        ;;
+      esac
+      pkill -RTMIN+1 waybar
+    fi
   ;;
 esac
-
+exit 0

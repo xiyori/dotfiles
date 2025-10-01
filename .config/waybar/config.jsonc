@@ -16,7 +16,7 @@
         "cpu",
         "memory",
         "temperature#cpu",
-        //"temperature#gpu",
+        // "temperature#gpu",
         "disk#default",
         // "disk#system",
         // "disk#data",
@@ -254,8 +254,8 @@
         "return-type": "json",
         "on-click": "~/.scripts/audio/control.sh custom_action",  // play-pause or open widget depending on tablet mode
         "on-click-right": "~/.scripts/audio/next_active_sink.sh",
-        "on-scroll-up": "~/.scripts/audio/control.sh up",
-        "on-scroll-down": "~/.scripts/audio/control.sh down",
+        "on-scroll-up": "~/.scripts/audio/control.sh up quiet",
+        "on-scroll-down": "~/.scripts/audio/control.sh down quiet",
         // "interval": 2,
         "signal": 1
     },
@@ -274,6 +274,7 @@
             "",
             ""
         ],
+        "on-click": "~/.scripts/brightness.sh custom_action",
         "on-scroll-up": "~/.scripts/brightness.sh up",
         "on-scroll-down": "~/.scripts/brightness.sh down",
         // "interval": 2

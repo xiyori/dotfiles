@@ -6,12 +6,22 @@
   :geometry (geometry :x "20px" :y "5px" :anchor "top right")
   (sound-controls))
 
+(defwindow brightness-window
+  :monitor 0 ;; Optional for X11
+  :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore true
+  :geometry (geometry :x "11%" :y "5px" :anchor "top left")
+  (brightness-controls))
+
 (defpoll play_icon :interval "5s"
   `[[ "$(cat /tmp/player_status)" -eq 2 ]] && echo "󰐊" || echo "󰏤"`)
+(defvar mute_icon "󰖁")
 (defvar volume 65)
+(defvar brightness 10)
 
 (defwidget sound-controls []
-  (box :class "sound-controls" :orientation "h" :space-evenly false :spacing 10 :halign "center" :valign "center"
+  (box :class "controls" :orientation "h" :space-evenly false :spacing 10 :halign "center" :valign "center"
     ;; Previous button
     (button
       :class "sound-btn small-btn"
@@ -37,9 +47,29 @@
       :value volume
       :onchange "~/.scripts/audio/control.sh {}")
 
-    ;; Next sink button
-      (button
-        :class "sound-btn sink-btn"
-        :onclick "~/.scripts/audio/next_active_sink.sh"
-        "")))
+    ;; Mute button
+    (button
+      :class "sound-btn"
+      :onclick "~/.scripts/audio/control.sh mute quiet"
+      mute_icon)
 
+    ;; Auto gain button
+    (button
+      :class "sound-btn"
+      :onclick "~/.scripts/audio/auto_gain.sh default quiet"
+      "󱄠")
+
+    ;; Next sink button
+    (button
+      :class "sound-btn sink-btn"
+      :onclick "~/.scripts/audio/next_active_sink.sh"
+      "")))
+
+(defwidget brightness-controls []
+  (box :class "controls" :orientation "h" :space-evenly false :spacing 10 :halign "center" :valign "center"
+    ;; Brightness slider
+    (scale
+      :class "brightness-slider"
+      :min 0 :max 24
+      :value brightness
+      :onchange "~/.scripts/brightness.sh {}")))
