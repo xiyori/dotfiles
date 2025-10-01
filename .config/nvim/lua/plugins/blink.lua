@@ -39,9 +39,13 @@ return {
         ["<S-Tab>"] = {
           function(cmp)
             if cmp.snippet_active() then
-              return cmp.snippet_forward()
+              return cmp.snippet_backward()
             end
           end,
+          "fallback",
+        },
+        ["<Esc>"] = {
+          "cancel",
           "fallback",
         },
       },
