@@ -11,7 +11,7 @@
   :stacking "fg"
   :windowtype "normal"
   :wm-ignore true
-  :geometry (geometry :x "11%" :y "5px" :anchor "top left")
+  :geometry (geometry :x "16%" :y "5px" :anchor "top left")
   (brightness-controls))
 
 (defpoll play_icon :interval "5s"

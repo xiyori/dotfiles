@@ -10,7 +10,7 @@ dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT
 
 # monitors
 xrdb -merge ~/.Xresources
-~/.scripts/startup_monitor.sh
+~/.scripts/startup_monitor.sh &
 
 # wallpaper
 swww-daemon > /tmp/swww.log 2>&1 & disown
@@ -44,6 +44,5 @@ echo "" > /tmp/custom_monitor_waybar
 ~/.scripts/launch_waybar
 
 # touch
-# echo 0 > /tmp/tablet_mode
-# watch_tablet & disown
+# ~/.scripts/tablet_mode.sh > /dev/null 2>&1 & disown
 # hyprpm reload -n

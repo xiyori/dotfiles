@@ -6,7 +6,7 @@ notify="${2:-notify}"
 case "$argument" in
   custom_action)
     if [[ "$(cat /tmp/tablet_mode)" -eq 1 ]]; then
-      eww active-windows | grep "sound-window" && eww close sound-window || ( eww update volume="$(cat /tmp/loudness)" && eww open sound-window )
+      eww active-windows | grep -q "sound-window" && eww close sound-window || ( eww update volume="$(cat /tmp/loudness)" && eww update mute_icon="$([[ "$(cat /tmp/muted)" -eq 1 ]] && echo "󰕾" || echo "󰖁")" && eww open sound-window )
       exit 0
     fi
     argument="play-pause"
@@ -19,7 +19,7 @@ case "$argument" in
     for active_sink in $(~/.scripts/audio/list_active_sinks.sh) ; do
       pactl set-sink-mute "$active_sink" toggle
     done 
-    # hyprctl activewindow | grep "fullscreen: 0" ||
+    # hyprctl activewindow | grep -q "fullscreen: 0" ||
     message="$(~/.scripts/audio/mute_status.sh "$active_sink")"
     if [[ "$notify" == "notify" ]]; then
       notify-send -e -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low "$message"

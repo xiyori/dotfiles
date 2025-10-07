@@ -348,8 +348,8 @@ install_touch () {
     echo "installing touchscreen & tablet packages"
     packages=(
         "iio-sensor-proxy" # for performance monitoring
-        "detect-tablet-mode-git" # tablet mode detection
         "iio-hyprland-git" # screen rotation
+        "ydotool" # touchpad events conversion
         "squeekboard" # on-screen keyboard
         "eww-git" # sound control widget
     )
@@ -370,6 +370,17 @@ install_touch () {
 
     # Load sensors modules
     echo -e "intel-ishtp-hid\nhid-sensor-hub" | sudo tee -a /etc/modules-load.d/intel_hid.conf > /dev/null
+
+    # Services
+    sudo cp configs/ydotool.service /etc/systemd/system/ydotool.service
+    sudo cp configs/double-tap.service /etc/systemd/system/double-tap.service
+    sudo cp configs/watch-tablet.service /etc/systemd/system/watch-tablet.service
+    sudo ln -s "$(pwd)/.scripts/double-tap.sh" /usr/local/bin/double-tap.sh
+    sudo ln -s "$(pwd)/.scripts/watch-tablet.sh" /usr/local/bin/watch-tablet.sh
+
+    sudo systemctl enable ydotool.service
+    sudo systemctl enable double-tap.service
+    sudo systemctl enable watch-tablet.service
 }
 
 if [[ "$#" > 2 ]]; then
