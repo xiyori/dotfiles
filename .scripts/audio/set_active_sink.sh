@@ -35,7 +35,7 @@ exlock_now || exit 1
 
 output_node="$([[ "$(cat /tmp/low_latency)" == "low_latency" ]] && echo "myeffects_sink:monitor_F" || echo "LSP Loudness Compensator Stereo:Output ")"
 
-if ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&1 ; then
+if ! pactl list clients | grep -q "LSP Loudness Compensator Stereo" ; then
     exit 0
 fi
 # if [[ "$(ps -o etimes= -p "$(pgrep carla)")" -lt 7 ]]; then

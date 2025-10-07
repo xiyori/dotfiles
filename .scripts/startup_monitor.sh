@@ -1,5 +1,9 @@
 #!/bin/bash
 
-if hyprctl monitors | grep "Monitor DP-1"; then
-    hyprctl keyword monitor "eDP-1,disable"
-fi
+for i in {1..60}; do
+    if hyprctl monitors | grep -q "Monitor DP-"; then
+        hyprctl keyword monitor "eDP-1,disable"
+        # break
+    fi
+    sleep 1
+done

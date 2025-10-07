@@ -15,7 +15,7 @@ while read -r profile; do
         new_active_profile="$profile"
         break
     fi
-    if echo "$profile" | grep "$active_profile" > /dev/null 2>&1 ; then
+    if echo "$profile" | grep -q "$active_profile" ; then
         next=1
     fi
 done < <(echo "$profiles")

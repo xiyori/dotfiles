@@ -1,7 +1,7 @@
 #!/bin/bash
 # Original script by OptimusCrime73 from https://www.reddit.com/r/hyprland/comments/1722we7/automatically_switch_from_empty_workspace/
 function handle {
-    if [[ ${1:0:11} == "closewindow" ]] && hyprctl activeworkspace | grep "windows: 0" > /dev/null ; then
+    if [[ ${1:0:11} == "closewindow" ]] && hyprctl activeworkspace | grep -q "windows: 0" ; then
         active_id="$(hyprctl activeworkspace | grep "workspace ID" | awk '{ print $3 }')"
         regex=".* on monitor (.*)\:"
         if [[ "$(hyprctl activeworkspace | grep "on monitor")" =~ $regex ]]; then

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ! pactl list short sinks | grep myeffects_sink ; then
+if ! pactl list short sinks | grep -q myeffects_sink ; then
     pw-cli create-node adapter '{ factory.name=support.null-audio-sink node.name="myeffects_sink" node.description="myeffects_sink" media.class=Audio/Sink object.linger=true monitor.channel-volumes=true audio.position=[FL FR] }'
 fi
 
@@ -25,7 +25,7 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
         # while [[ "$(ps -o etimes= -p "$pid")" -lt 7 ]]; do
         #     sleep 1
         # done
-        while ! pactl list clients | grep "LSP Loudness Compensator Stereo" > /dev/null 2>&1 ; do
+        while ! pactl list clients | grep -q "LSP Loudness Compensator Stereo" ; do
             sleep 1
         done
         ~/.scripts/audio/link_nodes.sh "$1"
