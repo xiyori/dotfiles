@@ -10,6 +10,10 @@ if status is-interactive
     set fish_greeting ""
     # set fish_greeting "$(systemctl is-active --quiet fancontrol.service || printf '\033[0;31m##########################\nATTENTION! Fancontrol is not running\n##########################\033[0m')"
 
+    bind \cw backward-kill-word
+
+    alias docker="sudo /usr/bin/docker"
+
     set -x SYSTEMD_EDITOR nvim
 
     set VIRTUAL_ENV_DISABLE_PROMPT 1

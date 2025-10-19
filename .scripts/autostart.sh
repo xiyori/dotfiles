@@ -44,5 +44,5 @@ echo "" > /tmp/custom_monitor_waybar
 ~/.scripts/launch_waybar
 
 # touch
-~/.scripts/tablet_mode.sh > /dev/null 2>&1 & disown
-hyprpm reload -n
+# ~/.scripts/tablet_mode.sh > /dev/null 2>&1 & disown
+# hyprpm reload -n

@@ -41,8 +41,8 @@ case "$argument" in
           notify-send -e -h int:value:"$volume" -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low --expire-time 1000 "$icon $(cat /tmp/loudness)db"
         ;;
       esac
-      pkill -RTMIN+1 waybar
     fi
+    pkill -RTMIN+1 waybar
   ;;
 esac
 exit 0
