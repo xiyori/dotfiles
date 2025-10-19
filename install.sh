@@ -110,7 +110,7 @@ install_essential () {
         
         # Desktop Integration
         "xdg-desktop-portal-gtk" # needed for theming
-        "xdg-desktop-portal-wlr" # needed for theming
+        "xdg-desktop-portal-hyprland" # needed for screen share
 
         # Screenshot
         "grim"

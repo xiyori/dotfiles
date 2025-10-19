@@ -74,3 +74,4 @@ video/webm=vlc.desktop;mpv.desktop;
 text/markdown=nvim.desktop;
 application/x-msdownload=wine.desktop;
 application/vnd.ms-publisher=nvim.desktop;
+
