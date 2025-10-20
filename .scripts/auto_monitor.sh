@@ -3,6 +3,7 @@
 function handle {
   case "$1" in 
     monitorremoved\>\>*)
+      echo $1
       monitor="${1#*>>}"
       if [[ "$monitor" = "eDP-1" ]]; then
           return
@@ -13,6 +14,7 @@ function handle {
       return
     ;;
     monitoradded\>\>*)
+      echo $1
       monitor="${1#*>>}"
       if [[ "$monitor" = "eDP-1" ]]; then
           return
@@ -24,4 +26,4 @@ function handle {
     ;;
   esac
 }
-socat STDOUT "UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" | while read -r line; do handle "$line"; done
+socat -U - "UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" | while read -r line; do handle "$line"; done
