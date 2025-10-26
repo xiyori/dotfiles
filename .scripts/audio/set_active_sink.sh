@@ -47,13 +47,11 @@ new_active_sink="$1"
 profile="$2"
 
 # Disconnect profile(s) from loudness
-~/.scripts/audio/remove_output_links.sh "${output_node}L"
-~/.scripts/audio/remove_output_links.sh "${output_node}R"
+~/.scripts/audio/remove_output_links.sh "${output_node}"
 
 # Disconnect profile from sink(s)
 for active_sink in $active_sinks ; do
-    ~/.scripts/audio/remove_input_links.sh "${active_sink}:playback_FL"
-    ~/.scripts/audio/remove_input_links.sh "${active_sink}:playback_FR"
+    ~/.scripts/audio/remove_input_links.sh "${active_sink}:playback"
 done
 
 volume="$(echo "$profile" | cut -f 3)"

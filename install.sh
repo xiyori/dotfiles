@@ -71,7 +71,7 @@ install_essential () {
         
         # Desktop Customization
         "swww" # for wallpapers
-        "lxappearance-gtk3" # for theming
+        "lxappearance" # for theming
         "catppuccin-gtk-theme-mocha" # for theming
         "bibata-cursor-theme" # for theming
         "papirus-icon-theme" # for theming
@@ -110,7 +110,7 @@ install_essential () {
         
         # Desktop Integration
         "xdg-desktop-portal-gtk" # needed for theming
-        "xdg-desktop-portal-hyprland" # needed for screen share
+        "xdg-desktop-portal-wlr" # needed for screen share
 
         # Screenshot
         "grim"
@@ -221,7 +221,7 @@ install_essential () {
     sudo systemctl enable fstrim.timer
     sudo systemctl enable reflector.timer
     sudo systemctl enable paccache.timer
-    systemctl --user enable pipewire pipewire-pulse wireplumber
+    # systemctl --user enable pipewire pipewire-pulse wireplumber
     systemctl --user enable mpris-proxy.service
     systemctl --user enable auto-monitor.service
     systemctl --user enable switch-out-from-empty.service
