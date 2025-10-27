@@ -2,12 +2,8 @@
 Description=Starts double tap touchscreen service
 
 [Service]
-Type=simple
 Restart=always
 ExecStart=/usr/local/bin/double-tap.sh
-ExecReload=/usr/bin/kill -HUP $MAINPID
-KillMode=process
-TimeoutSec=180
 
 [Install]
 WantedBy=default.target
