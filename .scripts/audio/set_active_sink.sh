@@ -63,10 +63,14 @@ else
     pactl set-sink-volume "$new_active_sink" "$volume"
 fi
 
-in_profile="$(echo "$profile" | cut -f 2)"
-out_profile="$in_profile"
+in_port="$(echo "$profile" | cut -f 4)"
+out_port="$(echo "$profile" | cut -f 5)"
 
-if [[ -z "$in_profile" ]]; then
+profile_name="$(echo "$profile" | cut -f 2)"
+in_profile="${profile_name}:${in_port:-Input }"
+out_profile="${profile_name}:${out_port:-Output }"
+
+if [[ -z "$profile_name" ]]; then
     # No profile found, connect directly to sink
     pw-link "${output_node}L" "${new_active_sink}:playback_FL"
     pw-link "${output_node}R" "${new_active_sink}:playback_FR"
@@ -74,17 +78,17 @@ if [[ -z "$in_profile" ]]; then
     message="$(~/.scripts/audio/active_sink_nick.sh)"
 else
     # Connect new effects profile to sink
-    pw-link "${out_profile}:Output L" "${new_active_sink}:playback_FL"
-    pw-link "${out_profile}:Output R" "${new_active_sink}:playback_FR"
+    pw-link "${out_profile}L" "${new_active_sink}:playback_FL"
+    pw-link "${out_profile}R" "${new_active_sink}:playback_FR"
 
     # Connect loudness to profile
-    pw-link "${output_node}L" "${in_profile}:Input L"
-    pw-link "${output_node}R" "${in_profile}:Input R"
+    pw-link "${output_node}L" "${in_profile}L"
+    pw-link "${output_node}R" "${in_profile}R"
 
-    message=" $(cat ~/.config/myeffects/icons.txt | grep -F "$in_profile" | cut -f 2)  $in_profile"
+    message=" $(cat ~/.config/myeffects/icons.txt | grep -F "$profile_name" | cut -f 2)  $profile_name"
 
     # Connect sub profile and sink if any
-    sub_profile="$(cat ~/.config/myeffects/sub_profiles.txt | grep "^$in_profile")"
+    sub_profile="$(cat ~/.config/myeffects/sub_profiles.txt | grep "^$profile_name")"
     if [[ -n "$sub_profile" ]]; then
         sub_sink="$(echo "$sub_profile" | cut -f 2)"
         sub_volume="$(echo "$sub_profile" | cut -f 4)"
@@ -96,20 +100,24 @@ else
             pactl set-sink-volume "$sub_sink" "$sub_volume"
         fi
 
-        in_sub_profile="$(echo "$sub_profile" | cut -f 3)"
-        out_sub_profile="$in_sub_profile"
+        in_sub_port="$(echo "$sub_profile" | cut -f 5)"
+        out_sub_port="$(echo "$sub_profile" | cut -f 6)"
+
+        sub_profile_name="$(echo "$sub_profile" | cut -f 3)"
+        in_sub_profile="${sub_profile_name}:${in_sub_port:-Input }"
+        out_sub_profile="${sub_profile_name}:${out_sub_port:-Output }"
 
         # Connect new effects profile to sink
-        pw-link "${out_sub_profile}:Output L" "${sub_sink}:playback_FL"
-        pw-link "${out_sub_profile}:Output R" "${sub_sink}:playback_FR"
+        pw-link "${out_sub_profile}L" "${sub_sink}:playback_FL"
+        pw-link "${out_sub_profile}R" "${sub_sink}:playback_FR"
 
         # Connect profile to sub profile
-        pw-link "${out_profile}:Output L" "${in_sub_profile}:Input L"
-        pw-link "${out_profile}:Output R" "${in_sub_profile}:Input R"
+        pw-link "${out_profile}L" "${in_sub_profile}L"
+        pw-link "${out_profile}R" "${in_sub_profile}R"
     fi
 fi
 
-echo "$in_profile" > /tmp/active_profile
+echo "$profile_name" > /tmp/active_profile
 echo "$new_active_sink" > /tmp/active_sink
 echo "$(~/.scripts/audio/active_sink_nick.sh)" > /tmp/active_sink_nick
 ~/.scripts/audio/mute_status.sh
