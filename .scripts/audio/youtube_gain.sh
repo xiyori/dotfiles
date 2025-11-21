@@ -40,7 +40,7 @@ i=0
 while [[ "$flag" -eq 0 && "$i" -lt 20 ]]; do
     volume="$(pactl get-sink-volume myeffects_sink | ~/.scripts/audio/get_pactl_volume.sh)"
     n_non_browser="$(pactl list sink-inputs | awk '/Corked:|application.name / {print $0};' | grep --after-context 1 "Corked: no" | grep "application.name" | grep -v "LibreWolf" | grep -v "Firefox" | wc -l)"
-    active_sources="$(pactl list sink-inputs | awk '/Corked:|Volume:|media.name / {print $0};' | grep --after-context 2 "Corked: no" | grep --before-context 1 " - YouTube")"
+    active_sources="$(pactl list sink-inputs | awk '/Corked:|Volume:|media.name / {print $0};' | grep --after-context 2 "Corked: no" | grep --before-context 1 -e " - YouTube" -e "AudioStream")"
 
     unset new_volume
     if [[ "$(echo "$active_sources" | wc -l)" -eq 2 && "$n_non_browser" -eq 0 ]]; then

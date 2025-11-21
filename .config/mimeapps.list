@@ -39,7 +39,7 @@ image/jpeg=gimp.desktop;org.xfce.ristretto.desktop;qimgv.desktop;
 application/pdf=chromium.desktop;firefox.desktop;libreoffice-draw.desktop;okularApplication_pdf.desktop;google-chrome.desktop;calibre-ebook-viewer.desktop;librewolf.desktop;
 text/javascript=nvim.desktop;code-oss.desktop;vim.desktop;
 application/json=nvim.desktop;
-image/gif=gimp.desktop;qimgv.desktop;org.xfce.ristretto.desktop;
+image/gif=qimgv.desktop;gimp.desktop;org.xfce.ristretto.desktop;
 application/x-zerosize=nvim.desktop;
 image/svg+xml=librewolf.desktop;org.xfce.ristretto.desktop;
 inode/directory=thunar.desktop;
@@ -74,4 +74,3 @@ video/webm=vlc.desktop;mpv.desktop;
 text/markdown=nvim.desktop;
 application/x-msdownload=wine.desktop;
 application/vnd.ms-publisher=nvim.desktop;
-

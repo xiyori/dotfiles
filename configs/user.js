@@ -330,6 +330,11 @@ user_pref("browser.tabs.insertAfterCurrent", true); // New Tab insertion
 
 //user_pref("full-screen-api.ignore-widgets", true); // Fake Fullscreen
 
+// PREF: disable WebRTC
+user_pref("media.peerconnection.enabled", false);
+user_pref("media.peerconnection.ice.proxy_only", true);
+user_pref("media.peerconnection.ice.relay_only", true);
+
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
 ****************************************************************************/

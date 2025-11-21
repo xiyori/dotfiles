@@ -44,10 +44,10 @@ return {
           end,
           "fallback",
         },
-        ["<Esc>"] = {
-          "cancel",
-          "fallback",
-        },
+        -- ["<Esc>"] = {
+        --   "cancel",
+        --   "fallback",
+        -- },
       },
 
       -- completion = {

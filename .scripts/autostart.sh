@@ -44,5 +44,6 @@ echo "" > /tmp/custom_monitor_waybar
 ~/.scripts/launch_waybar
 
 # touch
+# iio-hyprland & disown
 # ~/.scripts/tablet_mode.sh > /dev/null 2>&1 & disown
 # hyprpm reload -n

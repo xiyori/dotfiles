@@ -3,7 +3,6 @@
 function tablet_mode ()
 {
   squeekboard & disown
-  iio-hyprland & disown
   eww daemon
   gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled true
   echo 1 > /tmp/tablet_mode
@@ -12,7 +11,6 @@ function tablet_mode ()
 function laptop_mode ()
 {
   killall squeekboard
-  killall iio-hyprland
   eww kill
   gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled false
   echo 0 > /tmp/tablet_mode

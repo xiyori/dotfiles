@@ -88,6 +88,7 @@ install_essential () {
         "thunar-media-tags-plugin"
         "xarchiver"
         "zip"
+        "7zip"
         "unzip"
         
         # Fonts
