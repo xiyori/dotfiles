@@ -7,6 +7,8 @@
 #     done
 # }
 
+hyprctl dispatch workspace name:Music
+
 if ! pgrep -f "alacritty --class cmus,cmus" > /dev/null 2>&1 ; then
     mkdir -p /tmp/cmus_status
     cp ~/.local/state/cmus_status/placeholder.png /tmp/cmus_status/cmus_status_cover.jpg
