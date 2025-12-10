@@ -16,8 +16,10 @@ case "$argument" in
     pkill -USR2 hyprlock
   ;;
   mute)
+    muted="$(cat /tmp/muted)"
+    (( muted ^= 1 ))
     for active_sink in $(~/.scripts/audio/list_active_sinks.sh) ; do
-      pactl set-sink-mute "$active_sink" toggle
+      pactl set-sink-mute "$active_sink" "$muted"
     done 
     # hyprctl activewindow | grep -q "fullscreen: 0" ||
     message="$(~/.scripts/audio/mute_status.sh "$active_sink")"
