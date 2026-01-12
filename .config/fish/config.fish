@@ -3,6 +3,8 @@ if status is-interactive
 
     set PATH "$PATH:$HOME/.cargo/bin"
 
+    set --global fish_key_bindings fish_default_key_bindings
+
     set fish_function_path $fish_function_path "/usr/share/powerline/bindings/fish"
     source /usr/share/powerline/bindings/fish/powerline-setup.fish
     powerline-setup
@@ -13,6 +15,7 @@ if status is-interactive
     bind \cw backward-kill-word
 
     alias docker="sudo /usr/bin/docker"
+    alias vim="nvim"
 
     set -x SYSTEMD_EDITOR nvim
 

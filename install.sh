@@ -72,6 +72,7 @@ install_essential () {
         # Desktop Customization
         "swww" # for wallpapers
         "lxappearance" # for theming
+        "qt5ct" # for theming
         "catppuccin-gtk-theme-mocha" # for theming
         "bibata-cursor-theme" # for theming
         "papirus-icon-theme" # for theming
@@ -111,7 +112,7 @@ install_essential () {
         
         # Desktop Integration
         "xdg-desktop-portal-gtk" # needed for theming
-        "xdg-desktop-portal-wlr" # needed for screen share
+        "xdg-desktop-portal-hyprland" # needed for screen share
 
         # Screenshot
         "grim"
@@ -133,6 +134,7 @@ install_essential () {
         "xorg-xsetroot" # for cursor size stability
         "qt5-wayland"
         "qt6-wayland"
+        "libinput-tools"
 
         # wifi - network management
         "networkmanager" # for network management

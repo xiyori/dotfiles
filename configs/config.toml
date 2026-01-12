@@ -16,5 +16,5 @@ command = "agreety --cmd /usr/bin/fish"
 user = "sergej"
 
 [initial_session]
-command = "Hyprland > .hyprland.log.txt 2> .hyprland.err.txt"
+command = "start-hyprland > .hyprland.log.txt 2> .hyprland.err.txt"
 user = "sergej"

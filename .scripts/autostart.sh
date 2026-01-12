@@ -5,8 +5,16 @@
 
 # https://wiki.hyprland.org/FAQ/#some-of-my-apps-take-a-really-long-time-to-open
 # https://gist.github.com/PowerBall253/2dea6ddf6974ba4e5d26c3139ffb7580
-systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP LATITUDE LONGITUDE &
-dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all &
+
+( systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP LATITUDE LONGITUDE
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all
+sleep 4
+killall -e xdg-desktop-portal-hyprland
+killall xdg-desktop-portal
+/usr/lib/xdg-desktop-portal-hyprland > /tmp/xdg-desktop-portal-hyprland.log 2>&1 & disown
+sleep 4
+/usr/lib/xdg-desktop-portal > /tmp/xdg-desktop-portal.log 2>&1 & disown
+) &
 
 # monitors
 xrdb -merge ~/.Xresources
@@ -17,7 +25,7 @@ swww-daemon > /tmp/swww.log 2>&1 & disown
 ~/.scripts/wallpaper.sh init
 
 # hyprlock
-{ ~/.scripts/lock || hyprctl dispatch exit && swww img "$(~/.scripts/wallpaper.sh query)" ; } &
+( ~/.scripts/lock || hyprctl dispatch exit && swww img "$(~/.scripts/wallpaper.sh query)" ) &
 
 # other
 powerline-daemon
@@ -29,7 +37,7 @@ killall wl-clip-persist ; wl-clip-persist --clipboard regular > /dev/null 2>&1 &
 # applets
 blueman-applet & disown
 nm-applet & disown
-swaync & disown
+# swaync & disown
 
 # wlsunset
 # killall wlsunset ; wlsunset -t 3400 -T 4600 -l $LATITUDE -L $LONGITUDE > /tmp/wlsunset.log 2>&1 & disown
@@ -47,3 +55,6 @@ echo "" > /tmp/custom_monitor_waybar
 # iio-hyprland & disown
 # ~/.scripts/tablet_mode.sh > /dev/null 2>&1 & disown
 # hyprpm reload -n
+
+# prevent silent power on
+# cat /proc/acpi/button/lid/LID0/state | grep -q open || ( date >> ~/unexpected_power_on ; shutdown now )
