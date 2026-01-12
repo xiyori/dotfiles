@@ -1,18 +1,21 @@
 #!/usr/bin/bash
 
 argument="$1"
+notify="${2:-notify}"
 current="$(brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}')"
 
 case "$argument" in
   up)
     # increase the backlight by 5%
     delta="$(( current < 5 ? 1 : 5 ))"
-    brightnessctl set "$(( current + delta ))%"
+    new="$(( current + delta ))"
+    brightnessctl set "${new}%"
   ;;
   down)
     # decrease the backlight by 5%
     delta="$(( current <= 5 ? 1 : 5 ))"
-    brightnessctl set "$(( current <= 1 ? 1 : current - delta ))%"
+    new="$(( current <= 1 ? 1 : current - delta ))"
+    brightnessctl set "${new}%"
   ;;
   custom_action)
     if [[ "$(cat /tmp/tablet_mode)" -eq 1 ]]; then
@@ -33,3 +36,8 @@ case "$argument" in
     brightnessctl set "${target}%"
   ;;
 esac
+
+if [[ "$notify" == "notify" && -n "$new" ]]; then
+  # icon="$(~/.scripts/audio/volume_icon.sh)"
+  notify-send -e -h int:value:"$new" -h string:x-canonical-private-synchronous:brightness_notif -h boolean:SWAYNC_BYPASS_DND:true -u low --expire-time 1000 "󰃟  ${new}%"
+fi
