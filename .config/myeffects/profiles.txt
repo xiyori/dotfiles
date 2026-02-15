@@ -1,6 +1,7 @@
 alsa_output.usb-MOTU_M2_M2AE211FF5-00	DBR-62
 alsa_output.usb-MOTU_M2_M2AE211FF5-00	HD800s		playback_F	capture_F
 alsa_output.usb-TTGK_Technology_TE-C_330243E8250828-01	Meta
+alsa_output.usb-TTGK_Technology_TE-C_330243E8250828-01	Nice Buds
 alsa_output.usb-TTGK_Technology_TE-C_330243E8250828-01	Daybreak
 bluez_output.B0:54:76:4E:67:7E	Buds2 Pro ANC	30419
 alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Speaker__sink		25108
