@@ -18,10 +18,10 @@ if ! pgrep -f "alacritty --class cmus,cmus" > /dev/null 2>&1 ; then
     sleep 0.1
     qimgv /tmp/cmus_status/cmus_status_cover.jpg >/dev/null 2>&1 &
     sleep 0.5
-    hyprctl dispatch splitratio -0.5
+    hyprctl dispatch layoutmsg splitratio -0.5
     sleep 0.1
     hyprctl dispatch focuswindow 'class:^(cmus)$'
-    hyprctl dispatch splitratio 0.195
+    hyprctl dispatch layoutmsg splitratio 0.195
 fi
 if [[ "$#" -eq 1 ]]; then
     cmus-remote -f "$1"
