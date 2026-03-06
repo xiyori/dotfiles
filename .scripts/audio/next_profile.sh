@@ -11,7 +11,7 @@ while read -r profile; do
         new_active_profile="$profile"
         break
     fi
-    if echo "$profile" | grep -q "$active_profile" ; then
+    if [[ "$(echo "$profile" | cut -f 2)" == "$active_profile" ]]; then
         next=1
     fi
 done < <(~/.scripts/audio/get_sink_profiles.sh "$active_sink")

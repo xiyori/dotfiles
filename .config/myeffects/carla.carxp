@@ -45,7 +45,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.5623413252</Value>
+    <Value>0.177827939391136</Value>
    </Parameter>
 
    <Parameter>
@@ -2422,7 +2422,7 @@
    <CustomData>
     <Type>http://lv2plug.in/ns/ext/atom#Object</Type>
     <Key>http://lsp-plug.in/plugins/lv2/para_equalizer_x32_stereo/preset_state</Key>
-    <Value>AAAAAFMAAABUAAAAAAAAAAEAAAARAAAAAAAAAAAAAABVAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABWAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
+    <Value>AAAAAFUAAABWAAAAAAAAAAEAAAARAAAAAAAAAAAAAABXAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABYAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
    </CustomData>
 
    <CustomData>
@@ -2464,7 +2464,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.3427677865</Value>
+    <Value>0.11220183968544</Value>
    </Parameter>
 
    <Parameter>
@@ -4841,7 +4841,7 @@
    <CustomData>
     <Type>http://lv2plug.in/ns/ext/atom#Object</Type>
     <Key>http://lsp-plug.in/plugins/lv2/para_equalizer_x32_stereo/preset_state</Key>
-    <Value>AAAAAFMAAABUAAAAAAAAAAEAAAARAAAAAAAAAAAAAABVAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABWAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
+    <Value>AAAAAFUAAABWAAAAAAAAAAEAAAARAAAAAAAAAAAAAABXAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABYAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
    </CustomData>
 
    <CustomData>
@@ -4883,7 +4883,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.3427677865</Value>
+    <Value>0.11220183968544</Value>
    </Parameter>
 
    <Parameter>
@@ -7260,7 +7260,7 @@
    <CustomData>
     <Type>http://lv2plug.in/ns/ext/atom#Object</Type>
     <Key>http://lsp-plug.in/plugins/lv2/para_equalizer_x32_stereo/preset_state</Key>
-    <Value>AAAAAFMAAABUAAAAAAAAAAEAAAARAAAAAAAAAAAAAABVAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABWAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
+    <Value>AAAAAFUAAABWAAAAAAAAAAEAAAARAAAAAAAAAAAAAABXAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABYAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
    </CustomData>
 
    <CustomData>
@@ -9685,7 +9685,7 @@
    <CustomData>
     <Type>http://lv2plug.in/ns/ext/atom#Object</Type>
     <Key>http://lsp-plug.in/plugins/lv2/para_equalizer_x32_stereo/preset_state</Key>
-    <Value>AAAAAFMAAABUAAAAAAAAAAEAAAARAAAAAAAAAAAAAABVAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABWAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
+    <Value>AAAAAFUAAABWAAAAAAAAAAEAAAARAAAAAAAAAAAAAABXAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABYAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
    </CustomData>
   </Data>
  </Plugin>
@@ -9845,7 +9845,7 @@
    <CustomData>
     <Type>http://lv2plug.in/ns/ext/atom#Object</Type>
     <Key>http://lsp-plug.in/plugins/lv2/filter_stereo/preset_state</Key>
-    <Value>AAAAAFMAAABUAAAAAAAAAAEAAAARAAAAAAAAAAAAAABVAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABWAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
+    <Value>AAAAAFUAAABWAAAAAAAAAAEAAAARAAAAAAAAAAAAAABXAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABYAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
    </CustomData>
   </Data>
  </Plugin>
@@ -12264,7 +12264,7 @@
    <CustomData>
     <Type>http://lv2plug.in/ns/ext/atom#Object</Type>
     <Key>http://lsp-plug.in/plugins/lv2/para_equalizer_x32_stereo/preset_state</Key>
-    <Value>AAAAAFMAAABUAAAAAAAAAAEAAAARAAAAAAAAAAAAAABVAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABWAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
+    <Value>AAAAAFUAAABWAAAAAAAAAAEAAAARAAAAAAAAAAAAAABXAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABYAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
    </CustomData>
   </Data>
  </Plugin>
@@ -12398,24 +12398,18 @@
    <CustomData>
     <Type>http://lv2plug.in/ns/ext/atom#Object</Type>
     <Key>http://lsp-plug.in/plugins/lv2/loud_comp_stereo/preset_state</Key>
-    <Value>AAAAAFMAAABUAAAAAAAAAAEAAAARAAAAAAAAAAAAAABVAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABWAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
+    <Value>AAAAAFUAAABWAAAAAAAAAAEAAAARAAAAAAAAAAAAAABXAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABYAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
    </CustomData>
   </Data>
  </Plugin>
 
  <ExternalPatchbay>
   <Positions>
-   <Position x1="270" y1="492" x2="1164" y2="344">
-    <Name>M Series Pro</Name>
-   </Position>
    <Position x1="882" y1="590">
     <Name>HD800s</Name>
    </Position>
    <Position x1="392" y1="338">
     <Name>myeffects_sink</Name>
-   </Position>
-   <Position x1="775" y1="896" x2="1171" y2="416">
-    <Name>USB-C to 3.5mm Headphone Jack Adapter Analog Stereo</Name>
    </Position>
    <Position x1="148" y1="697" x2="882" y2="697">
     <Name>Midi-Bridge</Name>
@@ -12423,26 +12417,29 @@
    <Position x1="286" y1="602" x2="1258" y2="524">
     <Name>BLE MIDI 1</Name>
    </Position>
-   <Position x1="882" y1="86" pluginId="0">
+   <Position x1="882" y1="86">
     <Name>Nice Buds</Name>
    </Position>
-   <Position x1="882" y1="170" pluginId="0">
+   <Position x1="882" y1="170">
     <Name>Meta</Name>
    </Position>
-   <Position x1="882" y1="254" pluginId="1">
+   <Position x1="882" y1="254">
     <Name>Daybreak</Name>
    </Position>
-   <Position x1="882" y1="338" pluginId="2">
+   <Position x1="882" y1="338">
     <Name>DBR-62</Name>
    </Position>
-   <Position x1="882" y1="422" pluginId="3">
+   <Position x1="882" y1="422">
     <Name>SB-1000</Name>
    </Position>
-   <Position x1="882" y1="506" pluginId="4">
+   <Position x1="882" y1="506">
     <Name>Buds2 Pro ANC</Name>
    </Position>
-   <Position x1="559" y1="338" pluginId="5">
+   <Position x1="559" y1="338">
     <Name>LSP Loudness Compensator Stereo</Name>
+   </Position>
+   <Position x1="882" y1="2" pluginId="7">
+    <Name>MDR-MV1</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>
