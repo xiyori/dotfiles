@@ -213,6 +213,10 @@ install_essential () {
     # Services
     sudo mkdir /etc/systemd/system/paccache.timer.d
     sudo cp configs/paccache-override.conf /etc/systemd/system/paccache.timer.d/override.conf
+    
+    sudo mkdir /etc/systemd/logind.conf.d
+    sudo cp configs/handle_lid_switch.conf /etc/systemd/logind.conf.d/
+
     sudo cp configs/monitor-temp.service /etc/systemd/system/monitor-temp.service
     sudo ln -s "$(pwd)/.scripts/monitor-temp.sh" /usr/local/bin/monitor-temp.sh
 
