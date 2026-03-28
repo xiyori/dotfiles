@@ -254,7 +254,10 @@ install_optional () {
         "imagemagick" # for color picker script
         "tty-clock" # to flex
         "calcurse" # to plan while flexing
-        "cmus" # musical flex
+        "mpd" # musical flex
+        "mpd-mpris" # musical flex
+        "rmpc" # musical flex
+        "kitty" # for rmpc only
         "cava" # saem
         "qalculate-gtk" # calculator
         "lsd" # next gen ls
@@ -269,15 +272,13 @@ install_optional () {
     _create_symlink .config/calcurse/keys
     _create_symlink .config/cava/config
     _create_symlink .config/fastfetch
+    _create_symlink .config/mpd
+    _create_symlink .config/rmpc
 
     echo "setting up packages"
     
-    # Cmus status
-    mkdir -p ~/.local/state/cmus_status
-    mkdir -p ~/.local/share/icons
-    ln -s "$(pwd)/assets/placeholder.png" ~/.local/state/cmus_status/placeholder.png
-    ln -s "$(pwd)/assets/cmus.svg" ~/.local/share/icons/cmus.svg
-    desktop-file-install --dir=$HOME/.local/share/applications configs/cmus.desktop
+    # rmpc setup
+    kitty +kitten themes --reload-in=all Catppuccin-Mocha
 
     # App themes
     git clone https://github.com/catppuccin/bat.git "$(bat --config-dir)"
@@ -285,9 +286,6 @@ install_optional () {
 
     git clone https://github.com/catppuccin/btop.git
     sudo cp btop/themes/* /usr/share/btop/themes/
-
-    git clone https://github.com/Sekki21956/cmus.git
-    sudo cp cmus/catppuccin.theme /usr/share/cmus/
 }
 
 install_extra () {
