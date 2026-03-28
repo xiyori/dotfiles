@@ -45,7 +45,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.177827939391136</Value>
+    <Value>0.005623413252</Value>
    </Parameter>
 
    <Parameter>
@@ -2464,7 +2464,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.11220183968544</Value>
+    <Value>0.003548133892</Value>
    </Parameter>
 
    <Parameter>
@@ -4883,7 +4883,7 @@
     <Index>2</Index>
     <Name>Output gain</Name>
     <Symbol>g_out</Symbol>
-    <Value>0.11220183968544</Value>
+    <Value>0.003548133892</Value>
    </Parameter>
 
    <Parameter>
