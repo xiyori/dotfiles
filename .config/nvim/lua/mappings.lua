@@ -15,6 +15,7 @@ map("i", "<C-a>", "<ESC>ggVG")
 map("i", "<C-/>", "<ESC>gcci", { desc = "toggle comment", remap = true })
 map("n", "<C-/>", "gcc", { desc = "toggle comment", remap = true })
 map("v", "<C-/>", "gc", { desc = "toggle comment", remap = true })
+
 map("i", "<C-TAB>", function()
   require("nvchad.tabufline").next()
 end)
@@ -27,15 +28,27 @@ end)
 map("n", "<CS-TAB>", function()
   require("nvchad.tabufline").prev()
 end)
+
 map("v", "<TAB>", ">")
 map("i", "<S-TAB>", "<ESC>v<i")
 map("n", "<S-TAB>", "v<")
 map("v", "<S-TAB>", "<")
+
 map("v", "(", "Sb", { desc = "surround parentheses", remap = true })
 map("v", "[", "S]", { desc = "surround brackets", remap = true })
 map("v", "{", "SB", { desc = "surround braces", remap = true })
 
 local opts = { noremap = true, silent = true }
+
+map("i", "<C-Left>", "<ESC>bi", opts)
+map("n", "<C-Left>", "b", opts)
+map("v", "<C-Left>", "b", opts)
+map("i", "<C-Right>", "<ESC>`]wi", opts)
+map("n", "<C-Right>", "w", opts)
+map("v", "<C-Right>", "w", opts)
+
+-- map("i", "<ESC>", "<ESC>`^", opts)
+
 vim.api.nvim_set_keymap("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", opts)
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
