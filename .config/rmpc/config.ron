@@ -41,18 +41,21 @@
             "op":         ShowDecoders,
             "od":         ShowDownloads,
             "oP":         Partition(),
-            "z":          ToggleRepeat,
-            "x":          ToggleRandom,
-            "c":          ToggleConsume,
-            "v":          ToggleSingle,
-            "p":          TogglePause,
-            "s":          Stop,
-            ">":          NextTrack,
-            "<":          PreviousTrack,
-            "f":          SeekForward,
-            "b":          SeekBack,
-            ".":          VolumeUp,
-            ",":          VolumeDown,
+            "a":          ToggleRepeat,
+            "s":          ToggleRandom,
+            "p":          ToggleConsume,
+            "i":          ToggleSingle,
+            "c":          TogglePause,
+            "v":          Stop,
+            "b":          NextTrack,
+            "z":          PreviousTrack,
+            ">":          SeekForward,
+            "<":          SeekBack,
+            ".":          ExternalCommand(command: ["rmpc", "seek", "+60"], description: "Seek +1 minute."),
+            ",":          ExternalCommand(command: ["rmpc", "seek", "-60"], description: "Seek -1 minute."),
+            "x":          SeekToStart,
+            // ".":          VolumeUp,
+            // ",":          VolumeDown,
             "<Tab>":      NextTab,
             "gt":         NextTab,
             "<S-Tab>":    PreviousTab,
@@ -103,9 +106,9 @@
             "/":          EnterSearch,
             "n":          NextResult,
             "N":          PreviousResult,
-            "a":          Add,
-            "A":          AddAll,
-            "D":          Delete,
+            "e":          Add,
+            "E":          AddAll,
+            "<Del>":      Delete,
             "<C-r>":      Rename,
             "i":          FocusInput,
             "oi":         ShowInfo,
@@ -142,6 +145,28 @@
         album_sort_by: Date,
         album_date_tags: [Date],
     ),
+    cava: (
+        framerate: 60, // default 60
+        autosens: true, // default true
+        sensitivity: 100, // default 100
+        lower_cutoff_freq: 40, // not passed to cava if not provided
+        higher_cutoff_freq: 20000, // not passed to cava if not provided
+        input: (
+            method: Fifo,
+            source: "/tmp/mpd.fifo",
+            sample_rate: 44100,
+            channels: 2,
+            sample_bits: 16,
+        ),
+        smoothing: (
+            noise_reduction: 77, // default 77
+            monstercat: false, // default false
+            waves: false, // default false
+        ),
+        // this is a list of floating point numbers thats directly passed to cava
+        // they are passed in order that they are defined
+        //eq: []
+    ),
     tabs: [
         (
             name: "Queue",
@@ -160,12 +185,10 @@
                                     pane: Pane(AlbumArt)
                                 ),
                                 (
-                                    size: "7",
+                                    size: "8",
                                     borders: "ALL",
                                     border_symbols: Inherited(parent: Rounded, top_left: "├", top_right: "┤",),
-                                    border_title: [(kind: Text(" Lyrics "))],
-                                    border_title_alignment: Right,
-                                    pane: Pane(Lyrics)
+                                    pane: Pane(Cava)
                                 ),
                             ],
                         ),
