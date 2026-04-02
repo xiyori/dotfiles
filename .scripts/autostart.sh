@@ -21,7 +21,7 @@ xrdb -merge ~/.Xresources
 ~/.scripts/startup_monitor.sh &
 
 # wallpaper
-swww-daemon > /tmp/swww.log 2>&1 & disown
+awww-daemon > /tmp/awww.log 2>&1 & disown
 ~/.scripts/wallpaper.sh init
 
 # hyprlock
