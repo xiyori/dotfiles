@@ -3,7 +3,7 @@ require "nvchad.options"
 -- add yours here!
 local opt = vim.opt
 local o = vim.o
--- local g = vim.g
+local g = vim.g
 
 vim.api.nvim_create_user_command("Vb", "normal! <C-v>", {})
 o.shell = "/usr/bin/fish"
@@ -18,5 +18,7 @@ o.listchars = "tab:⋅⋅,nbsp:~"
 o.list = true
 o.clipboard = ""
 opt.iskeyword:remove "_"
+
+g.copilot_proxy = 'socks5://127.0.0.1:2080'
 
 -- o.cursorlineopt ='both' -- to enable cursorline!

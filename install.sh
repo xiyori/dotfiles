@@ -70,7 +70,7 @@ install_essential () {
         "swaync" # for notifications
         
         # Desktop Customization
-        "swww" # for wallpapers
+        "awww" # for wallpapers
         "lxappearance" # for theming
         "qt5ct" # for theming
         "catppuccin-gtk-theme-mocha" # for theming
@@ -87,7 +87,7 @@ install_essential () {
         "thunar-volman"
         "thunar-archive-plugin"
         "thunar-media-tags-plugin"
-        "xarchiver"
+        "file-roller"
         "zip"
         "7zip"
         "unzip"
@@ -245,7 +245,6 @@ install_optional () {
         "btop" # for performance monitoring
         "bat" # cat with the looks
         "tree" # ls but recursive
-        "ristretto" # image viewer
         "qimgv" # image viewer
         "rofi-emoji-git" # emoji picker
         "noto-fonts-emoji" # emoji font
@@ -279,6 +278,8 @@ install_optional () {
     
     # rmpc setup
     kitty +kitten themes --reload-in=all Catppuccin-Mocha
+    systemctl --user enable mpd.socket
+    systemctl --user enable mpd-mpris.service
 
     # App themes
     git clone https://github.com/catppuccin/bat.git "$(bat --config-dir)"

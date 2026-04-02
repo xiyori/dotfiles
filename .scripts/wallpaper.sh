@@ -45,4 +45,4 @@ if [[ -z "$1" || "$1" == "next" ]]; then
 else
     trans="-t none"
 fi
-swww img "${wall_dir}/$new_wall" $trans
+awww img "${wall_dir}/$new_wall" $trans
