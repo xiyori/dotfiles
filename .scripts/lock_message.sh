@@ -2,17 +2,17 @@
 
 tooltip="$(cat /tmp/player_metadata)"
 
-if [[ -z "$tooltip" ]]; then
-    tooltip="$(hyprctl splash)"
-fi
-
 case $(~/.scripts/audio/player.sh status 2> /dev/null) in 
   Playing)
-    icon="󰐊"
+    icon="󰐊 "
   ;;
   Paused)
-    icon="󰏤"
+    icon="󰏤 "
   ;;
 esac
 
-echo "$icon $tooltip"
+if [[ -z "$tooltip" || -z "$icon" ]]; then
+    tooltip="$(hyprctl splash)"
+fi
+
+echo "${icon}${tooltip}"
