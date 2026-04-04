@@ -51,7 +51,7 @@ profile="$2"
 
 # Disconnect profile from sink(s)
 for active_sink in $active_sinks ; do
-    ~/.scripts/audio/remove_input_links.sh "${active_sink}:playback"
+    ~/.scripts/audio/remove_input_links.sh "${active_sink}"
 done
 
 volume="$(echo "$profile" | cut -f 3)"
@@ -63,6 +63,14 @@ else
     pactl set-sink-volume "$new_active_sink" "$volume"
 fi
 
+sink_ports="$(pw-link -Iil "" "$new_active_sink" | grep -v "|<-" | cut -f 2 -d ":")"
+sink_left="${new_active_sink}:$(echo "$sink_ports" | head -1)"
+sink_right="${new_active_sink}:$(echo "$sink_ports" | tail -1)"
+
+if [[ "$sink_left" == "$sink_right" ]]; then
+    sink_right="nonexistent"
+fi
+
 in_port="$(echo "$profile" | cut -f 4)"
 out_port="$(echo "$profile" | cut -f 5)"
 
@@ -72,14 +80,14 @@ out_profile="${profile_name}:${out_port:-Output }"
 
 if [[ -z "$profile_name" ]]; then
     # No profile found, connect directly to sink
-    pw-link "${output_node}L" "${new_active_sink}:playback_FL"
-    pw-link "${output_node}R" "${new_active_sink}:playback_FR"
+    pw-link "${output_node}L" "$sink_left"
+    pw-link "${output_node}R" "$sink_right"
 
     message="$(~/.scripts/audio/active_sink_nick.sh)"
 else
     # Connect new effects profile to sink
-    pw-link "${out_profile}L" "${new_active_sink}:playback_FL"
-    pw-link "${out_profile}R" "${new_active_sink}:playback_FR"
+    pw-link "${out_profile}L" "$sink_left"
+    pw-link "${out_profile}R" "$sink_right"
 
     # Connect loudness to profile
     pw-link "${output_node}L" "${in_profile}L"
@@ -100,6 +108,10 @@ else
             pactl set-sink-volume "$sub_sink" "$sub_volume"
         fi
 
+        sink_ports="$(pw-link -Iil "" "$sub_sink" | grep -v "|<-" | cut -f 2 -d ":")"
+        sub_sink_left="${sub_sink}:$(echo "$sink_ports" | head -1)"
+        sub_sink_right="${sub_sink}:$(echo "$sink_ports" | tail -1)"
+
         in_sub_port="$(echo "$sub_profile" | cut -f 5)"
         out_sub_port="$(echo "$sub_profile" | cut -f 6)"
 
@@ -108,8 +120,8 @@ else
         out_sub_profile="${sub_profile_name}:${out_sub_port:-Output }"
 
         # Connect new effects profile to sink
-        pw-link "${out_sub_profile}L" "${sub_sink}:playback_FL"
-        pw-link "${out_sub_profile}R" "${sub_sink}:playback_FR"
+        pw-link "${out_sub_profile}L" "$sub_sink_left"
+        pw-link "${out_sub_profile}R" "$sub_sink_right"
 
         # Connect profile to sub profile
         pw-link "${out_profile}L" "${in_sub_profile}L"
