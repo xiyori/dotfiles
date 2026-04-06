@@ -25,7 +25,7 @@ awww-daemon > /tmp/awww.log 2>&1 & disown
 ~/.scripts/wallpaper.sh init
 
 # hyprlock
-( ~/.scripts/lock || hyprctl dispatch exit && swww img "$(~/.scripts/wallpaper.sh query)" ) &
+( ~/.scripts/lock || hyprctl dispatch exit && awww img "$(~/.scripts/wallpaper.sh query)" ) &
 
 # other
 powerline-daemon
