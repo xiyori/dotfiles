@@ -180,11 +180,15 @@ install_essential () {
     _create_symlink .config/systemd/user/cycle-wallpaper.timer
     _create_symlink .config/systemd/user/cycle-wallpaper.service
     _create_symlink .config/systemd/user/dbus-monitor.service
+    _create_symlink impulse
 
     echo "setting up packages"
 
     # For MIDI loudness control
     echo "snd-virmidi" | sudo tee -a /etc/modules-load.d/virmidi.conf > /dev/null
+
+    # Impulse responses
+    ln -sf "$(pwd)/configs/impulse" ~/impulse
 
     # For the proper starting of terminal apps from GTK
     sudo ln -sf "$(pwd)/.scripts/xdg-terminal-exec" /usr/bin/xdg-terminal-exec
