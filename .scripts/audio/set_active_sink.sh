@@ -63,6 +63,10 @@ else
     pactl set-sink-volume "$new_active_sink" "$volume"
 fi
 
+pactl get-sink-mute "$new_active_sink" | grep -q no
+muted="$?"
+echo $muted
+
 sink_ports="$(pw-link -Iil "" "$new_active_sink" | grep -v "|<-" | cut -f 2 -d ":")"
 sink_left="${new_active_sink}:$(echo "$sink_ports" | head -1)"
 sink_right="${new_active_sink}:$(echo "$sink_ports" | tail -1)"
@@ -108,6 +112,8 @@ else
             pactl set-sink-volume "$sub_sink" "$sub_volume"
         fi
 
+        pactl set-sink-mute "$sub_sink" "$muted"
+
         sink_ports="$(pw-link -Iil "" "$sub_sink" | grep -v "|<-" | cut -f 2 -d ":")"
         sub_sink_left="${sub_sink}:$(echo "$sink_ports" | head -1)"
         sub_sink_right="${sub_sink}:$(echo "$sink_ports" | tail -1)"
@@ -132,7 +138,7 @@ fi
 echo "$profile_name" > /tmp/active_profile
 echo "$new_active_sink" > /tmp/active_sink
 echo "$(~/.scripts/audio/active_sink_nick.sh)" > /tmp/active_sink_nick
-~/.scripts/audio/mute_status.sh
+~/.scripts/audio/muted_update.sh "$muted"
 
 pkill -RTMIN+1 waybar
 pkill -RTMIN+5 waybar

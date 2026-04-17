@@ -63,11 +63,37 @@
             "Carla": "󰙽",
             "Telegram": "",
             // "active": "",
-            "default": ""
+            "default": "",
+            "1": "󰲠",
+            "2": "󰲢",
+            "3": "󰲤",
+            "4": "󰲦",
+            "5": "󰲨",
+            "6": "󰲪",
+            "7": "󰲬",
+            "8": "󰲮",
+            "9": "󰲰",
+            "10": "󰿬"
         },
         "on-scroll-up": "~/.scripts/workspace_swipe.py prev",
         "on-scroll-down": "~/.scripts/workspace_swipe.py next",
         "on-click": "activate"
+        /*"workspace-taskbar": {
+            "enable": true,
+            "update-active-window": true
+        },*/
+        /*"format": "{windows}",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "class<kitty> title<rmpc>": "󰎇",
+            "class<carla>": "󰙽",
+            "title<.*youtube.*>": "",
+            "class<firefox|librewolf>": "󰈹",
+            // "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+            "class<thunar>": "",
+            "class<Alacritty>": "",
+            "title<.* - (.*) - VSCodium>": "codium $1"  // captures part of the window title and formats it into output
+        }*/
     },
     "cpu": {
         "format": " {usage}%",

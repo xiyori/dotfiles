@@ -18,6 +18,8 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ':TSUpdate',
     opts = {
       ensure_installed = {
         "vim",
@@ -26,7 +28,9 @@ return {
         "fish",
         "bash",
         "python",
-        "yuck"
+        "yuck",
+        "c",
+        "cpp"
       },
     },
   },

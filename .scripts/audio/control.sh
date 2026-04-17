@@ -16,16 +16,22 @@ case "$argument" in
     pkill -USR2 hyprlock
   ;;
   mute)
-    muted="$(cat /tmp/muted)"
+    pactl get-sink-mute "$(~/.scripts/audio/get_active_sink.sh)" | grep -q no
+    muted="$?"
     (( muted ^= 1 ))
     for active_sink in $(~/.scripts/audio/list_active_sinks.sh) ; do
       pactl set-sink-mute "$active_sink" "$muted"
     done 
     # hyprctl activewindow | grep -q "fullscreen: 0" ||
-    message="$(~/.scripts/audio/mute_status.sh "$active_sink")"
     if [[ "$notify" == "notify" ]]; then
+      if [[ "$muted" -eq 1 ]]; then
+        message="󰖁  Mute sound"
+      else
+        message="$(~/.scripts/audio/volume_icon.sh)  Unmute sound"
+      fi
       notify-send -e -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low "$message"
     fi
+    ~/.scripts/audio/muted_update.sh "$muted"
     pkill -RTMIN+1 waybar
   ;;
   *)
