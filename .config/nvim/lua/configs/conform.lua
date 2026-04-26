@@ -3,7 +3,11 @@ local options = {
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
+    javascript = { "prettier"},
     python = { "isort", "black" },
+    php = { "pretty-php" },
+    c = { "clang-format" },
+    cpp = { "clang-format" },
   },
 
   -- format_on_save = {

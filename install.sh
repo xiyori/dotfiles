@@ -327,7 +327,11 @@ install_extra () {
         "system-config-printer"
         "nss-mdns"
         "joplin-appimage"
-        "rnote"
+        "rnote",
+        "prettier",
+        "stylua",
+        "python-isort",
+        "python-black"
     )
     install "${packages[@]}"
 

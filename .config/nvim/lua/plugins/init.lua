@@ -30,7 +30,11 @@ return {
         "python",
         "yuck",
         "c",
-        "cpp"
+        "cpp",
+        "html",
+        "css",
+        "javascript",
+        "php"
       },
     },
   },
