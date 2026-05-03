@@ -328,6 +328,9 @@ install_extra () {
         "nss-mdns"
         "joplin-appimage"
         "rnote",
+        "msmtp",
+        "msmtp-mta",
+        "s-nail",
         "prettier",
         "stylua",
         "python-isort",
