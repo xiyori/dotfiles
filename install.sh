@@ -94,6 +94,7 @@ install_essential () {
         
         # Fonts
         "ttf-firacode-nerd"
+        "ttf-noto-nerd"
         "noto-fonts"
 
         # Sound
