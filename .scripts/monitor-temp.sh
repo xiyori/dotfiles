@@ -6,9 +6,9 @@ mkdir -p /tmp/monitor-temp
 echo 30000 > /tmp/monitor-temp/temp_cpu
 echo 30000 > /tmp/monitor-temp/temp_gpu
 echo 30000 > /tmp/monitor-temp/temp_max_gpu_cpu
-echo 30000 > /tmp/monitor-temp/temp_cpu_max_avg
-echo 30000 > /tmp/monitor-temp/temp_gpu_special
-printf '30000\n%.0s' {1..10} > /tmp/monitor-temp/temp_cpu_history
+# echo 30000 > /tmp/monitor-temp/temp_cpu_max_avg
+# printf '30000\n%.0s' {1..10} > /tmp/monitor-temp/temp_cpu_history
+bias=10000
 while : ; do
     temp_gpu="$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits | sort -nr | head -n1)"
     temp_gpu="$((temp_gpu * 1000))"
@@ -16,21 +16,20 @@ while : ; do
 
     temp_cpu="$(cat /tmp/hwmon4/temp1_input)"
     echo "$temp_cpu" > /tmp/monitor-temp/temp_cpu
-    echo "$((temp_gpu > temp_cpu ? temp_gpu : temp_cpu))" > /tmp/monitor-temp/temp_max_gpu_cpu
-    echo "$((temp_gpu > temp_cpu ? temp_gpu : 30000))" > /tmp/monitor-temp/temp_gpu_special
+    echo "$((temp_gpu > temp_cpu - bias ? temp_gpu : temp_cpu - bias))" > /tmp/monitor-temp/temp_max_gpu_cpu
 
-    tail -n +2 /tmp/monitor-temp/temp_cpu_history > /tmp/monitor-temp/temp_cpu_history.tmp && mv /tmp/monitor-temp/temp_cpu_history.tmp /tmp/monitor-temp/temp_cpu_history
-    echo "$temp_cpu" >> /tmp/monitor-temp/temp_cpu_history
-
-    max=0
-    second_to_max=0
-    while read N; do
-        if (( N > max )); then
-            second_to_max="$max"
-            max="$N"
-        fi
-    done < /tmp/monitor-temp/temp_cpu_history
-    echo "$second_to_max" > /tmp/monitor-temp/temp_cpu_max_avg
+    # tail -n +2 /tmp/monitor-temp/temp_cpu_history > /tmp/monitor-temp/temp_cpu_history.tmp && mv /tmp/monitor-temp/temp_cpu_history.tmp /tmp/monitor-temp/temp_cpu_history
+    # echo "$temp_cpu" >> /tmp/monitor-temp/temp_cpu_history
+    #
+    # max=0
+    # second_to_max=0
+    # while read N; do
+    #     if (( N > max )); then
+    #         second_to_max="$max"
+    #         max="$N"
+    #     fi
+    # done < /tmp/monitor-temp/temp_cpu_history
+    # echo "$max" > /tmp/monitor-temp/temp_cpu_max_avg
 
     sleep 5
 done

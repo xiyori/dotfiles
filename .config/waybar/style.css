@@ -82,6 +82,7 @@ tooltip {
 #memory,
 #disk,
 #temperature,
+#custom-backup,
 #custom-fancontrol,
 #custom-monitor,
 #custom-autogain,
@@ -122,7 +123,14 @@ tooltip {
 }
 
 /* =============================== */
-/* Monitor Module */
+/* Backup Module */
+#custom-backup {
+  color: @red;
+  padding-right: 11px;
+}
+
+/* =============================== */
+/* Fancontrol Module */
 #custom-fancontrol {
   color: @red;
   padding-right: 11px;
@@ -149,8 +157,9 @@ tooltip {
 /* Powermenu Module */
 #custom-power {
   padding-left: 12px;
-  padding-right: 13px;
+  padding-right: 15px;
   margin-right: 0;
+  font-size: 16px;
 }
 
 /* =============================== */
