@@ -103,6 +103,8 @@
             "<PageDown>": PageDown,
             "gg":         Top,
             "G":          Bottom,
+            "<Home>":     Top,
+            "<End>":      Bottom,
             "<Space>":    Select,
             "<C-Space>":  InvertSelection,
             "/":          EnterSearch,

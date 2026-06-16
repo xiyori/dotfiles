@@ -276,6 +276,7 @@ install_optional () {
     _create_symlink .config/calcurse/keys
     _create_symlink .config/cava/config
     _create_symlink .config/fastfetch
+    _create_symlink .config/kitty/overrides.conf
     _create_symlink .config/mpd
     _create_symlink .config/rmpc
 
@@ -283,6 +284,7 @@ install_optional () {
     
     # rmpc setup
     kitty +kitten themes --reload-in=all Catppuccin-Mocha
+    echo "include overrides.conf" >> ~/.config/kitty/kitty.conf
     systemctl --user enable mpd.socket
     systemctl --user enable mpd-mpris.service
 
@@ -335,7 +337,11 @@ install_extra () {
         "prettier",
         "stylua",
         "python-isort",
-        "python-black"
+        "python-black",
+        "jedi-language-server",
+        "bash-language-server",
+        "vscode-css-languageserver",
+        "vscode-html-language-server"
     )
     install "${packages[@]}"
 
