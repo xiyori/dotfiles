@@ -125,7 +125,7 @@ tooltip {
 /* =============================== */
 /* Backup Module */
 #custom-backup {
-  color: @red;
+  color: @green;
   padding-right: 11px;
 }
 

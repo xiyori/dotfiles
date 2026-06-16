@@ -4,19 +4,24 @@ ln -sf /sys/devices/platform/nct6687.2592/hwmon/* /tmp/hwmon5
 
 mkdir -p /tmp/monitor-temp
 echo 30000 > /tmp/monitor-temp/temp_cpu
-echo 30000 > /tmp/monitor-temp/temp_gpu
+echo 30000 > /tmp/monitor-temp/temp_gpu0
+echo 30000 > /tmp/monitor-temp/temp_max_gpu
 echo 30000 > /tmp/monitor-temp/temp_max_gpu_cpu
 # echo 30000 > /tmp/monitor-temp/temp_cpu_max_avg
 # printf '30000\n%.0s' {1..10} > /tmp/monitor-temp/temp_cpu_history
 bias=10000
 while : ; do
-    temp_gpu="$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits | sort -nr | head -n1)"
-    temp_gpu="$((temp_gpu * 1000))"
-    echo "$temp_gpu" > /tmp/monitor-temp/temp_gpu
+    temp_gpus="$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)"
+    temp_max_gpu="$(echo "$temp_gpus" | sort -nr | head -n1)"
+    temp_max_gpu="$((temp_max_gpu * 1000))"
+    temp_gpu0="$(echo "$temp_gpus" | head -1)"
+    temp_gpu0="$((temp_gpu0 * 1000))"
+    echo "$temp_gpu0" > /tmp/monitor-temp/temp_gpu0
+    echo "$temp_max_gpu" > /tmp/monitor-temp/temp_max_gpu
 
     temp_cpu="$(cat /tmp/hwmon4/temp1_input)"
     echo "$temp_cpu" > /tmp/monitor-temp/temp_cpu
-    echo "$((temp_gpu > temp_cpu - bias ? temp_gpu : temp_cpu - bias))" > /tmp/monitor-temp/temp_max_gpu_cpu
+    echo "$((temp_max_gpu > temp_cpu - bias ? temp_max_gpu : temp_cpu - bias))" > /tmp/monitor-temp/temp_max_gpu_cpu
 
     # tail -n +2 /tmp/monitor-temp/temp_cpu_history > /tmp/monitor-temp/temp_cpu_history.tmp && mv /tmp/monitor-temp/temp_cpu_history.tmp /tmp/monitor-temp/temp_cpu_history
     # echo "$temp_cpu" >> /tmp/monitor-temp/temp_cpu_history
