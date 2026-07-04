@@ -35,11 +35,11 @@ case "$argument" in
     pkill -RTMIN+1 waybar
   ;;
   *)
-    if [[ "$(cat /tmp/low_latency)" == "low_latency" ]]; then
-        ~/.scripts/audio/bypass_volume.sh "$argument"
-    else
-        ~/.scripts/audio/volume.sh "$argument"
-    fi
+    # if [[ "$(cat /tmp/low_latency)" == "low_latency" ]]; then
+      # ~/.scripts/audio/bypass_volume.sh "$argument"
+    # else
+    ~/.scripts/audio/volume.sh "$argument"
+    # fi
     if [[ "$notify" == "notify" ]]; then
       case "$argument" in
         *up|*down)

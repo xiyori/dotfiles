@@ -7462,7 +7462,7 @@
     <Index>2</Index>
     <Name>Processing mode</Name>
     <Symbol>mode</Symbol>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <Parameter>

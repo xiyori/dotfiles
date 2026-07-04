@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[[ "$(cat /tmp/low_latency)" == "low_latency" ]] && exit 0
+# [[ "$(cat /tmp/low_latency)" == "low_latency" ]] && exit 0
 
 argument="$1"
 notify="${2:-notify}"

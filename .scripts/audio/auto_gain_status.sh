@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[[ "$(cat /tmp/low_latency)" == "low_latency" ]] && exit 0
+# [[ "$(cat /tmp/low_latency)" == "low_latency" ]] && exit 0
 
 gain="$(cat /tmp/auto_gain)"
 if [[ "$(cat /tmp/auto_gain_enabled)" -eq 1 ]] ; then

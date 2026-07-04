@@ -11,14 +11,14 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
     echo 65 > /tmp/loudness  # 65db initial loudness
     if ! pgrep carla ; then
         if [[ -n "$1" ]]; then
-            # export PIPEWIRE_LATENCY="64/48000"
             pw-metadata -n settings 0 clock.force-quantum 64
-            echo "low_latency" > /tmp/low_latency
-            pactl set-sink-volume myeffects_sink -18db  # 65db initial loudness
+            pw-metadata -n settings 0 clock.force-rate 96000
+            # echo "low_latency" > /tmp/low_latency
+            # pactl set-sink-volume myeffects_sink -18db  # 65db initial loudness
         else
-            # export PIPEWIRE_LATENCY="2048/48000"
-            pw-metadata -n settings 0 clock.force-quantum 2048
-            echo "default" > /tmp/low_latency
+            pw-metadata -n settings 0 clock.force-quantum 96
+            pw-metadata -n settings 0 clock.force-rate 0
+            # echo "default" > /tmp/low_latency
         fi
         carla ~/.config/myeffects/carla.carxp > /tmp/carla.log 2>&1 & disown
         # pid="$!"
