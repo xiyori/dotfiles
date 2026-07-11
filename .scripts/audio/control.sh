@@ -23,6 +23,7 @@ case "$argument" in
       pactl set-sink-mute "$active_sink" "$muted"
     done 
     # hyprctl activewindow | grep -q "fullscreen: 0" ||
+    ~/.scripts/audio/muted_update.sh "$muted"
     if [[ "$notify" == "notify" ]]; then
       if [[ "$muted" -eq 1 ]]; then
         message="󰖁  Mute sound"
@@ -31,7 +32,6 @@ case "$argument" in
       fi
       notify-send -e -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low "$message"
     fi
-    ~/.scripts/audio/muted_update.sh "$muted"
     pkill -RTMIN+1 waybar
   ;;
   *)
