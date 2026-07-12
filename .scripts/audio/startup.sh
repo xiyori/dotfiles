@@ -11,12 +11,14 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
     echo 65 > /tmp/loudness  # 65db initial loudness
     if ! pgrep carla ; then
         if [[ -n "$1" ]]; then
+            echo "Set CPU governor to performance"
+            sudo cpupower frequency-set -g performance
             pw-metadata -n settings 0 clock.force-quantum 64
             pw-metadata -n settings 0 clock.force-rate 96000
             # echo "low_latency" > /tmp/low_latency
             # pactl set-sink-volume myeffects_sink -18db  # 65db initial loudness
         else
-            pw-metadata -n settings 0 clock.force-quantum 96
+            pw-metadata -n settings 0 clock.force-quantum 1024
             pw-metadata -n settings 0 clock.force-rate 0
             # echo "default" > /tmp/low_latency
         fi

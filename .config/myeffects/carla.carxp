@@ -4967,7 +4967,7 @@
     <Index>18</Index>
     <Name>Filter slope</Name>
     <Symbol>s</Symbol>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
@@ -7483,7 +7483,7 @@
     <Index>5</Index>
     <Name>IIR approximation</Name>
     <Symbol>approx</Symbol>
-    <Value>2</Value>
+    <Value>4</Value>
    </Parameter>
 
    <Parameter>

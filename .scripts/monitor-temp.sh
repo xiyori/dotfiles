@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+
 ln -sf /sys/devices/platform/coretemp.0/hwmon/* /tmp/hwmon4
 ln -sf /sys/devices/platform/nct6687.2592/hwmon/* /tmp/hwmon5
 
