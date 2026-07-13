@@ -30,32 +30,54 @@ unlock()            { _lock u; }   # drop a lock
 
 ### BEGIN OF SCRIPT ###
 
+### FUNCTIONS ###
+
+list_input_ports() {
+    pw-link -Iil "" "$1" | grep -v "|<-" | cut -f 2 -d ":" | grep -v "events"
+}
+
+list_output_ports() {
+    pw-link -Iol "$1" | grep -v "|->" | cut -f 2 -d ":" | grep -v "events"
+}
+
+remove_input_links() {
+    for link in $(pw-link -Iil "" "$1" | grep "|<-" | awk '{ print $1 }') ; do
+        pw-link -d "$link"
+    done
+}
+
+remove_output_links() {
+    for link in $(pw-link -Iol "$1" | grep "|->" | awk '{ print $1 }') ; do
+        pw-link -d "$link"
+    done
+}
+
+active_sink_nick() {
+    pactl list sinks | sed -n "/$(~/.scripts/audio/get_active_sink.sh)/,/^$/p" 2> /dev/null | grep -F -e "node.nick" -e "media.name" | cut -d'=' -f 2 | xargs | tr -d '"'
+}
+
 # Simplest example is avoiding running multiple instances of script.
 exlock_now || exit 1
 
-# output_node="$([[ "$(cat /tmp/low_latency)" == "low_latency" ]] && echo "myeffects_sink:monitor_F" || echo "LSP Loudness Compensator Stereo:Output ")"
-output_node="LSP Loudness Compensator Stereo:Output "
+output_node="LSP Loudness Compensator Stereo"
 
-if ! pactl list clients | grep -q "LSP Loudness Compensator Stereo" ; then
+if ! pactl list clients | grep -q "$output_node" ; then
     exit 0
 fi
-# if [[ "$(ps -o etimes= -p "$(pgrep carla)")" -lt 7 ]]; then
-#     exit 0
-# fi
 
 active_sinks="$(~/.scripts/audio/list_active_sinks.sh)"
 new_active_sink="$1"
 profile="$2"
 
 # Disconnect profile(s) from loudness
-~/.scripts/audio/remove_output_links.sh "${output_node}"
+remove_output_links "$output_node"
 
 # Disconnect profile from sink(s)
 for active_sink in $active_sinks ; do
-    ~/.scripts/audio/remove_input_links.sh "${active_sink}"
+    remove_input_links "$active_sink"
 done
 
-volume="$(echo "$profile" | cut -f 3)"
+volume="$(echo "$profile" | cut -f 2)"
 
 # Set sink volume
 if [[ -z "$volume" ]]; then
@@ -64,82 +86,55 @@ else
     pactl set-sink-volume "$new_active_sink" "$volume"
 fi
 
-pactl get-sink-mute "$new_active_sink" | grep -q no
-muted="$?"
-echo $muted
+first_node="$(echo "$profile" | cut -f 3)"
 
-sink_ports="$(pw-link -Iil "" "$new_active_sink" | grep -v "|<-" | cut -f 2 -d ":")"
-sink_left="${new_active_sink}:$(echo "$sink_ports" | head -1)"
-sink_right="${new_active_sink}:$(echo "$sink_ports" | tail -1)"
+readarray -t sink_ports < <(list_input_ports "$new_active_sink")
+readarray -t output_ports < <(list_output_ports "$output_node")
 
-if [[ "$sink_left" == "$sink_right" ]]; then
-    sink_right="nonexistent"
-fi
-
-in_port="$(echo "$profile" | cut -f 4)"
-out_port="$(echo "$profile" | cut -f 5)"
-
-profile_name="$(echo "$profile" | cut -f 2)"
-in_profile="${profile_name}:${in_port:-Input }"
-out_profile="${profile_name}:${out_port:-Output }"
-
-if [[ -z "$profile_name" ]]; then
-    # No profile found, connect directly to sink
-    pw-link "${output_node}L" "$sink_left"
-    pw-link "${output_node}R" "$sink_right"
-
-    message="$(~/.scripts/audio/active_sink_nick.sh)"
-else
-    # Connect new effects profile to sink
-    pw-link "${out_profile}L" "$sink_left"
-    pw-link "${out_profile}R" "$sink_right"
-
+length="${#sink_ports[@]}"
+i=0
+while read node; do
     # Connect loudness to profile
-    pw-link "${output_node}L" "${in_profile}L"
-    pw-link "${output_node}R" "${in_profile}R"
+    j=0
+    while read in_port; do
+        pw-link "${output_node}:${output_ports[j]}" "${node}:${in_port}"
+        j=$(( j + 1 ))
+    done < <(list_input_ports "$node")
 
-    message=" $(cat ~/.config/myeffects/icons.txt | grep -F "$profile_name" | cut -f 2)  $profile_name"
-
-    # Connect sub profile and sink if any
-    sub_profile="$(cat ~/.config/myeffects/sub_profiles.txt | grep "^$profile_name")"
-    if [[ -n "$sub_profile" ]]; then
-        sub_sink="$(echo "$sub_profile" | cut -f 2)"
-        sub_volume="$(echo "$sub_profile" | cut -f 4)"
-
-        # Set sink volume
-        if [[ -z "$sub_volume" ]]; then
-            pactl set-sink-volume "$sub_sink" 100%
-        else
-            pactl set-sink-volume "$sub_sink" "$sub_volume"
+    # Connect effects profile to sink
+    while read out_port; do
+        if (( i >= length )); then
+            break
         fi
+        pw-link "${node}:${out_port}" "${new_active_sink}:${sink_ports[i]}" 
+        i=$(( i + 1 ))
+    done < <(list_output_ports "$node")
 
-        pactl set-sink-mute "$sub_sink" "$muted"
-
-        sink_ports="$(pw-link -Iil "" "$sub_sink" | grep -v "|<-" | cut -f 2 -d ":")"
-        sub_sink_left="${sub_sink}:$(echo "$sink_ports" | head -1)"
-        sub_sink_right="${sub_sink}:$(echo "$sink_ports" | tail -1)"
-
-        in_sub_port="$(echo "$sub_profile" | cut -f 5)"
-        out_sub_port="$(echo "$sub_profile" | cut -f 6)"
-
-        sub_profile_name="$(echo "$sub_profile" | cut -f 3)"
-        in_sub_profile="${sub_profile_name}:${in_sub_port:-Input }"
-        out_sub_profile="${sub_profile_name}:${out_sub_port:-Output }"
-
-        # Connect new effects profile to sink
-        pw-link "${out_sub_profile}L" "$sub_sink_left"
-        pw-link "${out_sub_profile}R" "$sub_sink_right"
-
-        # Connect profile to sub profile
-        pw-link "${out_profile}L" "${in_sub_profile}L"
-        pw-link "${out_profile}R" "${in_sub_profile}R"
+    if [[ -z "$message" ]]; then
+        message=" $(cat ~/.config/myeffects/icons.txt | grep -F "$node" | cut -f 2)  $node"
     fi
+
+    if (( i >= length )); then
+        break
+    fi
+done < <(echo "$profile" | cut -f "3-" | tr "\t" "\n")
+
+if [[ -z "$first_node" ]]; then
+    # No profile found, connect directly to sink
+    for (( i=0; i<${#output_ports[@]}; i++ )); do
+        if (( i >= length )); then
+            break
+        fi
+        pw-link "${output_node}:${output_ports[i]}" "${new_active_sink}:${sink_ports[i]}"
+    done
+
+    message="$(active_sink_nick)"
 fi
 
-echo "$profile_name" > /tmp/active_profile
+echo "$first_node" > /tmp/active_profile
 echo "$new_active_sink" > /tmp/active_sink
-echo "$(~/.scripts/audio/active_sink_nick.sh)" > /tmp/active_sink_nick
-~/.scripts/audio/muted_update.sh "$muted"
+echo "$(active_sink_nick)" > /tmp/active_sink_nick
+~/.scripts/audio/muted_update.sh "$(pactl get-sink-mute "$new_active_sink" | grep -q "yes" && echo 1 || echo 0)"
 
 pkill -RTMIN+1 waybar
 pkill -RTMIN+5 waybar

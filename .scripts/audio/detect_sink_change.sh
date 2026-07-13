@@ -12,5 +12,5 @@ while read -r profile; do
             exit 0
         fi
     done
-done < <(cat ~/.config/myeffects/profiles.txt)
+done < ~/.config/myeffects/profiles.txt
 ~/.scripts/audio/next_active_sink.sh

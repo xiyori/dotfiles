@@ -26,6 +26,6 @@ done
 # Don't particularly like this method of making it circular, but...
 [[ -z "$new_active_sink" ]] && new_active_sink="$first"
 
-profile="$(~/.scripts/audio/get_sink_profiles.sh "$new_active_sink" | head -1)"
+profile="$(~/.scripts/audio/list_sink_profiles.sh "$new_active_sink" | head -1)"
 
 ~/.scripts/audio/set_active_sink.sh "$new_active_sink" "$profile"

@@ -14,7 +14,7 @@ while read -r profile; do
     if [[ "$(echo "$profile" | cut -f 2)" == "$active_profile" ]]; then
         next=1
     fi
-done < <(~/.scripts/audio/get_sink_profiles.sh "$active_sink")
+done < <(~/.scripts/audio/list_sink_profiles.sh "$active_sink")
 
 [[ -z "$next" ]] && exit 0
 
