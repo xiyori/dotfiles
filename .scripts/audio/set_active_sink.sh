@@ -59,9 +59,9 @@ active_sink_nick() {
 # Simplest example is avoiding running multiple instances of script.
 exlock_now || exit 1
 
-output_node="LSP Loudness Compensator Stereo"
+source_node="LSP Loudness Compensator Stereo"
 
-if ! pactl list clients | grep -q "$output_node" ; then
+if ! pactl list clients | grep -q "$source_node" ; then
     exit 0
 fi
 
@@ -70,7 +70,7 @@ new_active_sink="$1"
 profile="$2"
 
 # Disconnect profile(s) from loudness
-remove_output_links "$output_node"
+remove_output_links "$source_node"
 
 # Disconnect profile from sink(s)
 for active_sink in $active_sinks ; do
@@ -86,49 +86,48 @@ else
     pactl set-sink-volume "$new_active_sink" "$volume"
 fi
 
-first_node="$(echo "$profile" | cut -f 3)"
-
 readarray -t sink_ports < <(list_input_ports "$new_active_sink")
-readarray -t output_ports < <(list_output_ports "$output_node")
 
-length="${#sink_ports[@]}"
-i=0
-while read node; do
-    # Connect loudness to profile
-    j=0
-    while read in_port; do
-        pw-link "${output_node}:${output_ports[j]}" "${node}:${in_port}"
-        j=$(( j + 1 ))
-    done < <(list_input_ports "$node")
+sink_port_offset=0
+while read node_chain; do
+    readarray -t nodes < <(echo "${node_chain//->/$'\n'}")
 
-    # Connect effects profile to sink
-    while read out_port; do
-        if (( i >= length )); then
-            break
-        fi
-        pw-link "${node}:${out_port}" "${new_active_sink}:${sink_ports[i]}" 
-        i=$(( i + 1 ))
-    done < <(list_output_ports "$node")
-
-    if [[ -z "$message" ]]; then
-        message=" $(cat ~/.config/myeffects/icons.txt | grep -F "$node" | cut -f 2)  $node"
+    if [[ -z "${nodes[0]}" ]]; then
+        nodes=()
     fi
 
-    if (( i >= length )); then
+    # Connect loudness to the first node
+    prev_node="$source_node"
+
+    # Connect last node to sink
+    nodes+=("$new_active_sink")
+
+    for node in "${nodes[@]}"; do
+        readarray -t out_ports < <(list_output_ports "$prev_node")
+        readarray -t in_ports < <(list_input_ports "$node")
+
+        if [[ "$node" == "$new_active_sink" ]]; then
+            in_ports=( "${in_ports[@]:sink_port_offset}" )
+            sink_port_offset=$(( sink_port_offset + ${#out_ports[@]} ))
+        fi
+
+        for (( i=0; i<${#out_ports[@]}; i++ )); do
+            pw-link "${prev_node}:${out_ports[i]}" "${node}:${in_ports[i]}"
+        done
+        prev_node="$node"
+    done
+
+    if (( sink_port_offset >= ${#sink_ports[@]} )); then
         break
     fi
 done < <(echo "$profile" | cut -f "3-" | tr "\t" "\n")
 
+first_node="$(echo "$profile" | cut -f 3)"
+first_node="${first_node%%->*}"
 if [[ -z "$first_node" ]]; then
-    # No profile found, connect directly to sink
-    for (( i=0; i<${#output_ports[@]}; i++ )); do
-        if (( i >= length )); then
-            break
-        fi
-        pw-link "${output_node}:${output_ports[i]}" "${new_active_sink}:${sink_ports[i]}"
-    done
-
     message="$(active_sink_nick)"
+else
+    message=" $(cat ~/.config/myeffects/icons.txt | grep -F "$first_node" | cut -f 2)  $first_node"
 fi
 
 echo "$first_node" > /tmp/active_profile
