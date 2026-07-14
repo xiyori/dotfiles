@@ -33,21 +33,21 @@ unlock()            { _lock u; }   # drop a lock
 ### FUNCTIONS ###
 
 list_input_ports() {
-    pw-link -Iil "" "$1" | grep -v "|<-" | cut -f 2 -d ":" | grep -v "events"
+    pw-link -Iil "" "$1" | grep -v "|<-" | cut -f 2 -d ":" | grep -v "events" | grep -v "monitor"
 }
 
 list_output_ports() {
-    pw-link -Iol "$1" | grep -v "|->" | cut -f 2 -d ":" | grep -v "events"
+    pw-link -Iol "$1" | grep -v "|->" | cut -f 2 -d ":" | grep -v "events" | grep -v "monitor"
 }
 
 remove_input_links() {
-    for link in $(pw-link -Iil "" "$1" | grep "|<-" | awk '{ print $1 }') ; do
+    for link in $(pw-link -Iil "" "$1" | grep "|<-" | grep -vi "midi" | awk '{ print $1 }') ; do
         pw-link -d "$link"
     done
 }
 
 remove_output_links() {
-    for link in $(pw-link -Iol "$1" | grep "|->" | awk '{ print $1 }') ; do
+    for link in $(pw-link -Iol "$1" | grep "|->" | grep -vi "midi" | awk '{ print $1 }') ; do
         pw-link -d "$link"
     done
 }
