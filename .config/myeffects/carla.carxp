@@ -9728,6 +9728,11 @@
     <Index>3</Index>
     <Name>Loudness contour standard</Name>
     <Symbol>std</Symbol>
+    <MidiChannel>3</MidiChannel>
+    <MappedControlIndex>1</MappedControlIndex>
+    <MappedMinimum>0</MappedMinimum>
+    <MappedMaximum>4</MappedMaximum>
+    <MidiCC>1</MidiCC>
     <Value>4</Value>
    </Parameter>
 

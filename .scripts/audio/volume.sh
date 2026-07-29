@@ -58,6 +58,11 @@ new_volume_raw=$((2 * new_volume - 53))
 new_volume_hex="$(printf "%X" "$new_volume_raw")"
 device="$(~/.scripts/audio/midi_device.sh)"
 amidi -p "$device" -S "B2 07 $new_volume_hex"  # send volume control to MIDI channel 3
+if (( volume < 83 && new_volume >= 83 )); then
+  amidi -p "$device" -S "B2 01 0"  # send contour control to MIDI channel 3
+elif (( volume >= 83 && new_volume < 83 )); then
+  amidi -p "$device" -S "B2 01 70"  # send contour control to MIDI channel 3
+fi
 echo "$new_volume" > /tmp/loudness
 
 unlock
