@@ -40,7 +40,7 @@ function handle {
                 prev_id="$next_id"
             fi
         fi
-        hyprctl dispatch workspace "$prev_id"
+        hyprctl dispatch "hl.dsp.focus({ workspace = \"$prev_id\" })"
         echo "Switched from $active_id to $prev_id"
     fi
 }

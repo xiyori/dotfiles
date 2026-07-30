@@ -25,12 +25,12 @@ ex_id = active_workspace["id"]
 for workspace in workspaces:
     if workspace["monitorID"] == active_workspace["monitorID"]:
         if direction == "prev" and workspace["id"] < ex_id:
-            run_command("hyprctl dispatch workspace m-1")
+            run_command("hyprctl dispatch 'hl.dsp.focus({ workspace = \"m-1\" })'")
             exit(0)
         if direction == "next" and workspace["id"] > ex_id:
-            run_command("hyprctl dispatch workspace m+1")
+            run_command("hyprctl dispatch 'hl.dsp.focus({ workspace = \"m+1\" })'")
             exit(0)
 
 if direction == "next":
-    run_command("hyprctl dispatch workspace empty")
+    run_command("hyprctl dispatch 'hl.dsp.focus({ workspace = \"empty\" })'")
 
