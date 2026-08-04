@@ -8,7 +8,12 @@ function handle {
       if [[ "$monitor" = "eDP-1" ]]; then
           return
       fi
-      hyprctl keyword monitor "eDP-1,preferred,0x0,1.8"
+      hyprctl eval 'hl.monitor({
+          output = "eDP-1",
+          mode = "preferred",
+          position = "0x0",
+          scale = 1.8,
+      })'
       echo "" > /tmp/custom_monitor_waybar
       pkill -RTMIN+3 waybar
       return
