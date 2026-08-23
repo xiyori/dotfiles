@@ -127,7 +127,7 @@ first_node="${first_node%%->*}"
 if [[ -z "$first_node" ]]; then
     message="$(active_sink_nick)"
 else
-    message=" $(cat ~/.config/myeffects/icons.txt | grep -F "$first_node" | cut -f 2)  $first_node"
+    message=" $(cat ~/.config/myeffects/icons.txt | grep "^$first_node" | cut -f 2)  $first_node"
 fi
 
 echo "$first_node" > /tmp/active_profile

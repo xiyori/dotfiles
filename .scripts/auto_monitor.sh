@@ -13,6 +13,7 @@ function handle {
           mode = "preferred",
           position = "0x0",
           scale = 1.8,
+          disabled = false,
       })'
       echo "" > /tmp/custom_monitor_waybar
       pkill -RTMIN+3 waybar

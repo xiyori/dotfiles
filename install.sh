@@ -301,7 +301,7 @@ install_extra () {
     packages=(
         "font-manager"
         "firefox"
-        "librewolf-bin"
+        "librewolf"
         "telegram-desktop"
         "gimp"
         "mpv"

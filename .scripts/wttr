@@ -54,10 +54,15 @@ WEATHER_CODES = {
     '395': '❄️ '
 }
 
+proxies = {
+    "http": "socks5://127.0.0.1:10808",
+    "https": "socks5://127.0.0.1:10808",
+}
+
 data = {}
 
 try:
-    weather = requests.get("https://wttr.in/?format=j1").json()
+    weather = requests.get("https://wttr.in/?format=j1", proxies=proxies).json()
 except Exception:
     data['text'] = '🪐'
     data['tooltip'] = 'Weather data unavailable'

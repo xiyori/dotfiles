@@ -1,10 +1,9 @@
-alsa_output.usb-MOTU_M4		DBR-62	SB-1000
-alsa_output.usb-MOTU_M4		HD800s
-alsa_output.usb-MOTU_M4		MDR-MV1
+alsa_output.usb-MOTU_UltraLite-mk5		Q1 Meta->Q1 Meta Delay	SB-1000
+alsa_output.usb-MOTU_UltraLite-mk5		HD800s
+alsa_output.usb-MOTU_UltraLite-mk5		MDR-MV1
 alsa_output.usb-TTGK_Technology_TE-C		Meta
 alsa_output.usb-TTGK_Technology_TE-C		Nice Buds
 alsa_output.usb-TTGK_Technology_TE-C		Daybreak
 bluez_output.58:18:62:6F:1B:DE	30419	WF-1000XM6 ANC
 bluez_output.58_18_62_6F_1B_DE	30419	WF-1000XM6 ANC
-platform-skl_hda_dsp_generic.HiFi__Speaker__sink	30419
 alsa_output.usb-FIIO_FIIO_KA15		R70x
