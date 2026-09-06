@@ -114,11 +114,11 @@ hl.bind(mainMod .. " + SHIFT + 8", hl.dsp.window.move({ workspace = 8 }))
 hl.bind(mainMod .. " + SHIFT + 9", hl.dsp.window.move({ workspace = 9 }))
 hl.bind(mainMod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
 
-hl.bind(mainMod .. " + mouse_up", hl.dsp.exec_cmd("~/.scripts/workspace_swipe.py next"))
-hl.bind(mainMod .. " + mouse_down", hl.dsp.exec_cmd("~/.scripts/workspace_swipe.py prev"))
+hl.bind(mainMod .. " + mouse_down", hl.dsp.exec_cmd("~/.scripts/workspace_swipe.py next"))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.exec_cmd("~/.scripts/workspace_swipe.py prev"))
 
-hl.bind(mainMod .. " + SHIFT + mouse_up", hl.dsp.window.move({ workspace = "m+1" }))
-hl.bind(mainMod .. " + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "m-1" }))
+hl.bind(mainMod .. " + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "m+1" }))
+hl.bind(mainMod .. " + SHIFT + mouse_up", hl.dsp.window.move({ workspace = "m-1" }))
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag())
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize())

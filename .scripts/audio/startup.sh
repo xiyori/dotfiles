@@ -27,7 +27,7 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
         # while [[ "$(ps -o etimes= -p "$pid")" -lt 7 ]]; do
         #     sleep 1
         # done
-        while ! pactl list clients | grep -q "LSP Loudness Compensator Stereo" ; do
+        until pactl list clients | grep -q "LSP Loudness Compensator Stereo" ; do
             sleep 1
         done
         ~/.scripts/audio/link_nodes.sh "$1"

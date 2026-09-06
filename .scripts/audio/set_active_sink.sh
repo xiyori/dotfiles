@@ -103,6 +103,10 @@ while read node_chain; do
     nodes+=("$new_active_sink")
 
     for node in "${nodes[@]}"; do
+        if pactl list short sources | cut -f 2 | grep -Fxq "$node" ; then
+            pactl set-source-volume "$node" 100%
+        fi
+
         readarray -t out_ports < <(list_output_ports "$prev_node")
         readarray -t in_ports < <(list_input_ports "$node")
 

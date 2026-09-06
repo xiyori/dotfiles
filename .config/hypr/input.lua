@@ -34,9 +34,9 @@ hl.config({
         accel_profile = "flat",
     },
     -- device {
-    --     name = wacom-intuos-bt-m-pen
-    --     output = current
-    --     active_area_size = 216 121.5
-    --     active_area_position = 0.0 13.5
+    --     name = "wacom-intuos-bt-m-pen",
+    --     output = "current",
+    --     active_area_size = "216 121.5",
+    --     active_area_position = "0.0 13.5",
     -- }
 })
