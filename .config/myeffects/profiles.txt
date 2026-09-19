@@ -1,5 +1,4 @@
 alsa_output.usb-MOTU_UltraLite-mk5		Q1 Meta Main
-alsa_output.usb-MOTU_UltraLite-mk5		Q1 Meta Desk
 alsa_output.usb-MOTU_UltraLite-mk5		HD800s
 alsa_output.usb-TTGK_Technology_TE-C		Meta
 alsa_output.usb-TTGK_Technology_TE-C		HD800s

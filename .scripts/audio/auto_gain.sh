@@ -15,14 +15,14 @@ if [[ "$(cat /tmp/auto_gain_enabled)" -eq 1 ]] ; then
     echo 0 > /tmp/auto_gain_enabled
     [[ "$notify" == "notify" ]] && notify-send -e -h boolean:SWAYNC_BYPASS_DND:true -u low "Auto Gain: Off"
 
-    ~/.scripts/audio/youtube_gain.sh &
-elif (( "$(echo "$(cat /tmp/auto_gain) != 0" | bc -l)" )); then
-    pactl set-sink-volume myeffects_sink 100%
-    echo 0 > /tmp/auto_gain
-    echo 0 > /tmp/auto_gain_enabled
-    [[ "$notify" == "notify" ]] && notify-send -e -h boolean:SWAYNC_BYPASS_DND:true -u low "Youtube Gain: Off"
+    # ~/.scripts/audio/youtube_gain.sh &
+# elif (( "$(echo "$(cat /tmp/auto_gain) != 0" | bc -l)" )); then
+#     pactl set-sink-volume myeffects_sink 100%
+#     echo 0 > /tmp/auto_gain
+#     echo 0 > /tmp/auto_gain_enabled
+#     [[ "$notify" == "notify" ]] && notify-send -e -h boolean:SWAYNC_BYPASS_DND:true -u low "Youtube Gain: Off"
 else
-    killall "youtube_gain.sh"
+    # killall "youtube_gain.sh"
 
     echo 0 > /tmp/auto_gain
     echo 1 > /tmp/auto_gain_enabled
