@@ -309,6 +309,8 @@ install_extra () {
         "npm"
         "libreoffice-still"
         "libreoffice-still-ru"
+        "hunspell"
+        "hunspell-en_us"
         "networkmanager-openconnect"
         "wireguard-tools"
         "systemd-resolvconf"

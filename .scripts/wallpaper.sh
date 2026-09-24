@@ -42,7 +42,5 @@ fi
 
 if [[ -z "$1" || "$1" == "next" ]]; then
     trans="-t wipe --transition-angle 30"
-else
-    trans="-t none"
+    awww img "${wall_dir}/$new_wall" $trans
 fi
-awww img "${wall_dir}/$new_wall" $trans

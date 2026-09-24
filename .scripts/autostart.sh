@@ -1,7 +1,14 @@
 #!/usr/bin/bash
 
+# hyprlock & wallpaper
+~/.scripts/wallpaper.sh init  # should be instanteneous
+
+( ~/.scripts/lock || hyprctl dispatch exit ) &
+awww-daemon > /tmp/awww.log 2>&1 & disown
+awww img "$(~/.scripts/wallpaper.sh query)" -t none
+
 # Policy Authentication Agent
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 2>&1 & disown
 
 # https://wiki.hyprland.org/FAQ/#some-of-my-apps-take-a-really-long-time-to-open
 # https://gist.github.com/PowerBall253/2dea6ddf6974ba4e5d26c3139ffb7580
@@ -17,15 +24,7 @@ sleep 4
 ) &
 
 # monitors
-xrdb -merge ~/.Xresources
-~/.scripts/startup_monitor.sh &
-
-# wallpaper
-awww-daemon > /tmp/awww.log 2>&1 & disown
-~/.scripts/wallpaper.sh init
-
-# hyprlock
-( ~/.scripts/lock || hyprctl dispatch exit && awww img "$(~/.scripts/wallpaper.sh query)" ) &
+( xrdb -merge ~/.Xresources ; ~/.scripts/startup_monitor.sh ) &
 
 # other
 powerline-daemon
