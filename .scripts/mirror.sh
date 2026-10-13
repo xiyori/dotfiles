@@ -6,17 +6,13 @@ if [[ -z "$monitor" ]]; then
 fi
 hyprctl eval 'hl.monitor({
     output = "eDP-1",
-    mode = "preferred",
-    position = "0x0",
-    scale = 1.8,
+    disabled = false
 })'
 sleep 2
 hyprctl eval "hl.monitor({
     output = \"$monitor\",
-    mode = \"preferred\",
-    position = \"auto\",
-    scale = 1,
     mirror = \"eDP-1\",
+    disabled = false
 })"
 echo "{\"text\":\"󰍺 \",\"tooltip\":\"Mirroring to $monitor\"}" > /tmp/custom_monitor_waybar
 pkill -RTMIN+3 waybar

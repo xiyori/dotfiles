@@ -3,9 +3,8 @@
 monitor="$(cat /tmp/custom_monitor_waybar_monitor)"
 hyprctl eval "hl.monitor({
     output = \"$monitor\",
-    mode = \"preferred\",
-    position = \"auto\",
-    scale = 1,
+    disabled = false,
+    mirror = ""
 })"
 sleep 2
 hyprctl eval 'hl.monitor({

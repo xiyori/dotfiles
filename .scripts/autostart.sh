@@ -15,6 +15,7 @@ awww img "$(~/.scripts/wallpaper.sh query)" -t none
 
 ( systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP LATITUDE LONGITUDE
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all
+systemctl --user start wm-session.target
 sleep 4
 killall -e xdg-desktop-portal-hyprland
 killall xdg-desktop-portal

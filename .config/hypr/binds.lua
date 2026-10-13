@@ -76,6 +76,9 @@ hl.bind(mainMod .. " + ALT + F12", hl.dsp.exec_cmd("~/.scripts/audio/control.sh 
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("~/.scripts/audio/control.sh previous"), { locked = true })
 hl.bind(mainMod .. " + ALT + F10", hl.dsp.exec_cmd("~/.scripts/audio/control.sh previous"), { locked = true })
 hl.bind("XF86Sleep", hl.dsp.exec_cmd("~/.scripts/suspend.sh"), { locked = true })
+-- hl.bind("XF86PickupPhone", hl.dsp.send_shortcut({ mods = "", key = "Backspace" }), { locked = true, repeating = true })
+-- hl.bind("CTRL + XF86PickupPhone", hl.dsp.send_shortcut({ mods = "CTRL", key = "Backspace" }), { locked = true, repeating = true })
+-- hl.bind("ALT + XF86PickupPhone", hl.dsp.send_shortcut({ mods = "ALT", key = "Backspace" }), { locked = true, repeating = true })
 
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("~/.scripts/brightness.sh up notify"), { locked = true, release = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("~/.scripts/brightness.sh down notify"), { locked = true, release = true })

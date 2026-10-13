@@ -10,9 +10,6 @@ function handle {
       fi
       hyprctl eval 'hl.monitor({
           output = "eDP-1",
-          mode = "preferred",
-          position = "0x0",
-          scale = 1.8,
           disabled = false,
       })'
       echo "" > /tmp/custom_monitor_waybar

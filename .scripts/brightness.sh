@@ -8,7 +8,7 @@ case "$argument" in
   up)
     # increase the backlight by 5%
     delta="$(( current < 5 ? 1 : 5 ))"
-    new="$(( current + delta ))"
+    new="$(( current >= 100 ? 100 : current + delta ))"
     brightnessctl set "${new}%"
   ;;
   down)
