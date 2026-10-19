@@ -181,7 +181,6 @@ install_essential () {
     _create_symlink .config/systemd/user/cycle-wallpaper.timer
     _create_symlink .config/systemd/user/cycle-wallpaper.service
     _create_symlink .config/systemd/user/dbus-monitor.service
-    _create_symlink .config/systemd/user/mpd-mpris.service.d
     _create_symlink .config/systemd/user/mpd.service.d
 
     echo "setting up packages"
