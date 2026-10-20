@@ -24,7 +24,7 @@ case "$argument" in
       else
         eww_var="$(( current / 5 + 3 ))"
       fi
-      eww active-windows | grep -q "brightness-window" && eww close brightness-window || ( eww update brightness="$eww_var" && eww open brightness-window )
+      eww active-windows | grep -q "brightness-window" && eww close brightness-window || { eww update brightness="$eww_var" && eww open brightness-window ; }
     fi
   ;;
   *)

@@ -56,8 +56,7 @@
     "hyprland/workspaces": {
         // "format": "{icon} {name}",
         "sort-by": "id",
-        "disable-scroll": false,
-        "format": "{icon}",
+        /*"format": "{icon}",
         "format-icons": {
             "Music": "󰎇",
             "Carla": "󰙽",
@@ -74,26 +73,25 @@
             "8": "󰲮",
             "9": "󰲰",
             "10": "󰿬"
-        },
+        },*/
+        "enable-bar-scroll": true,
         "on-scroll-up": "~/.scripts/workspace_swipe.py prev",
         "on-scroll-down": "~/.scripts/workspace_swipe.py next",
-        "on-click": "activate"
-        /*"workspace-taskbar": {
-            "enable": true,
-            "update-active-window": true
-        },*/
-        /*"format": "{windows}",
+        "format": "{windows}",
+        "max-windows": 1,
         "window-rewrite-default": "",
         "window-rewrite": {
             "class<kitty> title<rmpc>": "󰎇",
             "class<carla>": "󰙽",
             "title<.*youtube.*>": "",
             "class<firefox|librewolf>": "󰈹",
+            "class<chromium>": "",
+            "class<.*telegram.*>": "",
             // "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
             "class<thunar>": "",
             "class<Alacritty>": "",
-            "title<.* - (.*) - VSCodium>": "codium $1"  // captures part of the window title and formats it into output
-        }*/
+            "class<gimp>": ""
+        }
     },
     "cpu": {
         "format": " {usage}%",

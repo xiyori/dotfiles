@@ -10,7 +10,7 @@ hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("~/.scripts/suspend.sh"), { lock
 
 local terminal = "alacritty"
 local fileManager = "thunar"
-local menu = "pkill rofi || rofi -show drun"
+local menu = "pkill rofi || ~/GitHub/rofi/build/rofi -show drun"
 local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
@@ -44,7 +44,7 @@ hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("code"))
 hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("~/.scripts/clock.sh"))
 hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("~/.scripts/donut.sh"))
 hl.bind(mainMod .. " + A", hl.dsp.focus({ workspace = "name:Music" }))
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("pgrep rmpc || ( systemctl --user start mpd.service && systemctl --user start mpd-mpris.service && kitty rmpc || notify-send \"Library is not connected!\" )"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("pgrep rmpc || ~/.scripts/rmpc.sh"))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("~/.scripts/cava.sh"))
 hl.bind(mainMod .. " + S", hl.dsp.focus({ workspace = "name:Carla" }))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("pgrep carla || ~/.scripts/audio/startup.sh"))

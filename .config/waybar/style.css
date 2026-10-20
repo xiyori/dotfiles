@@ -101,7 +101,7 @@ tooltip {
   background-color: @surface0;
   color: @text;
   border-radius: 8px;
-  padding: 0.5rem 1rem;
+  padding: 6px 13px;
   box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;
   margin-top: 10px;
   /*
@@ -145,41 +145,50 @@ tooltip {
 
 /* =============================== */
 /* Launcher Module */
-#custom-launcher, #custom-power {
+#custom-launcher {
   color: @pink;
   padding-top: 0px;
   padding-bottom: 0px;
   padding-left: 10px;
-  padding-right: 15px;
+  padding-right: 16px;
+}
+
+#custom-launcher label {
   font-size: 24px;
 }
 
 /* Powermenu Module */
 #custom-power {
+  color: @pink;
+  padding-top: 0px;
+  padding-bottom: 0px;
   padding-left: 12px;
-  padding-right: 15px;
+  padding-right: 16px;
   margin-right: 0;
+}
+
+#custom-power label {
   font-size: 16px;
 }
 
 /* =============================== */
 /* Workspaces */
 #workspaces {
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 0px 8px;
 }
 
-/* #workspaces * {
-  font-size: 0px;
-} */
+#workspaces button label, 
+#workspaces label {
+    font-size: 15px;
+}
 
 #workspaces button {
   background: transparent;
-  color: @overlay0;
+  color: @overlay1;
   /* border-radius: 100%; */
-  min-height: 14px;
-  min-width: 14px;
-  padding: 5px 11px 5px 5px;
+  min-height: 15px;
+  min-width: 15px;
+  padding: 2px 11px 0px 5px;
   /*transition: all 0.5s cubic-bezier(0.33, 1.0, 0.68, 1.0); easeInOutCubic */
   transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.68);
   /* box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px; */
