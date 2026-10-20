@@ -51,7 +51,7 @@
         "tooltip": true,
         "exec": "echo '{\"text\":\"󰣇\",\"tooltip\":\"Launcher\"}'",
         "return-type": "json",
-        "on-click": "pkill rofi || rofi -show drun"
+        "on-click": "pkill rofi || ~/GitHub/rofi/build/rofi -show drun"
     },
     "hyprland/workspaces": {
         // "format": "{icon} {name}",

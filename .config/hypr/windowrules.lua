@@ -163,4 +163,9 @@ hl.window_rule({
     workspace = "name:Carla silent",
 })
 
--- windowrule=move 100%+1 100%+1,match:title ^(app.zoom.us is sharing your screen.)$
+hl.window_rule({
+    match = {
+        title = ".*(is sharing your screen).*",
+    },
+    move = { "monitor_w", "monitor_h" },
+})

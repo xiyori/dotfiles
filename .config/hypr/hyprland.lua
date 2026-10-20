@@ -13,6 +13,7 @@ require("appearance")
 require("monitors")
 require("hyprgrass")
 require("chinese_pointer")
+require("luasnips")
 
 -- See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
