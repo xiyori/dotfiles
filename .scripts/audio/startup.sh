@@ -14,12 +14,12 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
             echo "Set CPU governor to performance"
             sudo cpupower frequency-set -g performance
             pw-metadata -n settings 0 clock.force-quantum 64
-            pw-metadata -n settings 0 clock.force-rate 96000
+            # pw-metadata -n settings 0 clock.force-rate 0
             # echo "low_latency" > /tmp/low_latency
             # pactl set-sink-volume myeffects_sink -18db  # 65db initial loudness
         else
             pw-metadata -n settings 0 clock.force-quantum 1024
-            pw-metadata -n settings 0 clock.force-rate 0
+            # pw-metadata -n settings 0 clock.force-rate 0
             # echo "default" > /tmp/low_latency
         fi
         carla ~/.config/myeffects/carla.carxp > /tmp/carla.log 2>&1 & disown
@@ -30,7 +30,7 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
         until pactl list clients | grep -q "LSP Loudness Compensator Stereo" ; do
             sleep 1
         done
-        ~/.scripts/audio/link_nodes.sh "$1"
+        ~/.scripts/audio/link_nodes.sh
         ~/.scripts/audio/detect_sink_change.sh
     fi
 else

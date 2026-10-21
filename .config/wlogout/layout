@@ -6,13 +6,13 @@
 }
 {
     "label" : "reboot",
-    "action" : "systemctl reboot",
+    "action" : "~/.scripts/shutdown.sh reboot",
     "text" : "Reboot",
     "keybind" : "r"
 }
 {
     "label" : "shutdown",
-    "action" : "systemctl poweroff",
+    "action" : "~/.scripts/shutdown.sh poweroff",
     "text" : "Shutdown",
     "keybind" : "s"
 }

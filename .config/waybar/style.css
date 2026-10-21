@@ -188,7 +188,7 @@ tooltip {
   /* border-radius: 100%; */
   min-height: 15px;
   min-width: 15px;
-  padding: 2px 11px 0px 5px;
+  padding: 1px 11px 0px 5px;
   /*transition: all 0.5s cubic-bezier(0.33, 1.0, 0.68, 1.0); easeInOutCubic */
   transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.68);
   /* box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px; */

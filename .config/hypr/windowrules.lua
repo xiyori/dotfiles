@@ -169,3 +169,11 @@ hl.window_rule({
     },
     move = { "monitor_w", "monitor_h" },
 })
+
+hl.window_rule({
+    match = {
+        class = "^(org.gnome.FileRoller)$",
+        title = "^(Extract)$",
+    },
+    float = true,
+})

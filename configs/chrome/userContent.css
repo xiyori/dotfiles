@@ -1,9 +1,9 @@
-@-moz-document unobservable-document() {
-  body:has(.pdfViewer) {
-    filter: brightness(80%) invert(100%) hue-rotate(180deg);
-    /* background-color: #333333 !important; */
-  }
-}
+/* @-moz-document unobservable-document() { */
+/*   body:has(.pdfViewer) { */
+/*     filter: brightness(80%) invert(100%) hue-rotate(180deg); */
+/*     background-color: #333333 !important; */
+/*   } */
+/* } */
 
 @-moz-document url("about:home"), url("about:newtab"), url("about:blank") {
   body {
