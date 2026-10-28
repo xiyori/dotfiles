@@ -74,7 +74,7 @@
             "9": "󰲰",
             "10": "󰿬"
         },*/
-        "enable-bar-scroll": true,
+        "enable-bar-scroll": false,
         "on-scroll-up": "~/.scripts/workspace_swipe.py prev",
         "on-scroll-down": "~/.scripts/workspace_swipe.py next",
         "format": "{windows}",
@@ -84,13 +84,20 @@
             "class<kitty> title<rmpc>": "󰎇",
             "class<carla>": "󰙽",
             "title<.*youtube.*>": "",
-            "class<firefox|librewolf>": "󰈹",
+            "class<firefox|librewolf>": "",
             "class<chromium>": "",
             "class<.*telegram.*>": "",
             // "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
             "class<thunar>": "",
-            "class<Alacritty>": "",
-            "class<gimp>": ""
+            "class<Alacritty>": "",
+            "class<gimp>": "",
+            "class<.*roomeqwizard.*>": "󰱐",
+            "class<Tor Browser>": "",
+            "class<Vncviewer>": "󰄛",
+            "class<.*joplin.*>": "",
+            "class<mpv>": "",
+            "class<libreoffice-writer>": "󰈙",
+            "class<libreoffice-calc>": ""
         }
     },
     "cpu": {
@@ -122,7 +129,7 @@
     },
     "temperature#gpu": {
         // "thermal-zone": 2,
-        "hwmon-path": "/tmp/monitor-temp/temp_gpu",
+        "hwmon-path": "/tmp/monitor-temp/temp_max_gpu",
         "critical-threshold": 70,
         "format-critical": "<span color='#F38BA8'>{icon} {temperatureC}°C</span>",
         "format": "{icon} {temperatureC}°C",
@@ -151,6 +158,14 @@
         //"on-click": "alacritty -e btop",
         "interval": 2,
         "path": "/mnt/data"
+    },
+    "custom/backup": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{}", // {format_source}
+        "interval": 60,
+        "tooltip": true,
+        "exec": "~/.scripts/backup_status.sh",
+        "return-type": "json"
     },
     "custom/monitor": {
         // "scroll-step": 1, // %, can be a float
