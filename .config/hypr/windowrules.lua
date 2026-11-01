@@ -160,7 +160,7 @@ hl.window_rule({
     match = {
         class = "^(carla)$",
     },
-    workspace = "name:Carla silent",
+    workspace = "name: Carla silent",
 })
 
 hl.window_rule({

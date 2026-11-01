@@ -13,7 +13,7 @@ hl.on("window.open", function(w)
             sub:remove()
 
             hl.dispatch(hl.dsp.window.float({ action = "set", window = tw }))
-            hl.dispatch(hl.dsp.window.resize({ x = 800, y = 600, window = tw }))
+            hl.dispatch(hl.dsp.window.resize({ x = 600, y = 800, window = tw }))
             hl.dispatch(hl.dsp.window.center({ window = tw }))
             hl.dispatch(hl.dsp.focus({ window = tw }))
         end

@@ -55,7 +55,7 @@
     },
     "hyprland/workspaces": {
         // "format": "{icon} {name}",
-        "sort-by": "id",
+        "sort-by": "name",
         /*"format": "{icon}",
         "format-icons": {
             "Music": "󰎇",

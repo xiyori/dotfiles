@@ -21,16 +21,15 @@ def run_command(command):
 active_workspace = get_json_command("hyprctl -j activeworkspace")
 workspaces = get_json_command("hyprctl -j workspaces")
 direction = sys.argv[1]
-ex_id = active_workspace["id"]
+ex_id = active_workspace["name"]
 for workspace in workspaces:
     if workspace["monitorID"] == active_workspace["monitorID"]:
-        if direction == "prev" and workspace["id"] < ex_id:
+        if direction == "prev" and workspace["name"] < ex_id:
             run_command("hyprctl dispatch 'hl.dsp.focus({ workspace = \"m-1\" })'")
             exit(0)
-        if direction == "next" and workspace["id"] > ex_id:
+        if direction == "next" and workspace["name"] > ex_id:
             run_command("hyprctl dispatch 'hl.dsp.focus({ workspace = \"m+1\" })'")
             exit(0)
 
 if direction == "next":
-    run_command("hyprctl dispatch 'hl.dsp.focus({ workspace = \"empty\" })'")
-
+    run_command("hyprctl dispatch 'hl.dsp.focus({ workspace = \"emptym\" })'")

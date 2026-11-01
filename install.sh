@@ -17,23 +17,23 @@ print_help () {
     echo "  -h, --help            display this help screen and exit"
 }
 
-install_yay () {
-    if sudo pacman -Qs yay > /dev/null ; then
-        echo "yay is installed"
+install_paru () {
+    if sudo pacman -Qs paru > /dev/null ; then
+        echo "paru is installed"
     else
-        echo "yay is not installed, installing now"
-        git clone https://aur.archlinux.org/yay.git yay
-        cd yay
+        echo "paru is not installed, installing now"
+        git clone https://aur.archlinux.org/paru.git paru
+        cd paru
         makepkg -si
         cd ..
-        echo "yay has been installed"
+        echo "paru has been installed"
         echo
     fi
 }
 
 install () {
     echo -e "Installation in progress...\n\tSee package_install.log for details."
-    yay -Syu --needed --noconfirm $* >> package_install.log 2>&1
+    paru -Syu --needed --noconfirm $* >> package_install.log 2>&1
 }
 
 _create_symlink () {
@@ -415,23 +415,23 @@ fi
 
 case "$1" in
     essential)
-        install_yay
+        install_paru
         install_essential
     ;;
     optional)
-        install_yay
+        install_paru
         install_optional
     ;;
     extra)
-        install_yay
+        install_paru
         install_extra
     ;;
     touch)
-        install_yay
+        install_paru
         install_touch
     ;;
     all)
-        install_yay
+        install_paru
         install_essential
         install_optional
         install_extra
