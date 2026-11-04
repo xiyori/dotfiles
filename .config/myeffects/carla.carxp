@@ -4923,7 +4923,7 @@
     <Index>5</Index>
     <Name>IIR approximation</Name>
     <Symbol>approx</Symbol>
-    <Value>4</Value>
+    <Value>2</Value>
    </Parameter>
 
    <Parameter>

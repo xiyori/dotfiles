@@ -37,7 +37,11 @@ list_input_ports() {
 }
 
 list_output_ports() {
-    pw-link -Iol "$1" | grep -v "|->" | cut -f 2 -d ":" | grep -v "events" | grep -v "monitor"
+    if [[ "$1" == "myeffects_sink" ]]; then
+        echo -e "monitor_FL\nmonitor_FR"
+    else
+        pw-link -Iol "$1" | grep -v "|->" | cut -f 2 -d ":" | grep -v "events" | grep -v "monitor"
+    fi
 }
 
 remove_input_links() {
@@ -62,7 +66,7 @@ exlock_now || exit 1
 source_node="LSP Loudness Compensator Stereo"
 
 if ! pactl list clients | grep -q "$source_node" ; then
-    exit 0
+    source_node="myeffects_sink"
 fi
 
 active_sinks="$(~/.scripts/audio/list_active_sinks.sh)"

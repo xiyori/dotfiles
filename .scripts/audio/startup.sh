@@ -11,26 +11,23 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
     echo 65 > /tmp/loudness  # 65db initial loudness
     if ! pgrep carla ; then
         if [[ -n "$1" ]]; then
-            echo "Set CPU governor to performance"
-            sudo cpupower frequency-set -g performance
-            pw-metadata -n settings 0 clock.force-quantum 64
+            # echo "Set CPU governor to performance"
+            # sudo cpupower frequency-set -g performance
+            pw-metadata -n settings 0 clock.force-quantum 96
             # pw-metadata -n settings 0 clock.force-rate 0
-            # echo "low_latency" > /tmp/low_latency
-            # pactl set-sink-volume myeffects_sink -18db  # 65db initial loudness
+
+            pactl set-sink-volume myeffects_sink -18db  # 65db initial loudness
         else
             pw-metadata -n settings 0 clock.force-quantum 1024
             # pw-metadata -n settings 0 clock.force-rate 0
-            # echo "default" > /tmp/low_latency
-        fi
-        carla ~/.config/myeffects/carla.carxp > /tmp/carla.log 2>&1 & disown
-        # pid="$!"
-        # while [[ "$(ps -o etimes= -p "$pid")" -lt 7 ]]; do
-        #     sleep 1
-        # done
-        until pactl list clients | grep -q "LSP Loudness Compensator Stereo" ; do
+
+            carla ~/.config/myeffects/carla.carxp > /tmp/carla.log 2>&1 & disown
+            until pactl list clients | grep -q "LSP Loudness Compensator Stereo" ; do
+                sleep 1
+            done
             sleep 1
-        done
-        ~/.scripts/audio/link_nodes.sh
+            ~/.scripts/audio/link_nodes.sh
+        fi
         ~/.scripts/audio/detect_sink_change.sh
     fi
 else

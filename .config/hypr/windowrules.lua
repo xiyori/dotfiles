@@ -137,7 +137,7 @@ hl.window_rule({
     match = {
         class = "^(org\\.telegram\\.desktop)",
     },
-    workspace = "name:Telegram",
+    workspace = "name: Telegram",
 })
 
 hl.window_rule({

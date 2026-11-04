@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if ! pactl list clients | grep -q "LSP Loudness Compensator Stereo" ; then
-    echo "{\"text\": \"󱄡 N/A\",\"tooltip\":\"Carla not started\"}"
-    exit 0
-fi
+# if ! pactl list clients | grep -q "LSP Loudness Compensator Stereo" ; then
+#     echo "{\"text\": \"󱄡 N/A\",\"tooltip\":\"Carla not started\"}"
+#     exit 0
+# fi
 
 muted="$(cat /tmp/muted)"
 player_status="$(cat /tmp/player_status)"

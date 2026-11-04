@@ -22,6 +22,7 @@
         // "disk#data",
         "battery",
         "backlight",
+        "custom/backup",
         // "custom/fancontrol",
         "custom/monitor",
         "hyprland/workspaces"
@@ -84,20 +85,24 @@
             "class<kitty> title<rmpc>": "󰎇",
             "class<carla>": "󰙽",
             "title<.*youtube.*>": "",
-            "class<firefox|librewolf>": "",
+            "class<librewolf>": "",
+            "class<firefox>": "󰈹",
             "class<chromium>": "",
+            "class<.*Thunderbird>": "",
             "class<.*telegram.*>": "",
             // "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
             "class<thunar>": "",
             "class<Alacritty>": "",
             "class<gimp>": "",
+            "class<qimgv>": "",
             "class<.*roomeqwizard.*>": "󰱐",
             "class<Tor Browser>": "",
             "class<Vncviewer>": "󰄛",
             "class<.*joplin.*>": "",
             "class<mpv>": "",
             "class<libreoffice-writer>": "󰈙",
-            "class<libreoffice-calc>": ""
+            "class<libreoffice-calc>": "",
+            "class<Throne>": "󰖂"
         }
     },
     "cpu": {
