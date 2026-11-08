@@ -1,9 +1,9 @@
 import QtQuick
 import Quickshell
 
-// Inactive workspaces as icons, followed by the active workspace icon and a
-// minimap of its niri columns. Click a column to focus it, scroll to move
-// focus between columns.
+// Non-empty inactive workspaces as icons; the active workspace is rendered
+// as a minimap of its niri columns in its position. Click a column to focus
+// it, scroll to move focus between columns.
 Pill {
     id: root
 
@@ -29,47 +29,57 @@ Pill {
     })
     readonly property string defaultIcon: "\uf111"
 
+    readonly property int namedCount: 3
+
     function iconOf(ws) {
-        return icons[ws.name ?? ""] ?? icons[String(ws.idx)] ?? defaultIcon;
+        // Unmarked workspaces are numbered after the named ones
+        return icons[ws.name ?? ""] ?? icons[String(ws.idx - namedCount)] ?? defaultIcon;
     }
 
     leftPadding: 8
     rightPadding: 8
 
     // Rebuild the icon delegates only when something visible changed
-    property var iconModel: []
+    property var iconModelBefore: []
+    property var iconModelAfter: []
     property string iconSignature: ""
 
     function syncIcons() {
-        const signature = JSON.stringify(workspaces.map(w => [w.id, w.idx, w.name, w.is_active]));
+        const signature = JSON.stringify(workspaces.map(w => [w.id, w.idx, w.name, w.is_active, w.active_window_id]));
         if (signature === iconSignature)
             return;
         iconSignature = signature;
-        iconModel = workspaces;
+        // Hide workspaces without windows; split around the active one
+        const visible = workspaces.filter(w => w.active_window_id != null);
+        const activeIdx = visible.findIndex(w => w.is_active);
+        iconModelBefore = activeIdx >= 0 ? visible.slice(0, activeIdx) : visible;
+        iconModelAfter = activeIdx >= 0 ? visible.slice(activeIdx + 1) : [];
     }
 
     onWorkspacesChanged: syncIcons()
     Component.onCompleted: syncIcons()
 
     Row {
+        id: row
+
+        readonly property int cellWidth: 28
+
         Repeater {
-            model: root.iconModel
+            model: root.iconModelBefore
 
             delegate: Item {
                 id: button
 
                 required property var modelData
-                readonly property bool active: modelData.is_active
 
-                width: icon.implicitWidth + 16
+                width: row.cellWidth
                 height: Theme.pillHeight
 
                 Text {
                     id: icon
-                    x: 5
-                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.centerIn: parent
                     text: root.iconOf(button.modelData)
-                    color: button.active ? Theme.pink : (area.containsMouse ? Theme.text : Theme.overlay1)
+                    color: area.containsMouse ? Theme.text : Theme.overlay1
                     font.family: Theme.font
                     font.pixelSize: 15
 
@@ -84,6 +94,13 @@ Pill {
                     hoverEnabled: true
                     onClicked: Niri.focusWorkspace(button.modelData)
                 }
+
+                Tip {
+                    target: icon
+                    markup: false
+                    text: button.modelData.name ? button.modelData.name : "Workspace " + (button.modelData.idx - root.namedCount)
+                    shown: area.containsMouse
+                }
             }
         }
 
@@ -91,8 +108,7 @@ Pill {
             id: minimap
 
             readonly property var columns: root.activeWorkspace ? Niri.columnsOf(root.activeWorkspace.id) : []
-            readonly property int cellWidth: 28
-            readonly property int cellSpacing: 2
+            readonly property int cellSpacing: 0
             readonly property int maxWidth: 420
             property int cursor: -1
             property real wheelAccum: 0
@@ -167,7 +183,7 @@ Pill {
                             readonly property int count: modelData.windows.length
                             readonly property bool focused: modelData.focused
 
-                            width: minimap.cellWidth
+                            width: row.cellWidth
                             height: 28
                             anchors.verticalCenter: parent.verticalCenter
                             radius: 5
@@ -190,11 +206,15 @@ Pill {
                                     delegate: Text {
                                         required property var modelData
 
-                                        horizontalAlignment: Text.AlignHCenter
+                                        // horizontalAlignment: Text.AlignHLeft
                                         text: AppIcons.iconFor(modelData.appId, modelData.title)
                                         color: cell.focused ? Theme.pink : (area.containsMouse ? Theme.text : Theme.overlay1)
                                         font.family: Theme.font
-                                        font.pixelSize: cell.count === 1 ? 15 : (cell.count === 2 ? 11 : 10)
+                                        font.pixelSize: cell.count === 1 ? 15 : 10
+
+                                        Behavior on color {
+                                            ColorAnimation { duration: 150 }
+                                        }
                                     }
                                 }
                             }
@@ -216,16 +236,56 @@ Pill {
                     }
                 }
             }
+        }
 
-            WheelHandler {
-                acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
-                onWheel: event => {
-                    minimap.wheelAccum += event.angleDelta.y;
-                    while (Math.abs(minimap.wheelAccum) >= 120) {
-                        const dir = minimap.wheelAccum > 0 ? -1 : 1;
-                        minimap.step(dir);
-                        minimap.wheelAccum -= -dir * 120;
+        Repeater {
+            model: root.iconModelAfter
+
+            delegate: Item {
+                id: button
+
+                required property var modelData
+
+                width: row.cellWidth
+                height: Theme.pillHeight
+
+                Text {
+                    id: icon
+                    anchors.centerIn: parent
+                    text: root.iconOf(button.modelData)
+                    color: area.containsMouse ? Theme.text : Theme.overlay1
+                    font.family: Theme.font
+                    font.pixelSize: 15
+
+                    Behavior on color {
+                        ColorAnimation { duration: 150 }
                     }
+                }
+
+                MouseArea {
+                    id: area
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onClicked: Niri.focusWorkspace(button.modelData)
+                }
+
+                Tip {
+                    target: icon
+                    markup: false
+                    text: button.modelData.name ? button.modelData.name : "Workspace " + (button.modelData.idx - root.namedCount)
+                    shown: area.containsMouse
+                }
+            }
+        }
+
+        WheelHandler {
+            acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+            onWheel: event => {
+                minimap.wheelAccum += event.angleDelta.y;
+                while (Math.abs(minimap.wheelAccum) >= 120) {
+                    const dir = minimap.wheelAccum > 0 ? -1 : 1;
+                    minimap.step(dir);
+                    minimap.wheelAccum -= -dir * 120;
                 }
             }
         }

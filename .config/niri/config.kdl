@@ -22,3 +22,4 @@ prefer-no-csd
 
 workspace "Carla"
 workspace "Music"
+workspace "Telegram"
