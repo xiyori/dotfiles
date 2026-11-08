@@ -1,0 +1,24 @@
+// See https://yalter.github.io/niri/ for more
+
+include "environment.kdl"
+include "input.kdl"
+include "outputs.kdl"
+include "appearance.kdl"
+include "windowrules.kdl"
+include "binds.kdl"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+switch-events {
+    lid-close { spawn "~/.scripts/suspend.sh"; }
+}
+
+spawn-sh-at-startup "~/.scripts/autostart.sh"
+spawn-at-startup "swayidle" "-w"
+
+prefer-no-csd
+
+workspace "Carla"
+workspace "Music"

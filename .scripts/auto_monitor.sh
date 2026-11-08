@@ -1,32 +1,36 @@
 #!/bin/bash
 
-function handle {
-  case "$1" in 
-    monitorremoved\>\>*)
-      echo $1
-      monitor="${1#*>>}"
-      if [[ "$monitor" = "eDP-1" ]]; then
-          return
-      fi
-      hyprctl eval 'hl.monitor({
-          output = "eDP-1",
-          disabled = false,
-      })'
-      echo "" > /tmp/custom_monitor_waybar
-      pkill -RTMIN+3 waybar
-      return
-    ;;
-    monitoradded\>\>*)
-      echo $1
-      monitor="${1#*>>}"
-      if [[ "$monitor" = "eDP-1" ]]; then
-          return
-      fi
-      echo "$monitor" > /tmp/custom_monitor_waybar_monitor
-      echo "{\"text\":\"󰍹 \",\"tooltip\":\"$monitor connected\"}" > /tmp/custom_monitor_waybar
-      pkill -RTMIN+3 waybar
-      return
-    ;;
-  esac
+# niri has no output hotplug events, so poll the output list
+function list_outputs {
+  niri msg --json outputs | jq -r 'keys[]'
 }
-socat -U - "UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" | while read -r line; do handle "$line"; done
+
+function removed {
+  echo "removed $1"
+  if [[ "$1" = "eDP-1" ]]; then
+      return
+  fi
+  pkill -x wl-mirror
+  niri msg output eDP-1 on
+  echo "" > /tmp/custom_monitor_waybar
+  pkill -RTMIN+3 waybar
+}
+
+function added {
+  echo "added $1"
+  if [[ "$1" = "eDP-1" ]]; then
+      return
+  fi
+  echo "$1" > /tmp/custom_monitor_waybar_monitor
+  echo "{\"text\":\"󰍹 \",\"tooltip\":\"$1 connected\"}" > /tmp/custom_monitor_waybar
+  pkill -RTMIN+3 waybar
+}
+
+prev="$(list_outputs)"
+while sleep 2; do
+  cur="$(list_outputs)" || continue
+  [[ "$cur" == "$prev" ]] && continue
+  for monitor in $(comm -23 <(echo "$prev") <(echo "$cur")); do removed "$monitor"; done
+  for monitor in $(comm -13 <(echo "$prev") <(echo "$cur")); do added "$monitor"; done
+  prev="$cur"
+done

@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
-hyprctl clients -j | jq -r '.[].address' | xargs -I {} hyprctl dispatch hl.dsp.window.close\({window = \"address:{}\"}\)
+niri msg --json windows | jq -r '.[].id' | xargs -I {} niri msg action close-window --id {}
 systemctl "$1"

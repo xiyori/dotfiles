@@ -1,0 +1,37 @@
+output "eDP-1" {
+    scale 1.8
+    position x=0 y=0
+}
+
+output "HDMI-A-1" {
+    mode "3840x2160@144.000"
+    scale 2
+    position x=0 y=0
+}
+
+output "DP-1" {
+    scale 2
+    position x=-1920 y=-216
+}
+
+output "DP-3" {
+    scale 1
+    position x=-1920 y=-216
+}
+
+output "DP-4" {
+    scale 1
+    transform "90"
+    position x=-3000 y=-760
+}
+
+output "DP-5" {
+    scale 1
+    position x=-1920 y=-216
+}
+
+output "DP-6" {
+    scale 1
+    transform "90"
+    position x=-3000 y=-760
+}

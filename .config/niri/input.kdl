@@ -1,0 +1,20 @@
+input {
+    keyboard {
+        xkb {
+            layout "us,ru"
+            options "grp:win_space_toggle"
+        }
+    }
+
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+        accel-profile "adaptive"
+        scroll-factor 0.5
+    }
+
+    mouse {
+        accel-profile "flat"
+    }
+}

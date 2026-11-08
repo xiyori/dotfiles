@@ -2,13 +2,13 @@ input_device: /dev/input/by-path/platform-INTC107B:00-event
 modes:
   laptop:
     - killall squeekboard
-    - killall iio-hyprland
+    - killall iio-niri
     - eww kill
     - gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled false
     - echo 0 > /tmp/tablet_mode
   tablet:
     - squeekboard & disown
-    - iio-hyprland & disown
+    - iio-niri & disown
     - eww daemon
     - gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled true
     - echo 1 > /tmp/tablet_mode

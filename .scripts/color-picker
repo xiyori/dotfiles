@@ -4,10 +4,8 @@
 ## Script by PROxZIMA from https://github.com/PROxZIMA/.dotfiles/tree/master
 
 # pick and autocopy
-hyprpicker -n -a
-
-# get the value
-color=$(wl-paste)
+color=$(niri msg pick-color | sed -n 's/^Hex: //p')
+[[ -n "$color" ]] && wl-copy "$color"
 
 image=/tmp/${color}.png
 

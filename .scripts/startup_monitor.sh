@@ -1,11 +1,8 @@
 #!/bin/bash
 
 for i in {1..30}; do
-    if hyprctl monitors | grep -q -E "Monitor DP-1"; then
-        hyprctl eval 'hl.monitor({
-            output = "eDP-1",
-            disabled = true,
-        })'
+    if niri msg outputs | grep -q -F "(DP-1)"; then
+        niri msg output eDP-1 off
         # break
     fi
     sleep 1

@@ -38,12 +38,12 @@ install () {
 
 _create_symlink () {
     mkdir -p "$(dirname ~/"$1")"
-    
+
     # Remove existing symlink, directory, or file at the target location
     [ -L ~/"$1" ] && { rm ~/"$1"; echo -n "old symlink removed, "; }
     [ -d ~/"$1" ] && { rm -rf ~/"$1"; echo -n "old directory removed, "; }
     [ -f ~/"$1" ] && { rm ~/"$1"; echo -n "old file removed, "; }
-    
+
     # Create new symlink
     ln -s "$(pwd)/$1" ~/"$1"
     echo "created symlink ~/$1"
@@ -56,19 +56,19 @@ install_essential () {
         "pacman-contrib" # pacman utilities
         "reflector"      # update mirrorlist
         "rsync"          # use rsync mirrors
-        
+
         # Terminals & Shells
         "alacritty" # for terminal management
         "fish" # friendly interactive shell
         "powerline" # for CLI customization
-        
+
         # Text Editors
         "neovim"
-        
+
         # Launchers & Notifications
         "rofi" # for launching applications
         "swaync" # for notifications
-        
+
         # Desktop Customization
         "awww" # for wallpapers
         "lxappearance" # for theming
@@ -77,7 +77,7 @@ install_essential () {
         "bibata-cursor-theme" # for theming
         "papirus-icon-theme" # for theming
         "papirus-folders" # for theming
-        
+
         # File Management & Utilities
         "thunar"
         "xfce4-settings"
@@ -91,7 +91,7 @@ install_essential () {
         "zip"
         "7zip"
         "unzip"
-        
+
         # Fonts
         "ttf-firacode-nerd"
         "ttf-noto-nerd"
@@ -110,10 +110,11 @@ install_essential () {
         "alsa-utils"
         "jq" # for waybar json scripting
         "bc" # for auto gain scripting
-        
+
         # Desktop Integration
         "xdg-desktop-portal-gtk" # needed for theming
-        "xdg-desktop-portal-hyprland" # needed for screen share
+        "xdg-desktop-portal-gnome" # needed for screen share
+        "gnome-keyring" # secret portal
 
         # Screenshot
         "grim"
@@ -126,11 +127,12 @@ install_essential () {
         "wlogout" # power menu
         "wlsunset" # night light (redshift)
         "sunwait" # wallpaper mode
-        "socat" # for hyprland socket scripts
         "python-requests" # for wttr script
         "polkit-gnome" # auth dialogs
-        "hyprlock" # lock screen
-        "hypridle" # turn off screen
+        "swaylock-effects" # lock screen
+        "swayidle" # turn off screen
+        "wl-mirror" # monitor mirroring
+        "xwayland-satellite" # X11 apps
         "xorg-xrdb" # for .Xresources
         "xorg-xsetroot" # for cursor size stability
         "qt5-wayland"
@@ -147,9 +149,9 @@ install_essential () {
         "bluez"
         "bluez-utils"
 
-        # Hyprland
-        "hyprland" # window manager
-        "waybar" # for status bar 
+        # Niri
+        "niri" # window manager
+        "waybar" # for status bar
     )
     install "${packages[@]}"
 
@@ -163,7 +165,9 @@ install_essential () {
     _create_symlink .config/fish/config.fish
     _create_symlink .config/fontconfig/fonts.conf
     _create_symlink .config/gtk-3.0/settings.ini
-    _create_symlink .config/hypr
+    _create_symlink .config/niri
+    _create_symlink .config/swaylock
+    _create_symlink .config/swayidle
     _create_symlink .config/myeffects
     _create_symlink .config/nvim
     _create_symlink .config/pipewire
@@ -177,7 +181,6 @@ install_essential () {
     _create_symlink .config/electron-flags.conf
     _create_symlink .config/mimeapps.list
     _create_symlink .config/systemd/user/auto-monitor.service
-    _create_symlink .config/systemd/user/switch-out-from-empty.service
     _create_symlink .config/systemd/user/cycle-wallpaper.timer
     _create_symlink .config/systemd/user/cycle-wallpaper.service
     _create_symlink .config/systemd/user/dbus-monitor.service
@@ -193,7 +196,7 @@ install_essential () {
 
     # Reflector config
     sudo cp configs/reflector.conf /etc/xdg/reflector/
-    
+
     # gsettings
     gsettings set org.gnome.desktop.interface gtk-theme 'catppuccin-mocha-mauve-standard+default'
     gsettings set org.gnome.desktop.interface font-name 'Noto Sans 11'
@@ -204,7 +207,7 @@ install_essential () {
 
     # App themes
     papirus-folders -C violet --theme Papirus-Dark
-    
+
     # We use Alacritty's default Linux config directory as our storage location here.
     mkdir -p ~/.config/alacritty/themes
     git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
@@ -215,7 +218,7 @@ install_essential () {
     # Services
     sudo mkdir /etc/systemd/system/paccache.timer.d
     sudo cp configs/paccache-override.conf /etc/systemd/system/paccache.timer.d/override.conf
-    
+
     sudo mkdir /etc/systemd/logind.conf.d
     sudo cp configs/handle_lid_switch.conf /etc/systemd/logind.conf.d/
 
@@ -233,7 +236,6 @@ install_essential () {
     # systemctl --user enable pipewire pipewire-pulse wireplumber
     systemctl --user enable mpris-proxy.service
     systemctl --user enable auto-monitor.service
-    systemctl --user enable switch-out-from-empty.service
     systemctl --user enable dbus-monitor.service
     systemctl --user enable cycle-wallpaper.timer
 }
@@ -251,7 +253,6 @@ install_optional () {
         "rofi-emoji-git" # emoji picker
         "noto-fonts-emoji" # emoji font
         "wtype" # input tool for emoji
-        "hyprpicker" # color picker
         "imagemagick" # for color picker script
         "tty-clock" # to flex
         "calcurse" # to plan while flexing
@@ -278,7 +279,7 @@ install_optional () {
     _create_symlink .config/rmpc
 
     echo "setting up packages"
-    
+
     # rmpc setup
     kitty +kitten themes --reload-in=all Catppuccin-Mocha
     echo "include overrides.conf" >> ~/.config/kitty/kitty.conf
@@ -353,12 +354,12 @@ install_extra () {
     _create_symlink .config/GIMP/2.10/toolrc
 
     sudo ln -sf "$(pwd)/configs/config.toml" /etc/greetd/config.toml
-    
+
     sudo mkdir /etc/systemd/resolved.conf.d
     sudo cp configs/20-dns-servers.conf /etc/systemd/resolved.conf.d/
 
     sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-    
+
     sudo ln -s "$(pwd)/configs/90-dns-over-tls.conf" /etc/NetworkManager/conf.d/90-dns-over-tls.conf
 
     # Services
@@ -371,7 +372,7 @@ install_touch () {
     echo "installing touchscreen & tablet packages"
     packages=(
         "iio-sensor-proxy" # for performance monitoring
-        "iio-hyprland-git" # screen rotation
+        "iio-niri" # screen rotation
         "ydotool" # touchpad events conversion
         "squeekboard" # on-screen keyboard
         "eww-git" # sound control widget
@@ -385,11 +386,6 @@ install_touch () {
     _create_symlink .config/eww
 
     echo "setting up packages"
-
-    # Touch gestures
-    hyprpm update
-    hyprpm add https://github.com/horriblename/hyprgrass
-    hyprpm enable hyprgrass
 
     # Load sensors modules
     echo -e "intel-ishtp-hid\nhid-sensor-hub" | sudo tee -a /etc/modules-load.d/intel_hid.conf > /dev/null

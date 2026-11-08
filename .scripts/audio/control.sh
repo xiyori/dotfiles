@@ -13,7 +13,6 @@ case "$argument" in
   ;&
   play-pause|next|previous|status|metadata)
     ~/.scripts/audio/player.sh "$argument"
-    pkill -USR2 hyprlock
   ;;
   mute)
     pactl get-sink-mute "$(~/.scripts/audio/get_active_sink.sh)" | grep -q no
@@ -21,8 +20,7 @@ case "$argument" in
     (( muted ^= 1 ))
     for active_sink in $(~/.scripts/audio/list_active_sinks.sh) ; do
       pactl set-sink-mute "$active_sink" "$muted"
-    done 
-    # hyprctl activewindow | grep -q "fullscreen: 0" ||
+    done
     ~/.scripts/audio/muted_update.sh "$muted"
     if [[ "$notify" == "notify" ]]; then
       if [[ "$muted" -eq 1 ]]; then

@@ -1,0 +1,26 @@
+environment {
+    EDITOR "nvim"
+    VISUAL "nvim"
+    GDK_CORE_DEVICE_EVENTS "1"
+    GDK_SCALE "1"
+
+    QT_QPA_PLATFORMTHEME "qt5ct"
+    GTK_THEME "catppuccin-mocha-mauve-standard+default"
+    BAT_THEME "Catppuccin Mocha"
+
+    LATITUDE "56.2"
+    LONGITUDE "36.3"
+
+    GBM_BACKEND "nvidia-drm"
+    __NV_PRIME_RENDER_OFFLOAD "1"
+    __GLX_VENDOR_LIBRARY_NAME "nvidia"
+    __GL_VRR_ALLOWED "0"
+    LIBVA_DRIVER_NAME "nvidia"
+    NVD_BACKEND "direct"
+    CUDA_DISABLE_PERF_BOOST "1"
+}
+
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 24
+}

@@ -1,0 +1,46 @@
+layout {
+    gaps 10
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        // Make sure "off" is NOT present here
+        width 2
+        active-color "#f5c2e7"
+        inactive-color "#1E1E2E" // Only visible on unfocused monitors
+    }
+
+    // border {
+    //     width 2
+    //     active-color "#f5c2e7"
+    //     inactive-color "#1E1E2E"
+    // }
+
+    shadow {
+        on
+        softness 10
+        spread 0
+        offset x=0 y=0
+        color "#1a1a1aaa"
+        inactive-color "#0000001e"
+    }
+}
+
+blur {
+    passes 3
+    offset 3
+}
+
+animations {
+    window-open {
+        duration-ms 200
+        curve "cubic-bezier" 0.05 0.9 0.1 1.05
+    }
+    window-close {
+        duration-ms 400
+        curve "ease-out-quad"
+    }
+    workspace-switch {
+        duration-ms 200
+        curve "ease-out-cubic"
+    }
+}

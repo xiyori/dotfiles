@@ -1,0 +1,6 @@
+timeout 450 'brightnessctl -s set 0%' resume 'brightnessctl -r'
+timeout 600 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors'
+timeout 1200 'systemd-ac-power || ~/.scripts/suspend.sh'
+lock '~/.scripts/lock'
+unlock 'pkill -USR1 swaylock'
+after-resume 'niri msg action power-on-monitors'

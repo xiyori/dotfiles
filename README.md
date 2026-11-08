@@ -3,7 +3,7 @@
 [<img align="right" src="pic/rice.jpg" alt="Rice Preview" width="400px"/>](pic/)
 
 ```mint
-⠀⠀   ⑨ Setup / Hyprland ⑨
+⠀⠀   ⑨ Setup / Niri ⑨
  -----------------------------------
 
  ╭─ Distro  -> Arch Linux x86_64
@@ -18,7 +18,7 @@
  ├─ GPU   -> No :(
  ╰─ Resolution -> 1920x1080
 
- ╭─ WM       -> Hyprland
+ ╭─ WM       -> Niri
  ├─ Terminal -> Alacritty
  ├─ Launcher -> Rofi
  ├─ Theme    -> Catpuccin-Mocha-Blue-Dark
@@ -42,7 +42,7 @@ Include = /etc/pacman.d/mirrorlist
 
 ## Installation
 
-Run `./install.sh` from the repo directory. Minimum requirements are `base`, `base-devel`. Customize monitors and appearance configs in `.config/hypr/`.
+Run `./install.sh` from the repo directory. Minimum requirements are `base`, `base-devel`. Customize monitors and appearance configs in `.config/niri/`.
 
 Set up cmus (if installed)
 

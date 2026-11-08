@@ -1,0 +1,105 @@
+binds {
+    Mod+T { spawn "alacritty"; }
+    Mod+B { spawn "librewolf"; }
+    Mod+Shift+V { spawn "librewolf" "--profile" ".librewolf/inKqXFAy.Profile 1"; }
+    Mod+Shift+B { spawn "chromium"; }
+    Mod+M { spawn-sh "~/.scripts/focus_or_run.sh '^org[.]telegram[.]desktop$' '' Telegram"; }
+    Mod+Shift+M { spawn "thunderbird"; }
+    Mod+Q { close-window; }
+    Mod+Shift+Q { spawn-sh "kill -9 $(niri msg --json focused-window | jq -r .pid)"; }
+    Mod+E { spawn "thunar"; }
+    Mod+Shift+E { spawn-sh "pkill rofi || rofi -modi emoji -show emoji"; }
+    Mod+V { toggle-window-floating; }
+    Mod+R { spawn-sh "pkill rofi || ~/GitHub/rofi/build/rofi -show drun"; }
+    Mod+F { fullscreen-window; }
+    Mod+J { spawn "joplin-desktop"; }
+    Mod+O { spawn-sh "~/.scripts/audio/next_active_sink.sh"; }
+    Mod+Shift+O { spawn-sh "~/.scripts/audio/next_profile.sh"; }
+    Mod+G { spawn-sh "~/.scripts/audio/auto_gain.sh"; }
+    Mod+L { spawn-sh "~/.scripts/logout.sh"; }
+    Mod+P { spawn-sh "~/.scripts/color-picker"; }
+    Mod+Z { toggle-overview; }
+
+    Ctrl+Alt+L allow-inhibiting=false { spawn-sh "~/.scripts/lock"; }
+
+    Print { spawn-sh "pkill slurp || ~/.scripts/screenshot"; }
+    Shift+Print { spawn-sh "~/.scripts/screenshot_full"; }
+
+    Mod+C { spawn "qalculate-gtk"; }
+    Mod+I { spawn "code"; }
+    Mod+Shift+T { spawn-sh "~/.scripts/clock.sh"; }
+    Mod+Shift+D { spawn-sh "~/.scripts/donut.sh"; }
+    Mod+A { spawn-sh "~/.scripts/focus_or_run.sh '^kitty$' '^rmpc' ~/.scripts/rmpc.sh"; }
+    Mod+Shift+C { spawn-sh "~/.scripts/cava.sh"; }
+    Mod+S { spawn-sh "~/.scripts/focus_or_run.sh '(?i)^carla' '' ~/.scripts/audio/startup.sh"; }
+    Mod+Shift+P { spawn "mpv" "--background=none" "/home/sergej/GitHub/dotfiles/assets/arrow.mov"; }
+
+    Mod+Left { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+Up { focus-window-up; }
+    Mod+Down { focus-window-down; }
+
+    Mod+Shift+Left { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Up { move-window-up; }
+    Mod+Shift+Down { move-window-down; }
+
+    Mod+Ctrl+Left { consume-or-expel-window-left; }
+    Mod+Ctrl+Right { consume-or-expel-window-right; }
+
+    Mod+Comma { set-column-width "-10%"; }
+    Mod+Period { set-column-width "+10%"; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "~/.scripts/audio/control.sh up"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "~/.scripts/audio/control.sh down"; }
+    Ctrl+XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "~/.scripts/audio/manual_gain.sh up"; }
+    Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn-sh "~/.scripts/audio/manual_gain.sh down"; }
+    XF86AudioMute allow-when-locked=true { spawn-sh "~/.scripts/audio/control.sh mute"; }
+    XF86AudioPlay allow-when-locked=true { spawn-sh "~/.scripts/audio/control.sh play-pause"; }
+    Mod+Alt+F11 allow-when-locked=true { spawn-sh "~/.scripts/audio/control.sh play-pause"; }
+    XF86AudioNext allow-when-locked=true { spawn-sh "~/.scripts/audio/control.sh next"; }
+    Mod+Alt+F12 allow-when-locked=true { spawn-sh "~/.scripts/audio/control.sh next"; }
+    XF86AudioPrev allow-when-locked=true { spawn-sh "~/.scripts/audio/control.sh previous"; }
+    Mod+Alt+F10 allow-when-locked=true { spawn-sh "~/.scripts/audio/control.sh previous"; }
+    XF86Sleep allow-when-locked=true { spawn-sh "~/.scripts/suspend.sh"; }
+
+    XF86MonBrightnessUp allow-when-locked=true repeat=false { spawn-sh "~/.scripts/brightness.sh up notify"; }
+    XF86MonBrightnessDown allow-when-locked=true repeat=false { spawn-sh "~/.scripts/brightness.sh down notify"; }
+    Mod+Alt+Up allow-when-locked=true { spawn-sh "~/.scripts/brightness.sh up notify"; }
+    Mod+Alt+Down allow-when-locked=true { spawn-sh "~/.scripts/brightness.sh down notify"; }
+
+    // Mod+Tab { focus-column-right-or-first; }
+    Alt+Tab { focus-window-previous; }
+    Alt+Shift+Tab { focus-window-previous; }
+    Mod+W { focus-monitor-next; }
+    Mod+Shift+W { move-workspace-to-monitor-next; }
+    Mod+N { spawn-sh "~/.scripts/empty_workspace.sh"; }
+    Mod+Shift+N { spawn-sh "~/.scripts/empty_workspace.sh move"; }
+
+    Mod+1 { focus-column 1; }
+    Mod+2 { focus-column 2; }
+    Mod+3 { focus-column 3; }
+    Mod+4 { focus-column 4; }
+    Mod+5 { focus-column 5; }
+    Mod+6 { focus-column 6; }
+    Mod+7 { focus-column 7; }
+    Mod+8 { focus-column 8; }
+    Mod+9 { focus-column 9; }
+    Mod+0 { focus-column 10; }
+
+    Mod+Shift+1 { move-column-to-index 1; }
+    Mod+Shift+2 { move-column-to-index 2; }
+    Mod+Shift+3 { move-column-to-index 3; }
+    Mod+Shift+4 { move-column-to-index 4; }
+    Mod+Shift+5 { move-column-to-index 5; }
+    Mod+Shift+6 { move-column-to-index 6; }
+    Mod+Shift+7 { move-column-to-index 7; }
+    Mod+Shift+8 { move-column-to-index 8; }
+    Mod+Shift+9 { move-column-to-index 9; }
+    Mod+Shift+0 { move-column-to-index 10; }
+
+    Mod+WheelScrollUp cooldown-ms=150 { focus-column-left; }
+    Mod+WheelScrollDown cooldown-ms=150 { focus-column-right; }
+    Mod+Shift+WheelScrollUp cooldown-ms=150 { move-column-left; }
+    Mod+Shift+WheelScrollDown cooldown-ms=150 { move-column-right; }
+}

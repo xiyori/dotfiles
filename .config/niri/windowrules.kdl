@@ -1,0 +1,90 @@
+window-rule {
+    geometry-corner-radius 5
+    clip-to-geometry true
+    background-effect { blur true; }
+}
+
+window-rule {
+    match is-active=false
+    opacity 0.92
+}
+
+window-rule {
+    match app-id=r#"^(ristretto|qimgv|mpv)$"#
+    opacity 1.0
+}
+
+window-rule {
+    match app-id=r#"^(blueman|file-).*"#
+    match app-id=r#"^(engrampa|qalculate-gtk|tty-flex|font-viewer|nm-connection-editor)$"#
+    match title=r#".*(- Properties)$"#
+    match app-id=r#"^org.gnome.FileRoller$"# title=r#"^Extract$"#
+    match app-id=r#"^(thunar|Thunar)$"# title=r#"^(Confirm to replace files|Attention|File Operation Progress|Rename |Create New ).*"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^org.pulseaudio.pavucontrol$"#
+    open-floating true
+    default-column-width { proportion 0.4; }
+    default-window-height { proportion 0.6; }
+}
+
+window-rule {
+    match app-id=r#"^tty-flex$"# title=r#"^cava$"#
+    default-column-width { fixed 650; }
+    default-window-height { fixed 240; }
+}
+
+window-rule {
+    match app-id=r#"^tty-flex$"# title=r#"^tty-clock$"#
+    default-column-width { fixed 480; }
+    default-window-height { fixed 165; }
+}
+
+window-rule {
+    match app-id=r#"^tty-flex$"# title=r#"^donut$"#
+    default-column-width { fixed 650; }
+    default-window-height { fixed 420; }
+}
+
+window-rule {
+    match app-id=r#"^(gamescope|geometrydash.exe)$"#
+    match title=r#"^Wine Desktop$"#
+    open-fullscreen true
+}
+
+window-rule {
+    match app-id=r#"(?i)^(firefox|Tor Browser|librewolf)$"# title=r#"^(Enter name of file to save|Save Image).*"#
+    default-column-width { proportion 0.8; }
+    default-window-height { proportion 0.8; }
+}
+
+window-rule {
+    match app-id=r#"(?i)^(firefox|Tor Browser|librewolf)$"#
+    default-column-width { proportion 1.0; }
+}
+
+window-rule {
+    match app-id=r#".*VSCode$"#
+    open-maximized false
+}
+
+// window-rule {
+//     match app-id=r#"^Alacritty$"#
+//     default-window-height { proportion 0.5; }
+// }
+
+window-rule {
+    match title=r#"^Select fonts to remove$"#
+    open-floating true
+    default-column-width { proportion 0.4; }
+    default-window-height { proportion 0.4; }
+}
+
+window-rule {
+    match app-id=r#"(?i)^carla$"#
+    open-maximized false
+    open-on-workspace "Carla"
+    default-column-width { proportion 1.0; }
+}

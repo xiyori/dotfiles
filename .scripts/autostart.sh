@@ -1,27 +1,19 @@
 #!/usr/bin/bash
 
-# hyprlock & wallpaper
+# lock & wallpaper
 ~/.scripts/wallpaper.sh init  # should be instanteneous
 
-( ~/.scripts/lock || hyprctl dispatch exit ) &
+( ~/.scripts/lock || niri msg action quit --skip-confirmation ) &
 awww-daemon > /tmp/awww.log 2>&1 & disown
 awww img "$(~/.scripts/wallpaper.sh query)" -t none
 
 # Policy Authentication Agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 2>&1 & disown
 
-# https://wiki.hyprland.org/FAQ/#some-of-my-apps-take-a-really-long-time-to-open
-# https://gist.github.com/PowerBall253/2dea6ddf6974ba4e5d26c3139ffb7580
+# https://yalter.github.io/niri/Important-Software.html
 
-( systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_RUNTIME_DIR LATITUDE LONGITUDE
+( systemctl --user import-environment LATITUDE LONGITUDE
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all
-systemctl --user start wm-session.target
-sleep 4
-killall -e xdg-desktop-portal-hyprland
-killall xdg-desktop-portal
-/usr/lib/xdg-desktop-portal-hyprland > /tmp/xdg-desktop-portal-hyprland.log 2>&1 & disown
-sleep 4
-/usr/lib/xdg-desktop-portal > /tmp/xdg-desktop-portal.log 2>&1 & disown
 ) &
 
 # monitors
@@ -29,7 +21,6 @@ sleep 4
 
 # other
 powerline-daemon
-hyprctl setcursor "$XCURSOR_THEME" $XCURSOR_SIZE
 xsetroot -xcf "/usr/share/icons/$XCURSOR_THEME/cursors/left_ptr" $XCURSOR_SIZE
 killall wl-clip-persist ; wl-clip-persist --clipboard regular > /dev/null 2>&1 & disown
 # killall wl-paste ; cliphist wipe ; wl-paste --watch cliphist store &
@@ -47,14 +38,15 @@ killall wlsunset ; wlsunset -l $LATITUDE -L $LONGITUDE > /tmp/wlsunset.log 2>&1 
 ~/.scripts/audio/startup.sh
 
 # waybar
-ln -s $XDG_RUNTIME_DIR/hypr /tmp/hypr
 echo "" > /tmp/custom_monitor_waybar
 ~/.scripts/launch_waybar
 
+# librewolf extension popups
+~/.scripts/librewolf_extension_float.sh > /dev/null 2>&1 & disown
+
 # touch
-# iio-hyprland & disown
+# iio-niri & disown
 # ~/.scripts/tablet_mode.sh > /dev/null 2>&1 & disown
-# hyprpm reload -n
 
 # prevent silent power on
 # cat /proc/acpi/button/lid/LID0/state | grep -q open || ( date >> ~/unexpected_power_on ; shutdown now )

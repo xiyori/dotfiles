@@ -1,8 +1,5 @@
 #!/bin/bash
 
-hyprctl eval 'hl.monitor({
-    output = "eDP-1",
-    mode = "2880x1800@60",
-    position = "0x0",
-    scale = 1.8,
-})'
+niri msg output eDP-1 mode 2880x1800@60.000
+niri msg output eDP-1 scale 1.8
+niri msg output eDP-1 position set 0 0
