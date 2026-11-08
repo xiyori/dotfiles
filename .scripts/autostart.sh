@@ -37,9 +37,9 @@ killall wlsunset ; wlsunset -l $LATITUDE -L $LONGITUDE > /tmp/wlsunset.log 2>&1 
 # audio
 ~/.scripts/audio/startup.sh
 
-# waybar
+# quickshell (bar & touch widgets)
 echo "" > /tmp/custom_monitor_waybar
-~/.scripts/launch_waybar
+killall -q quickshell qs ; quickshell > /tmp/quickshell.log 2>&1 & disown
 
 # librewolf extension popups
 ~/.scripts/librewolf_extension_float.sh > /dev/null 2>&1 & disown

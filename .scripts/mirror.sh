@@ -10,4 +10,4 @@ sleep 2
 pkill -x wl-mirror
 wl-mirror -F --fullscreen-output "$monitor" eDP-1 > /dev/null 2>&1 & disown
 echo "{\"text\":\"󰍺 \",\"tooltip\":\"Mirroring to $monitor\"}" > /tmp/custom_monitor_waybar
-pkill -RTMIN+3 waybar
+~/.scripts/bar_refresh monitor

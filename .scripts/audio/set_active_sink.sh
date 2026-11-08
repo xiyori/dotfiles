@@ -143,8 +143,8 @@ echo "$new_active_sink" > /tmp/active_sink
 echo "$(active_sink_nick)" > /tmp/active_sink_nick
 ~/.scripts/audio/muted_update.sh "$(pactl get-sink-mute "$new_active_sink" | grep -q "yes" && echo 1 || echo 0)"
 
-pkill -RTMIN+1 waybar
-pkill -RTMIN+5 waybar
+~/.scripts/bar_refresh sound
+~/.scripts/bar_refresh soundprofile
 
 notify-send -e -h boolean:SWAYNC_BYPASS_DND:true -u low "Audio: $message"
 

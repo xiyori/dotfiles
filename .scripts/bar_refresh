@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+# Re-run a quickshell bar module's script (replaces `pkill -RTMIN+N waybar`).
+# Modules: sound, autogain, monitor, updates, soundprofile
+
+qs ipc call bar refresh "$1" > /dev/null 2>&1 || true

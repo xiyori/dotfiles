@@ -6,4 +6,4 @@ niri msg output "$monitor" on
 sleep 2
 niri msg output eDP-1 off
 echo "{\"text\":\"󰶐 \",\"tooltip\":\"$monitor only\"}" > /tmp/custom_monitor_waybar
-pkill -RTMIN+3 waybar
+~/.scripts/bar_refresh monitor

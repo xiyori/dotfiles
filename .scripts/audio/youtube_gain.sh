@@ -59,7 +59,7 @@ while [[ "$flag" -eq 0 && "$i" -lt 20 ]]; do
     if (( $(echo "$volume != $new_volume" | bc -l) )); then
         pactl set-sink-volume myeffects_sink "${new_volume}db"
         echo "$new_volume" > /tmp/auto_gain
-        pkill -RTMIN+2 waybar
+        ~/.scripts/bar_refresh autogain
     else
         flag=0
     fi

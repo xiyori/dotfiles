@@ -27,10 +27,10 @@ else
     echo 0 > /tmp/auto_gain
     echo 1 > /tmp/auto_gain_enabled
     [[ "$notify" == "notify" ]] && notify-send -e -h boolean:SWAYNC_BYPASS_DND:true -u low "Auto Gain: On"
-    pkill -RTMIN+2 waybar
+    ~/.scripts/bar_refresh autogain
 
     device="$(~/.scripts/audio/midi_device.sh)"
     amidi -p "$device" -d | ~/.scripts/audio/gain_loop.py
 fi
 
-pkill -RTMIN+2 waybar
+~/.scripts/bar_refresh autogain

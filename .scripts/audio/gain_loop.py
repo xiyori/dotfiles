@@ -62,7 +62,7 @@ def main():
             # if current_gain == 0:
             #     send_notif()
             #     break
-            run_command("pkill -RTMIN+2 waybar")
+            run_command("~/.scripts/bar_refresh autogain")
         # elif new_gain < current_gain:
         elif current_gain != 0:
             current_gain = new_gain
@@ -70,7 +70,7 @@ def main():
             # if current_gain == 0:
             #     send_notif()
             #     break
-            run_command("pkill -RTMIN+2 waybar")
+            run_command("~/.scripts/bar_refresh autogain")
 
 
 if __name__ == "__main__":

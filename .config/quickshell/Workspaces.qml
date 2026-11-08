@@ -137,8 +137,8 @@ Pill {
                 let x = flick.contentX;
                 const i = focusedIndex();
                 if (i >= 0) {
-                    const left = i * (cellWidth + cellSpacing);
-                    const right = left + cellWidth;
+                    const left = i * (row.cellWidth + cellSpacing);
+                    const right = left + row.cellWidth;
                     if (left < x)
                         x = left;
                     else if (right > x + flick.width)
@@ -149,7 +149,7 @@ Pill {
 
             onColumnsChanged: {
                 cursor = -1;
-                Qt.callLater(reveal);
+                Qt.callLater(() => reveal());
             }
 
             Flickable {
@@ -160,7 +160,7 @@ Pill {
                 interactive: false
                 clip: true
                 boundsBehavior: Flickable.StopAtBounds
-                onWidthChanged: Qt.callLater(minimap.reveal)
+                onWidthChanged: Qt.callLater(() => minimap.reveal())
 
                 Behavior on contentX {
                     NumberAnimation { duration: 150; easing.type: Easing.OutCubic }
@@ -170,7 +170,7 @@ Pill {
                     id: strip
                     height: parent.height
                     spacing: minimap.cellSpacing
-                    onWidthChanged: Qt.callLater(minimap.reveal)
+                    onWidthChanged: Qt.callLater(() => minimap.reveal())
 
                     Repeater {
                         model: minimap.columns

@@ -57,6 +57,6 @@ delta="$(bc -l <<< "$new_volume - $volume")"
 pactl set-sink-volume myeffects_sink "+${delta}db"
 echo "$new_volume" > /tmp/auto_gain
 
-pkill -RTMIN+2 waybar
+~/.scripts/bar_refresh autogain
 
 unlock

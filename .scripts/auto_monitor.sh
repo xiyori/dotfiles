@@ -13,7 +13,7 @@ function removed {
   pkill -x wl-mirror
   niri msg output eDP-1 on
   echo "" > /tmp/custom_monitor_waybar
-  pkill -RTMIN+3 waybar
+  ~/.scripts/bar_refresh monitor
 }
 
 function added {
@@ -23,7 +23,7 @@ function added {
   fi
   echo "$1" > /tmp/custom_monitor_waybar_monitor
   echo "{\"text\":\"󰍹 \",\"tooltip\":\"$1 connected\"}" > /tmp/custom_monitor_waybar
-  pkill -RTMIN+3 waybar
+  ~/.scripts/bar_refresh monitor
 }
 
 prev="$(list_outputs)"

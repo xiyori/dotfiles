@@ -1,11 +1,31 @@
-# Quickshell Analog Clock Widget
+# Quickshell bar and widgets
 
-This adds a configurable analog clock widget for Quickshell.
+Replaces waybar (top bar) and eww (tablet-mode sound/brightness panels). Started from `~/.scripts/autostart.sh`.
+
+## Files
+
+- `shell.qml` – entry point: a `Bar` per screen, the touch panels, and IPC handlers.
+- `Bar.qml` – module layout, ported from the old waybar config and styling.
+- `Workspaces.qml` – workspace icons plus a clickable, scrollable minimap of the active workspace's niri columns.
+- `AppIcons.qml` – app icon rules in waybar `window-rewrite` syntax (`class<regex> title<regex>`), used by the minimap.
+- `Niri.qml` – live niri state from `niri msg event-stream`.
+- `SoundPanel.qml`, `BrightnessPanel.qml` – tablet-mode widgets.
+
+## Scripts
+
+- `~/.scripts/bar_refresh <module>` re-runs a bar module's script (replaces `pkill -RTMIN+N waybar`).
+  Modules: `sound` (1), `autogain` (2), `monitor` (3), `updates` (4), `soundprofile` (5).
+- `~/.scripts/widget_toggle <sound|brightness>` toggles a touch panel (replaces `eww open/close`).
+
+Both wrap `qs ipc call`, see the `IpcHandler`s in `shell.qml`.
+
+# Analog clock widget
+
+`AnalogClock.qml` is a standalone, configurable analog clock component. It is not used by the bar.
 
 ## Files
 
 - `.config/quickshell/AnalogClock.qml` – reusable analog clock component.
-- `.config/quickshell/shell.qml` – minimal popup usage example with opacity appear/disappear animation.
 
 ## Features
 

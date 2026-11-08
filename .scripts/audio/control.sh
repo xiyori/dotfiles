@@ -6,7 +6,7 @@ notify="${2:-notify}"
 case "$argument" in
   custom_action)
     if [[ "$(cat /tmp/tablet_mode)" -eq 1 ]]; then
-      eww active-windows | grep -q "sound-window" && eww close sound-window || ( eww update volume="$(cat /tmp/loudness)" && eww update mute_icon="$([[ "$(cat /tmp/muted)" -eq 1 ]] && echo "󰕾" || echo "󰖁")" && eww open sound-window )
+      ~/.scripts/widget_toggle sound
       exit 0
     fi
     argument="play-pause"
@@ -30,7 +30,7 @@ case "$argument" in
       fi
       notify-send -e -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true -u low "$message"
     fi
-    pkill -RTMIN+1 waybar
+    ~/.scripts/bar_refresh sound
   ;;
   *)
     if pactl list clients | grep -q "LSP Loudness Compensator Stereo"; then
@@ -48,7 +48,7 @@ case "$argument" in
         ;;
       esac
     fi
-    pkill -RTMIN+1 waybar
+    ~/.scripts/bar_refresh sound
   ;;
 esac
 exit 0

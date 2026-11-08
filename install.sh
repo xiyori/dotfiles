@@ -108,7 +108,7 @@ install_essential () {
         "carla" # equal loudness system volume
         "lsp-plugins-lv2"
         "alsa-utils"
-        "jq" # for waybar json scripting
+        "jq" # for niri json scripting
         "bc" # for auto gain scripting
 
         # Desktop Integration
@@ -151,7 +151,8 @@ install_essential () {
 
         # Niri
         "niri" # window manager
-        "waybar" # for status bar
+        "quickshell" # for status bar and widgets
+        "papirus-icon-theme" # tray icons
     )
     install "${packages[@]}"
 
@@ -173,7 +174,7 @@ install_essential () {
     _create_symlink .config/pipewire
     _create_symlink .config/wireplumber
     _create_symlink .config/powerline
-    _create_symlink .config/waybar
+    _create_symlink .config/quickshell
     _create_symlink .config/wlogout
     _create_symlink .config/rofi
     _create_symlink .config/swaync
@@ -375,7 +376,6 @@ install_touch () {
         "iio-niri" # screen rotation
         "ydotool" # touchpad events conversion
         "squeekboard" # on-screen keyboard
-        "eww-git" # sound control widget
     )
     install "${packages[@]}"
 
@@ -383,7 +383,6 @@ install_touch () {
     echo "creating symlinks"
 
     _create_symlink .config/watch_tablet.yml
-    _create_symlink .config/eww
 
     echo "setting up packages"
 

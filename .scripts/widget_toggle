@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+# Toggle a quickshell touch widget (replaces eww open/close). Widgets: sound, brightness
+
+case "$1" in
+  sound) qs ipc call widgets toggleSound ;;
+  brightness) qs ipc call widgets toggleBrightness ;;
+esac

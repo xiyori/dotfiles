@@ -47,8 +47,8 @@ binds {
     Mod+Ctrl+Left { consume-or-expel-window-left; }
     Mod+Ctrl+Right { consume-or-expel-window-right; }
 
-    Mod+Comma { set-column-width "-10%"; }
-    Mod+Period { set-column-width "+10%"; }
+    Mod+Comma { set-column-width "-25%"; }
+    Mod+Period { set-column-width "+25%"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "~/.scripts/audio/control.sh up"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "~/.scripts/audio/control.sh down"; }
@@ -98,8 +98,10 @@ binds {
     Mod+Shift+9 { move-column-to-index 9; }
     Mod+Shift+0 { move-column-to-index 10; }
 
-    Mod+WheelScrollUp cooldown-ms=150 { focus-column-left; }
-    Mod+WheelScrollDown cooldown-ms=150 { focus-column-right; }
-    Mod+Shift+WheelScrollUp cooldown-ms=150 { move-column-left; }
-    Mod+Shift+WheelScrollDown cooldown-ms=150 { move-column-right; }
+    Mod+WheelScrollUp cooldown-ms=15 { focus-column-left; }
+    Mod+WheelScrollDown cooldown-ms=15 { focus-column-right; }
+    Mod+Shift+WheelScrollUp cooldown-ms=15 { move-column-left; }
+    Mod+Shift+WheelScrollDown cooldown-ms=15 { move-column-right; }
+    Mod+Ctrl+WheelScrollUp cooldown-ms=15 { consume-or-expel-window-left; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=15 { consume-or-expel-window-right; }
 }

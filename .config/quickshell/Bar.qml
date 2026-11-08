@@ -166,6 +166,7 @@ PanelWindow {
                         id: trayItem
 
                         required property var modelData
+                        readonly property bool hovered: trayHover.hovered
 
                         width: 14
                         height: 14
@@ -176,6 +177,23 @@ PanelWindow {
                             source: trayItem.modelData.icon
                             sourceSize: Qt.size(28, 28)
                             smooth: true
+                        }
+
+                        HoverHandler {
+                            id: trayHover
+                        }
+
+                        Tip {
+                            target: trayItem
+                            text: {
+                                const t = trayItem.modelData.tooltipTitle ?? "";
+                                const d = trayItem.modelData.tooltipDescription ?? "";
+                                if (t !== "" && d !== "")
+                                    return t + "\n" + d;
+                                return t !== "" ? t : d;
+                            }
+                            markup: false
+                            shown: trayItem.hovered
                         }
 
                         MouseArea {
