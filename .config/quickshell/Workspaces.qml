@@ -108,6 +108,7 @@ Pill {
             id: minimap
 
             readonly property var columns: root.activeWorkspace ? Niri.columnsOf(root.activeWorkspace.id) : []
+            readonly property int cellWidth: 28
             readonly property int cellSpacing: 0
             readonly property int maxWidth: 420
             property int cursor: -1
@@ -137,8 +138,8 @@ Pill {
                 let x = flick.contentX;
                 const i = focusedIndex();
                 if (i >= 0) {
-                    const left = i * (row.cellWidth + cellSpacing);
-                    const right = left + row.cellWidth;
+                    const left = i * (cellWidth + cellSpacing);
+                    const right = left + cellWidth;
                     if (left < x)
                         x = left;
                     else if (right > x + flick.width)
@@ -183,7 +184,7 @@ Pill {
                             readonly property int count: modelData.windows.length
                             readonly property bool focused: modelData.focused
 
-                            width: row.cellWidth
+                            width: minimap.cellWidth
                             height: 28
                             anchors.verticalCenter: parent.verticalCenter
                             radius: 5

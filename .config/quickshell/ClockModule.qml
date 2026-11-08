@@ -5,7 +5,7 @@ import Quickshell
 TextPill {
     id: root
 
-    readonly property var locale: Qt.locale("ru_RU")
+    readonly property var locale: Qt.locale("en_US")
     property bool alternate: false
 
     readonly property string calendar: {
@@ -29,16 +29,17 @@ TextPill {
         for (let i = 0; i < cells.length; i += 7)
             rows.push(cells.slice(i, i + 7).join(" "));
 
-        const title = locale.monthName(month, Locale.LongFormat) + " " + year;
+        const date = pad(today).trim().padStart(2, "0") + "." + pad(month + 1).trim().padStart(2, "0") + "." + year;
         return "<pre style='font-size:" + (Theme.fontSize - 2) + "px'>"
-            + "<span style='color:" + Theme.flamingo + "'><b>" + pad(today).trim().padStart(2, "0") + "</b></span> "
-            + "<span style='color:" + Theme.flamingo + "'><b>" + title + "</b></span>\n"
+            + "<div style='text-align: right;'>"
+            + "<span style='color:" + Theme.flamingo + "'><b>" + date + "</b></span>"
+            + "</div>"
             + "<span style='color:" + Theme.maroon + "'><b>" + weekdays + "</b></span>\n"
             + rows.join("\n") + "</pre>";
     }
 
     text: alternate
-        ? locale.toString(clock.date, "dddd MMMM dd yyyy | hh:mm:ss AP")
+        ? locale.toString(clock.date, "dddd MMMM dd yyyy | HH:mm:ss")
         : locale.toString(clock.date, "dd") + " <span style='font-size:" + (Theme.fontSize - 2) + "px'>"
             + locale.toString(clock.date, "ddd") + "</span> " + locale.toString(clock.date, "HH:mm")
     richText: true
