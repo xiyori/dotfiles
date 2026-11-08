@@ -31,6 +31,10 @@ Pill {
 
     readonly property int namedCount: 3
 
+    // Content is centered on the pill, so this height spans from the top of
+    // the bar down to the same distance below the pill center.
+    readonly property real hitHeight: 2 * (Theme.pillTop + Theme.pillHeight / 2)
+
     function iconOf(ws) {
         // Unmarked workspaces are numbered after the named ones
         return icons[ws.name ?? ""] ?? icons[String(ws.idx - namedCount)] ?? defaultIcon;
@@ -73,7 +77,7 @@ Pill {
                 required property var modelData
 
                 width: row.cellWidth
-                height: Theme.pillHeight
+                height: root.hitHeight
 
                 Text {
                     id: icon
@@ -93,6 +97,7 @@ Pill {
                     anchors.fill: parent
                     hoverEnabled: true
                     onClicked: Niri.focusWorkspace(button.modelData)
+                    onWheel: event => minimap.scroll(event.angleDelta.y)
                 }
 
                 Tip {
@@ -116,7 +121,7 @@ Pill {
 
             visible: columns.length > 0
             width: Math.min(strip.width, maxWidth)
-            height: Theme.pillHeight
+            height: root.hitHeight
 
             function focusedIndex() {
                 return columns.findIndex(c => c.focused);
@@ -129,6 +134,15 @@ Pill {
                     return;
                 cursor = target;
                 Niri.focusWindow(columns[target].targetId);
+            }
+
+            function scroll(delta) {
+                wheelAccum += delta;
+                while (Math.abs(wheelAccum) >= 120) {
+                    const dir = wheelAccum > 0 ? -1 : 1;
+                    step(dir);
+                    wheelAccum -= -dir * 120;
+                }
             }
 
             // Keep the focused column inside the visible part of the strip
@@ -220,11 +234,15 @@ Pill {
                                 }
                             }
 
+                            // Spans the full bar height, not just the cell background
                             MouseArea {
                                 id: area
-                                anchors.fill: parent
+                                anchors.verticalCenter: parent.verticalCenter
+                                width: parent.width
+                                height: root.hitHeight
                                 hoverEnabled: true
                                 onClicked: Niri.focusWindow(cell.modelData.targetId)
+                                onWheel: event => minimap.scroll(event.angleDelta.y)
                             }
 
                             Tip {
@@ -248,7 +266,7 @@ Pill {
                 required property var modelData
 
                 width: row.cellWidth
-                height: Theme.pillHeight
+                height: root.hitHeight
 
                 Text {
                     id: icon
@@ -268,6 +286,7 @@ Pill {
                     anchors.fill: parent
                     hoverEnabled: true
                     onClicked: Niri.focusWorkspace(button.modelData)
+                    onWheel: event => minimap.scroll(event.angleDelta.y)
                 }
 
                 Tip {
@@ -279,16 +298,8 @@ Pill {
             }
         }
 
-        WheelHandler {
-            acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
-            onWheel: event => {
-                minimap.wheelAccum += event.angleDelta.y;
-                while (Math.abs(minimap.wheelAccum) >= 120) {
-                    const dir = minimap.wheelAccum > 0 ? -1 : 1;
-                    minimap.step(dir);
-                    minimap.wheelAccum -= -dir * 120;
-                }
-            }
-        }
     }
+
+    // Wheel over the margins and gaps falls through to the pill's full-height area
+    onScrolled: direction => minimap.scroll(direction * 120)
 }

@@ -156,6 +156,9 @@ PanelWindow {
             rightMargin: 0
             rightPadding: 5
 
+            // Tray items handle their own clicks
+            fullHeightInteraction: false
+
             Row {
                 spacing: 9
 

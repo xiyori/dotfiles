@@ -15,6 +15,11 @@ Item {
     property real rightMargin: 10
     property string tooltip: ""
     property bool tooltipMarkup: true
+    // When true the pill adds a root-level MouseArea covering the whole bar
+    // height, so clicks and scrolling register even in the margin above and
+    // below the graphical background. It sits below the content, so content
+    // areas take priority; disable it if the content handles everything.
+    property bool fullHeightInteraction: true
     readonly property bool hovered: hover.hovered
     readonly property alias background: bg
 
@@ -35,29 +40,32 @@ Item {
         topRightRadius: root.rightRadius
         bottomRightRadius: root.rightRadius
 
-        MouseArea {
-            id: mouseArea
-            property real wheelAccum: 0
-
-            anchors.fill: parent
-            acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
-            onClicked: mouse => root.clicked(mouse.button)
-            onWheel: event => {
-                wheelAccum += event.angleDelta.y;
-                while (Math.abs(wheelAccum) >= 120) {
-                    const dir = wheelAccum > 0 ? 1 : -1;
-                    root.scrolled(dir);
-                    wheelAccum -= dir * 120;
-                }
-            }
-        }
-
         Item {
             id: holder
             width: childrenRect.width
             height: childrenRect.height
             x: root.leftPadding + (Math.max(root.minWidth, width) - width) / 2
             y: (bg.height - height) / 2
+        }
+    }
+
+    // Covers the whole bar height so clicks and scrolling register even in
+    // the margin above and below the graphical pill background.
+    MouseArea {
+        property real wheelAccum: 0
+
+        z: -1
+        visible: root.fullHeightInteraction
+        anchors.fill: parent
+        acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
+        onClicked: mouse => root.clicked(mouse.button)
+        onWheel: event => {
+            wheelAccum += event.angleDelta.y;
+            while (Math.abs(wheelAccum) >= 120) {
+                const dir = wheelAccum > 0 ? 1 : -1;
+                root.scrolled(dir);
+                wheelAccum -= dir * 120;
+            }
         }
     }
 
