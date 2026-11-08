@@ -1,0 +1,20 @@
+singleton Theme Theme.qml
+singleton Niri Niri.qml
+singleton AppIcons AppIcons.qml
+singleton Refresh Refresh.qml
+singleton SysStats SysStats.qml
+Bar Bar.qml
+BrightnessPanel BrightnessPanel.qml
+ClockModule ClockModule.qml
+NotificationsModule NotificationsModule.qml
+PanelButton PanelButton.qml
+PanelSlider PanelSlider.qml
+PanelWindowBase PanelWindowBase.qml
+Pill Pill.qml
+ScriptModule ScriptModule.qml
+SoundPanel SoundPanel.qml
+TempModule TempModule.qml
+TextPill TextPill.qml
+Tip Tip.qml
+Workspaces Workspaces.qml
+AnalogClock AnalogClock.qml
