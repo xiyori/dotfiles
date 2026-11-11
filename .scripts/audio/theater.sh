@@ -50,4 +50,7 @@ else
     for (( i=0; i<${#out_ports[@]}; i++ )); do
         pw-link "${theater_node}:${out_ports[i]}" "${sink_node}:${in_ports[i]}"
     done
+
+    echo "Home Theater" > /tmp/active_profile
+    ~/.scripts/bar_refresh soundprofile
 fi

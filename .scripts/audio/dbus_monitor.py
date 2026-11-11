@@ -17,9 +17,9 @@ def on_properties_changed(interface_name, changed_properties, invalidated_proper
     global prev_metadata
     if interface_name == "org.mpris.MediaPlayer2.Player":
         for key, properties in changed_properties.items():
-            # print(key)
+            print(key)
             if key == "PlaybackStatus":
-                # print(properties)
+                print(properties)
                 if properties == "Playing":
                     status = 1
                 elif properties == "Paused":

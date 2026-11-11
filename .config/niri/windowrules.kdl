@@ -61,20 +61,16 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"(?i)^(firefox|Tor Browser|librewolf)$"#
+    match app-id=r#"(?i)^(firefox|Tor Browser|librewolf|chromium)$"#
+    match app-id=r#"^gimp$"#
+    match app-id=r#".*VSCode$"#
     default-column-width { proportion 1.0; }
 }
 
 window-rule {
-    match app-id=r#".*VSCode$"#
-    open-maximized false
-    default-column-width { proportion 1.0; }
+    match app-id=r#"^$"#
+    default-window-height { proportion 0.5; }
 }
-
-// window-rule {
-//     match app-id=r#"^Alacritty$"#
-//     default-window-height { proportion 0.5; }
-// }
 
 window-rule {
     match title=r#"^Select fonts to remove$"#
@@ -86,13 +82,13 @@ window-rule {
 window-rule {
     match app-id=r#"(?i)^carla$"#
     open-maximized false
+    open-focused false
     open-on-workspace "Carla"
     default-column-width { proportion 1.0; }
 }
 
 window-rule {
     match app-id=r#".*telegram.*"#
-    open-maximized false
     open-on-workspace "Telegram"
     default-column-width { proportion 1.0; }
 }

@@ -44,8 +44,10 @@ binds {
     Mod+Shift+Up { move-window-up; }
     Mod+Shift+Down { move-window-down; }
 
-    Mod+Ctrl+Left { consume-or-expel-window-left; }
-    Mod+Ctrl+Right { consume-or-expel-window-right; }
+    Mod+Alt+Left { consume-or-expel-window-left; }
+    Mod+Alt+Right { consume-or-expel-window-right; }
+    Mod+BracketLeft { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
 
     Mod+Comma { set-column-width "-25%"; }
     Mod+Period { set-column-width "+25%"; }
@@ -102,6 +104,6 @@ binds {
     Mod+WheelScrollDown cooldown-ms=15 { focus-column-right; }
     Mod+Shift+WheelScrollUp cooldown-ms=15 { move-column-left; }
     Mod+Shift+WheelScrollDown cooldown-ms=15 { move-column-right; }
-    Mod+Ctrl+WheelScrollUp cooldown-ms=15 { consume-or-expel-window-left; }
-    Mod+Ctrl+WheelScrollDown cooldown-ms=15 { consume-or-expel-window-right; }
+    Mod+Alt+WheelScrollUp cooldown-ms=15 { consume-or-expel-window-left; }
+    Mod+Alt+WheelScrollDown cooldown-ms=15 { consume-or-expel-window-right; }
 }

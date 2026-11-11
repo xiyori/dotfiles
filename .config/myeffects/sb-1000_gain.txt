@@ -1,1 +1,1 @@
-Preamp: -24.0 dB
+Preamp: -21.6 dB

@@ -33,7 +33,9 @@ unlock()            { _lock u; }   # drop a lock
 # Simplest example is avoiding running multiple instances of script.
 exlock_now || exit 1
 
-volume="$(pactl get-sink-volume myeffects_sink | ~/.scripts/audio/get_pactl_volume.sh)"
+default_sink="$(pactl get-default-sink)"
+
+volume="$(pactl get-sink-volume "$default_sink" | ~/.scripts/audio/get_pactl_volume.sh)"
 case "$1" in
   up)
     delta="1"
@@ -53,9 +55,9 @@ case "$1" in
   ;;
 esac
 
-new_volume="$(echo "$volume + $delta" | bc -l | awk '{print int($1)}' | awk '$0<-53{$0=-53}$0>7{$0=7}1')"
+new_volume="$(echo "$volume + $delta" | bc -l | awk '{print int($1)}' | awk '$0<-53{$0=-53}$0>17{$0=17}1')"
 delta="$(bc -l <<< "$new_volume - $volume")"
-pactl set-sink-volume myeffects_sink "+${delta}db"
+pactl set-sink-volume "$default_sink" "+${delta}db"
 echo $((new_volume + 83)) > /tmp/loudness
 
 unlock

@@ -171,8 +171,8 @@ PanelWindow {
                         required property var modelData
                         readonly property bool hovered: trayHover.hovered
 
-                        width: 14
-                        height: 14
+                        width: 18
+                        height: 18
                         anchors.verticalCenter: parent.verticalCenter
 
                         Image {
@@ -251,6 +251,7 @@ PanelWindow {
             plainTooltip: true
             rightPadding: 17
             clickCommand: "~/.scripts/audio/next_profile.sh"
+            rightClickCommand: "~/.scripts/audio/theater.sh"
         }
 
         ScriptModule {

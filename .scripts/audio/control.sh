@@ -33,7 +33,9 @@ case "$argument" in
     ~/.scripts/bar_refresh sound
   ;;
   *)
-    if pactl list clients | grep -q "LSP Loudness Compensator Stereo"; then
+    if [[ "$(pactl get-default-sink)" == "Home Theater" ]]; then
+      ~/.scripts/audio/bypass_volume.sh "$argument"
+    elif pactl list clients | grep -q "LSP Loudness Compensator Stereo"; then
       ~/.scripts/audio/volume.sh "$argument"
     else
       ~/.scripts/audio/bypass_volume.sh "$argument"
