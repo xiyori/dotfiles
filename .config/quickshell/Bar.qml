@@ -78,7 +78,7 @@ PanelWindow {
         // }
 
         TextPill {
-            text: "\uf0a0 " + Disk.system + "%"
+            text: "\uf0a0 " + Disk.diskText
             textColor: Theme.flamingo
             minWidth: 48
             leftRadius: 0

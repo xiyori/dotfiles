@@ -1,5 +1,7 @@
 [Unit]
 Description=Monitor audio-related D-Bus events
+PartOf=graphical-session.target
+After=graphical-session.target
 
 [Service]
 StandardOutput=journal
@@ -9,4 +11,4 @@ Restart=always
 RestartSec=5
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target

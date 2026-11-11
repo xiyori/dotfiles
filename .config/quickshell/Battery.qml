@@ -15,20 +15,21 @@ Singleton {
     property int updateInterval: 2000
 
     readonly property var icons: [
-        "\ue900", // 0%
-        "\ue901", // 10%
-        "\ue902", // 20%
-        "\ue903", // 30%
-        "\ue904", // 40%
-        "\ue905", // 50%
-        "\ue906", // 60%
-        "\ue907", // 70%
-        "\ue908", // 80%
-        "\ue909"  // 90%
+        "󰁺", // 0%
+        "󰁻", // 10%
+        "󰁼", // 20%
+        "󰁽", // 30%
+        "󰁾", // 40%
+        "󰁿", // 50%
+        "󰂀", // 60%
+        "󰂁", // 70%
+        "󰂂", // 80%
+        "󰁹"  // 90%
     ]
 
-    readonly property string iconCharging: "\ue90a"  // 
-    readonly property string iconPlugged: "\ue90b"   // 
+    readonly property string iconFull: "󱟢"
+    readonly property string iconCharging: "󰂄"
+    readonly property string iconPlugged: "󰚥"
 
     readonly property int capacity: capacityBattery
     readonly property string status: batteryStatus
@@ -61,7 +62,9 @@ Singleton {
     }
 
     function getIcon(capacity) {
-        if (isCharging || batteryStatus === "Full")
+        if (batteryStatus === "Full")
+            return iconFull
+        if (isCharging)
             return iconCharging
         if (isPlugged)
             return iconPlugged

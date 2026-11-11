@@ -13,17 +13,15 @@ Singleton {
     property int updateInterval: 2000
 
     readonly property var icons: [
-        "\ue90c", // 0%
-        "\ue90d", // 10%
-        "\ue90e", // 20%
-        "\ue90f", // 30%
-        "\ue910", // 40%
-        "\ue911", // 50%
-        "\ue912", // 60%
-        "\ue913", // 70%
-        "\ue914", // 80%
-        "\ue915", // 90%
-        "\ue916"  // 100%
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
     ]
 
     readonly property int percent: backlightPercent
@@ -49,7 +47,7 @@ Singleton {
     }
 
     function getIcon(percent) {
-        const idx = Math.min(10, Math.floor(percent / 10))
+        const idx = Math.min(icons.length - 1, Math.floor(percent * icons.length / 100))
         return icons[idx]
     }
 
