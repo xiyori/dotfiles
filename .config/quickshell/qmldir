@@ -3,6 +3,9 @@ singleton Niri Niri.qml
 singleton AppIcons AppIcons.qml
 singleton Refresh Refresh.qml
 singleton SysStats SysStats.qml
+singleton Battery Battery.qml
+singleton Backlight Backlight.qml
+singleton Disk Disk.qml
 Bar Bar.qml
 BrightnessPanel BrightnessPanel.qml
 ClockModule ClockModule.qml

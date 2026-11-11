@@ -45,7 +45,7 @@ Item {
             width: childrenRect.width
             height: childrenRect.height
             x: root.leftPadding + (Math.max(root.minWidth, width) - width) / 2
-            y: (bg.height - height) / 2
+            y: (bg.height - height) / 2 + 0.5
         }
     }
 

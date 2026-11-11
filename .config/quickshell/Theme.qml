@@ -30,6 +30,6 @@ Singleton {
 
     readonly property int barHeight: 50
     readonly property int pillTop: 10
-    readonly property int pillHeight: 36
+    readonly property int pillHeight: 38
     readonly property int radius: 8
 }

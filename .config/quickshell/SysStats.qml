@@ -4,7 +4,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 
-// Replacements for waybar's cpu, memory, temperature and disk modules.
+// Replacements for waybar's cpu, memory, and temperature modules.
 Singleton {
     id: root
 
@@ -12,8 +12,6 @@ Singleton {
     property int memory: 0
     property real cpuTemp: -1
     property real gpuTemp: -1
-    property int diskSystem: 0
-    property int diskData: 0
 
     property var lastCpu: null
 
@@ -64,25 +62,6 @@ Singleton {
         onLoadFailed: root.gpuTemp = -1
     }
 
-    // Prints "<total blocks> <available blocks>" for / and /mnt/data
-    Process {
-        id: disks
-        command: ["stat", "-f", "-c", "%b %a", "/", "/mnt/data"]
-        stdout: StdioCollector {
-            onStreamFinished: {
-                const used = line => {
-                    const [total, avail] = line.split(" ").map(Number);
-                    return total > 0 ? Math.round(100 * (total - avail) / total) : 0;
-                };
-                const lines = text.trim().split("\n");
-                if (lines.length >= 1)
-                    root.diskSystem = used(lines[0]);
-                if (lines.length >= 2)
-                    root.diskData = used(lines[1]);
-            }
-        }
-    }
-
     Timer {
         interval: 2000
         running: true
@@ -93,8 +72,6 @@ Singleton {
             meminfoFile.reload();
             cpuTempFile.reload();
             gpuTempFile.reload();
-            if (!disks.running)
-                disks.running = true;
         }
     }
 }

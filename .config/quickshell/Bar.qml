@@ -27,7 +27,7 @@ PanelWindow {
             fontSize: 24
             tooltip: "Launcher"
             leftPadding: 10
-            rightPadding: 16
+            rightPadding: 10
             clickCommand: "pkill rofi || ~/GitHub/rofi/build/rofi -show drun"
         }
 
@@ -65,35 +65,53 @@ PanelWindow {
             rightPadding: 5
         }
 
-        TempModule {
-            temp: SysStats.gpuTemp
-            critical: 70
-            levelIcons: ["\uefa7"]
+        // TempModule {
+        //     temp: SysStats.gpuTemp
+        //     critical: 70
+        //     levelIcons: ["\uefa7"]
+        //     minWidth: 48
+        //     leftRadius: 0
+        //     rightRadius: 0
+        //     rightMargin: 0
+        //     leftPadding: 5
+        //     rightPadding: 5
+        // }
+
+        TextPill {
+            text: "\uf0a0 " + Disk.system + "%"
+            textColor: Theme.flamingo
             minWidth: 48
             leftRadius: 0
             rightRadius: 0
             rightMargin: 0
             leftPadding: 5
             rightPadding: 5
+            tooltip: Disk.diskTooltip
         }
 
         TextPill {
-            text: "\uf0a0 " + SysStats.diskSystem + "%,"
-            textColor: Theme.flamingo
-            minWidth: 48
+            text: Battery.getStatusIcon() + " " + Battery.capacity + "%"
+            textColor: Battery.isCharging ? Theme.green : Theme.text
+            minWidth: 40
             leftRadius: 0
             rightRadius: 0
             rightMargin: 0
             leftPadding: 5
-            rightPadding: 2
+            rightPadding: 5
+            tooltip: Battery.getTooltip()
         }
 
         TextPill {
-            text: SysStats.diskData + "%"
-            textColor: Theme.flamingo
-            minWidth: 24
+            text: Backlight.getIcon(Backlight.percent) + " " + Backlight.percent + "%"
+            textColor: Theme.mauve
+            minWidth: 40
             leftRadius: 0
-            leftPadding: 0
+            leftPadding: 5
+            tooltip: Backlight.getTooltip()
+            clickCommand: "~/.scripts/brightness.sh custom_action"
+            rightClickCommand: "~/.scripts/brightness.sh down"
+            scrollUpCommand: "~/.scripts/brightness.sh up"
+            scrollDownCommand: "~/.scripts/brightness.sh down"
         }
 
         ScriptModule {
@@ -249,7 +267,6 @@ PanelWindow {
             signalName: "soundprofile"
             textColor: Theme.subtext1
             plainTooltip: true
-            rightPadding: 17
             clickCommand: "~/.scripts/audio/next_profile.sh"
             rightClickCommand: "~/.scripts/audio/theater.sh"
         }
@@ -300,7 +317,7 @@ PanelWindow {
             fontSize: 16
             tooltip: "Power"
             leftPadding: 12
-            rightPadding: 16
+            rightPadding: 12
             rightMargin: 0
             clickCommand: "~/.scripts/logout.sh"
             rightClickCommand: "~/.scripts/wallpaper.sh next"
