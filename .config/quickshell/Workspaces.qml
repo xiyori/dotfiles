@@ -33,7 +33,7 @@ Pill {
 
     // Content is centered on the pill, so this height spans from the top of
     // the bar down to the same distance below the pill center.
-    readonly property real hitHeight: 2 * (Theme.pillTop + Theme.pillHeight / 2)
+    readonly property real hitHeight: 2 * Theme.pillTop + Theme.pillHeight
 
     function iconOf(ws) {
         // Unmarked workspaces are numbered after the named ones

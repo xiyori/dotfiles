@@ -38,6 +38,9 @@ PanelWindow {
             rightRadius: 0
             rightMargin: 0
             rightPadding: 5
+            tooltip: SysStats.cpuUsageByCore.length > 0 ? (
+                SysStats.cpuUsageByCore.map((u, i) => `Core ${i}: ${u}%`).join("\n")
+            ) : "CPU: " + SysStats.cpu + "%"
             clickCommand: "alacritty -e btop"
         }
 
@@ -50,6 +53,9 @@ PanelWindow {
             rightMargin: 0
             leftPadding: 5
             rightPadding: 5
+            tooltip: SysStats.memoryTotalGB > 0 ? (
+                "RAM: " + SysStats.memoryUsedGB.toFixed(1) + "GB / " + SysStats.memoryTotalGB.toFixed(1) + "GB"
+            ) : ""
             clickCommand: "alacritty -e btop"
         }
 
@@ -63,6 +69,8 @@ PanelWindow {
             rightMargin: 0
             leftPadding: 5
             rightPadding: 5
+            tooltip: (SysStats.cpuFanSpeed >= 0 ? "CPU Fan: " + SysStats.cpuFanSpeed + " RPM" : "") +
+                (SysStats.pumpSpeed >= 0 ? "\nPump: " + SysStats.pumpSpeed + " RPM" : "")
         }
 
         // TempModule {
@@ -75,6 +83,8 @@ PanelWindow {
         //     rightMargin: 0
         //     leftPadding: 5
         //     rightPadding: 5
+        //     tooltip: (SysStats.gpuFanSpeed >= 0 ? "GPU Fan: " + SysStats.gpuFanSpeed + " RPM" : "") +
+        //         (SysStats.intakeFanSpeed >= 0 ? "\nIntake Fan: " + SysStats.intakeFanSpeed + " RPM" : "")
         // }
 
         TextPill {
@@ -91,7 +101,8 @@ PanelWindow {
 
         TextPill {
             text: Battery.getStatusIcon() + " " + Battery.capacity + "%"
-            textColor: Battery.isCharging ? Theme.green : Theme.text
+            textColor: Battery.isCharging ? Theme.green : Battery.flashRed ? Theme.base : Battery.isLow ? Theme.red : Theme.text
+            backgroundColor: Battery.flashRed ? Theme.red : Theme.surface0
             minWidth: 40
             leftRadius: 0
             rightRadius: 0

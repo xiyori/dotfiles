@@ -48,7 +48,7 @@ Singleton {
 
     function getIcon(percent) {
         const idx = Math.min(icons.length - 1, Math.floor(percent * icons.length / 100))
-        return icons[idx]
+        return icons[idx] ?? ""
     }
 
     function getTooltip() {

@@ -35,6 +35,8 @@ Singleton {
     readonly property string status: batteryStatus
     readonly property bool isCharging: batteryStatus === "Charging"
     readonly property bool isPlugged: batteryStatus === "Full" || batteryStatus === "Charging"
+    readonly property bool isLow: capacityBattery < 25
+    readonly property bool isCritical: capacityBattery < 15
 
     property int capacityBattery: 0
     property string batteryStatus: "Unknown"
@@ -68,8 +70,8 @@ Singleton {
             return iconCharging
         if (isPlugged)
             return iconPlugged
-        const idx = Math.min(9, Math.floor(capacity / 10))
-        return icons[idx]
+        const idx = Math.min(icons.length - 1, Math.floor(capacity * icons.length / 100))
+        return icons[idx] ?? ""
     }
 
     function getFormattedTime() {
@@ -117,6 +119,18 @@ Singleton {
         onTriggered: {
             capacityProc.running = true
             statusProc.running = true
+        }
+    }
+
+    property bool flashRed: false
+
+    Timer {
+        interval: updateInterval
+        running: root.isCritical
+        repeat: true
+        triggeredOnStart: true
+        onTriggered: {
+            root.flashRed = !root.flashRed
         }
     }
 }

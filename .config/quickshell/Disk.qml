@@ -34,7 +34,7 @@ Singleton {
             const path = root.paths[i]
             const total = Math.round(root.diskTotals[i])
             const used = Math.round(total - root.diskAvails[i])
-            labels.push(`${path}: ${used}${unit} of ${total}${unit} used`)
+            labels.push(`${path}: ${used}${unit} / ${total}${unit} used`)
         }
         root.diskTooltip = labels.join("\n")
     }

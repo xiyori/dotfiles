@@ -15,6 +15,7 @@ Item {
     property real rightMargin: 10
     property string tooltip: ""
     property bool tooltipMarkup: true
+    property color backgroundColor: Theme.surface0
     // When true the pill adds a root-level MouseArea covering the whole bar
     // height, so clicks and scrolling register even in the margin above and
     // below the graphical background. It sits below the content, so content
@@ -34,11 +35,15 @@ Item {
         y: Theme.pillTop
         height: Theme.pillHeight
         width: Math.max(root.minWidth, holder.width) + root.leftPadding + root.rightPadding
-        color: Theme.surface0
+        color: backgroundColor
         topLeftRadius: root.leftRadius
         bottomLeftRadius: root.leftRadius
         topRightRadius: root.rightRadius
         bottomRightRadius: root.rightRadius
+
+        Behavior on color {
+            ColorAnimation { duration: 500 }
+        }
 
         Item {
             id: holder
