@@ -33,6 +33,7 @@ case "$argument" in
 esac
 
 if [[ "$notify" == "notify" && -n "$new" ]]; then
-  # icon="$(~/.scripts/audio/volume_icon.sh)"
   notify-send -e -h int:value:"$new" -h string:x-canonical-private-synchronous:brightness_notif -h boolean:SWAYNC_BYPASS_DND:true -u low --expire-time 1000 "󰃟  ${new}%"
 fi
+
+~/.scripts/bar_refresh brightness
