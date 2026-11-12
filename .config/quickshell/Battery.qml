@@ -9,7 +9,6 @@ import Quickshell.Io
 Singleton {
     id: root
 
-    property string bat: ""
     property int warning: 30
     property int critical: 10
     property int updateInterval: 2000
@@ -40,74 +39,71 @@ Singleton {
 
     property int capacityBattery: 0
     property string batteryStatus: "Unknown"
+    property string batteryTime: ""
+    property int healthBattery: 0
 
-    function updateCapacity(text) {
+    function updateInfo(text) {
         const lines = text.trim().split("\n")
         for (const line of lines) {
-            const match = line.match(/POWER_SUPPLY_CAPACITY=(\d+)/)
-            if (match) {
-                capacityBattery = parseInt(match[1])
-                return
+            {
+                const match = line.match(/percentage:\s*(\d+).*/)
+                if (match) {
+                    capacityBattery = parseInt(match[1])
+                    continue
+                }
+            }
+            {
+                const match = line.match(/state:\s*([a-z]+)/)
+                if (match) {
+                    batteryStatus = match[1]
+                    continue
+                }
+            }
+            {
+                const match = line.match(/time to empty:\s*(.+)/)
+                if (match) {
+                    batteryTime = match[1]
+                    continue
+                }
+
+            }            
+            {
+                const match = line.match(/capacity:\s*(\d+).*/)
+                if (match) {
+                    healthBattery = parseInt(match[1])
+                    continue
+                }
             }
         }
-    }
-
-    function updateStatus(text) {
-        const lines = text.trim().split("\n")
-        for (const line of lines) {
-            const match = line.match(/POWER_SUPPLY_STATUS=(\w+)/)
-            if (match) {
-                batteryStatus = match[1]
-                return
-            }
-        }
-    }
-
-    function getIcon(capacity) {
-        if (batteryStatus === "Full")
-            return iconFull
-        if (isCharging)
-            return iconCharging
-        if (isPlugged)
-            return iconPlugged
-        const idx = Math.min(icons.length - 1, Math.floor(capacity * icons.length / 100))
-        return icons[idx] ?? ""
-    }
-
-    function getFormattedTime() {
-        // Get remaining time in format HH:MM
-        // This is a simplified implementation
-        return ""
+        if (!root.isCritical)
+            flashRed = false
     }
 
     function getStatusIcon() {
-        if (isCharging)
+        if (batteryStatus === "full")
+            return iconFull
+        if (batteryStatus === "charging")
             return iconCharging
-        if (isPlugged)
+        if (batteryStatus === "plugged")
             return iconPlugged
-        return getIcon(capacityBattery)
+        const idx = Math.min(icons.length - 1, Math.floor(capacityBattery * icons.length / 100))
+        return icons[idx] ?? ""
     }
 
     function getTooltip() {
-        const time = getFormattedTime()
-        if (time !== "")
-            return `${batteryStatus}: ${capacityBattery}% (${time})`
-        return `${batteryStatus}: ${capacityBattery}%`
+        var tooltip = `${batteryStatus.charAt(0).toUpperCase() + batteryStatus.slice(1)}`
+        if (batteryTime !== "")
+            tooltip += `\n${batteryTime} left`
+        if (healthBattery !== 0)
+            tooltip += `\nHealth: ${healthBattery}%`
+        return tooltip
     }
 
     Process {
-        id: capacityProc
-        command: ["sh", "-c", `cat /sys/class/power_supply/${bat === '' ? '' : bat + '/'}capacity 2>/dev/null || echo 0`]
+        id: infoProc
+        command: ["sh", "-c", `upower -i "$(upower -e | grep BAT | head -1)"`]
         stdout: StdioCollector {
-            onStreamFinished: root.updateCapacity(text)
-        }
-    }
-
-    Process {
-        id: statusProc
-        command: ["sh", "-c", `cat /sys/class/power_supply/${bat === '' ? '' : bat + '/'}status 2>/dev/null || echo Unknown`]
-        stdout: StdioCollector {
-            onStreamFinished: root.updateStatus(text)
+            onStreamFinished: root.updateInfo(text)
         }
     }
 
@@ -117,8 +113,7 @@ Singleton {
         repeat: true
         triggeredOnStart: true
         onTriggered: {
-            capacityProc.running = true
-            statusProc.running = true
+            infoProc.running = true
         }
     }
 

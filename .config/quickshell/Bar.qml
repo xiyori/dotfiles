@@ -132,12 +132,12 @@ PanelWindow {
             rightPadding: 11
         }
 
-        ScriptModule {
-            exec: "~/.scripts/fancontrol_status.sh"
-            interval: 60
-            textColor: Theme.red
-            rightPadding: 11
-        }
+        // ScriptModule {
+        //     exec: "~/.scripts/fancontrol_status.sh"
+        //     interval: 60
+        //     textColor: Theme.red
+        //     rightPadding: 11
+        // }
 
         ScriptModule {
             exec: "cat /tmp/custom_monitor_waybar"

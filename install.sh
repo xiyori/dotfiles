@@ -138,6 +138,7 @@ install_essential () {
         "qt5-wayland"
         "qt6-wayland"
         "libinput-tools"
+        "upower" # battery management
 
         # wifi - network management
         "networkmanager" # for network management
