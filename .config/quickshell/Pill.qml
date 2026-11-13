@@ -34,7 +34,7 @@ Item {
         id: bg
         y: Theme.pillTop
         height: Theme.pillHeight
-        width: Math.max(root.minWidth, holder.width) + root.leftPadding + root.rightPadding
+        width: Math.ceil(Math.max(root.minWidth, holder.width)) + root.leftPadding + root.rightPadding
         color: backgroundColor
         topLeftRadius: root.leftRadius
         bottomLeftRadius: root.leftRadius
@@ -49,8 +49,8 @@ Item {
             id: holder
             width: childrenRect.width
             height: childrenRect.height
-            x: root.leftPadding + (Math.max(root.minWidth, width) - width) / 2
-            y: (bg.height - height) / 2 + 0.5
+            x: root.leftPadding + Math.ceil(Math.max(root.minWidth, width) - width) / 2
+            y: (bg.height - height) / 2
         }
     }
 

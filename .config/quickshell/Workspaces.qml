@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell
+import Quickshell.Io
 
 // Non-empty inactive workspaces as icons; the active workspace is rendered
 // as a minimap of its niri columns in its position. Click a column to focus
@@ -40,8 +41,16 @@ Pill {
         return icons[ws.name ?? ""] ?? icons[String(ws.idx - namedCount)] ?? defaultIcon;
     }
 
-    leftPadding: 8
-    rightPadding: 8
+    property bool isScrolling: false
+
+    Timer {
+        id: scrollCooldown
+        interval: 250 // Slightly longer than the 150ms flick animation
+        onTriggered: root.isScrolling = false
+    }
+
+    leftPadding: 6
+    rightPadding: 6
 
     // Rebuild the icon delegates only when something visible changed
     property var iconModelBefore: []
@@ -75,6 +84,7 @@ Pill {
                 id: button
 
                 required property var modelData
+                readonly property bool hovered: area.containsMouse && !root.isScrolling
 
                 width: row.cellWidth
                 height: root.hitHeight
@@ -83,11 +93,12 @@ Pill {
                     id: icon
                     anchors.centerIn: parent
                     text: root.iconOf(button.modelData)
-                    color: area.containsMouse ? Theme.text : Theme.overlay1
+                    color: button.hovered ? Theme.text : Theme.overlay1
                     font.family: Theme.font
                     font.pixelSize: 15
 
                     Behavior on color {
+                        enabled: !root.isScrolling
                         ColorAnimation { duration: 150 }
                     }
                 }
@@ -104,7 +115,7 @@ Pill {
                     target: icon
                     markup: false
                     text: button.modelData.name ? button.modelData.name : "Workspace " + (button.modelData.idx - root.namedCount)
-                    shown: area.containsMouse
+                    shown: button.hovered
                 }
             }
         }
@@ -113,7 +124,6 @@ Pill {
             id: minimap
 
             readonly property var columns: root.activeWorkspace ? Niri.columnsOf(root.activeWorkspace.id) : []
-            readonly property int cellWidth: 28
             readonly property int cellSpacing: 0
             readonly property int maxWidth: 420
             property int cursor: -1
@@ -123,24 +133,35 @@ Pill {
             width: Math.min(strip.width, maxWidth)
             height: root.hitHeight
 
+            Process {
+                id: scrollRunner
+                property string direction: "next"
+                command: ["sh", "-c", "~/.scripts/workspace_swipe.py " + direction]
+            }
+
             function focusedIndex() {
                 return columns.findIndex(c => c.focused);
             }
 
-            function step(direction) {
-                const base = cursor >= 0 ? cursor : focusedIndex();
-                const target = Math.max(0, Math.min(columns.length - 1, (base < 0 ? 0 : base) + direction));
-                if (target === base)
-                    return;
-                cursor = target;
-                Niri.focusWindow(columns[target].targetId);
-            }
+            // function step(direction) {
+            //     const base = cursor >= 0 ? cursor : focusedIndex();
+            //     const target = Math.max(0, Math.min(columns.length - 1, (base < 0 ? 0 : base) + direction));
+            //     if (target === base)
+            //         return;
+            //     cursor = target;
+            //     Niri.focusWindow(columns[target].targetId);
+            // }
 
             function scroll(delta) {
+                root.isScrolling = true;
+                scrollCooldown.restart();
+
                 wheelAccum += delta;
                 while (Math.abs(wheelAccum) >= 120) {
                     const dir = wheelAccum > 0 ? -1 : 1;
-                    step(dir);
+                    const dirText = dir < 0 ? "prev" : "next";
+                    scrollRunner.direction = dirText;
+                    scrollRunner.running = true;
                     wheelAccum -= -dir * 120;
                 }
             }
@@ -152,8 +173,8 @@ Pill {
                 let x = flick.contentX;
                 const i = focusedIndex();
                 if (i >= 0) {
-                    const left = i * (cellWidth + cellSpacing);
-                    const right = left + cellWidth;
+                    const left = i * (row.cellWidth + cellSpacing);
+                    const right = left + row.cellWidth;
                     if (left < x)
                         x = left;
                     else if (right > x + flick.width)
@@ -197,14 +218,16 @@ Pill {
 
                             readonly property int count: modelData.windows.length
                             readonly property bool focused: modelData.focused
+                            readonly property bool hovered: area.containsMouse && !root.isScrolling
 
-                            width: minimap.cellWidth
-                            height: 28
+                            width: row.cellWidth
+                            height: Theme.pillHeight - 10
                             anchors.verticalCenter: parent.verticalCenter
                             radius: 5
-                            color: focused ? Theme.surface3 : (area.containsMouse ? Theme.surface1 : "transparent")
+                            color: focused ? Theme.surface3 : (cell.hovered ? Theme.surface1 : "transparent")
 
                             Behavior on color {
+                                enabled: !root.isScrolling
                                 ColorAnimation { duration: 150 }
                             }
 
@@ -223,11 +246,12 @@ Pill {
 
                                         // horizontalAlignment: Text.AlignHLeft
                                         text: AppIcons.iconFor(modelData.appId, modelData.title)
-                                        color: cell.focused ? Theme.pink : (area.containsMouse ? Theme.text : Theme.overlay1)
+                                        color: cell.focused ? Theme.pink : (cell.hovered ? Theme.text : Theme.overlay1)
                                         font.family: Theme.font
                                         font.pixelSize: cell.count === 1 ? 15 : 10
 
                                         Behavior on color {
+                                            enabled: !root.isScrolling
                                             ColorAnimation { duration: 150 }
                                         }
                                     }
@@ -249,7 +273,7 @@ Pill {
                                 target: cell
                                 markup: false
                                 text: cell.modelData.windows.map(w => w.title || w.appId).join("\n")
-                                shown: area.containsMouse
+                                shown: cell.hovered
                             }
                         }
                     }
@@ -264,6 +288,7 @@ Pill {
                 id: button
 
                 required property var modelData
+                readonly property bool hovered: area.containsMouse && !root.isScrolling
 
                 width: row.cellWidth
                 height: root.hitHeight
@@ -272,11 +297,12 @@ Pill {
                     id: icon
                     anchors.centerIn: parent
                     text: root.iconOf(button.modelData)
-                    color: area.containsMouse ? Theme.text : Theme.overlay1
+                    color: button.hovered ? Theme.text : Theme.overlay1
                     font.family: Theme.font
                     font.pixelSize: 15
 
                     Behavior on color {
+                        enabled: !root.isScrolling
                         ColorAnimation { duration: 150 }
                     }
                 }
@@ -293,7 +319,7 @@ Pill {
                     target: icon
                     markup: false
                     text: button.modelData.name ? button.modelData.name : "Workspace " + (button.modelData.idx - root.namedCount)
-                    shown: area.containsMouse
+                    shown: button.hovered
                 }
             }
         }

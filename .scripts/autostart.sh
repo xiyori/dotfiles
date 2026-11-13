@@ -36,6 +36,7 @@ killall wlsunset ; wlsunset -l $LATITUDE -L $LONGITUDE > /tmp/wlsunset.log 2>&1 
 
 # audio
 ~/.scripts/audio/startup.sh
+~/.scripts/empty_workspace.sh
 
 # quickshell (bar & touch widgets)
 echo "" > /tmp/custom_monitor_waybar
