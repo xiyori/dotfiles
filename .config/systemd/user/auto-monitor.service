@@ -1,5 +1,7 @@
 [Unit]
 Description=Detect external monitor connection
+PartOf=graphical-session.target
+After=graphical-session.target
 
 [Service]
 StandardOutput=journal

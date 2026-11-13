@@ -72,7 +72,6 @@ install_essential () {
         # Desktop Customization
         "awww" # for wallpapers
         "lxappearance" # for theming
-        "qt5ct" # for theming
         "catppuccin-gtk-theme-mocha" # for theming
         "bibata-cursor-theme" # for theming
         "papirus-icon-theme" # for theming

@@ -32,7 +32,8 @@ Singleton {
         "class<mpv>": "\uf36e",
         "class<libreoffice-writer>": "\u{f0219}",
         "class<libreoffice-calc>": "\uf0ce",
-        "class<Throne>": "\u{f0582}"
+        "class<Throne>": "\u{f0582}",
+        "class<.*obsproject.*>": ""
     })
 
     readonly property var rules: {

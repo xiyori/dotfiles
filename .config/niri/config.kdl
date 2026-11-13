@@ -15,6 +15,19 @@ switch-events {
     lid-close { spawn "~/.scripts/suspend.sh"; }
 }
 
+layout {
+    preset-column-widths {
+        proportion 0.25
+        proportion 0.5
+        proportion 0.75
+        proportion 1.0
+        // You can also add custom fractions or fixed pixel sizes:
+        // proportion 0.25
+        // proportion 0.75
+        // fixed 1280
+    }
+}
+
 spawn-sh-at-startup "~/.scripts/autostart.sh"
 spawn-at-startup "swayidle" "-w"
 

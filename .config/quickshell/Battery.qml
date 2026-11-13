@@ -11,7 +11,8 @@ Singleton {
 
     property int warning: 30
     property int critical: 10
-    property int updateInterval: 2000
+    property int updateInterval: 5000
+    property int flashInterval: 2000
 
     readonly property var icons: [
         "󰁺", // 0%
@@ -32,8 +33,7 @@ Singleton {
 
     readonly property int capacity: capacityBattery
     readonly property string status: batteryStatus
-    readonly property bool isCharging: batteryStatus === "Charging"
-    readonly property bool isPlugged: batteryStatus === "Full" || batteryStatus === "Charging"
+    readonly property bool isPlugged: batteryStatus === "fully-charged" || batteryStatus === "charging" || batteryStatus === "pending-charge" || batteryStatus === "pending-discharge"
     readonly property bool isLow: capacityBattery < 25
     readonly property bool isCritical: capacityBattery < 15
 
@@ -53,7 +53,7 @@ Singleton {
                 }
             }
             {
-                const match = line.match(/state:\s*([a-z]+)/)
+                const match = line.match(/state:\s*([a-z\-]+)/)
                 if (match) {
                     batteryStatus = match[1]
                     continue
@@ -80,11 +80,11 @@ Singleton {
     }
 
     function getStatusIcon() {
-        if (batteryStatus === "full")
+        if (batteryStatus === "fully-charged")
             return iconFull
         if (batteryStatus === "charging")
             return iconCharging
-        if (batteryStatus === "plugged")
+        if (batteryStatus === "pending-charge" || batteryStatus === "pending-discharge")
             return iconPlugged
         const idx = Math.min(icons.length - 1, Math.floor(capacityBattery * icons.length / 100))
         return icons[idx] ?? ""
@@ -108,7 +108,7 @@ Singleton {
     }
 
     Timer {
-        interval: updateInterval
+        interval: root.updateInterval
         running: true
         repeat: true
         triggeredOnStart: true
@@ -120,7 +120,7 @@ Singleton {
     property bool flashRed: false
 
     Timer {
-        interval: updateInterval
+        interval: root.flashInterval
         running: root.isCritical
         repeat: true
         triggeredOnStart: true
