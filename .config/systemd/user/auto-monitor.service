@@ -1,7 +1,8 @@
 [Unit]
 Description=Detect external monitor connection
 PartOf=graphical-session.target
-After=graphical-session.target
+After=graphical-session.target niri.service
+Requisite=graphical-session.target
 
 [Service]
 StandardOutput=journal
@@ -11,4 +12,4 @@ Restart=always
 RestartSec=5
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=niri.service

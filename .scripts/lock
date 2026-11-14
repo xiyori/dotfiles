@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
 niri msg action switch-layout 0
-pgrep -x swaylock || swaylock -f -i "$(~/.scripts/wallpaper.sh query)"
+pgrep -x swaylock || swaylock -i "$(~/.scripts/wallpaper.sh query)"

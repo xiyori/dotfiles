@@ -29,6 +29,7 @@ if [[ "$(wpctl status | grep -F ". myeffects_sink")" =~ $regex ]]; then
             ~/.scripts/audio/link_nodes.sh
         fi
         ~/.scripts/audio/detect_sink_change.sh
+        systemctl --user start dbus-monitor.service
     fi
 else
     echo "audio effects startup failed"

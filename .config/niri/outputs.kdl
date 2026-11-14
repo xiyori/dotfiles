@@ -4,7 +4,13 @@ output "eDP-1" {
 }
 
 output "HDMI-A-1" {
-    mode "3840x2160@144.000"
+    mode "3840x2160@143.851"
+    scale 2
+    position x=0 y=0
+}
+
+output "HDMI-A-5" {
+    mode "3840x2160@143.851"
     scale 2
     position x=0 y=0
 }

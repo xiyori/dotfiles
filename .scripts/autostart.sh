@@ -3,18 +3,17 @@
 # lock & wallpaper
 ~/.scripts/wallpaper.sh init  # should be instanteneous
 
-( ~/.scripts/lock || niri msg action quit --skip-confirmation ) &
+( ~/.scripts/lock || niri msg action quit --skip-confirmation ; ~/.scripts/empty_workspace.sh ) &
+
+# https://yalter.github.io/niri/Important-Software.html
+systemctl --user import-environment LATITUDE LONGITUDE  # DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+# dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all
+
 awww-daemon > /tmp/awww.log 2>&1 & disown
 awww img "$(~/.scripts/wallpaper.sh query)" -t none
 
 # Policy Authentication Agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 2>&1 & disown
-
-# https://yalter.github.io/niri/Important-Software.html
-
-( systemctl --user import-environment LATITUDE LONGITUDE
-dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all
-) &
 
 # monitors
 ( xrdb -merge ~/.Xresources ; ~/.scripts/startup_monitor.sh ) &
@@ -36,7 +35,6 @@ killall wlsunset ; wlsunset -l $LATITUDE -L $LONGITUDE > /tmp/wlsunset.log 2>&1 
 
 # audio
 ~/.scripts/audio/startup.sh
-~/.scripts/empty_workspace.sh
 
 # quickshell (bar & touch widgets)
 echo "" > /tmp/custom_monitor_waybar
