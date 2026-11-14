@@ -69,12 +69,12 @@ PanelWindow {
             rightMargin: 0
             leftPadding: 5
             rightPadding: 5
-            tooltip: (SysStats.cpuFanSpeed >= 0 ? "CPU Fan: " + SysStats.cpuFanSpeed + " RPM" : "") +
-                (SysStats.pumpSpeed >= 0 ? "\nPump: " + SysStats.pumpSpeed + " RPM" : "")
+            tooltip: (GpuStats.cpuPwm >= 0 ? "CPU Fan: " + GpuStats.cpuPwm + "%" : "") +
+                (GpuStats.pumpPwm >= 0 ? "\nPump: " + GpuStats.pumpPwm + "%" : "")
         }
 
         // TempModule {
-        //     temp: SysStats.gpuTemp
+        //     temp: GpuStats.gpuTemp
         //     critical: 70
         //     levelIcons: ["\uefa7"]
         //     minWidth: 48
@@ -83,8 +83,7 @@ PanelWindow {
         //     rightMargin: 0
         //     leftPadding: 5
         //     rightPadding: 5
-        //     tooltip: (SysStats.gpuFanSpeed >= 0 ? "GPU Fan: " + SysStats.gpuFanSpeed + " RPM" : "") +
-        //         (SysStats.intakeFanSpeed >= 0 ? "\nIntake Fan: " + SysStats.intakeFanSpeed + " RPM" : "")
+        //     tooltip: GpuStats.gpuInfo
         // }
 
         TextPill {
@@ -100,29 +99,29 @@ PanelWindow {
         }
 
         TextPill {
-            text: Battery.getStatusIcon() + " " + Battery.capacity + "%"
-            textColor: Battery.isCharging ? Theme.green : Battery.flashRed ? Theme.base : Battery.isLow ? Theme.red : Theme.text
-            backgroundColor: Battery.flashRed ? Theme.red : Theme.surface0
+            text: Backlight.getIcon(Backlight.percent) + " " + Backlight.percent + "%"
+            textColor: Theme.mauve
             minWidth: 40
             leftRadius: 0
             rightRadius: 0
             rightMargin: 0
             leftPadding: 5
             rightPadding: 5
-            tooltip: Battery.getTooltip()
-        }
-
-        TextPill {
-            text: Backlight.getIcon(Backlight.percent) + " " + Backlight.percent + "%"
-            textColor: Theme.mauve
-            minWidth: 40
-            leftRadius: 0
-            leftPadding: 5
             tooltip: Backlight.getTooltip()
             clickCommand: "~/.scripts/brightness.sh custom_action"
             rightClickCommand: "~/.scripts/brightness.sh down"
             scrollUpCommand: "~/.scripts/brightness.sh up"
             scrollDownCommand: "~/.scripts/brightness.sh down"
+        }
+
+        TextPill {
+            text: Battery.getStatusIcon() + " " + Battery.capacity + "%"
+            textColor: Battery.isPlugged ? Theme.green : Battery.flashRed ? Theme.base : Battery.isLow ? Theme.red : Theme.text
+            backgroundColor: Battery.flashRed ? Theme.red : Theme.surface0
+            minWidth: 40
+            leftRadius: 0
+            leftPadding: 5
+            tooltip: Battery.getTooltip()
         }
 
         ScriptModule {
@@ -180,7 +179,7 @@ PanelWindow {
         Pill {
             id: tray
 
-            visible: SystemTray.items.values.length > 0
+            // visible: SystemTray.items.values.length > 0
             rightRadius: 0
             rightMargin: 0
             rightPadding: 5
