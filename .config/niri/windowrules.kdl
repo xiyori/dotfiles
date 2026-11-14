@@ -98,3 +98,9 @@ window-rule {
     open-on-workspace "Music"
     default-column-width { proportion 1.0; }
 }
+
+window-rule {
+    match title=r#".* \(GUI\)$"#
+    exclude app-id="."
+    open-floating true
+}

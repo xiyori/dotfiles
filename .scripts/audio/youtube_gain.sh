@@ -36,40 +36,69 @@ exlock_now || exit 1
 pactl list clients | grep -q "LSP Loudness Compensator Stereo" || exit 0
 [[ "$(cat /tmp/auto_gain_enabled)" -eq 1 ]] && exit 0
 
-flag=0
-i=0
-while [[ "$flag" -eq 0 && "$i" -lt 20 ]]; do
-    volume="$(pactl get-sink-volume myeffects_sink | ~/.scripts/audio/get_pactl_volume.sh)"
-    n_non_browser="$(pactl list sink-inputs | awk '/Corked:|application.name / {print $0};' | grep --after-context 1 "Corked: no" | grep "application.name" | grep -v "LibreWolf" | grep -v "Firefox" | grep -v "Tor Browser" | grep -v "Chromium" | wc -l)"
-    active_sources="$(pactl list sink-inputs | awk '/Corked:|Volume:|media.name / {print $0};' | grep --after-context 2 "Corked: no" | grep --before-context 1 -e " - YouTube" -e "AudioStream")"
+KEYWORD="- YouTube"
+BROWSERS="LibreWolf|Firefox|Tor Browser|Chromium"
 
-    unset new_volume
-    if [[ "$(echo "$active_sources" | wc -l)" -eq 2 && "$n_non_browser" -eq 0 ]]; then
-        new_volume="$(echo "$active_sources" | ~/.scripts/audio/get_pactl_volume.sh)"
+max_vol=""
+
+# Parse sink-inputs block-by-block and return: <id> <target_db> <current_db>
+while read -r id target_vol current_vol; do
+    # Only update if the current dB differs from the target dB
+    if [[ -n "$current_vol" ]] && (( $(echo "$current_vol != $target_vol" | bc -l) )); then
+        pactl set-sink-input-volume "$id" "${target_vol}db"
     fi
 
-    if [[ -z "$new_volume" ]]; then
-        new_volume="0"
-    else
-        flag=1
+    # Track the highest target volume among all active browser streams
+    if [[ -z "$max_vol" ]] || (( $(echo "$target_vol > $max_vol" | bc -l) )); then
+        max_vol="$target_vol"
     fi
+done < <(pactl list sink-inputs | awk -v kw="$KEYWORD" -v browsers="$BROWSERS" '
+BEGIN {
+    RS = "Sink Input #"
+    FS = "\n"
+}
+NR > 1 {
+    id = $1
+    app = ""
+    media = ""
+    vol_db = ""
 
-    new_volume="$(bc -l <<< "x=-($new_volume); if(x<1) print 0; x")"
+    for (i = 2; i <= NF; i++) {
+        if ($i ~ /application\.name = /) {
+            sub(/.*application\.name = "/, "", $i)
+            sub(/".*/, "", $i)
+            app = $i
+        }
+        else if ($i ~ /media\.name = /) {
+            sub(/.*media\.name = "/, "", $i)
+            sub(/".*/, "", $i)
+            media = $i
+        }
+        else if ($i ~ /^[[:space:]]*Volume:/) {
+            # Extracts the dB value (e.g., "0.00" or "-6.50")
+            if (match($i, /[-+]?[0-9]+\.[0-9]+[[:space:]]*dB/)) {
+                vol_db = substr($i, RSTART, RLENGTH)
+                sub(/[[:space:]]*dB/, "", vol_db)
+            }
+        }
+    }
 
-    if (( $(echo "$volume != $new_volume" | bc -l) )); then
-        pactl set-sink-volume myeffects_sink "${new_volume}db"
-        echo "$new_volume" > /tmp/auto_gain
-        ~/.scripts/bar_refresh autogain
-    else
-        flag=0
-    fi
+    # Check if the stream belongs to a browser
+    if (app ~ browsers) {
+        target = (index(media, kw) > 0) ? 8 : 0
+        print id, target, vol_db
+    }
+}
+')
 
-    if [[ "$i" -lt 10 ]]; then
-        sleep 0.1
-    else
-        sleep 1
-    fi
-    i=$(( i + 1 ))
-done
+# Default to 0 if no browser streams are currently active
+max_vol=${max_vol:-0}
+prev_max=$(cat /tmp/auto_gain 2>/dev/null)
+
+# Update state file and refresh bar once if any volume changed or max_vol shifted
+if [[ "$max_vol" != "$prev_max" ]]; then
+    echo "$max_vol" > /tmp/auto_gain
+    ~/.scripts/bar_refresh autogain
+fi
 
 unlock
